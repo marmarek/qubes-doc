@@ -1,10 +1,12 @@
 ---
+lang: en
 layout: doc
-title: Emergency Backup Recovery (v4)
 permalink: /doc/backup-emergency-restore-v4/
 redirect_from:
 - /en/doc/backup-emergency-restore-v4/
 - /doc/BackupEmergencyRestoreV4/
+ref: 73
+title: Emergency Backup Recovery (v4)
 ---
 
 Emergency Backup Recovery without Qubes (v4)
@@ -192,4 +194,3 @@ Emergency Recovery Instructions
 [get and verify the Release 4 Signing Key]: https://www.qubes-os.org/security/verifying-signatures/#2-get-the-release-signing-key
 [Emergency Backup Recovery without Qubes (v2)]: https://www.qubes-os.org/doc/backup-emergency-restore-v2/
 [Emergency Backup Recovery without Qubes (v3)]: https://www.qubes-os.org/doc/backup-emergency-restore-v3/
-

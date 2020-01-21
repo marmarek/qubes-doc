@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Managing VM kernel
 permalink: /doc/managing-vm-kernel/
 redirect_from:
 - /en/doc/managing-vm-kernel/
+ref: 88
+title: Managing VM kernel
 ---
 
 VM kernel managed by dom0
@@ -373,4 +375,3 @@ You can always set the kernel back to some dom0-provided value to fix a VM kerne
 
 
 [dom0-kernel-upgrade]: /doc/software-update-dom0/#kernel-upgrade
-

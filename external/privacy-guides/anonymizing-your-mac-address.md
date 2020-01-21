@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Anonymizing your MAC Address
 permalink: /doc/anonymizing-your-mac-address/
 redirect_from:
 - /doc/randomizing-your-mac-address/
+ref: 199
+title: Anonymizing your MAC Address
 ---
 
 Anonymizing your MAC Address

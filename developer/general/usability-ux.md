@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Usability & UX
 permalink: /doc/usability-ux/
+ref: 130
+title: Usability & UX
 ---
 
 Usability & UX

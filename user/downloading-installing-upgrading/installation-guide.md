@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Installation Guide
 permalink: /doc/installation-guide/
 redirect_from:
 - /en/doc/installation-guide/
@@ -14,6 +14,8 @@ redirect_from:
 - /doc/InstallationGuideR2rc2/
 - /doc/InstallationGuideR3.0rc1/
 - /doc/InstallationGuideR3.0rc2/
+ref: 35
+title: Installation Guide
 ---
 
 Installation Guide
@@ -361,4 +363,3 @@ Getting Help
 [improving]: /doc/doc-guidelines/
 [mailing lists]: /support/
 [help]: /help/
-

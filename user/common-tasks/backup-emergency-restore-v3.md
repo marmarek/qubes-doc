@@ -1,10 +1,12 @@
 ---
+lang: en
 layout: doc
-title: Emergency Backup Recovery (v3)
 permalink: /doc/backup-emergency-restore-v3/
 redirect_from:
 - /en/doc/backup-emergency-restore-v3/
 - /doc/BackupEmergencyRestoreV3/
+ref: 70
+title: Emergency Backup Recovery (v3)
 ---
 
 Emergency Backup Recovery without Qubes (v3)
@@ -137,4 +139,3 @@ any GNU/Linux system with the following procedure.
     repository:
 
         https://github.com/QubesOS/qubes-doc.git
-

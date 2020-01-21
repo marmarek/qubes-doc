@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: GUI Configuration and Troubleshooting
 permalink: /doc/gui-configuration/
+ref: 93
+title: GUI Configuration and Troubleshooting
 ---
 
 GUI Configuration and Troubleshooting

@@ -1,8 +1,8 @@
 ---
+lang: en
 layout: doc
-title: Security
 permalink: /security/
-redirect_from: 
+redirect_from:
 - /en/security/
 - /en/doc/security/
 - /en/doc/qubes-security/
@@ -12,6 +12,8 @@ redirect_from:
 - /doc/SecurityPage/
 - /wiki/SecurityPage/
 - /trac/wiki/SecurityPage/
+ref: 159
+title: Security
 ---
 
 Qubes OS Project Security Center
@@ -87,5 +89,3 @@ Please see [Why and How to Verify Signatures] for information about how to verif
 [Joanna Rutkowska]: /team/#joanna-rutkowska
 [emeritus, canaries only]: /news/2018/11/05/qubes-security-team-update/
 [Updating Qubes OS]: /doc/updating-qubes-os/
-
-

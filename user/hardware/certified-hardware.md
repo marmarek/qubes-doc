@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Certified Hardware
 permalink: /doc/certified-hardware/
 redirect_from:
- - /doc/hardware/
- - /doc/certified-laptops/
- - /hardware-certification/
+- /doc/hardware/
+- /doc/certified-laptops/
+- /hardware-certification/
+ref: 34
+title: Certified Hardware
 ---
 
 # Certified Hardware

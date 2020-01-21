@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: ZFS
 permalink: /doc/zfs/
 redirect_from:
 - /en/doc/zfs/
 - /doc/ZFS/
 - /wiki/ZFS/
+ref: 207
+title: ZFS
 ---
 
 ZFS in Qubes
@@ -194,4 +196,3 @@ Further Reading
 
 -   [http://www.open-zfs.org](http://www.open-zfs.org)
 -   [http://zfsonlinux.org](http://zfsonlinux.org)
-

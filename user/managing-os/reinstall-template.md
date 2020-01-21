@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: How to Reinstall a TemplateVM
 permalink: /doc/reinstall-template/
 redirect_from:
 - /doc/whonix/reinstall/
+ref: 52
+title: How to Reinstall a TemplateVM
 ---
 
 How to Reinstall a TemplateVM
@@ -82,4 +84,3 @@ If you want to reinstall more than one TemplateVM, repeat these instructions for
 
 
 [TemplateVM]: /doc/templates/
-

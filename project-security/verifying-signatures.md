@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Verifying Signatures
 permalink: /security/verifying-signatures/
 redirect_from:
 - /doc/verifying-signatures/
 - /en/doc/verifying-signatures/
 - /doc/VerifyingSignatures/
 - /wiki/VerifyingSignatures/
+ref: 157
+title: Verifying Signatures
 ---
 
 On Digital Signatures and Key Verification
@@ -457,4 +459,3 @@ If you still have a question, please address it to the [qubes-users mailing list
 [GPG documentation]: https://www.gnupg.org/documentation/
 [qubes-users mailing list]: /support/#qubes-users
 [except dom0]: https://github.com/QubesOS/qubes-issues/issues/2544
-

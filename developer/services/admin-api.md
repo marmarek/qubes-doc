@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc-full
-title: Admin API
 permalink: /doc/admin-api/
 redirect_from:
 - /doc/mgmt/
 - /doc/mgmt1/
 - /doc/mgmt-architecture/
 - /doc/admin-api-architecture/
+ref: 144
+title: Admin API
 ---
 
 # Qubes OS Admin API
@@ -323,4 +325,3 @@ destination_path: ncftpput -u my-ftp-username -p my-ftp-pass -c my-ftp-server /d
 <!-- vim: set ts=4 sts=4 sw=4 et : -->
 
 [admin-api-architecture]: /attachment/wiki/AdminAPI/admin-api-architecture.svg
-

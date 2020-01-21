@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: How to Create a NetBSD VM
 permalink: /doc/netbsd/
+ref: 185
+title: How to Create a NetBSD VM
 ---
 
 How to Create a NetBSD VM

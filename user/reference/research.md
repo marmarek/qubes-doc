@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: default
-title: Research
 permalink: /research/
 redirect_from:
 - /doc/qubes-research/
 - /en/doc/qubes-research/
 - /doc/QubesResearch/
 - /wiki/QubesResearch/
+ref: 84
+title: Research
 ---
 
 Here are links to various research papers, projects, and blog posts that relate

@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Qubes R1.0 Release Notes
 permalink: /doc/releases/1.0/release-notes/
 redirect_from:
 - /en/doc/releases/1.0/release-notes/
+ref: 111
+title: Qubes R1.0 Release Notes
 ---
 
 Qubes R1.0 Release Notes
@@ -53,4 +55,3 @@ If you have Qubes Beta 3 currently installed on your system, you must reinstall 
 ~~~
 qvm-backup-restore <backup_dir> --replace-template=fedora-15-x64:fedora-17-x64 
 ~~~
-

@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Managing AppVm Shortcuts
 permalink: /doc/managing-appvm-shortcuts/
 redirect_from:
 - /en/doc/managing-appvm-shortcuts/
 - /doc/ManagingAppVmShortcuts/
 - /wiki/ManagingAppVmShortcuts/
+ref: 62
+title: Managing AppVm Shortcuts
 ---
 
 Managing shortcuts to applications in AppVMs
@@ -115,4 +117,3 @@ Actual command lines for the menu shortcuts involve `qvm-run` command which star
 Examples: `qvm-run -q -a --service -- %VMNAME% qubes.StartApp+7-Zip-7-Zip_File_Manager` or `qvm-run -q -a --service -- %VMNAME% qubes.StartApp+firefox`
 
 Note that you can create a shortcut that points to a .desktop file in your AppVM with e.g. `qvm-run -q -a --service -- personal qubes.StartApp+firefox`.
-

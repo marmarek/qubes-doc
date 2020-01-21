@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title:  USB Qubes
 permalink: /doc/usb-qubes/
 redirect_from:
 - /doc/usbvm/
@@ -8,6 +8,8 @@ redirect_from:
 - /doc/USBVM/
 - /wiki/USBVM/
 - /doc/sys-usb/
+ref: 95
+title: USB Qubes
 ---
 
 # USB Qubes #
@@ -205,4 +207,3 @@ The procedure to hide all USB controllers from dom0 is as follows:
 [hiding USB controllers from dom0]: #how-to-hide-all-usb-controllers-from-dom0
 [AEM]: /doc/anti-evil-maid/
 [create a USB qube]: #creating-and-using-a-usb-qube
-

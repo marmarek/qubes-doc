@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: default
-title: Statistics
 permalink: /statistics/
-redirect_from: 
+redirect_from:
 - /counter/
+ref: 17
+title: Statistics
 ---
 
 <div style="text-align: center; margin-bottom: 3em;">
@@ -67,4 +69,3 @@ The source code is available [here][source-code].
 [TorDNSEL's exit lists]: https://metrics.torproject.org/collector.html#type-tordnsel
 [raw-data]: https://tools.qubes-os.org/counter/stats.json
 [source-code]: https://github.com/woju/qubes-stats
-

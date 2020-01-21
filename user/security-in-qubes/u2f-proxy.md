@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: The Qubes U2F Proxy
 permalink: /doc/u2f-proxy/
+ref: 26
+title: The Qubes U2F Proxy
 ---
 
 # The Qubes U2F Proxy
@@ -140,4 +142,3 @@ Chrome and Chromium do not require any special browser extensions.
 [report any bugs you encounter]: /doc/reporting-bugs/
 [ff-u2f-addon]: https://addons.mozilla.org/en-US/firefox/addon/u2f-support-add-on/?src=api
 [qubes-devel]: /support/#qubes-devel
-

@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Ubuntu Template
 permalink: /doc/templates/ubuntu/
 redirect_from:
 - /doc/ubuntu/
 - /en/doc/templates/ubuntu/
 - /doc/Templates/Ubuntu/
 - /wiki/Templates/Ubuntu/
+ref: 187
+title: Ubuntu Template
 ---
 
 Ubuntu template(s)

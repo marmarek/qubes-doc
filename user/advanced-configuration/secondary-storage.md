@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Secondary Storage
 permalink: /doc/secondary-storage/
 redirect_from:
 - /en/doc/secondary-storage/
 - /doc/SecondaryStorage/
 - /wiki/SecondaryStorage/
+ref: 97
+title: Secondary Storage
 ---
 
 Storing AppVMs on Secondary Drives
@@ -90,4 +92,3 @@ By default VMs will be created on the main Qubes disk (i.e. a small SSD), to cre
 
 [Qubes Backup]: /doc/BackupRestore/
 [TemplateVM]: /doc/Templates/
-

@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Updating Qubes OS
 permalink: /doc/updating-qubes-os/
+ref: 65
+title: Updating Qubes OS
 ---
 
 Updating Qubes OS

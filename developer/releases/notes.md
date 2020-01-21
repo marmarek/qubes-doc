@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Release Notes
 permalink: /doc/releases/notes/
+ref: 102
+title: Release Notes
 ---
 
 Release Notes
@@ -13,4 +15,3 @@ Release Notes
  * [Qubes R3.1 release notes](/doc/releases/3.1/release-notes/)
  * [Qubes R3.2 release notes](/doc/releases/3.2/release-notes/)
  * [Qubes R4.0 release notes](/doc/releases/4.0/release-notes/)
-

@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: DisposableVM Customization
 permalink: /doc/disposablevm-customization/
 redirect_from:
 - /doc/dispvm-customization/
@@ -8,6 +8,8 @@ redirect_from:
 - /doc/DispVMCustomization/
 - /doc/UserDoc/DispVMCustomization/
 - /wiki/UserDoc/DispVMCustomization/
+ref: 92
+title: DisposableVM Customization
 ---
 
 # DisposableVM Customization
@@ -319,4 +321,3 @@ You can then delete the DisposableVM Template:
 If you still encounter the issue, you may have forgot to clean an entry. Looking at the system logs will help you
 
     [user@dom0 ~]$ journalctl | tail
-

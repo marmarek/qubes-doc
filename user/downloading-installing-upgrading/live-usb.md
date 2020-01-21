@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Live USB
 permalink: /doc/live-usb/
+ref: 42
+title: Live USB
 ---
 
 Qubes Live USB (alpha)

@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Qubes Windows Tools
 permalink: /doc/windows-tools/
 redirect_from:
 - /doc/windows-appvms/
@@ -12,6 +12,8 @@ redirect_from:
 - /doc/WindowsTools3/
 - /doc/WindowsTools/
 - /wiki/WindowsTools/
+ref: 189
+title: Qubes Windows Tools
 ---
 
 Qubes Windows Tools
@@ -256,4 +258,3 @@ When we publish new QWT version (which is announced on `qubes-users` Google Grou
 `qubes-dom0-update --enablerepo=qubes-dom0-current-testing qubes-windows-tools`
 
 That command will download a new QWT .iso from the testing repository. It goes without saying that you should **backup your VMs** before installing anything from testing repos.
-

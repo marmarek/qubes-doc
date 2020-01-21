@@ -1,8 +1,10 @@
 ---
+lang: en
 layout: sidebar
-title: Google Summer of Code
 permalink: /gsoc/
 redirect_from: /GSoC/
+ref: 127
+title: Google Summer of Code
 ---
 
 2019 Google Summer of Code

@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: VM Configuration Interface
 permalink: /doc/vm-interface/
 redirect_from:
 - /en/doc/vm-interface/
 - /doc/VMInterface/
 - /doc/SystemDoc/VMInterface/
 - /wiki/SystemDoc/VMInterface/
+ref: 139
+title: VM Configuration Interface
 ---
 
 VM Configuration Interface

@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Installing and updating software in dom0
 permalink: /doc/software-update-dom0/
 redirect_from:
 - /en/doc/software-update-dom0/
 - /doc/SoftwareUpdateDom0/
 - /wiki/SoftwareUpdateDom0/
+ref: 67
+title: Installing and updating software in dom0
 ---
 
 # Installing and updating software in dom0
@@ -219,4 +221,3 @@ For example: sys-whonix.
 [testing]: /doc/testing/
 [troubleshooting newer hardware]: /doc/newer-hardware-troubleshooting/
 [Managing VM kernel]: /doc/managing-vm-kernel/
-

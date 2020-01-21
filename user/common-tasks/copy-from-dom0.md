@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Copying from (and to) dom0
 permalink: /doc/copy-from-dom0/
 redirect_from:
 - /doc/copy-to-dom0/
 - /en/doc/copy-to-dom0/
 - /doc/CopyToDomZero/
 - /wiki/CopyToDomZero/
+ref: 66
+title: Copying from (and to) dom0
 ---
 
 Copying from (and to) dom0
@@ -72,4 +74,3 @@ Note that you can use the same method to copy files from dom0 to VMs (if, for so
 ~~~
 cat /path/to/file_in_dom0 | qvm-run --pass-io <dest-vm> 'cat > /path/to/file_name_in_appvm'
 ~~~
-

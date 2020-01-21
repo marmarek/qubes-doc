@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Development Workflow
 permalink: /doc/development-workflow/
 redirect_from:
 - /en/doc/development-workflow/
 - /doc/DevelopmentWorkflow/
 - /wiki/DevelopmentWorkflow/
+ref: 124
+title: Development Workflow
 ---
 
 Development Workflow

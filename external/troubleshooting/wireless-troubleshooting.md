@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Wireless Troubleshooting
 permalink: /doc/wireless-troubleshooting/
 redirect_from:
 - /en/doc/wireless-troubleshooting/
+ref: 171
+title: Wireless Troubleshooting
 ---
 
 Wireless Troubleshooting Guide

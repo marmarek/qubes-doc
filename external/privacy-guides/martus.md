@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Martus
 permalink: /doc/martus/
+ref: 195
+title: Martus
 ---
 
 Martus
@@ -46,4 +48,3 @@ To install Martus in a qube:
 
 
 [Martus]: https://martus.org/
-

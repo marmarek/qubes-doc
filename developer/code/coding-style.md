@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Coding Style
 permalink: /doc/coding-style/
 redirect_from:
 - /en/doc/coding-style/
 - /doc/CodingStyle/
 - /wiki/CodingStyle/
 - /trac/wiki/CodingStyle/
+ref: 151
+title: Coding Style
 ---
 
 Coding Guidelines for Qubes Developers

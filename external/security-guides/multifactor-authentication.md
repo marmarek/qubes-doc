@@ -1,10 +1,12 @@
 ---
+lang: en
 layout: doc
-title: Multifactor Authentication
 permalink: /doc/multifactor-authentication/
 redirect_from:
 - /en/doc/multifactor-authentication/
 - /doc/Multi-factorAuthentication/
+ref: 216
+title: Multifactor Authentication
 ---
 
 Using Multi-factor Authentication with Qubes

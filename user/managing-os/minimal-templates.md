@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Minimal TemplateVMs
 permalink: /doc/templates/minimal/
 redirect_from:
 - /doc/templates/fedora-minimal/
@@ -9,6 +9,8 @@ redirect_from:
 - /doc/Templates/FedoraMinimal/
 - /wiki/Templates/FedoraMinimal/
 - /doc/templates/debian-minimal/
+ref: 55
+title: Minimal TemplateVMs
 ---
 
 # Minimal TemplateVMs
@@ -198,4 +200,3 @@ Use case | Description | Required steps
 [testing]: /doc/testing/
 [customization]: /doc/fedora-minimal-template-customization/
 [Passwordless Root Access in VMs]: /doc/vm-sudo/
-

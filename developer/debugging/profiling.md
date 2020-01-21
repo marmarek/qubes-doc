@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Profiling
 permalink: /doc/profiling/
 redirect_from:
 - /en/doc/profiling/
 - /doc/Profiling/
 - /wiki/Profiling/
+ref: 135
+title: Profiling
 ---
 
 Profiling

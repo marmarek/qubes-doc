@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Hardware Testing
 permalink: /doc/hardware-testing/
+ref: 32
+title: Hardware Testing
 ---
 
 # Hardware Testing
@@ -41,4 +43,3 @@ Note: The Lenovo X and T series are similar enough to assume similar compatibili
 
 [Qubes Certified Hardware]: /doc/certified-hardware/
 [Hardware Compatibility List (HCL)]: /hcl/
-

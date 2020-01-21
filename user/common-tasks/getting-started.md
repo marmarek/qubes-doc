@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: default
-title: Get Started
 permalink: /getting-started/
 redirect_from:
 - /doc/getting-started/
 - /en/doc/getting-started/
 - /doc/GettingStarted/
 - /wiki/GettingStarted/
+ref: 69
+title: Get Started
 ---
 
 <a name="already-installed"></a>After [installing Qubes](/doc/installation-guide/), let's cover some basic concepts.

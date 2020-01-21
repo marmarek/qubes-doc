@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Upgrading to R4.0
 permalink: /doc/upgrade-to-r4.0/
 redirect_from:
 - /en/doc/upgrade-to-r4.0/
 - /doc/UpgradeToR4.0/
 - /doc/UpgradeToR4.0rc1/
+ref: 48
+title: Upgrading to R4.0
 ---
 
 Upgrading Qubes R3.2 to R4.0
@@ -118,4 +120,3 @@ Please see [Supported Versions](/doc/supported-versions/) for information on sup
  * [Upgrading Fedora TemplateVMs](/doc/templates/fedora/#upgrading)
  * [Upgrading Debian TemplateVMs](/doc/templates/debian/#upgrading)
  * [Updating Whonix TemplateVMs](https://www.whonix.org/wiki/Qubes/Update)
-

@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Security Pack
 permalink: /security/pack/
 redirect_from:
 - /doc/security-pack/
@@ -13,6 +13,8 @@ redirect_from:
 - /doc/qsp/
 - /doc/sec-pack/
 - /doc/secpack/
+ref: 162
+title: Security Pack
 ---
 
 Qubes Security Pack
@@ -258,4 +260,3 @@ The same procedures can be applied to any directory or file in the
 signatures) are provided to ensure that the system is robust (e.g., against a
 potential failure in Git tag-based verification) and to give users more options
 to verify the files.
-

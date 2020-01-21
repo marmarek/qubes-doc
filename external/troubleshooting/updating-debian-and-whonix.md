@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Updating Debian and Whonix
 permalink: /doc/troubleshooting/updating-debian-and-whonix/
+ref: 170
+title: Updating Debian and Whonix
 ---
 
 Updating Debian and Whonix

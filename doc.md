@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc-index
-title: Documentation
 permalink: /doc/
 redirect_from:
 - /en/doc/
@@ -12,6 +12,8 @@ redirect_from:
 - /en/help/
 - /en/community/
 - /community/
+ref: 11
+title: Documentation
 ---
 
 ## Introduction
@@ -276,4 +278,3 @@ Unofficial, third-party documentation from the Qubes community and others.
  * [Building the Archlinux Template](/doc/building-archlinux-template/)
  * [Building the Whonix Templates](/doc/building-whonix-template/)
  * [How to compile kernels for dom0](https://groups.google.com/d/topic/qubes-users/yBeUJPwKwHM/discussion)
-

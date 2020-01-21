@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Custom Installation
 permalink: /doc/custom-install/
 redirect_from:
- - /doc/encryption-config/
+- /doc/encryption-config/
+ref: 41
+title: Custom Installation
 ---
 
 # Custom Installation
@@ -156,4 +158,3 @@ Boot into the Qubes installer, then press `ctrl`+`alt`+`F2` to get a virtual con
 [cryptsetup-faq]: https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions
 [dm-crypt]: https://wiki.archlinux.org/index.php/dm-crypt/Device_encryption
 [tomb-238]: https://github.com/dyne/Tomb/issues/238
-

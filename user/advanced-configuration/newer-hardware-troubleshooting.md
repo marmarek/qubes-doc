@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Troubleshooting newer hardware
 permalink: /doc/newer-hardware-troubleshooting/
+ref: 89
+title: Troubleshooting newer hardware
 ---
 
 Troubleshooting newer hardware
@@ -26,4 +28,3 @@ If `uname -r` reports a higher version number, then you've successfully booted w
 
 
 [dom0-kernel-upgrade]: /doc/software-update-dom0/#kernel-upgrade
-

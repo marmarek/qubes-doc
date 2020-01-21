@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Multibooting
 permalink: /doc/multiboot/
+ref: 206
+title: Multibooting
 ---
 
 Multibooting Qubes 

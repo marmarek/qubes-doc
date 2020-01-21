@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: sidebar
-title: Help, Support, and Mailing Lists
 permalink: /support/
 redirect_from:
 - /help/
@@ -11,6 +11,8 @@ redirect_from:
 - /doc/qubes-lists/
 - /doc/QubesLists/
 - /wiki/QubesLists/
+ref: 18
+title: Help, Support, and Mailing Lists
 ---
 
 # Help, Support, and Mailing Lists #
@@ -377,4 +379,3 @@ This list also has an optional [Google Groups web interface][qubes-translation-w
 [Transifex]: https://www.transifex.com/otf/qubes/
 [issue tracker]: /doc/reporting-bugs/
 [searching the issue tracker]: /doc/reporting-bugs/#search-tips
-

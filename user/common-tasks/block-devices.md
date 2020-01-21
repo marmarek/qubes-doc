@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Block (Storage) Devices
 permalink: /doc/block-devices/
 redirect_from:
 - /doc/stick-mounting/
 - /en/doc/stick-mounting/
 - /doc/StickMounting/
 - /wiki/StickMounting/
+ref: 79
+title: Block (Storage) Devices
 ---
 
 # Block (Storage) Devices #
@@ -242,4 +244,3 @@ This option accepts `cdrom` and `disk`, default is `disk`.
 [losetup]: https://linux.die.net/man/8/losetup
 [USB]:/doc/usb-devices/
 [1082]: https://github.com/QubesOS/qubes-issues/issues/1082
-

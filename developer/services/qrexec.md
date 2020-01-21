@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Qrexec
 permalink: /doc/qrexec/
 redirect_from:
 - /en/doc/qrexec3/
@@ -11,6 +11,8 @@ redirect_from:
 - /en/doc/qrexec/
 - /doc/Qrexec/
 - /wiki/Qrexec/
+ref: 145
+title: Qrexec
 ---
 
 # Qrexec: secure communication across domains

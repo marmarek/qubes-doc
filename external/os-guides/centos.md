@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: CentOS Template
 permalink: /doc/templates/centos/
+ref: 183
+title: CentOS Template
 ---
 
 # CentOS Template
@@ -32,5 +34,3 @@ After a fresh install, we recommend to [Update the TemplateVM](/doc/software-upd
 [switch]: /doc/templates/#switching
 [reinstall]: /doc/reinstall-template/
 [uninstall]: /doc/templates/#uninstalling
-
-

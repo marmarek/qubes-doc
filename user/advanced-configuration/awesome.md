@@ -1,10 +1,12 @@
 ---
+lang: en
 layout: doc
-title: awesome
 permalink: /doc/awesome/
 redirect_from:
 - /en/doc/awesome/
 - /doc/awesome/
+ref: 98
+title: awesome
 ---
 
 # Using awesome in dom0
@@ -184,4 +186,3 @@ client.disconnect_signal("request::tag", ewmh.tag)
 ```
 
 The signal names may change across awesome versions.
-

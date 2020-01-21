@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Full Screen Mode
 permalink: /doc/full-screen-mode/
 redirect_from:
 - /en/doc/full-screen-mode/
 - /doc/FullScreenMode/
 - /wiki/FullScreenMode/
+ref: 63
+title: Full Screen Mode
 ---
 
 Enabling Full Screen Mode for select VMs

@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: sidebar
-title: Google Season of Docs
 permalink: /gsod/
+ref: 129
+title: Google Season of Docs
 ---
 
 # 2019 Google Season of Docs
@@ -175,4 +177,3 @@ This could be helped by writing consolidated guide with with a clear list of sym
 [getting started]: /getting-started/
 [markdown]: https://daringfireball.net/projects/markdown/
 [doc-issues]: https://github.com/QubesOS/qubes-issues/issues?q=is%3Aopen+is%3Aissue+label%3A%22C%3A+doc%22
-

@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Storage Pools
 permalink: /doc/storage-pools/
+ref: 118
+title: Storage Pools
 ---
 
 Storage Pools in Qubes
@@ -50,4 +52,4 @@ argument to `qvm-create` to have the VM images stored in pool `foo`. See also
 `qvm-create --help`.
 
 While the current API is not as clean and beautiful as the R4 API, it allows
-you to write your own storage drivers e.g. for Btrfs today. 
+you to write your own storage drivers e.g. for Btrfs today.

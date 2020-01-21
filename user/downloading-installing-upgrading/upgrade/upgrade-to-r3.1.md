@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Upgrading to R3.1
 permalink: /doc/upgrade-to-r3.1/
 redirect_from:
 - /en/doc/upgrade-to-r3.1/
 - /doc/UpgradeToR3.1/
 - /doc/UpgradeToR3.1rc1/
+ref: 47
+title: Upgrading to R3.1
 ---
 
 Upgrading Qubes R3.0 to R3.1
@@ -114,4 +116,3 @@ Once you have upgraded dom0, you can install new templates from Qubes R3.1
 repositories, in particular the new default Fedora 23 template:
 
     sudo qubes-dom0-update qubes-template-fedora-23
-

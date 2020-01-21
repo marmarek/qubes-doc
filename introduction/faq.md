@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: sidebar
-title: Frequently Asked Questions
 permalink: /faq/
 redirect_from:
 - /doc/user-faq/
@@ -11,6 +11,8 @@ redirect_from:
 - /en/doc/devel-faq/
 - /doc/DevelFaq/
 - /wiki/DevelFaq/
+ref: 13
+title: Frequently Asked Questions
 ---
 
 # Frequently Asked Questions
@@ -755,4 +757,3 @@ There is also the unofficial [ansible-qubes toolkit](https://github.com/Rudd-O/a
 (**Warning:** Since this is an external project that has not been reviewed or endorsed by the Qubes team, [allowing it to manage dom0 may be a security risk](/doc/security-guidelines/#dom0-precautions).)
 
 [paper-compart]: https://invisiblethingslab.com/resources/2014/Software_compartmentalization_vs_physical_separation.pdf
-

@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: default
-title: Code of Conduct
 permalink: /code-of-conduct/
+ref: 19
+title: Code of Conduct
 ---
 
 ## Introduction
@@ -68,4 +70,3 @@ The initial published version of this Code of Conduct was adapted from the [Cont
 [mailing list discussion guidelines]: /support/#discussion-list-guidelines
 [Contributor Covenant, version 1.4]: http://contributor-covenant.org/version/1/4
 [Rust Code of Conduct]: https://www.rust-lang.org/en-US/conduct.html
-

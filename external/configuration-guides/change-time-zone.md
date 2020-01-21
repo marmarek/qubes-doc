@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Changing your Time Zone
 permalink: /doc/change-time-zone/
+ref: 202
+title: Changing your Time Zone
 ---
 
 # Changing your Time Zone #
@@ -33,4 +35,3 @@ Europe/Berlin:
      Network time on: no
     NTP synchronized: no
      RTC in local TZ: no
-

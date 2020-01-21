@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Copy and Paste
 permalink: /doc/copy-paste/
 redirect_from:
 - /en/doc/copy-paste/
 - /doc/CopyPaste/
 - /wiki/CopyPaste/
+ref: 74
+title: Copy and Paste
 ---
 
 Copy and Paste between domains
@@ -79,4 +81,3 @@ VMs need to be restarted in order for changes in `/etc/qubes/guid.conf` to take 
 
 
 [RPC policy]: /doc/rpc-policy/
-

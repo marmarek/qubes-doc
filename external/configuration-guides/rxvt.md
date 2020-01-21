@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Rxvt
 permalink: /doc/rxvt/
 redirect_from:
 - /en/doc/rxvt/
 - /doc/Rxvt/
 - /wiki/Rxvt/
+ref: 200
+title: Rxvt
 ---
 
 Rxvt

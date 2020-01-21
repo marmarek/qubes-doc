@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Documentation Guidelines
 permalink: /doc/doc-guidelines/
 redirect_from:
 - /en/doc/doc-guidelines/
 - /wiki/DocStyle/
 - /doc/DocStyle/
+ref: 131
+title: Documentation Guidelines
 ---
 
 Documentation Guidelines
@@ -305,4 +307,3 @@ Please try to write good commit messages, according to the
 [git-commit]: /doc/coding-style/#commit-message-guidelines
 [render the site locally]: https://github.com/QubesOS/qubesos.github.io#instructions
 [qubes-attachment]: https://github.com/QubesOS/qubes-attachment
-

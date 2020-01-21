@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Archlinux Template
 permalink: /doc/templates/archlinux/
 redirect_from:
 - /doc/archlinux/
 - /en/doc/templates/archlinux/
 - /doc/Templates/Archlinux/
 - /wiki/Templates/Archlinux/
+ref: 188
+title: Archlinux Template
 ---
 
 # Archlinux Template

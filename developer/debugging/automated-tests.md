@@ -1,10 +1,12 @@
 ---
+lang: en
 layout: doc
-title: Automated Tests
 permalink: /doc/automated-tests/
 redirect_from:
 - /en/doc/automated-tests/
 - /doc/AutomatedTests/
+ref: 136
+title: Automated Tests
 ---
 
 Automated Tests
@@ -216,4 +218,3 @@ Thanks to an anonymous donor, our openQA system is hosted in a datacenter on har
 
 [unittest]: https://docs.python.org/2/library/unittest.html
 [OpenQA]: http://open.qa/
-

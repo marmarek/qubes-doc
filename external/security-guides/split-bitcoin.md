@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Split Bitcoin
 permalink: /doc/split-bitcoin/
+ref: 217
+title: Split Bitcoin
 ---
 
 How to Set Up a Split Bitcoin Wallet in Qubes
@@ -49,4 +51,3 @@ Important Notes
 
 [inter-VM clipboard]: /doc/copy-paste/
 [inter-VM file copy]: /doc/copying-files/
-

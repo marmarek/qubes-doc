@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Qubes RPC internals
 permalink: /doc/qrexec-internals/
 redirect_from:
 - /doc/qrexec3-implementation/
 - /en/doc/qrexec3-implementation/
 - /doc/Qrexec3Implementation/
 - /wiki/Qrexec3Implementation/
+ref: 142
+title: Qubes RPC internals
 ---
 
 # Qubes RPC internals
@@ -166,4 +168,3 @@ Details of all possible use cases and the messages involved are described below.
 - **domY**: `qrexec-agent` starts a vchan server on the port received in the step above. It acts as a `qrexec-client` in this case because this is a VM-VM connection.
 - **domX**: `qrexec-agent` connects to the vchan server of **domY**'s `qrexec-agent` (connection details were received before from **domX**'s `qrexec-daemon`).
 - After that, connection follows the flow of the previous example (dom0-VM).
-

@@ -1,6 +1,6 @@
 ---
 lang: en
-layout: home
+layout: experts
 permalink: /experts/
 ref: 119
 title: Experts

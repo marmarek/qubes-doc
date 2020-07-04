@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Device Handling Security
 permalink: /doc/device-handling-security/
+ref: 170
+title: Device Handling Security
 ---
 
 # Device Handling Security #
@@ -86,4 +88,3 @@ Support for [two factor authentication][qubes u2f proxy] was recently added, tho
 [side channel attack]: https://en.wikipedia.org/wiki/Side-channel_attack
 [Xen PCI Passthrough: PV guests and PCI quirks]: https://wiki.xenproject.org/wiki/Xen_PCI_Passthrough#PV_guests_and_PCI_quirks
 [Software Attacks on Intel VT-d]: https://invisiblethingslab.com/resources/2011/Software%20Attacks%20on%20Intel%20VT-d.pdf
-

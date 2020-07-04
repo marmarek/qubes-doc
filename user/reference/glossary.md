@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Glossary
 permalink: /doc/glossary/
 redirect_from:
 - /en/doc/glossary/
 - /doc/Glossary/
 - /wiki/Glossary/
+ref: 140
+title: Glossary
 ---
 
 Glossary of Qubes Terminology
@@ -194,4 +196,3 @@ Qubes Windows Tools are a set of programs and drivers that provide integration o
 QWT
 ----
 An abbreviation of Qubes [Windows Tools](#windows-tools).
-

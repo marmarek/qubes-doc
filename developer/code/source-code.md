@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Source Code
 permalink: /doc/source-code/
 redirect_from:
 - /en/doc/source-code/
 - /doc/SourceCode/
 - /wiki/SourceCode/
+ref: 54
+title: Source Code
 ---
 
 Qubes Source Code Repositories

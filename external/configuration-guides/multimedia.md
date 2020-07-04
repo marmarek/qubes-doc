@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: How to Make a Multimedia TemplateVM
 permalink: /doc/multimedia/
 redirect_from:
 - /en/doc/multimedia/
 - /doc/Multimedia/
 - /wiki/Multimedia/
+ref: 105
+title: How to Make a Multimedia TemplateVM
 ---
 
 How to Make a Multimedia TemplateVM
@@ -237,4 +239,3 @@ Create a Multimedia AppVM
 The last step is to create a multimedia AppVM (named "my-multimedia" here) based on the new multimedia template.
 
 `qvm-create --template t-multimedia --label orange my-multimedia`
-

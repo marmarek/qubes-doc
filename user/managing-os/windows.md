@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Windows VMs
 permalink: /doc/windows/
+ref: 129
+title: Windows VMs
 ---
 
 Windows VMs in Qubes OS
@@ -17,5 +19,3 @@ For more information about Windows VMs in Qubes OS, please see the specific guid
  * [Installing and Using Windows-based VMs](/doc/windows-vm/)
  * [Installing and Using Qubes Windows Tools](/doc/windows-tools/)
  * [Issue #3585 - Installation and know limitations of Qubes Windows Tools in Qubes R4.0](https://github.com/QubesOS/qubes-issues/issues/3585)
-
-

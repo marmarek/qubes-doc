@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Installing and updating software in domUs
 permalink: /doc/software-update-domu/
 redirect_from:
 - /doc/software-update-vm/
 - /en/doc/software-update-vm/
 - /doc/SoftwareUpdateVM/
 - /wiki/SoftwareUpdateVM/
+ref: 189
+title: Installing and updating software in domUs
 ---
 
 # Installing and updating software in domUs
@@ -311,4 +313,3 @@ Note that the app will autostart only when the AppVM starts. If you would like t
 [RPM Fusion]: http://rpmfusion.org/
 [service framework]: /doc/qubes-service/
 [How to Reinstall a TemplateVM]: /doc/reinstall-template/
-

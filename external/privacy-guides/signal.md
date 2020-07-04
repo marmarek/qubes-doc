@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Signal
 permalink: /doc/signal/
+ref: 70
+title: Signal
 ---
 
 Signal

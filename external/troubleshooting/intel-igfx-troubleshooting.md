@@ -1,8 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Intel Integrated Graphics Troubleshooting
 permalink: /doc/intel-igfx-troubleshooting/
+ref: 90
+title: Intel Integrated Graphics Troubleshooting
 ---
+
 # Intel Integrated Graphics Troubleshooting #
 
 ## Software Rendering or Video Lags
@@ -62,4 +65,3 @@ Edit the startup parameters for Xen:
 3. Add to the line `options` the setting `iommu=no-igfx`, save and quit
 
 <b name="f1">1</b> <https://github.com/QubesOS/qubes-issues/issues/2841> [↩](#a1-1)
-

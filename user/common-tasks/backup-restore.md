@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Backup, Restoration, and Migration
 permalink: /doc/backup-restore/
 redirect_from:
 - /en/doc/backup-restore/
 - /doc/BackupRestore/
 - /wiki/BackupRestore/
+ref: 199
+title: Backup, Restoration, and Migration
 ---
 
 Qubes Backup, Restoration, and Migration
@@ -137,4 +139,3 @@ Notes
 
  * For the technical details of the backup system, please refer to [this thread](https://groups.google.com/d/topic/qubes-devel/TQr_QcXIVww/discussion).
  * If working with symlinks, note the issues described in [this thread](https://groups.google.com/d/topic/qubes-users/EITd1kBHD30/discussion).
-

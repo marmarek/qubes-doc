@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: sidebar
-title: Frequently Asked Questions
 permalink: /faq/
 redirect_from:
 - /doc/user-faq/
@@ -11,6 +11,8 @@ redirect_from:
 - /en/doc/devel-faq/
 - /doc/DevelFaq/
 - /wiki/DevelFaq/
+ref: 124
+title: Frequently Asked Questions
 ---
 
 # Frequently Asked Questions

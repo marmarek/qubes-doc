@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: System Requirements
 permalink: /doc/system-requirements/
 redirect_from:
 - /system-requirements/
 - /en/doc/system-requirements/
 - /doc/SystemRequirements/
 - /wiki/SystemRequirements/
+ref: 142
+title: System Requirements
 ---
 
 # System Requirements #
@@ -101,4 +103,3 @@ redirect_from:
 [AMD-Vi (aka AMD IOMMU)]: https://en.wikipedia.org/wiki/X86_virtualization#I.2FO_MMU_virtualization_.28AMD-Vi_and_Intel_VT-d.29
 [EPT]: https://en.wikipedia.org/wiki/Second_Level_Address_Translation#Extended_Page_Tables
 [RVI]: https://en.wikipedia.org/wiki/Second_Level_Address_Translation#Rapid_Virtualization_Indexing
-

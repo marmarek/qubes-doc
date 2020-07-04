@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Whonix for Privacy & Anonymity
 permalink: /doc/whonix/
 redirect_from:
 - /doc/privacy/whonix/
@@ -16,6 +16,8 @@ redirect_from:
 - /doc/privacy/uninstall-whonix/
 - /doc/whonix/update/
 - /doc/privacy/updating-whonix/
+ref: 69
+title: Whonix for Privacy & Anonymity
 ---
 
 Whonix for Privacy & Anonymity
@@ -55,4 +57,3 @@ Note: To install Whonix in Qubes, you must [install Qubes](/doc/installation-gui
 
 *  [Whonix Support](https://www.whonix.org/wiki/Support) - General Whonix, Debian, Tor, etc... related issues
 *  [Whonix Qubes Forum](https://forums.whonix.org/c/qubes) - Whonix specific issues
-

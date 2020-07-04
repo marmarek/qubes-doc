@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: StandaloneVMs and HVMs
 permalink: /doc/standalone-and-hvm/
 redirect_from:
 - /doc/hvm/
@@ -8,6 +8,8 @@ redirect_from:
 - /en/doc/hvm-create/
 - /doc/HvmCreate/
 - /wiki/HvmCreate/
+ref: 130
+title: StandaloneVMs and HVMs
 ---
 
 # StandaloneVMs and HVMs
@@ -338,4 +340,3 @@ Other documents related to HVM:
 
 -   [Windows VMs](/doc/windows-vm/)
 -   [LinuxHVMTips](/doc/linux-hvm-tips/)
-

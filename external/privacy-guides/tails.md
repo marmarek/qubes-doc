@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Running Tails in Qubes
 permalink: /doc/tails/
 redirect_from:
 - /doc/running-tails
+ref: 71
+title: Running Tails in Qubes
 ---
 
 Running Tails in Qubes

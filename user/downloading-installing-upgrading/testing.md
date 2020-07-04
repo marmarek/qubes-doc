@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Testing New Releases and Updates
 permalink: /doc/testing/
+ref: 147
+title: Testing New Releases and Updates
 ---
 
 Testing New Releases and Updates
@@ -61,4 +63,3 @@ If you [report a bug] in a package that is in a testing repository, please refer
 [updates-status]: https://github.com/QubesOS/updates-status/issues
 [report a bug]: /doc/reporting-bugs/
 [Providing Feedback]: #providing-feedback
-

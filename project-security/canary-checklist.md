@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Canary Checklist
 permalink: /security/canaries/checklist/
+ref: 216
+title: Canary Checklist
 ---
 
 Canary Checklist
@@ -21,4 +23,3 @@ Announcement
  * Send the content of the news post to the appropriate [mailing lists](/support/) 
  * Share link to news post on social media
  * Set a reminder for the next canary
-

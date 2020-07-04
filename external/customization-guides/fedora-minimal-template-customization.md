@@ -1,8 +1,10 @@
 ---
+lang: en
 layout: doc
-title: Fedora Minimal Template Customization
 permalink: /doc/fedora-minimal-template-customization/
 redirect_from: /en/doc/fedora-minimal-template-customization/
+ref: 76
+title: Fedora Minimal Template Customization
 ---
 
 FEDORA Packages Recommendations

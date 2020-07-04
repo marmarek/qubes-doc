@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: default
-title: Screenshots
 permalink: /screenshots/
 redirect_from:
 - /media/
 - /doc/QubesScreenshots/
 - /wiki/QubesScreenshots/
+ref: 123
+title: Screenshots
 ---
 
 Select Qubes OS Screenshots
@@ -120,4 +122,3 @@ The following screenshots, [courtesy of Qubes user nalu](https://groups.google.c
 [![r3rc1-nalu-desktop-3.png](/attachment/wiki/QubesScreenshots/r3rc1-nalu-desktop-3.png)](/attachment/wiki/QubesScreenshots/r3rc1-nalu-desktop-3.png)
 
 [![r3rc1-nalu-desktop-4.png](/attachment/wiki/QubesScreenshots/r3rc1-nalu-desktop-4.png)](/attachment/wiki/QubesScreenshots/r3rc1-nalu-desktop-4.png)
-

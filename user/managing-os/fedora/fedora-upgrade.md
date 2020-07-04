@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Upgrading Fedora TemplateVMs
 permalink: /doc/template/fedora/upgrade/
 redirect_from:
 - /doc/template/fedora/upgrade-26-to-27/
@@ -19,6 +19,8 @@ redirect_from:
 - /doc/FedoraTemplateUpgrade28/
 - /wiki/FedoraTemplateUpgrade28/
 - /doc/template/fedora/upgrade-29-to-30/
+ref: 137
+title: Upgrading Fedora TemplateVMs
 ---
 
 # Upgrading Fedora TemplateVMs
@@ -210,4 +212,3 @@ In this case, you have several options:
 [StandaloneVM]: /doc/standalone-and-hvm/
 [template-notes]: /doc/templates/#important-notes
 [5055]: https://github.com/QubesOS/qubes-issues/issues/5055
-

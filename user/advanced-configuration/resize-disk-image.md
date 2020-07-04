@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Resize Disk Image
 permalink: /doc/resize-disk-image/
 redirect_from:
 - /en/doc/resize-disk-image/
@@ -9,6 +9,8 @@ redirect_from:
 - /doc/ResizeRootDiskImage/
 - /wiki/ResizeDiskImage/
 - /wiki/ResizeRootDiskImage/
+ref: 182
+title: Resize Disk Image
 ---
 
 Resizing Disk Images
@@ -108,8 +110,3 @@ sudo lvresize --size 1024M /dev/qubes_dom0/vm-qube1-private
 If you have a SSD see [here][fstrim] for information on using fstrim.
 
 [fstrim]: /doc/disk-trim
-
-
-
-
-

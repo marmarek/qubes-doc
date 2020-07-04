@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: External Audio
 permalink: /doc/external-audio/
 redirect_from:
 - /en/doc/external-audio/
 - /doc/ExternalAudio/
 - /wiki/ExternalAudio/
+ref: 100
+title: External Audio
 ---
 
 Using External Audio Devices

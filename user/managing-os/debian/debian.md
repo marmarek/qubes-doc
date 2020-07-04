@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: The Debian TemplateVM
 permalink: /doc/templates/debian/
 redirect_from:
 - /doc/debian/
 - /en/doc/templates/debian/
 - /doc/Templates/Debian/
 - /wiki/Templates/Debian/
+ref: 134
+title: The Debian TemplateVM
 ---
 
 # The Debian TemplateVM
@@ -124,4 +126,3 @@ One solution is to add a dummy interface to allow the package to install correct
 [Upgrading Debian TemplateVMs]: /doc/template/debian/upgrade/
 [5149]: https://github.com/QubesOS/qubes-issues/issues/5149
 [install]: /doc/templates/#installing
-

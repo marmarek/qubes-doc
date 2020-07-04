@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Security Guidelines
 permalink: /doc/security-guidelines/
 redirect_from:
 - /en/doc/security-guidelines/
 - /doc/SecurityGuidelines/
 - /wiki/SecurityGuidelines/
+ref: 79
+title: Security Guidelines
 ---
 
 Security Guidelines
@@ -163,4 +165,3 @@ TemplateBasedVM Directories
    changes in the parent TemplateVM.
    
  * See [here](/doc/templates) for more detail and version specific information.
- 

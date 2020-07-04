@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: "Qrexec: Qubes RPC internals"
 permalink: /doc/qrexec-internals/
 redirect_from:
 - /doc/qrexec3-implementation/
 - /en/doc/qrexec3-implementation/
 - /doc/Qrexec3Implementation/
 - /wiki/Qrexec3Implementation/
+ref: 39
+title: 'Qrexec: Qubes RPC internals'
 ---
 
 # Qubes RPC internals

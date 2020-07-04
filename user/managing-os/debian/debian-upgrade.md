@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Upgrading Debian TemplateVMs
 permalink: /doc/template/debian/upgrade/
 redirect_from:
 - /doc/template/debian/upgrade-8-to-9/
@@ -8,6 +8,8 @@ redirect_from:
 - /en/doc/debian-template-upgrade-8/
 - /doc/DebianTemplateUpgrade8/
 - /wiki/DebianTemplateUpgrade8/
+ref: 133
+title: Upgrading Debian TemplateVMs
 ---
 
 # Upgrading Debian TemplateVMs
@@ -161,4 +163,3 @@ We strongly recommend against using any Debian release that has reached [end-of-
 [StandaloneVM]: /doc/standalone-and-hvm/
 [template-notes]: /doc/templates/#important-notes
 [5055]: https://github.com/QubesOS/qubes-issues/issues/5055
-

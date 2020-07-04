@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Tips and Tricks
 permalink: /doc/tips-and-tricks/
+ref: 110
+title: Tips and Tricks
 ---
 
 Tips and Tricks
@@ -52,4 +54,3 @@ Start the Windows TemplateVM (which has no user data), install/upgrade apps; the
 This applies also to any TemplateBasedVM relative to its parent TemplateVM, but the privacy risk is especially high in the case of Windows.
 
 Credit: [Joanna Rutkovska](https://twitter.com/rootkovska/status/832571372085850112)
-

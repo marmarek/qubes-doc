@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Fetchmail
 permalink: /doc/fetchmail/
 redirect_from:
 - /en/doc/fetchmail/
 - /doc/Fetchmail/
 - /wiki/Fetchmail/
+ref: 114
+title: Fetchmail
 ---
 
 Fetchmail

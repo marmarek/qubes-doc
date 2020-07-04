@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: TorVM
 permalink: /doc/torvm/
 redirect_from:
 - /doc/privacy/torvm/
@@ -8,6 +8,8 @@ redirect_from:
 - /doc/TorVM/
 - /doc/UserDoc/TorVM/
 - /wiki/UserDoc/TorVM/
+ref: 68
+title: TorVM
 ---
 
 Known issues:

@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc-full
-title: Admin API
 permalink: /doc/admin-api/
 redirect_from:
 - /doc/mgmt/
 - /doc/mgmt1/
 - /doc/mgmt-architecture/
 - /doc/admin-api-architecture/
+ref: 36
+title: Admin API
 ---
 
 # Qubes OS Admin API

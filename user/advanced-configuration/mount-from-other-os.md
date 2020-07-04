@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Mounting and Decrypting Qubes Partitions from Outside Qubes
 permalink: /doc/mount-from-other-os/
 redirect_from:
 - /en/doc/mount-from-other-os/
 - /doc/MountFromOtherOs/
 - /wiki/MountFromOtherOs/
+ref: 175
+title: Mounting and Decrypting Qubes Partitions from Outside Qubes
 ---
 
 Mount and Decrypt Qubes Partition from Outside Qubes
@@ -93,5 +95,3 @@ Thes steps must occur either in an AppVM or using recovery media.
 
 1. Unmount any disks that were accessed.
 2. Rename the VG back to qubes\_dom0 using the command `vgrename other_install qubes_dom0`.
-
-

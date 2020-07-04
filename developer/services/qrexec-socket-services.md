@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: "Qrexec: Socket-based services"
 permalink: /doc/qrexec-socket-services/
+ref: 42
+title: 'Qrexec: Socket-based services'
 ---
 
 # Qrexec: Socket-based services

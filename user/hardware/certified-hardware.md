@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Certified Hardware
 permalink: /doc/certified-hardware/
 redirect_from:
- - /doc/hardware/
- - /doc/certified-laptops/
- - /hardware-certification/
+- /doc/hardware/
+- /doc/certified-laptops/
+- /hardware-certification/
+ref: 144
+title: Certified Hardware
 ---
 
 # Certified Hardware
@@ -118,4 +120,3 @@ If you are interested in having your hardware certified, please [contact us].
 [Insurgo PrivacyBeast X230]: https://insurgo.ca/produit/qubesos-certified-privacybeast_x230-reasonably-secured-laptop/
 [privacybeast announcement]: /news/2019/07/18/insurgo-privacybeast-qubes-certification/
 [NitroPad X230]: https://shop.nitrokey.com/shop/product/nitropad-x230-67
-

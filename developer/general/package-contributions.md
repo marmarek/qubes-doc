@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Package Contributions
 permalink: /doc/package-contributions/
+ref: 29
+title: Package Contributions
 ---
 
 Package Contributions

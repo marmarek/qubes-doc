@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: sidebar
-title: Download Mirrors
 permalink: /downloads/mirrors/
+ref: 148
+title: Download Mirrors
 ---
 
 Qubes Download Mirrors

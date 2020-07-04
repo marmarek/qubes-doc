@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Upgrade Guides
 permalink: /doc/upgrade/
+ref: 158
+title: Upgrade Guides
 ---
 
 Qubes OS Upgrade Guides
@@ -21,4 +23,3 @@ If you're just looking to update your system while staying on the same version, 
 
 
 [Updating Qubes OS]: /doc/updating-qubes-os/
-

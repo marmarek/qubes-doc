@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Minimal TemplateVMs
 permalink: /doc/templates/minimal/
 redirect_from:
 - /doc/templates/fedora-minimal/
@@ -9,6 +9,8 @@ redirect_from:
 - /doc/Templates/FedoraMinimal/
 - /wiki/Templates/FedoraMinimal/
 - /doc/templates/debian-minimal/
+ref: 132
+title: Minimal TemplateVMs
 ---
 
 # Minimal TemplateVMs
@@ -217,4 +219,3 @@ You could, of course, use `qubes-vm-recommended` to automatically install many o
 [testing]: /doc/testing/
 [customization]: /doc/fedora-minimal-template-customization/
 [Passwordless Root Access in VMs]: /doc/vm-sudo/
-

@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Dark Theme in Dom0 and DomU
 permalink: /doc/dark-theme/
+ref: 74
+title: Dark Theme in Dom0 and DomU
 ---
 
 Dark Theme in Dom0

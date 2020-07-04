@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Device Handling
 permalink: /doc/device-handling/
 redirect_from:
 - /doc/external-device-mount-point/
 - /en/doc/external-device-mount-point/
 - /doc/ExternalDeviceMountPoint/
 - /wiki/ExternalDeviceMountPoint/
+ref: 188
+title: Device Handling
 ---
 
 # Device Handling #
@@ -168,4 +170,3 @@ If no specific `sourceVM:deviceID` combination is given, *all devices of that DE
 [device manager icon]: /attachment/wiki/Devices/media-removable.png
 [eject icon]: /attachment/wiki/Devices/media-eject.png
 [i4692]: https://github.com/QubesOS/qubes-issues/issues/4692
-

@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Removing TemplateVM Packages
 permalink: /doc/removing-templatevm-packages/
+ref: 75
+title: Removing TemplateVM Packages
 ---
 
 # Removing TemplateVM Packages

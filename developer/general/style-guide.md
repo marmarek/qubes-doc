@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Style-guide
 permalink: /doc/style-guide/
+ref: 27
+title: Style-guide
 ---
 
 Style Guide

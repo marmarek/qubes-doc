@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Supported Versions
 permalink: /doc/supported-versions/
+ref: 154
+title: Supported Versions
 ---
 
 # Supported Versions
@@ -143,4 +145,3 @@ We aim to announce both types of events one month in advance in order to remind 
 [debian-eol]: https://wiki.debian.org/DebianReleases
 [Whonix]: /doc/whonix/
 [Whonix Project]: https://www.whonix.org/
-

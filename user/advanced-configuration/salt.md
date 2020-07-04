@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Management stack
 permalink: /doc/salt/
+ref: 185
+title: Management stack
 ---
 
 # Management Infrastructure

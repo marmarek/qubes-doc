@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Postfix
 permalink: /doc/postfix/
 redirect_from:
 - /en/doc/postfix/
 - /doc/Postfix/
 - /wiki/Postfix/
+ref: 107
+title: Postfix
 ---
 
 Postfix

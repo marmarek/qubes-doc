@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Upgrading to R3.2
 permalink: /doc/upgrade-to-r3.2/
 redirect_from:
 - /en/doc/upgrade-to-r3.2/
 - /doc/UpgradeToR3.2/
 - /doc/UpgradeToR3.2rc1/
+ref: 161
+title: Upgrading to R3.2
 ---
 
 Upgrading Qubes R3.1 to R3.2
@@ -163,5 +165,3 @@ In order to do that, please see the
         sudo rm -f /etc/apt/sources.list.d/qubes-r3-upgrade.list
 
 6.  Shut down the template VM.
-
-

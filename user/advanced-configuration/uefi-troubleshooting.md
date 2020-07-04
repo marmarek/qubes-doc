@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: UEFI Troubleshooting
 permalink: /doc/uefi-troubleshooting/
+ref: 177
+title: UEFI Troubleshooting
 ---
 
 Troubleshooting UEFI related problems

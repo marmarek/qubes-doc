@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Building Whonix Templates
 permalink: /doc/building-whonix-template/
 redirect_from:
 - /en/doc/building-whonix-template/
+ref: 115
+title: Building Whonix Templates
 ---
 
 ## Building Whonix Templates
@@ -90,5 +92,3 @@ sudo dnf install qubes-template-whonix-ws-4.0.0-201802250145.noarch.rpm
 ~~~
 
 And you are done!
-
-

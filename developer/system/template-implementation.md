@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Template Implementation
 permalink: /doc/template-implementation/
 redirect_from:
 - /en/doc/template-implementation/
 - /doc/TemplateImplementation/
 - /wiki/TemplateImplementation/
+ref: 58
+title: Template Implementation
 ---
 
 Overview of VM block devices

@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Mutt
 permalink: /doc/mutt/
 redirect_from:
 - /en/doc/mutt/
 - /doc/Mutt/
 - /wiki/Mutt/
+ref: 106
+title: Mutt
 ---
 
 Mutt

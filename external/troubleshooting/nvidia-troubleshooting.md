@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Nvidia Troubleshooting
 permalink: /doc/nvidia-troubleshooting/
 redirect_from:
 - /en/doc/nvidia-troubleshooting/
 - /doc/NvidiaTroubleshooting/
 - /wiki/NvidiaTroubleshooting/
+ref: 91
+title: Nvidia Troubleshooting
 ---
 
 NVidia Troubleshooting Guide
@@ -156,4 +158,3 @@ You'll have to do the following to make this change persistent, so that it will 
     ~~~
     sudo grub2-mkconfig -o /boot/grub2/grub.cfg
     ~~~
-

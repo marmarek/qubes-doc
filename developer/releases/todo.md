@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Release Checklist
 permalink: /doc/releases/todo/
 redirect_from:
 - /en/doc/releases/todo/
+ref: 14
+title: Release Checklist
 ---
 
 Release Checklist

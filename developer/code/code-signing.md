@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Code Signing
 permalink: /doc/code-signing/
+ref: 51
+title: Code Signing
 ---
 
 Code Signing
@@ -214,4 +216,3 @@ Enigmail is a security addon for the Mozilla Thunderbird email client that allow
 [signature-checker]: https://github.com/marmarek/signature-checker
 [GitHub New GPG key]: https://github.com/settings/gpg/new
 [GitHub SSH GPG keys page]: https://github.com/settings/keys
-

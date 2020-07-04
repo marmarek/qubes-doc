@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: intro
-title: An Introduction to Qubes OS
 permalink: /intro/
 redirect_from:
 - /tour/
@@ -8,6 +8,8 @@ redirect_from:
 - /tour/#what-is-qubes-os
 - /about/
 - /en/about/
+ref: 126
+title: An Introduction to Qubes OS
 ---
 
 What is Qubes OS?

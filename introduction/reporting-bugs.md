@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Reporting bugs and other issues
 permalink: /doc/reporting-bugs/
 redirect_from:
 - /en/doc/reporting-bugs/
@@ -11,6 +11,8 @@ redirect_from:
 - /bugs/
 - /bug-report/
 - /bug-reports/
+ref: 121
+title: Reporting bugs and other issues
 ---
 
 # Reporting bugs and other issues #
@@ -144,4 +146,3 @@ If the issue is closed without one of these specific resolutions, then it means,
 [Contributing Code]: /doc/contributing/#contributing-code
 [Package Contributions]: /doc/package-contributions/
 [Documentation Guidelines]: /doc/doc-guidelines/
-

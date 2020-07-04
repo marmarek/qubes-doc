@@ -1,11 +1,13 @@
 ---
+lang: en
 layout: doc
-title: Sony Vaio Tinkering
 permalink: /doc/sony-vaio-tinkering/
 redirect_from:
 - /en/doc/sony-vaio-tinkering/
 - /doc/SonyVaioTinkering/
 - /wiki/SonyVaioTinkering/
+ref: 93
+title: Sony Vaio Tinkering
 ---
 
 Instructions for getting your Sony Vaio Z laptop working with Qubes/Linux

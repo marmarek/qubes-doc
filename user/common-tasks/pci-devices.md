@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: PCI Devices
 permalink: /doc/pci-devices/
 redirect_from:
 - /doc/assigning-devices/
 - /en/doc/assigning-devices/
 - /doc/AssigningDevices/
 - /wiki/AssigningDevices/
+ref: 197
+title: PCI Devices
 ---
 
 # PCI Devices #
@@ -171,4 +173,3 @@ or
 [ml1]: https://groups.google.com/group/qubes-devel/browse_thread/thread/631c4a3a9d1186e3
 [ml2]: https://groups.google.com/forum/#!topic/qubes-users/Fs94QAc3vQI
 [PCI passthrough]: https://wiki.xen.org/wiki/Xen_PCI_Passthrough
-

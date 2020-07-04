@@ -1,9 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Qubes R3.1 Release Schedule
 permalink: /doc/releases/3.1/schedule/
 redirect_from:
 - /en/doc/releases/3.1/schedule/
+ref: 17
+title: Qubes R3.1 Release Schedule
 ---
 
 Qubes R3.1 Release Schedule

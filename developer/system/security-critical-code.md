@@ -1,12 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Security-critical Code
 permalink: /doc/security-critical-code/
 redirect_from:
 - /en/doc/security-critical-code/
 - /doc/SecurityCriticalCode/
 - /wiki/SecurityCriticalCode/
 - /trac/wiki/SecurityCriticalCode/
+ref: 55
+title: Security-critical Code
 ---
 
 Security-critical Code in Qubes OS
@@ -78,4 +80,3 @@ This software is signed by Fedora distribution keys, so it is also critical that
 [Qubes Security Goals]: /security/goals/
 [Fedora Project]: https://getfedora.org/
 [Understanding and Preventing Data Leaks]: /doc/data-leaks/
-

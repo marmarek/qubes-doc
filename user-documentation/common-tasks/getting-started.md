@@ -184,27 +184,3 @@ In order for the changes to take effect, restart the qube(s).
 
 More details can be found [here](/doc/full-screen-mode/).
 
-<div class="row">
-  <div class="col-lg-4 col-md-4">
-    <h2>Compatible Hardware</h2>
-    <p>Ready to install Qubes? Make sure your hardware is compatible, as Qubes cannot run on every type of computer. Also, check out <a href="/doc/certified-laptops/">Qubes-certified Laptops</a>.</p>
-    <a href="/hcl/" class="btn btn-primary">
-      <i class="fa fa-laptop"></i> Hardware Compatibility List
-    </a>
-  </div>
-  <div class="col-lg-4 col-md-4">
-    <h2>Downloads</h2>
-    <p>Download an ISO, learn how to verify its authenticity and integrity, and follow our guides to install Qubes. Looking for the source code? You'll find it on <a href="https://github.com/QubesOS">GitHub</a>.</p>
-    <a href="/downloads/" class="btn btn-primary">
-      <i class="fa fa-download"></i> Downloads
-    </a>
-  </div>
-  <div class="col-lg-4 col-md-4">
-    <h2>Documentation</h2>
-    <p>Peruse our extensive library of documentation for users and developers of Qubes. You can even help us <a href="/doc/doc-guidelines/">improve</a> it!</p>
-    <a href="/doc/" class="btn btn-primary">
-      <i class="fa fa-book"></i> Documentation
-    </a>
-  </div>
-</div>
-<hr class="more-top more-bottom">

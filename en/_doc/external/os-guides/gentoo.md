@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Gentoo Template
 permalink: /doc/templates/gentoo/
+ref: 221
+title: Gentoo Template
 ---
 
 # Gentoo Template

@@ -1,8 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Installation Troubleshooting
 permalink: /doc/installation-troubleshooting/
+ref: 224
+title: Installation Troubleshooting
 ---
+
 # Installation Troubleshooting #
 
 ## "An unknown error has occurred" error during installation ##
@@ -77,6 +80,3 @@ If installing the available drivers does not help, disable the network card in t
 If this solves the issue, it confirms the PCI card is incompatible with Qubes. 
 In this case, you may want to consider replacing it with a network card of a different brand. 
 Broadcom cards are notoriously problematic with Qubes.
- 
-
-

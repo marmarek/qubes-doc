@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Installing contributed packages
 permalink: /doc/installing-contributed-packages/
+ref: 225
+title: Installing contributed packages
 ---
 
 # Installing contributed packages
@@ -48,4 +50,3 @@ Please see the package's README for specific installation and setup instructions
 
 [package contributions]: /doc/package-contributions/
 [QubesOS-contrib]: https://github.com/QubesOS-contrib/
-

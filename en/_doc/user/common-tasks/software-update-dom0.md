@@ -124,6 +124,10 @@ sudo qubes-dom0-update --enablerepo=qubes-dom0-unstable
 To enable or disable any of these repos permanently, change the corresponding `enabled` value to `1` in
 `/etc/yum.repos.d/qubes-dom0.repo`.
 
+## Contributed package repository
+
+Please see [installing contributed packages].
+
 ## Kernel upgrade
 
 This section describes upgrading the kernel in dom0 and domUs.
@@ -221,3 +225,4 @@ For example: sys-whonix.
 [testing]: /doc/testing/
 [troubleshooting newer hardware]: /doc/newer-hardware-troubleshooting/
 [Managing VM kernel]: /doc/managing-vm-kernel/
+[installing contributed packages]: /doc/installing-contributed-packages/

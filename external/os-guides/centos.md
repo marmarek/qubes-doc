@@ -34,3 +34,5 @@ After a fresh install, we recommend to [Update the TemplateVM](/doc/software-upd
 [switch]: /doc/templates/#switching
 [reinstall]: /doc/reinstall-template/
 [uninstall]: /doc/templates/#uninstalling
+[Minimal TemplateVMs]: /doc/templates/minimal/
+[Xfce TemplateVMs]: /doc/templates/xfce/

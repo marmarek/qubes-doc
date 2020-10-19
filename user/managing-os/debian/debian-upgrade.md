@@ -1,6 +1,7 @@
 ---
 lang: en
 layout: doc
+title: In-place upgrade of Debian TemplateVMs
 permalink: /doc/template/debian/upgrade/
 redirect_from:
 - /doc/template/debian/upgrade-8-to-9/
@@ -9,13 +10,12 @@ redirect_from:
 - /doc/DebianTemplateUpgrade8/
 - /wiki/DebianTemplateUpgrade8/
 ref: 133
-title: Upgrading Debian TemplateVMs
 ---
 
 # Upgrading Debian TemplateVMs
 
 This page provides instructions for performing an in-place upgrade of an installed [Debian TemplateVM].
-If you wish to install a new, unmodified Debian TemplateVM instead of upgrading a template that is already installed in your system, please see the [Debian TemplateVM] page instead.
+If you wish to install a new, unmodified Debian TemplateVM instead of upgrading a template that is already installed in your system, please see the [Debian TemplateVM] page instead. ([Learn more about the two options.][Debian TemplateVM Upgrade])
 
 In general, upgrading a Debian TemplateVM follows the same process as [upgrading a native Debian system][upgrade].
 
@@ -154,6 +154,7 @@ We strongly recommend against using any Debian release that has reached [end-of-
 
 
 [Debian TemplateVM]: /doc/templates/debian/
+[Debian TemplateVM Upgrade]: /doc/templates/debian/#upgrading
 [upgrade]: https://wiki.debian.org/DebianUpgrade
 [switch]: /doc/templates/#switching
 [jessie]: https://www.debian.org/releases/jessie/amd64/release-notes/ch-upgrading.en.html

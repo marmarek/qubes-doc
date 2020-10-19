@@ -13,7 +13,7 @@ title: Passwordless Root Access in VMs
 Passwordless Root Access in VMs
 ===============================
 
-Background ([/etc/sudoers.d/qubes](https://github.com/QubesOS/qubes-core-agent-linux/blob/master/misc/qubes.sudoers) in VM):
+Background (`/etc/sudoers.d/qubes` in VM):
 
     user ALL=(ALL) NOPASSWD: ALL
 

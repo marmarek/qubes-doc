@@ -142,6 +142,7 @@ You might find it helpful to read [this article][partitioning], which describes 
 Important tasks
 ---------------
 
+
 It's very important to [keep Qubes updated][update] to ensure you have the latest security updates.
 Frequently updating is one of the best ways to remain secure against new threats.
 
@@ -159,6 +160,18 @@ Here are some other tasks you're likely to want to perform.
  * [Device Handling] (block, USB, and PCI devices)
 
 If you encounter any problems, please visit the [Help, Support, and Mailing Lists] page.
+
+## Compatible Hardware
+
+Make sure your hardware is [compatible](/hcl/), as Qubes OS cannot run on every type of computer. Also, check out [Qubes-certified Laptops](/doc/certified-laptops/).
+
+## Downloads
+
+[Download](/downloads/) an ISO, learn how to verify its authenticity and integrity, and follow our guides to install Qubes OS. Looking for the source code? You'll find it on [GitHub](https://github.com/QubesOS).
+
+## Documentation
+
+Peruse our extensive library of [documentation](/doc/) for users and developers of Qubes OS. You can even help us [improve](/doc/doc-guidelines/) it!
 
 
 [getting-started-32]: /getting-started-32/
@@ -182,5 +195,3 @@ If you encounter any problems, please visit the [Help, Support, and Mailing List
 [DisposableVMs]: /doc/disposablevm/
 [Device Handling]: /doc/device-handling/
 [Help, Support, and Mailing Lists]: /support/
-
-

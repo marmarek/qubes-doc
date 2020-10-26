@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: PCI Troubleshooting
 permalink: /doc/pci-troubleshooting/
+ref: 230
+title: PCI Troubleshooting
 ---
 
 # PCI troubleshooting #

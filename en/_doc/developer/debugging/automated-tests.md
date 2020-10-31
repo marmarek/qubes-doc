@@ -9,11 +9,9 @@ ref: 45
 title: Automated Tests
 ---
 
-Automated Tests
-===============
+# Automated Tests
 
-Unit and Integration Tests
---------------------------
+## Unit and Integration Tests
 
 Starting with Qubes R3 we use [python unittest][unittest] to perform automatic tests of Qubes OS. 
 Despite the name, we use it for both [unit tests](https://en.wikipedia.org/wiki/Unit_tests) and [integration tests](https://en.wikipedia.org/wiki/Integration_tests). 
@@ -48,6 +46,7 @@ Our test runner runs mostly the same as the standard one, but it has some nice a
 
 You can use `python3 -m qubes.tests.run -h` to get usage information:
 
+```
     [user@dom0 ~]$ python3 -m qubes.tests.run -h
     usage: run.py [-h] [--verbose] [--quiet] [--list] [--failfast] [--no-failfast]
                   [--do-not-clean] [--do-clean] [--loglevel LEVEL]
@@ -85,9 +84,11 @@ You can use `python3 -m qubes.tests.run -h` to get usage information:
     When running only specific tests, write their names like in log, in format:
     MODULE+"/"+CLASS+"/"+FUNCTION. MODULE should omit initial "qubes.tests.".
     Example: basic/TC_00_Basic/test_000_create
+```
 
 For instance, to run only the tests for the fedora-21 template, you can use the `-l` option, then filter the list:
 
+```
     [user@dom0 ~]$ python3 -m qubes.tests.run -l | grep fedora-21
     network/VmNetworking_fedora-21/test_000_simple_networking
     network/VmNetworking_fedora-21/test_010_simple_proxyvm
@@ -110,6 +111,7 @@ For instance, to run only the tests for the fedora-21 template, you can use the 
     vm_qrexec_gui/TC_20_DispVM_fedora-21/test_020_gui_app
     vm_qrexec_gui/TC_20_DispVM_fedora-21/test_030_edit_file
     [user@dom0 ~]$ sudo -E python3 -m qubes.tests.run -v `python3 -m qubes.tests.run -l | grep fedora-21`
+```
 
 Example test run:
 
@@ -117,10 +119,11 @@ Example test run:
 
 Tests are also compatible with nose2 test runner, so you can use this instead:
 
+```bash
     sudo systemctl stop qubesd; sudo -E nose2 -v --plugin nose2.plugins.loader.loadtests qubes.tests; sudo systemctl start qubesd
+```
 
 This may be especially useful together with various nose2 plugins to store tests results (for example `nose2.plugins.junitxml`), to ease presenting results. This is what we use on [OpenQA].
-
 
 ### Unit testing inside a VM
 
@@ -134,6 +137,7 @@ its dependency [qubes-core-qrexec](https://github.com/QubesOS/qubes-core-qrexec)
 The below example however will assume that you set up a build environment as described in the [Qubes Builder documentation](/doc/qubes-builder/).
 
 Assuming you cloned the `qubes-builder` repository to your home directory inside a fedora VM, you can use the following commands to run the unit tests:
+
 ```{.bash}
 cd ~
 sudo dnf install python3-pip lvm2 python35 python3-virtualenv
@@ -160,16 +164,17 @@ the current stable branch.
 
 Test runs can be altered using environment variables:
 
- - `DEFAULT_LVM_POOL` - LVM thin pool to use for tests, in `VolumeGroup/ThinPool` format
- - `QUBES_TEST_PCIDEV` - PCI device to be used in PCI passthrough tests (for example sound card)
- - `QUBES_TEST_TEMPLATES` - space separated list of templates to run tests on; if not set, all installed templates are tested
- - `QUBES_TEST_LOAD_ALL` - load all tests (including tests for all templates) when relevant test modules are imported; this needs to be set for test runners not supporting [load_tests protocol](https://docs.python.org/3/library/unittest.html#load-tests-protocol)
+- `DEFAULT_LVM_POOL` - LVM thin pool to use for tests, in `VolumeGroup/ThinPool` format
+- `QUBES_TEST_PCIDEV` - PCI device to be used in PCI passthrough tests (for example sound card)
+- `QUBES_TEST_TEMPLATES` - space separated list of templates to run tests on; if not set, all installed templates are tested
+- `QUBES_TEST_LOAD_ALL` - load all tests (including tests for all templates) when relevant test modules are imported; this needs to be set for test runners not supporting [load_tests protocol](https://docs.python.org/3/library/unittest.html#load-tests-protocol)
 
 ### Adding a new test to core-admin
+
 After adding a new unit test to [core-admin/qubes/tests](https://github.com/QubesOS/qubes-core-admin/tree/master/qubes/tests) you'll have to include it in [core-admin/qubes/tests/\_\_init\_\_.py](https://github.com/QubesOS/qubes-core-admin/tree/master/qubes/tests/__init__.py)
 
-
 #### Editing `__init__.py`
+
 You'll also need to add your test at the bottom of the `__init__.py` file, in the method `def load_tests`, in the for loop with `modname`.
 Again, given the hypothetical `example.py` test:
 
@@ -239,9 +244,7 @@ class SomeTestCase(unittest.TestCase):
         gc.collect()
 ~~~
 
-
-Installation Tests with openQA
-------------------------------
+## Installation Tests with openQA
 
 **URL:** <https://openqa.qubes-os.org/>  
 **Tests:** <https://github.com/marmarek/openqa-tests-qubesos>

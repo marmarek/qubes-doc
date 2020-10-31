@@ -33,6 +33,7 @@ Here's a suggested template for adding project ideas:
 
 **Mentor**: Name and email address.
 ```
+
 ### Offline documentation
 
 **Project**: Offline documentation
@@ -41,13 +42,13 @@ Here's a suggested template for adding project ideas:
 
 **Expected results**: 
 
- - Review [past discussions on the issue](https://github.com/QubesOS/qubes-issues/issues/1019)
- - Recommend workflow and platform for displaying offline documentation
- - Test workflow and platform to ensure usability and functionality
+- Review [past discussions on the issue](https://github.com/QubesOS/qubes-issues/issues/1019)
+- Recommend workflow and platform for displaying offline documentation
+- Test workflow and platform to ensure usability and functionality
 
 **Knowledge prerequisite**: 
 
- - [Markdown][markdown]
+- [Markdown][markdown]
 
 **Mentor**: [Marek Marczykowski-Górecki][team]
 
@@ -59,12 +60,12 @@ Here's a suggested template for adding project ideas:
 
 **Expected results**: 
 
- - Review [past discussions on the issue](https://github.com/QubesOS/qubes-issues/issues/1774)
- - Provide visual mock-ups and proposed text 
+- Review [past discussions on the issue](https://github.com/QubesOS/qubes-issues/issues/1774)
+- Provide visual mock-ups and proposed text 
   
 **Knowledge prerequisite**: 
 
- - some experience with Anaconda would be helpful
+- some experience with Anaconda would be helpful
 
 **Mentor**: [Marek Marczykowski-Górecki][team]
 
@@ -116,14 +117,16 @@ This could be helped by writing consolidated guide with with a clear list of sym
 **Brief explanation**: The Qubes OS is missing an installation guide for virtual machines. Users are installing an outdated and unsupported version of Qubes OS (3.2) instead of the supported version. There is unofficial [existing installation guide] for Qubes OS on a virtual box but it is misleading and lacks documentation. Usually, users face some errors and bugs while installing Qubes OS on a virtual machine.[virtual box issue]
 
 **Expected results**: 
- -Provide a new option of installation guide for users working on virtual machines.
- -Review existing problems and provide solutions to them.
- -Giving a warning for using outdated versions.
+
+- Provide a new option of installation guide for users working on virtual machines.
+- Review existing problems and provide solutions to them.
+- Giving a warning for using outdated versions.
 
 **Knowledge prerequisite**: 
- - Experience in virtual boxes and machines.
- - Basic Knowledge about Fedora linux architecture.
- - [Markdown][markdown]
+
+- Experience in virtual boxes and machines.
+- Basic Knowledge about Fedora linux architecture.
+- [Markdown][markdown]
  
 **Mentor**: [Marek Marczykowski-Górecki][team]
 

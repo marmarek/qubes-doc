@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: USB Troubleshooting
 permalink: /doc/usb-troubleshooting/
+ref: 234
+title: USB Troubleshooting
 ---
 
 # USB troubleshooting #
@@ -79,5 +81,4 @@ To solve the problem, disable the USB qube by not having it autostart, or unassi
 
 Note that this procedure will attach your USB controllers to dom0, so do this only with USB devices you trust.
 
-If your computer has a PS/2 port, you may instead use a PS/2 keyboard to enter the LUKS password. 
-
+If your computer has a PS/2 port, you may instead use a PS/2 keyboard to enter the LUKS password.

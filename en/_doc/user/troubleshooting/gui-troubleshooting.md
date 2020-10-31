@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: GUI Troubleshooting
 permalink: /doc/gui-troubleshooting/
+ref: 233
+title: GUI Troubleshooting
 ---
 
 # GUI Troubleshooting

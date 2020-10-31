@@ -1,8 +1,11 @@
 ---
+lang: en
 layout: doc
-title: Media Troubleshooting
 permalink: /doc/media-troubleshooting/
+ref: 235
+title: Media Troubleshooting
 ---
+
 # Video and Audio Troubleshooting #
 
 ## Can't play media videos in a VM due to missing codecs
@@ -21,4 +24,3 @@ By default, the Output is set to "Automatic".
 Go through the list and try out other output options to see if any makes videos run smoother. 
 * If using mpv media player, you may be able to improve performance by entering `mpv --profile=sw-fast --vo=x11` in a terminal. 
 * For video lags when playing videos from a browser, disable hardware acceleration in the browser. If the problem arises when watching streams, it may be smoother to use `streamlink` to view streams in mpv instead of using the browser.
-

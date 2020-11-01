@@ -17,52 +17,63 @@ Archlinux template building instructions
 
 1:   Create and configure a qube for template building
 ------------------------------------------------------------
-*   The qube should be based on a Fedora template. I named the qube
-    `build-archlinux2`, based on the minimal Fedora template.
+
+* The qube should be based on a Fedora template. I named the qube
+  `build-archlinux2`, based on the minimal Fedora template.
     
 ![arch-template-01](/attachment/wiki/ArchlinuxTemplate/arch-template-01.png)
 
-*   Ensure there is at least 15GB of free space in the private storage.
+* Ensure there is at least 15GB of free space in the private storage.
 
 ![arch-template-02](/attachment/wiki/ArchlinuxTemplate/arch-template-02.png)
 
-
 2:   Create GitHub Account (optional)
 -------------------------------------------
-*   It can be helpful. Creating only a basic account is all that is needed. This will allow you to help, going           forward, with the Qubes project. You could be help edit errors in documentation. It can also be of use building      other templates.
-*   Create user account here https://github.com
+
+* It can be helpful. Creating only a basic account is all that is needed. This will allow you to help, going           forward, with the Qubes project. You could be help edit errors in documentation. It can also be of use building      other templates.
+* Create user account [here](https://github.com)
 
 ![arch-template-03](/attachment/wiki/ArchlinuxTemplate/arch-template-03.png)
 
 3:   Install necessary packages to `build-archlinux2` qube for "Qubes Automated Build System"
 -----------------------------------------------------------------------------------------------
+
 ```shell_session
 # dnf install git make 
 ```
 
 4: Downloading and verifying the integrity of the "Qubes Automated Build System"
 ---------------------------------------------------------------------------------
+
 * Import the Qubes master key
+
 ```shell_session
 $ gpg --import /usr/share/qubes/qubes-master-key.asc
 ```
+
 * Verify its fingerprint, set as 'trusted'. [This is described here](/doc/VerifyingSignatures).
 * Download the Qubes developers' keys.
+
 ```shell_session
 $ wget https://keys.qubes-os.org/keys/qubes-developers-keys.asc
 $ gpg --import qubes-developers-keys.asc
 ```
 
 * Download the latest stable qubes-builder repository:
+
 ```shell_session
 $ git clone https://github.com/QubesOS/qubes-builder.git /home/user/qubes-builder/
 ```
+
 * Verify the integrity of the downloaded repository. The last line should read `gpg: Good signature from`...
+
 ```shell_session
 $ cd /home/user/qubes-builder/
 $ git tag -v $(git describe)
 ```
+
 * Install the remaining dependencies
+
 ```shell_session
 $ make install-deps
 ```
@@ -71,92 +82,99 @@ $ make install-deps
 -------------------------------------------------------------
 
 ( The manual way would be to copy an example config like '**/home/user/qubes-builder/example-configs/qubes-os-r4.0.conf**' to '**/home/user/qubes-builder/builder.conf**' and edit the file ) 
-*   Run the 'setup' script located in '**/home/user/qubes-builder/**' Make sure you are in directory '**qubes-builder**'
+
+* Run the 'setup' script located in '**/home/user/qubes-builder/**' Make sure you are in directory '**qubes-builder**'
+
 ```shell_session
 $ cd /home/user/qubes-builder/
 $ ./setup
 ```
+
 ![arch-template-04](/attachment/wiki/ArchlinuxTemplate/arch-template-04.png)
 
 * Install the missing dependencies
 
 ![arch-template-05](/attachment/wiki/ArchlinuxTemplate/arch-template-05.png)
 
-*   First screen will ask you to import 'Qubes-Master-Signing-key.asc'.  The 'setup' script not only downloads but confirms the key to that of the key on Qubes-OS website.
-    *   Select '**YES**'
-    *   Select '**OK**' Press '**Enter**'
+* First screen will ask you to import 'Qubes-Master-Signing-key.asc'.  The 'setup' script not only downloads but confirms the key to that of the key on Qubes-OS website.
+  * Select '**YES**'
+  * Select '**OK**' Press '**Enter**'
     
 ![arch-template-06](/attachment/wiki/ArchlinuxTemplate/arch-template-06.png)
 
-*   Next screen will ask you to import Marek Marczykowski-Goracki (Qubes OS signing key).  Again 'setup' will confirm this key to the fingerprint.
-    *   Select '**YES**'
-    *   Select '**OK**' Press '**Enter**'
+* Next screen will ask you to import Marek Marczykowski-Goracki (Qubes OS signing key).  Again 'setup' will confirm this key to the fingerprint.
+  * Select '**YES**'
+  * Select '**OK**' Press '**Enter**'
     
 ![arch-template-07](/attachment/wiki/ArchlinuxTemplate/arch-template-07.png)
 
-*   This screen will give you the choice of which Qubes Release to build the template for.
-    *   Select '**Qubes Release 4.0**'
-    *   Select '**OK**' Press '**Enter**'
+* This screen will give you the choice of which Qubes Release to build the template for.
+  * Select '**Qubes Release 4.0**'
+  * Select '**OK**' Press '**Enter**'
     
 ![arch-template-08](/attachment/wiki/ArchlinuxTemplate/arch-template-08.png)
 
-*   Screen "**Choose Repos To Use To Build Packages**"
-    *   Select 'QubesOS/qubes- Stable - Default Repo'
-    *   Select '**OK**' Press '**Enter**'
+* Screen "**Choose Repos To Use To Build Packages**"
+  * Select 'QubesOS/qubes- Stable - Default Repo'
+  * Select '**OK**' Press '**Enter**'
     
-
 ![arch-template-09](/attachment/wiki/ArchlinuxTemplate/arch-template-09.png)
 
 * Screen "**Git Clone Faster**"
-    * Select '**OK**' Press '**Enter**'
+  * Select '**OK**' Press '**Enter**'
 
 ![arch-template-10](/attachment/wiki/ArchlinuxTemplate/arch-template-10.png)
 
 * Screen '**Choose Pre-Build Packages Repositories**'
-    * Select nothing, Press '**Enter**'
+  * Select nothing, Press '**Enter**'
 
 ![arch-template-11](/attachment/wiki/ArchlinuxTemplate/arch-template-11.png)
 
-*   Screen "**Build Template Only?**"
-    *   Select '**Yes**' Press '**Enter**'
+* Screen "**Build Template Only?**"
+  * Select '**Yes**' Press '**Enter**'
 
 ![arch-template-12](/attachment/wiki/ArchlinuxTemplate/arch-template-12.png)
 
 * Screen '**Template Distribution Selection**' will give choices of distributions to build
-    * Deselect everything
-    * Select '**archlinux**'
+  * Deselect everything
+  * Select '**archlinux**'
     
 ![arch-template-13](/attachment/wiki/ArchlinuxTemplate/arch-template-13.png)
 
-*   Screen '**Builder Plugin Selection**' will give choices of builder plugins to use for the build.
-    *   Deselect everything
-    *   Select '**builder-archlinux**'
-    *   Select '**OK**' Press **Enter**
+* Screen '**Builder Plugin Selection**' will give choices of builder plugins to use for the build.
+  * Deselect everything
+  * Select '**builder-archlinux**'
+  * Select '**OK**' Press **Enter**
     
 ![arch-template-14](/attachment/wiki/ArchlinuxTemplate/arch-template-14.png)
 
-*   Screen '**Get sources**' wants to download additional packages needed for the choosen plugin/s.
-    *   Select '**Yes**' Press '**Enter**'
+* Screen '**Get sources**' wants to download additional packages needed for the choosen plugin/s.
+  * Select '**Yes**' Press '**Enter**'
     
 ![arch-template-15](/attachment/wiki/ArchlinuxTemplate/arch-template-15.png)
 
-*   Then wait for download to finish and press '**OK**'
+* Then wait for download to finish and press '**OK**'
 
 6:   Get all the require sources for the build
 -----------------------------------------------
+
 ```shell_session
 $ make get-sources
 ```
 
 7:   Make all the require Qubes Components
 ------------------------------------------------
-*   **Note:** You can run a single command to build all the Qubes components or you can run them each individually.
-     Both ways below:
-*   Single command to build all Qubes components together: (this command can take a long time to process depending of your pc proccessing power)
+
+* **Note:** You can run a single command to build all the Qubes components or you can run them each individually.
+   Both ways below:
+* Single command to build all Qubes components together: (this command can take a long time to process depending of your pc proccessing power)
+
 ```shell_session
 $ make qubes-vm
 ```
-*   These are the indivual component 'make' commands:
+
+* These are the indivual component 'make' commands:
+
 ```shell_session
 $ make vmm-xen-vm
 $ make core-vchan-xen-vm
@@ -178,13 +196,16 @@ $ make app-linux-split-gpg-vm
 
 8:   Make the actual Archlinux template
 ----------------------------------------
+
 ```shell_session
 $ make template
 ```
 
 9:   Transfer Template into Dom0
 ----------------------------------
-*   You need to ensure these two files are in the '**noarch**' directory
+
+* You need to ensure these two files are in the '**noarch**' directory
+
 ```shell_session
 $ cd /home/user/qubes-builder/qubes-src/linux-template-builder/rpm/
 $ ls
@@ -196,18 +217,21 @@ qubes-template-archlinux-X.X.X-XXXXXXXXXXXX.noarch.rpm
 
 ![arch-template-16](/attachment/wiki/ArchlinuxTemplate/arch-template-16.png)
 
-*   **Transfer the install-templates.sh script file into Dom0**
+* **Transfer the install-templates.sh script file into Dom0**
   *Note: as there is not a typical file transfer method for Dom0, for security reasons, this less than simple transfer function has to be used*
-    *   Switch to Dom0 and open a terminal window.
+  * Switch to Dom0 and open a terminal window.
+
 ```shell_session
 $ qvm-run --pass-io build-archlinux2 'cat /home/user/qubes-builder/qubes-src/linux-template-builder/rpm/install-templates.sh' > install-templates.sh
 $ chmod +x install-templates.sh
 $ ./install-templates.sh
 ```
+
 * If everything went correct there should be a Archlinux template listed in your Qubes Manager
 
 Debugging the build process
 ===============================
+
 Archlinux use bleeding edge version of everything, so it is usually the
 first template to break when new software version came out.
 So an important point is to understand how to debug the template, how to fix
@@ -217,11 +241,13 @@ it, and then do a pull request :).
 The most important part about this script is where to add custom code that is not in the QubesOS repositories
 
 After the command:
+
 ```shell_session
 $ make get-sources
 ```
 
 And before the command:
+
 ```shell_session
 $ make qubes-vm
 ```
@@ -238,10 +264,13 @@ Example
 -----------------------
 
 Launch the build 
+
 ```shell_session
 $ ./build_arch.sh
 ```
+
 It crash
+
 ~~~~
 Makefile:202: target 'builder-archlinux.get-sources' given more than once in the same rule
 Makefile:204: target 'builder-archlinux.get-sources-extra' given more than once in the same rule
@@ -251,7 +280,9 @@ Makefile:585: target 'builder-archlinux.grep' given more than once in the same r
 -> Building template archlinux (logfile: build-logs/template-archlinux.log)...
 make: *** [Makefile:319: template-local-archlinux+minimal] Error 1
 ~~~~
+
 Let's check '**build-logs/template-archlinux.log**'
+
 ~~~~
 --> Finishing installation of qubes packages...
 resolving dependencies...
@@ -264,17 +295,20 @@ warning: cannot resolve "xorg-server<1.20.7", a dependency of "qubes-vm-gui"
 :: unable to satisfy dependency 'xorg-server<1.20.7' required by qubes-vm-gui
 make[1]: *** [Makefile:64: rootimg-build] Error 1
 ~~~~
+
 The xorg-server package was probably updated to a version greater than 1.20.7.
 Let's search what is the current version of xorg-server... Currently, it is
 **1.20.7-1**.
 Nor a fix nor a minor version change is likely to break things.
 So let's find the dependency for "**xorg-server<1.20.7**" and change it to
 "**xorg-server<1.21**".
+
 ```shell_session
 $ rg -iuu "xorg-server<1.20.7" ./qubes-builder/qubes-src/ 2> /dev/null
 ./qubes-builder/qubes-src/gui-agent-linux/archlinux/PKGBUILD
-55:		'xorg-server>=1.20.4' 'xorg-server<1.20.7'
+55:  'xorg-server>=1.20.4' 'xorg-server<1.20.7'
 ```
+
 So we need to modify the file **/archlinux/PKGBUILD** of the repository
 "qubes-gui-agent-linux".
 Let's clone "qubes-gui-agent-linux", be sure to checkout the correct
@@ -288,11 +322,13 @@ Example, add this to the script
 $ rm -Rf "~/qubes-builder/qubes-src/gui-agent-linux/"
 $ cp -R ~/qubes-gui-agent-linux "~/qubes-builder/qubes-src/gui-agent-linux"
 ```
+
 and retry to build the template.
 If  it build successfully and that the template work as expected, do a pull request on github to share your fix. 
 
 Debugging the qube runtime
 ================================================================
+
 If you are able to launch a terminal and execute command, just use your usual 
 archlinux-fu to fix the issue.
 If you are not able to launch a terminal, then, shutdown the qube, create a new
@@ -303,11 +339,13 @@ reddit](https://old.reddit.com/r/Qubes/comments/eg50ne/built_arch_linux_template
 
 Question
 ------------------------------
+
 Hello.
 I just built archlinux template and moved to dom0 and installed the template.
 Then I tried to open a terminal in archlinux TemplateVM, but it shows nothing.
 Can you please check this logs and please tell me what is wrong. Thanks
 I searched the word 'Failed" and found few.
+
 ~~~~
 [0m] Failed to start..... Initialize and mount /rw and /home.... see 'systemctl status qubes-mount-dirs.service' for details
 [0m] Failed unmounting.... /usr/lib/modules....
@@ -320,24 +358,31 @@ failed to mount moving /run to /sysroot/dev: Invalid argument
 when I tried to run terminal, in log says
 audit: type=1131 audit(some number): pid=1 uid=0 auid=some number ses=some number msg='unit=systemd=tmpfiles-clean cmm="systemd" exe="/usr/lib/systemd" hostname=? addr=? terminal? res=success'
 ~~~~
+
 how can I debug this qube?
 
 Answer
 ---------
+
 I tried to rebuild archlinux and got the same issue.
 The issue come from a systemd unit named "qubes-mount-dirs". We want to know more about that. We can't execute command into the qube, so let's shut it down.
 Then, we mount the archlinux root disk into a DisposableVM (
 [mount_lvm_image.sh](https://github.com/Qubes-Community/Contents/blob/master/code/OS-administration/mount_lvm_image.sh)
 & [mount-lvm-image](https://www.qubes-os.org/doc/mount-lvm-image/) )
+
 ```shell_session
 $ ./mount_lvm_image.sh /dev/qubes_dom0/vm-archlinux-minimal-root fedora-dvm
 ```
+
 then in the newly created DisposableVM we mount the disk and chroot to it
+
 ```shell_session
 # mount /dev/xvdi3 /mnt
 # chroot /mnt
 ```
+
 Then check the journal:
+
 ~~~~
 [root@disp9786 /]# journalctl -u qubes-mount-dirs
 -- Logs begin at Fri 2019-12-27 09:26:15 CET, end at Fri 2019-12-27 09:27:58 CET. --
@@ -377,11 +422,15 @@ Dec 27 09:26:54 archlinux systemd[1]: qubes-mount-dirs.service: Main process exi
 Dec 27 09:26:54 archlinux systemd[1]: qubes-mount-dirs.service: Failed with result 'exit-code'.
 Dec 27 09:26:54 archlinux systemd[1]: Failed to start Initialize and mount /rw and /home.
 ~~~~
+
 The most important line we saw is: 
+
 ~~~~
 /usr/lib/qubes/init/setup-rwdev.sh: line 16: cmp: command not found
 ~~~~
+
 Let's check `setup-rwdev.sh`:
+
 ~~~~
 [root@disp9786 /]# cat  /usr/lib/qubes/init/setup-rwdev.sh
 #!/bin/sh
@@ -412,6 +461,7 @@ That is definitely something that we want to be working. So the binary `cmp` is 
 ```shell_session
 # pacman -Fy cmp
 ```
+
 It is in `core/diffutils`, that, for some unknown reason, is not installed.
 Let's modify the archlinux template builder to add this package. Modify the files `qubes-builder/qubes-src/builder-archlinux/script/packages` to add the `diffutils`, and rebuild the template.
 Why this package was not installed in the first place? I am unsure. It could be that it was a dependency of the package `xf86dgaproto` that was removed few days ago, but I don't have the PKGBUILD of this package since it was deleted, so can't confirm. It can be something else too.
@@ -453,11 +503,13 @@ Server = https://neowutran.ovh/qubes/vm-archlinux/pkgs
 
 About the package `qubes-vm-keyring`
 =====================================
+
 The goal of this package was to add a `pacman` source for the Qubes OS packages, and to set the maintainer gpg key as trusted.
 Currently, no one want to provide binary packages.
 
 **So this package is currently useless.**
 
 If in the future, enough people think it is better to restart providing binary packages instead of the current "Do It Yourself" way, the gpg key and fingerprint of the new maintainer should be added in the files below: 
+
 * https://github.com/QubesOS/qubes-core-agent-linux/blob/master/archlinux/PKGBUILD-keyring-keys
 * https://github.com/QubesOS/qubes-core-agent-linux/blob/master/archlinux/archlinux/PKGBUILD-keyring-trusted

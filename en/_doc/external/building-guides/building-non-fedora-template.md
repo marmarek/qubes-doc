@@ -10,8 +10,7 @@ ref: 117
 title: Building Non-Fedora Template
 ---
 
-Building a TemplateVM for a new OS
-==============================================================
+# Building a TemplateVM for a new OS
 
 If you don't like using one of the existing templates because of specific administration, package management or other building needs, you can build a TemplateVM for your distribution of choice.
 
@@ -19,14 +18,12 @@ This article shows how to go about building a template for a different OS.
 
 You should make sure you understand the details of the BuilderPlugins API - they are explained [here][API].
 
-Qubes builder scripts
-=====================
+## Qubes builder scripts
 
 One way to start is by creating Qubes builder scripts for your new OS.
 Note that this will probably make your testing process harder than trying to build the package directly in an HVM on which you have already installed the new OS.
 
-chroot initialization
----------------------
+## chroot initialization
 
 You need to customize some scripts that will be used to build all the Qubes tools.
 Create a new directory to hold the files for the new os.
@@ -58,8 +55,7 @@ Then try to create (make) the template to check that at least these first two sc
 make linux-template-builder
 ~~~
 
-Qubes builder Makefiles
------------------------
+## Qubes builder Makefiles
 
 Now you need to create Makefiles specific to your OS.
 You will find the required scripts to adapt in the `builder-*` folders:
@@ -75,46 +71,43 @@ The goal of this file is to prepare a development environment of your target OS 
 You will reuse the `00_prepare.sh` and `01_install_core.sh` scripts.
 Additionally, the following things have to be done in this Makefile:
 
--   the `$1` variable will contain the installation directory (`$INSTALLDIR` should contain the same value as `$1` when you run `00_prepare.sh` or `01_install_core.sh`)
--   after your base system is installed, you should install development tools and libraries (gcc, make, ...)
--   create a user called 'user' inside your chroot, and give them enough rights to run the command sudo without any password
--   register all the repositories that will be necessary and synchronize the package database
--   register a custom repository that will be used to store Qubes packages
+- the `$1` variable will contain the installation directory (`$INSTALLDIR` should contain the same value as `$1` when you run `00_prepare.sh` or `01_install_core.sh`)
+- after your base system is installed, you should install development tools and libraries (gcc, make, ...)
+- create a user called 'user' inside your chroot, and give them enough rights to run the command sudo without any password
+- register all the repositories that will be necessary and synchronize the package database
+- register a custom repository that will be used to store Qubes packages
 
 ### Makefile.yourOSname
 
 This file will be used to define the action required when installing a custom package.
 The most important one are:
 
--   `dist-prepare-chroot`: that's where you will call `prepare-chroot-yourOSname` if the chroot has not been initialized.
--   `dist-package`: that's where you will chroot the development environment and run the command used to build a package.
--   `dist-build-dep`: that's where you will create the custom repository for your target OS based on already compiled packages.
+- `dist-prepare-chroot`: that's where you will call `prepare-chroot-yourOSname` if the chroot has not been initialized.
+- `dist-package`: that's where you will chroot the development environment and run the command used to build a package.
+- `dist-build-dep`: that's where you will create the custom repository for your target OS based on already compiled packages.
 
 These additional targets need to exist once you have created your first packages:
 
--   `dist-copy-out`: that's where you will retrieve the package you just built and put it with all the other packages you prepared.
--   `update-repo`: that's where you will retrieve the package that has been built and add it to the custom repository.
+- `dist-copy-out`: that's where you will retrieve the package you just built and put it with all the other packages you prepared.
+- `update-repo`: that's where you will retrieve the package that has been built and add it to the custom repository.
 
 ### Testing the development chroot
 
 You will be able to test these scripts when making the first Qubes packages.
 Don't forget that the first things that run when running `make somecomponent-vm` will be these two scripts, and that you will need to debug it at this point.
 
-Qubes packages
---------------
+## Qubes packages
 
-* [vmm-xen](https://github.com/QubesOS/qubes-vmm-xen)
-* [core-vchan-xen](https://github.com/QubesOS/qubes-core-vchan-xen)
-* [linux-utils](https://github.com/QubesOS/qubes-linux-utils)
-* [core-agent-linux](https://github.com/QubesOS/qubes-core-agent-linux)
-* [gui-common](https://github.com/QubesOS/qubes-gui-common)
-* [gui-agent-linux](https://github.com/QubesOS/qubes-gui-agent-linux)
+- [vmm-xen](https://github.com/QubesOS/qubes-vmm-xen)
+- [core-vchan-xen](https://github.com/QubesOS/qubes-core-vchan-xen)
+- [linux-utils](https://github.com/QubesOS/qubes-linux-utils)
+- [core-agent-linux](https://github.com/QubesOS/qubes-core-agent-linux)
+- [gui-common](https://github.com/QubesOS/qubes-gui-common)
+- [gui-agent-linux](https://github.com/QubesOS/qubes-gui-agent-linux)
 
-Additional Installation scripts
--------------------------------
+## Additional Installation scripts
 
 Again you need to create new scripts based on the existing scripts in these folders:
-
 
 ~~~
 builder-archlinux/scripts
@@ -135,15 +128,14 @@ Also you need to edit the fstab file of your template to mount Qubes virtual har
 
 This script is used to finalize and to remove unnecessary things from your template, such as cached packages, unused development packages ...
 
-Starting with an HVM
-====================
+# Starting with an HVM
 
 If no Qubes packages are available for your selected OS you could start by installing your OS in an HVM.
 Your goals will be:
 
--   to identify how to install the OS using command lines
--   to create required Qubes packages
--   to identify potential issues, making sure all Qubes agents and scripts work correctly.
+- to identify how to install the OS using command lines
+- to create required Qubes packages
+- to identify potential issues, making sure all Qubes agents and scripts work correctly.
 
 As soon as you manage to get `qrexec` and `qubes-gui-agent` working, you will be ready to start preparing a template VM.
 

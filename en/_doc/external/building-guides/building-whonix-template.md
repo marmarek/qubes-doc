@@ -43,6 +43,7 @@ Once it completes downloading, re-run `setup` to add the Whonix templates:
 # whonix-gateway-14, whonix-workstation-14
 # If prompted, choose Yes to add adrelanos's third party key
 ~~~
+
 Continue the build process with:
 
 ~~~
@@ -76,11 +77,11 @@ You can add/edit the `WHONIX_TBB_VERSION` variable in `~/qubes-builder/builder.c
 
 Finally, use:
 
-~~~
+```
 make qubes-vm
 make template
-~~~
- 
+```
+
 Once the build is complete, the install packages for your newly built templates will be located in `~/qubes-builder/qubes-src/linux-template-builder/rpm/noarch`.
 Copy them from there to dom0 and install:
 

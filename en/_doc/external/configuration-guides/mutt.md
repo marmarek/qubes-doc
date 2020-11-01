@@ -159,6 +159,7 @@ Some additional useful settings
 
 In `muttrc`:
 
+```
     ###qubes integration stuff
 
     #open links in a dispvm using urlview
@@ -170,9 +171,11 @@ In `muttrc`:
     set mailcap_path=~/.mailcap
 
     bind attach <return>    view-mailcap
+```
 
 Debian-specific options:
 
+```
     #use debian mutt-patched package for mailbox sidebar hack
     set sidebar_width = 30
     set sidebar_visible = no
@@ -188,18 +191,20 @@ Debian-specific options:
     bind index CO sidebar-open
     bind pager CP sidebar-prev
     bind pager CN sidebar-next
-
+```
 
 In `.urlview`:
 
+```
     ### TODO: this doesn't work with encrypted emails --
     ### urlview can't find the links
     ###
     COMMAND qvm-open-in-dvm %s
-
+```
 
 In `.mailcap`:
 
+```
     ### TODO: override most/all default mailcap settings to prevent
     ### opening in muttvm
     ### is there a way to do this polymorphically? i.e. not
@@ -226,3 +231,4 @@ In `.mailcap`:
     # HTML
     text/html; w3m -T text/html '%s' | cat --squeeze-blank; nametemplate=%s.html; copiousoutput
     text/html; qvm-open-in-dvm %s
+```

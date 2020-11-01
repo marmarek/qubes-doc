@@ -10,13 +10,11 @@ ref: 107
 title: Postfix
 ---
 
-Postfix
-=======
+# Postfix
 
 Postfix is full featured MTA (Message Transfer Agent). Here we will configure it in smarthost mode as part of common [Mutt](/doc/mutt/)+Postfix+[Fetchmail](/doc/fetchmail/) stack.
 
-Installation
-------------
+## Installation
 
 `dnf install postfix procmail make cyrus-sasl cyrus-sasl-plain`
 
@@ -24,8 +22,7 @@ Cyrus-sasl is installed to authenticate to remote servers. Procmail is not stric
 
 You should also check `alternatives` command, to see if it is the default `mta`. It probably is not. You may need to `dnf remove ssmtp` or something
 
-Configuration
--------------
+## Configuration
 
 In TemplateVM open `/etc/aliases` and add line:
 
@@ -142,8 +139,7 @@ list/qubes-users/
 list/qubes-devel/
 ~~~
 
-Run
----
+## Run
 
 Open `/rw/config/rc.local` and add those two lines (before fetchmail lines, if you have them):
 

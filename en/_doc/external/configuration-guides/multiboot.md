@@ -54,8 +54,6 @@ The general approach is:
 * Manually add boot stanzas to /etc/grub.d/40_custom
 * Update grub
 
-
-
 Windows
 ----------------------
 
@@ -113,7 +111,6 @@ menuentry "Windows" {
 
 (Change `X` to reflect the relevant system partition.)
 
-
 Linux
 ----------------------
 
@@ -144,7 +141,6 @@ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
 There is no  need to reinstall grub itself.
 
-
 Existing /boot partition, grub installed in MBR
 ----------------------
 
@@ -170,8 +166,6 @@ Then update the grub config:
 ~~~
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ~~~
-
-
 
 Troubleshooting
 ----------------------

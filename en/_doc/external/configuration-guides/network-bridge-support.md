@@ -15,10 +15,10 @@ Network Bridge Support (EXPERIMENTAL and UNSUPPORTED)
 
 The Qubes development team does not support bridging the network interfaces found in NetVM and don't plan to support it at all. Several reasons for that:
 
--   Using a bridged VM is almost only necessary for developers testing or working on OSI layer 2 or layer 3 tools (MAC or routing protocols). If not for testing, such tools are almost only used directly on routers ...).
--   Most of these tools can be anyway used directly inside the NetVM, which has direct access to the network card.
--   It is also possible to use a secondary network card plugged into a specific development VM.
--   Such a setup could break security features of Qubes such as AppVM firewalling.
+- Using a bridged VM is almost only necessary for developers testing or working on OSI layer 2 or layer 3 tools (MAC or routing protocols). If not for testing, such tools are almost only used directly on routers ...).
+- Most of these tools can be anyway used directly inside the NetVM, which has direct access to the network card.
+- It is also possible to use a secondary network card plugged into a specific development VM.
+- Such a setup could break security features of Qubes such as AppVM firewalling.
 
 Now if you really want to work with OSI layer2 / layer 3 tools, that you don't have a secondary network card, or that you want to completely expose services of a given AppVM (at your own risk), a bridged setup may help you.
 
@@ -53,7 +53,7 @@ You need to modify manually the NetVM iptable script inside the NetVM. The reaso
 
 Modify manually the Template you use for your NetVM (not the NetVM itself). This is by default fedora-x86\_64. Edit the file /etc/sysconfig/iptables. You need to modify two parts of the file.
 
--   Starting from the line -A POSTROUTING -j MASQUERADE that you need to comment :
+- Starting from the line -A POSTROUTING -j MASQUERADE that you need to comment :
 
     ~~~
     # Bridge support
@@ -66,7 +66,7 @@ Modify manually the Template you use for your NetVM (not the NetVM itself). This
     # End Bridge support
     ~~~
 
--   Starting from the line -A FORWARD -i vif+ -j ACCEPT:
+- Starting from the line -A FORWARD -i vif+ -j ACCEPT:
 
     ~~~
     -A FORWARD -i vif+ -o vif+ -j DROP
@@ -92,14 +92,14 @@ A bridge can be created inside the standard network manager (the network icon in
 
 This requires:
 
--   creating a bridge that will be your main IP (ex: setup the bridge with DHCP)
--   attach eth0 to your bridge
+- creating a bridge that will be your main IP (ex: setup the bridge with DHCP)
+- attach eth0 to your bridge
 
 Note: A wireless interface cannot be bridged.
 
 The bridge edition GUI is somewhat buggy as it does not remember all the parameters you set up. You can fix it by editing manually the files in /etc/NetworkManager/system-connections/. Here is one example for these files:
 
--   Bridge-DHCP
+- Bridge-DHCP
 
     ~~~
     [connection]
@@ -122,7 +122,7 @@ The bridge edition GUI is somewhat buggy as it does not remember all the paramet
 
 Note: Do not forget to put stp=false if you bridge only eth0 because sending BPDUs could make your admins angry :)
 
--   bridge0-eth0
+- bridge0-eth0
 
     ~~~
     [802-3-ethernet]

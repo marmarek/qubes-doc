@@ -10,11 +10,9 @@ ref: 100
 title: External Audio
 ---
 
-Using External Audio Devices
-============================
+# Using External Audio Devices
 
-Why you want to use external audio devices
-------------------------------------------
+## Why you want to use external audio devices
 
 Qubes audio virtualization protocol does not implement latency reporting for security reasons, keeping the protocol as simple as possible.
 Also, in a compromise between low latency and low CPU usage, latency may be around 200 ms.
@@ -22,8 +20,7 @@ So applications demanding higher audio quality (even Skype) need a better enviro
 But Qubes flexibility fully allows that using external audio devices. 
 These are mostly USB audio cards, but firewire devices also might be used.
 
-Implementing external audio devices
------------------------------------
+## Implementing external audio devices
 
 First you need to identify an user VM dedicated to audio and [assign a device](/doc/AssigningDevices) to it.
 In the most common case the assigned device is the USB controller to which your USB audio card will be connected.

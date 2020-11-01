@@ -19,7 +19,9 @@ zone in terminal you can issue the `timedatectl` command with the option
 For example, to set the system's time zone to Berlin, Germany type in a dom0
 terminal:
 
+```shwll_session
     $ sudo timedatectl set-timezone 'Europe/Berlin'
+```
 
 You can list the available time zones with the option `list-timezones` and show
 the current settings of the system clock and time zone with option `status`.
@@ -27,6 +29,7 @@ the current settings of the system clock and time zone with option `status`.
 Example output status of `timedatectl` on a system with time zone set to
 Europe/Berlin:
 
+```shell_session
     [user@dom0 ~]$ timedatectl status
           Local time: Sun 2018-10-14 06:20:00 CEST
       Universal time: Sun 2018-10-14 04:20:00 UTC
@@ -35,3 +38,4 @@ Europe/Berlin:
      Network time on: no
     NTP synchronized: no
      RTC in local TZ: no
+```

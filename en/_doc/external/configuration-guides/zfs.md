@@ -10,18 +10,15 @@ ref: 111
 title: ZFS
 ---
 
-ZFS in Qubes
-============
+# ZFS in Qubes
 
 **Use at your own risk**!
 
 Beware: Dragons might eat your precious data!
 
-Install ZFS in Dom0
-===================
+# Install ZFS in Dom0
 
-Install DKMS style packages for Fedora <sup>(defunct in 0.6.2 due to spl/issues/284)</sup>
-----------------------------------------------------------------------------------------------------
+## Install DKMS style packages for Fedora <sup>(defunct in 0.6.2 due to spl/issues/284)</sup>
 
 Fetch and install repository for DKMS style packages for your Dom0 Fedora version [http://zfsonlinux.org/fedora.html](http://zfsonlinux.org/fedora.html):
 
@@ -34,8 +31,7 @@ dom0# sudo qubes-dom0-update @development-tools
 dom0# sudo qubes-dom0-update zfs
 ~~~
 
-Install DKMS style packages from git-repository
------------------------------------------------
+## Install DKMS style packages from git-repository
 
 Build and install your DKMS or KMOD packages as described in [http://zfsonlinux.org/generic-rpm.html](http://zfsonlinux.org/generic-rpm.html).
 
@@ -103,11 +99,9 @@ sudo yum localinstall \
     ~/repositories/zfs/zfs-test-0.6.2-1.qbs2.x86_64.rpm
 ~~~
 
-Configure ZFS
-=============
+# Configure ZFS
 
-Automatically load modules
---------------------------
+## Automatically load modules
 
 /etc/sysconfig/modules/zfs.modules
 
@@ -121,8 +115,7 @@ done
 
 Make this file executable.
 
-Tuning
-------
+## Tuning
 
 Tame the memory-eating dragon (i.e. 512 Mb zfs\_arc\_max):
 
@@ -132,8 +125,7 @@ Tame the memory-eating dragon (i.e. 512 Mb zfs\_arc\_max):
 options zfs zfs_arc_max=536870912
 ~~~
 
-Setup a zpool with ZFS datasets
--------------------------------
+## Setup a zpool with ZFS datasets
 
 You can create a ZFS dataset for each AppVM, ServiceVM, HVM or TemplateVM or just use a pool as your backup location.
 
@@ -155,16 +147,13 @@ zfs create -m /var/lib/qubes/appvms/work qubes/appvms/work
 
 Have fun with zpool and zfs.
 
-Tips and Hints
-==============
+# Tips and Hints
 
-Backup your data
-----------------
+## Backup your data
 
 You're depending on an huge amount of code for this file system, keep this in mind and backup your precious data.
 
-Encrypt underlying devices
---------------------------
+## Encrypt underlying devices
 
 ~~~
 dom0# cryptsetup -c aes-xts-plain64 luksFormat <device1>
@@ -179,8 +168,7 @@ dom0# chmod 0400 /root/keyfile1
 dom0# cryptsetup luksAddKey <device1> /root/keyfile1
 ~~~
 
-Decrypt devices on boot
------------------------
+## Decrypt devices on boot
 
 Add your devices to /etc/crypttab.
 
@@ -191,8 +179,7 @@ Add your devices to /etc/crypttab.
 
 Specifying a keyfile is especially useful, if ZFS should be ready during boot.
 
-Further Reading
----------------
+## Further Reading
 
--   [http://www.open-zfs.org](http://www.open-zfs.org)
--   [http://zfsonlinux.org](http://zfsonlinux.org)
+- [http://www.open-zfs.org](http://www.open-zfs.org)
+- [http://zfsonlinux.org](http://zfsonlinux.org)

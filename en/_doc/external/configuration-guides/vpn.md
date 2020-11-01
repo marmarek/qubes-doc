@@ -11,8 +11,7 @@ ref: 102
 title: VPN
 ---
 
-How To make a VPN Gateway in Qubes
-==================================
+# How To make a VPN Gateway in Qubes
 
 <div class="alert alert-info" role="alert">
   <i class="fa fa-info-circle"></i>
@@ -45,8 +44,7 @@ Using a ProxyVM to set up a VPN client gives you the ability to:
 - Separate your VPN credentials from your AppVM data.
 - Easily control which of your AppVMs are connected to your VPN by simply setting it as a NetVM of the desired AppVM.
 
-Set up a ProxyVM as a VPN gateway using NetworkManager
-------------------------------------------------------
+## Set up a ProxyVM as a VPN gateway using NetworkManager
 
 1. Create a new VM, name it, click the ProxyVM radio button, and choose a color and template.
 
@@ -61,7 +59,7 @@ Set up a ProxyVM as a VPN gateway using NetworkManager
 4. (Optional) Make your VPN start automatically.
 
    Edit `/rw/config/rc.local` and add these lines:
-   
+
    ```bash
    # Automatically connect to the VPN once Internet is up
    while ! ping -c 1 -W 1 1.1.1.1; do
@@ -70,19 +68,23 @@ Set up a ProxyVM as a VPN gateway using NetworkManager
    PWDFILE="/rw/config/NM-system-connections/secrets/passwd-file.txt"
    nmcli connection up file-vpn-conn passwd-file $PWDFILE
    ```
+
    You can find the actual "file-vpn-conn" in `/rw/config/NM-system-connections/`.
    
    Create directory `/rw/config/NM-system-connections/secrets/` (You can put your `*.crt` and `*.pem` files here too).
    Create a new file `/rw/config/NM-system-connections/secrets/passwd-file.txt`:
+
    ```
    vpn.secrets.password:XXXXXXXXXXXXXX
    ```
+
    And substitute "XXXXXXXXXXXXXX" for the actual password.
    The contents of `passwd-file.txt` may differ depending on your VPN settings.  See the [documentation for `nmcli up`](https://www.mankier.com/1/nmcli#up).
    
 5. (Optional) Make the network fail-close for the AppVMs if the connection to the VPN breaks.
 
    Edit `/rw/config/qubes-firewall-user-script` and add these lines:
+
    ```bash
    # Block forwarding of connections through upstream network device
    # (in case the vpn tunnel breaks)
@@ -98,9 +100,7 @@ Set up a ProxyVM as a VPN gateway using NetworkManager
 
 7. Optionally, you can install some [custom icons](https://github.com/Zrubi/qubes-artwork-proxy-vpn) for your VPN
 
-
-Set up a ProxyVM as a VPN gateway using iptables and CLI scripts
-----------------------------------------------------------------
+## Set up a ProxyVM as a VPN gateway using iptables and CLI scripts
 
 This method is more involved than the one above, but has anti-leak features that also make the connection _fail closed_ should it be interrupted.
 It has been tested with Fedora 30 and Debian 10 templates.
@@ -245,7 +245,9 @@ Before proceeding, you will need to download a copy of your VPN provider's confi
 5. Set up iptables anti-leak rules.
    Edit the firewall script.
 
+```bash_session
        sudo gedit /rw/config/qubes-firewall-user-script
+```
 
    Clear out the existing lines and add:
 
@@ -279,11 +281,15 @@ Before proceeding, you will need to download a copy of your VPN provider's confi
    Save the script.
    Make it executable.
 
+```shell_session
        sudo chmod +x /rw/config/qubes-firewall-user-script
+```
 
 5. Set up the VPN's autostart.
 
+```shell_sessoin
        sudo gedit /rw/config/rc.local
+```
 
    Clear out the existing lines and add:
 
@@ -301,14 +307,14 @@ Before proceeding, you will need to download a copy of your VPN provider's confi
    Save the script.
    Make it executable.
 
+```shell_session
        sudo chmod +x /rw/config/rc.local
+```
 
 6. Restart the new VM!
    The link should then be established automatically with a popup notification to that effect.
 
-
-Usage
------
+## Usage
 
 Configure your AppVMs to use the VPN VM as a NetVM...
 
@@ -316,10 +322,8 @@ Configure your AppVMs to use the VPN VM as a NetVM...
 
 If you want to update your TemplateVMs through the VPN, you can enable the `qubes-updates-proxy` service for your new VPN VM and configure the [qubes-rpc policy](https://www.qubes-os.org/doc/software-update-domu/#updates-proxy).
 
+## Troubleshooting
 
-Troubleshooting
----------------
-
-* Always test your basic VPN connection before adding scripts.
-* Test DNS: Ping a familiar domain name from an appVM. It should print the IP address for the domain.
-* Use `iptables -L -v` and `iptables -L -v -t nat` to check firewall rules. The latter shows the critical PR-QBS chain that enables DNS forwarding.
+- Always test your basic VPN connection before adding scripts.
+- Test DNS: Ping a familiar domain name from an appVM. It should print the IP address for the domain.
+- Use `iptables -L -v` and `iptables -L -v -t nat` to check firewall rules. The latter shows the critical PR-QBS chain that enables DNS forwarding.

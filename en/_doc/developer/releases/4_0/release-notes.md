@@ -105,7 +105,6 @@ supported option to upgrade to Qubes R4.0 is to install it from scratch and use
 [qubes backup and restore tools][backup] for migrating of all of the user VMs.
 We also provide [detailed instruction][upgrade-to-r4.0] for this procedure.
 
-
 [backup]: /doc/backup-restore/
 [github-release-notes]: https://github.com/QubesOS/qubes-issues/issues?q=is%3Aissue+sort%3Aupdated-desc+milestone%3A%22Release+4.0%22+label%3Arelease-notes+is%3Aclosed
 [custom-ip]: https://github.com/QubesOS/qubes-issues/issues/1477

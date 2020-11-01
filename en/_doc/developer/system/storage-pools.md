@@ -34,7 +34,6 @@ When installed, the system has, as you can see from the contents of
 default pool is special in R3.2. It will add `dir_path=/var/lib/qubes`
 configuration value from `defaults[pool_config]`, if not overwritten.
 
-
 Currently the only supported driver out of the box is `xen`. The benefit of
 pools (besides that you can write your own storage driver e.g. for Btrfs) in R3.2
 is that you can store your domains in multiple places.

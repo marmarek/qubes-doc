@@ -47,36 +47,36 @@ Archlinux template building instructions
 
 * Import the Qubes master key
 
-```shell_session
+    ```shell_session
 $ gpg --import /usr/share/qubes/qubes-master-key.asc
-```
+    ```
 
 * Verify its fingerprint, set as 'trusted'. [This is described here](/doc/VerifyingSignatures).
 * Download the Qubes developers' keys.
 
-```shell_session
+    ```shell_session
 $ wget https://keys.qubes-os.org/keys/qubes-developers-keys.asc
 $ gpg --import qubes-developers-keys.asc
-```
+    ```
 
 * Download the latest stable qubes-builder repository:
 
-```shell_session
+    ```shell_session
 $ git clone https://github.com/QubesOS/qubes-builder.git /home/user/qubes-builder/
-```
+    ```
 
 * Verify the integrity of the downloaded repository. The last line should read `gpg: Good signature from`...
 
-```shell_session
+    ```shell_session
 $ cd /home/user/qubes-builder/
 $ git tag -v $(git describe)
-```
+    ```
 
 * Install the remaining dependencies
 
-```shell_session
+    ```shell_session
 $ make install-deps
-```
+    ```
 
 5:   Run the 'setup' script to build the builder.conf file
 -------------------------------------------------------------
@@ -85,10 +85,10 @@ $ make install-deps
 
 * Run the 'setup' script located in '**/home/user/qubes-builder/**' Make sure you are in directory '**qubes-builder**'
 
-```shell_session
+    ```shell_session
 $ cd /home/user/qubes-builder/
 $ ./setup
-```
+    ```
 
 ![arch-template-04](/attachment/wiki/ArchlinuxTemplate/arch-template-04.png)
 
@@ -169,13 +169,13 @@ $ make get-sources
    Both ways below:
 * Single command to build all Qubes components together: (this command can take a long time to process depending of your pc proccessing power)
 
-```shell_session
+    ```shell_session
 $ make qubes-vm
-```
+    ```
 
 * These are the indivual component 'make' commands:
 
-```shell_session
+    ```shell_session
 $ make vmm-xen-vm
 $ make core-vchan-xen-vm
 $ make core-qubesdb-vm
@@ -192,7 +192,7 @@ $ make core-agent-linux-vm
 $ make gui-common-vm
 $ make gui-agent-linux-vm
 $ make app-linux-split-gpg-vm
-```
+    ```
 
 8:   Make the actual Archlinux template
 ----------------------------------------
@@ -206,14 +206,14 @@ $ make template
 
 * You need to ensure these two files are in the '**noarch**' directory
 
-```shell_session
+    ```shell_session
 $ cd /home/user/qubes-builder/qubes-src/linux-template-builder/rpm/
 $ ls
 install-templates.sh
 $ cd noarch
 $ ls
 qubes-template-archlinux-X.X.X-XXXXXXXXXXXX.noarch.rpm
-```
+    ```
 
 ![arch-template-16](/attachment/wiki/ArchlinuxTemplate/arch-template-16.png)
 
@@ -221,11 +221,11 @@ qubes-template-archlinux-X.X.X-XXXXXXXXXXXX.noarch.rpm
   *Note: as there is not a typical file transfer method for Dom0, for security reasons, this less than simple transfer function has to be used*
   * Switch to Dom0 and open a terminal window.
 
-```shell_session
+    ```shell_session
 $ qvm-run --pass-io build-archlinux2 'cat /home/user/qubes-builder/qubes-src/linux-template-builder/rpm/install-templates.sh' > install-templates.sh
 $ chmod +x install-templates.sh
 $ ./install-templates.sh
-```
+    ```
 
 * If everything went correct there should be a Archlinux template listed in your Qubes Manager
 

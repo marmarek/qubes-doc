@@ -20,7 +20,7 @@ For example, to set the system's time zone to Berlin, Germany type in a dom0
 terminal:
 
 ```shwll_session
-    $ sudo timedatectl set-timezone 'Europe/Berlin'
+$ sudo timedatectl set-timezone 'Europe/Berlin'
 ```
 
 You can list the available time zones with the option `list-timezones` and show
@@ -30,12 +30,12 @@ Example output status of `timedatectl` on a system with time zone set to
 Europe/Berlin:
 
 ```shell_session
-    [user@dom0 ~]$ timedatectl status
-          Local time: Sun 2018-10-14 06:20:00 CEST
-      Universal time: Sun 2018-10-14 04:20:00 UTC
-            RTC time: Sun 2018-10-14 04:20:00
-           Time zone: Europe/Berlin (CEST, +0200)
-     Network time on: no
-    NTP synchronized: no
-     RTC in local TZ: no
+[user@dom0 ~]$ timedatectl status
+      Local time: Sun 2018-10-14 06:20:00 CEST
+  Universal time: Sun 2018-10-14 04:20:00 UTC
+        RTC time: Sun 2018-10-14 04:20:00
+       Time zone: Europe/Berlin (CEST, +0200)
+ Network time on: no
+NTP synchronized: no
+ RTC in local TZ: no
 ```

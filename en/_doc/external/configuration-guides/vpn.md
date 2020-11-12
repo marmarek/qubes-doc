@@ -245,13 +245,13 @@ Before proceeding, you will need to download a copy of your VPN provider's confi
 5. Set up iptables anti-leak rules.
    Edit the firewall script.
 
-```bash_session
-       sudo gedit /rw/config/qubes-firewall-user-script
-```
+    ```bash_session
+    sudo gedit /rw/config/qubes-firewall-user-script
+    ```
 
    Clear out the existing lines and add:
 
-   ~~~
+   ```sh
    #!/bin/bash
    #    Block forwarding of connections through upstream network device
    #    (in case the vpn tunnel breaks):
@@ -276,20 +276,20 @@ Before proceeding, you will need to download a copy of your VPN provider's confi
    #    Allow traffic from the `qvpn` group to the uplink interface (eth0);
    #    Our VPN client will run with group `qvpn`.
    iptables -I OUTPUT -p all -o eth0 -m owner --gid-owner qvpn -j ACCEPT
-   ~~~
+   ```
 
    Save the script.
    Make it executable.
 
-```shell_session
-       sudo chmod +x /rw/config/qubes-firewall-user-script
-```
+   ```bash_session
+   sudo chmod +x /rw/config/qubes-firewall-user-script
+   ```
 
-5. Set up the VPN's autostart.
+6. Set up the VPN's autostart.
 
-```shell_sessoin
-       sudo gedit /rw/config/rc.local
-```
+    ```shell_sessoin
+    sudo gedit /rw/config/rc.local
+    ```
 
    Clear out the existing lines and add:
 
@@ -307,11 +307,11 @@ Before proceeding, you will need to download a copy of your VPN provider's confi
    Save the script.
    Make it executable.
 
-```shell_session
-       sudo chmod +x /rw/config/rc.local
-```
+    ```bash_session
+    sudo chmod +x /rw/config/rc.local
+    ```
 
-6. Restart the new VM!
+7. Restart the new VM!
    The link should then be established automatically with a popup notification to that effect.
 
 ## Usage

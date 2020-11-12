@@ -25,11 +25,11 @@ By default w3m identifies itself as `w3m/` + version number. The user agent `Moz
 
 * Make w3m use the same HTTP_ACCEPT headers the TBB by adding the following lines at the end of the file:
 
-```
+    ```
    accept_language en-US,en;q=0.5
    accept_encoding gzip, deflate
    accept_media text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-```
+    ```
 
 These changes will hide your computer's locale and some other information that may or may not be unique to the VM in which it is running. With the modifications above w3m will have the same headers as about one in fifteen browsers fingerprinted by Panopticlick.
 

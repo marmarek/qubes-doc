@@ -23,9 +23,7 @@ When instructed by the operating system, discards are issued by the file-system 
 In Qubes, this gets more complex due to virtualization, LUKS, and LVM (and thin pools on R4.0 and up).
 If you run `fstrim --all` inside a TemplateVM, in a worst case the `discard` can follow a path like:
 
-```
-OS -> File-system Driver -> Virtual Storage Driver -> Backend Storage Driver -> LVM Storage Driver -> LUKS Driver -> Physical Storage Driver -> Physical Storage Device
-```
+`OS -> File-system Driver -> Virtual Storage Driver -> Backend Storage Driver -> LVM Storage Driver -> LUKS Driver -> Physical Storage Driver -> Physical Storage Device`
 
 If discards are not supported at any one of those layers, it will not make it to the underlying physical device.
 
@@ -110,7 +108,7 @@ To verify that TRIM is enabled, check `dmesg` for what flags were enabled when t
 You should see something like the following:
 
 ```
-    Adding 32391164k swap on /dev/mapper/qubes_dom0-swap.  Priority:-2 extents:1 across:32391164k SSDscFS
+Adding 32391164k swap on /dev/mapper/qubes_dom0-swap.  Priority:-2 extents:1 across:32391164k SSDscFS
 ```
 
 The `s` indicates that the entire swap device will be trimmed at boot, and `c` indicates that individual pages are trimmed after they are no longer being used.

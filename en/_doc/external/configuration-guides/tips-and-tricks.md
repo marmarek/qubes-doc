@@ -29,15 +29,15 @@ If you want this to happen automatically you can create a .desktop file that adv
 Open a text editor and copy and paste this into it:
 
 ```
-    [Desktop Entry]
-    Encoding=UTF-8
-    Name=BrowserVM
-    Exec=qvm-open-in-vm APPVMNAME %u
-    Terminal=false
-    X-MultipleArgs=false
-    Type=Application
-    Categories=Network;WebBrowser;
-    MimeType=x-scheme-handler/unknown;x-scheme-handler/about;text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+[Desktop Entry]
+Encoding=UTF-8
+Name=BrowserVM
+Exec=qvm-open-in-vm APPVMNAME %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=x-scheme-handler/unknown;x-scheme-handler/about;text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
 ```
 
 Replace `APPVMNAME` with the AppVM name you want to open links in. Now save, in the AppVM that you want to modify, this file to `~/.local/share/applications/browser_vm.desktop`

@@ -55,27 +55,27 @@ Modify manually the Template you use for your NetVM (not the NetVM itself). This
 
 - Starting from the line -A POSTROUTING -j MASQUERADE that you need to comment :
 
-    ~~~
-    # Bridge support
-    # Comment the following line
-    #-A POSTROUTING -j MASQUERADE
-    # Ensure packets coming from firewallVMs or AppVMs use NAT
-    -A POSTROUTING -m iprange --src-range 10.137.1.0-10.137.2.255 -j MASQUERADE
-    # Allow redirection of bridge packets (optional as POSTROUTING default is ACCEPT)
-    #-A POSTROUTING -o bridge+ -j ACCEPT
-    # End Bridge support
-    ~~~
+    ```
+# Bridge support
+# Comment the following line
+#-A POSTROUTING -j MASQUERADE
+# Ensure packets coming from firewallVMs or AppVMs use NAT
+-A POSTROUTING -m iprange --src-range 10.137.1.0-10.137.2.255 -j MASQUERADE
+# Allow redirection of bridge packets (optional as POSTROUTING default is ACCEPT)
+#-A POSTROUTING -o bridge+ -j ACCEPT
+# End Bridge support
+    ```
 
 - Starting from the line -A FORWARD -i vif+ -j ACCEPT:
 
-    ~~~
-    -A FORWARD -i vif+ -o vif+ -j DROP
-    -A FORWARD -i vif+ -j ACCEPT
-    # Bridge Support
-    -A FORWARD -i bridge+ -j ACCEPT
-    # End Bridge Support
-    -A FORWARD -j DROP
-    ~~~
+    ```
+-A FORWARD -i vif+ -o vif+ -j DROP
+-A FORWARD -i vif+ -j ACCEPT
+# Bridge Support
+-A FORWARD -i bridge+ -j ACCEPT
+# End Bridge Support
+-A FORWARD -j DROP
+    ```
 
 Ensure that the IP addresses used by default in Qubes are in the form 10.137.1.\* or 10.137.2.\* by running ifconfig. Of course, this setup won't work with IPv6.
 
@@ -101,43 +101,43 @@ The bridge edition GUI is somewhat buggy as it does not remember all the paramet
 
 - Bridge-DHCP
 
-    ~~~
-    [connection]
-    id=Bridge-DHCP
-    uuid=fd68198b-313a-47cb-9155-52e95cdc67f3
-    type=bridge
-    autoconnect=false
-    timestamp=1363938302
+```
+[connection]
+id=Bridge-DHCP
+uuid=fd68198b-313a-47cb-9155-52e95cdc67f3
+type=bridge
+autoconnect=false
+timestamp=1363938302
 
-    [ipv6]
-    method=auto
+[ipv6]
+method=auto
 
-    [ipv4]
-    method=auto
+[ipv4]
+method=auto
 
-    [bridge]
-    interface-name=bridge0
-    stp=false
-    ~~~
+[bridge]
+interface-name=bridge0
+stp=false
+```
 
 Note: Do not forget to put stp=false if you bridge only eth0 because sending BPDUs could make your admins angry :)
 
 - bridge0-eth0
 
-    ~~~
-    [802-3-ethernet]
-    duplex=full
-    mac-address=88:AE:1D:AE:30:31
+```
+[802-3-ethernet]
+duplex=full
+mac-address=88:AE:1D:AE:30:31
 
-    [connection]
-    id=bridge0-eth0
-    uuid=38320e5b-226c-409e-9fd6-0fbf4d0460a0
-    type=802-3-ethernet
-    autoconnect=false
-    timestamp=1363601650
-    master=fd68198b-313a-47cb-9155-52e95cdc67f3
-    slave-type=bridge
-    ~~~
+[connection]
+id=bridge0-eth0
+uuid=38320e5b-226c-409e-9fd6-0fbf4d0460a0
+type=802-3-ethernet
+autoconnect=false
+timestamp=1363601650
+master=fd68198b-313a-47cb-9155-52e95cdc67f3
+slave-type=bridge
+```
 
 If you do not manage to start your bridge, you can start it manually from a NetVM terminal:
 

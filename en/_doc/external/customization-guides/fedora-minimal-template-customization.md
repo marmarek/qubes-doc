@@ -7,16 +7,15 @@ ref: 76
 title: Fedora Minimal Template Customization
 ---
 
-FEDORA Packages Recommendations
-======================
+# FEDORA Packages Recommendations
 
 (starting from a minimal template)
 
-Template installation
-------------------------------
+## Template installation
 
-> [dom0]#qubes-dom0-update qubes-template-fedora-26-minimal
-
+```shell_session
+ [dom0]#qubes-dom0-update qubes-template-fedora-26-minimal
+```
 
 *Note*: If you have doubts about a set of tools or package you want to install, start installing and testing it in an AppVM. 
 You can then reproduce it later in your TemplateVM if you are satisfied.
@@ -24,82 +23,87 @@ That is the template philosophy in QubesOS.
 
 For more information on the uses of a minimal template read [this page][Minimal].
 
-Standard tools installation
-================
+# Standard tools installation
 
-Administration (documented)
----------------------------------------------
+## Administration (documented)
 
-> sudo pciutils vim-minimal less tcpdump telnet psmisc nmap nmap-ncat usbutils
+```
+sudo pciutils vim-minimal less tcpdump telnet psmisc nmap nmap-ncat usbutils
+```
 
 *Notes*: nmap can be used to discover hosts on a network (nmap -sP [network]), especially if you are inside a Microsoft network, because your AppVM will be protected/NATted behind the Qubes firewall.
 (Microsoft / home networks make heavy use of autodiscovery technologies which require clients to be in the same local network (no firewall/no NAT), eg: your printer.)
 
 Some recommendations here: check your current network using the Network manager applet (eg: 192.168.1.65). 
 Then run nmap in your current AppVM/TemplateVM to search for the selected printer/equipment: 
-	nmap -sP 192.168.1.-. 
+  nmap -sP 192.168.1.-. 
 Don't forget to temporarily allow traffic via the Qubes Firewall if you are doing this in a TemplateVM.
 
-Administration (undocumented)
--------------------------------------------------
+## Administration (undocumented)
 
-> openssh keepassx openssl gnome-keyring man
+```
+openssh keepassx openssl gnome-keyring man
+```
 
 Dependency note: keepassx rely on qt which takes ~30MB
 
-Network VM (documented)
-----------------------------------------
+## Network VM (documented)
 
-> NetworkManager NetworkManager-wifi network-manager-applet wireless-tools dbus-x11 tar tinyproxy iptables
+```
+NetworkManager NetworkManager-wifi network-manager-applet wireless-tools dbus-x11 tar tinyproxy iptables
+```
 
-Network VM (undocumented)
---------------------------------------------
+## Network VM (undocumented)
 
-> which dconf dconf-editor
+```
+which dconf dconf-editor
+```
 
 *Notes*: which is required for autostart scripts
 
 *Notes*: dconf is required to remember the VM settings that are changed (the gsetting backend will be in memory only if gconf is not installed).
 
-Network VM (manual operations - documented)
-------------------------------------------------------------------------
+## Network VM (manual operations - documented)
 
 Search for wireless firmware matching your wireless card (to be launched in network VM)
 
-> lspci; dnf search firmware
+```
+lspci; dnf search firmware
+```
 
-ProxyVM/NetworkVM for 3G Modems
---------------------------------------------
+## ProxyVM/NetworkVM for 3G Modems
 
-> ModemManager NetworkManager-wwan usb_modeswitch modem-manager-gui
+```
+ModemManager NetworkManager-wwan usb_modeswitch modem-manager-gui
+```
 
 Dependency note: modem-manager-gui relies on webkit-gtk and is optional (NetworkManager can handle the modem alone)
 
 Source: [3GMODEM]
 
-ProxyVM for VPNs
---------------------------------------------
+## ProxyVM for VPNs
 
 Search for a VPN package for your particular vpn solution then [configure][VPNNM] NetworkManager
 
-> dnf search NetworkManager [openvpn\|openconnect\|openswat\|...]
+```
+dnf search NetworkManager [openvpn\|openconnect\|openswat\|...]
+```
 
 OR
 
 Refer to [this guide][VPN] which includes instructions for failsafe anti-leak VPN configuration using CLI scripts. (An early discussion about OpenVPN configuration can be viewed [here][OPENVPNSETUP].) Required packages will be `iptables` in addition to VPN software such as `openvpn`.
 
+## Printer Setup
 
-Printer Setup
---------------------------------------------
-
-> system-config-printer system-config-printer-applet cups
+```
+system-config-printer system-config-printer-applet cups
+```
 
 Dependency Note: depends on python3 + python3 additional libraries which takes more than 40 M once installed.
 
 Dependency Note: cups depends on ghostscript and require installing additional printing fonts (not documented here), so it can takes several dozen of MB
 
-Manual operations
----------------------------
+## Manual operations
 
 - Don't forget to restart your TemplateVM or only the cups service when you installed cups (systemctl start cups)
 
@@ -109,31 +113,37 @@ Manual operations
 
 - You may need to cancel the operation to install more adapted printer drivers (eg: if the driver cannot be found automatically). Use dnf search printername to find potential drivers (eg dnf search photosmart)
 
-GUI recommendations
-======================
+# GUI recommendations
 
-Lightweight packages recommendations
----------------------------------------------------------------
+## Lightweight packages recommendations
 
-> lxterminal dejavu-sans-mono-fonts dejavu-sans-fonts gnome-settings-daemon
+```
+lxterminal dejavu-sans-mono-fonts dejavu-sans-fonts gnome-settings-daemon
+```
 
 *Note*: You need to install sans-mono fonts for the terminal or it will be unreadable (overlapping characters....), while the sans fonts are just to get nicer GUI menus.
 
 *Scite* is a nice notepad that can also highlight scripts with very light dependencies
-> scite
+
+```
+scite
+```
 
 *Meld* allows easy comparison of two text files/ two configuration files.
 
-> meld
+```
+meld
+```
 
 *Thunar* is a light file manager usually used by xfce
 
-> thunar thunar-volman ntfs-3g
+```
+thunar thunar-volman ntfs-3g
+```
 
 Dependency Note: xfce4 dependencies (but still quite light ~1.4M downloads)
 
-Miscellaneous packages
---------------------------
+## Miscellaneous packages
 
 *pycairo* package is needed for file's contextual menu "Send to VM" to function (to actually popup dialog box and enter VM's name where the file will be sent to).
 
@@ -141,8 +151,7 @@ Miscellaneous packages
 Install this package in the qube holding your password protected gpg keys. 
 If you do not use password protected gpg keys, there is no need to install this package.
 
-GUI themes
------------------
+## GUI themes
 
 Managing GUI theme / appearance is often complex because when you do not want to depend on a specific desktop system.
 
@@ -156,7 +165,9 @@ The appearance of Windows can only be changed in dom0, however, the appearance o
 
 Choose theme packages for each framework. I recommend the following documentation [THEMEPACKAGES]
 
-> clearlooks-phenix-gtk2-theme clearlooks-phenix-gtk3-theme
+```
+clearlooks-phenix-gtk2-theme clearlooks-phenix-gtk3-theme
+```
 
 You can search for other themes using `dnf search theme gtk`.
 
@@ -196,9 +207,9 @@ rm ~/.config/dconf/user
 
 The following programs can be used to see if theme has been correctly applied:
 
-* GTK2 program: scite, thunderbird, firefox
-* GTK3 program: lxterminal
-* Qt program: keepassx
+- GTK2 program: scite, thunderbird, firefox
+- GTK3 program: lxterminal
+- Qt program: keepassx
 
 *Note*: testing in a TemplateVM will not work as expected because gnome-settings-daemon is not started in TemplateVM.
              so test your themes in an AppVM and then update the TemplateVM accordingly.
@@ -213,9 +224,11 @@ This can be done for gtk themes by creating dconf global settings. I recommend r
 
 #### Creating global file
 
- * Setup global config file:
+- Setup global config file:
 
-   > mkdir /etc/dconf/db/qubes.d
+   ```
+   mkdir /etc/dconf/db/qubes.d
+   ```
 
    Edit/Create the following file: /etc/dconf/db/qubes.d/10-global-theme-settings:
 
@@ -228,11 +241,13 @@ This can be done for gtk themes by creating dconf global settings. I recommend r
    monospace-font-name="Monospace 11"
    ~~~
 
- * Generate global config database
+- Generate global config database
 
-   > dconf update
+   ```
+   dconf update
+   ```
 
- * Configure default user profile
+- Configure default user profile
 
     Edit/Create the following file: /etc/dconf/profile/user:
 
@@ -249,7 +264,9 @@ User dconf settings can be browsed using dconf-editor GUI.
 
 If you want to force specific settings to be applied for all user (so in our case for all AppVMs depending on the template), you need to create locks:
 
-> mkdir /etc/dconf/db/qubes.d/locks
+```
+mkdir /etc/dconf/db/qubes.d/locks
+```
 
 Edit/Create the following file: /etc/dconf/db/qubes.d/locks/theme.lock:
 
@@ -258,7 +275,10 @@ Edit/Create the following file: /etc/dconf/db/qubes.d/locks/theme.lock:
 ~~~
 
 Finally, regenerate the dconf database
-> dconf update
+
+```
+dconf update
+```
 
 ### Uniform look for Qt & GTK
 
@@ -276,21 +296,12 @@ Two case:
 
 *Note*: check that ~/.config/Trolltech.conf in your AppVMs is not defining another "style=" because it will take precedence over your global Qt theme.
 
-
 [3GMODEM]: https://www.codeenigma.com/community/blog/installing-3g-usb-modems-linux
-
 [OPENVPNSETUP]: https://groups.google.com/forum/#!searchin/qubes-users/openvpn$20setup/qubes-users/UbY4-apKScE/lhB_ouTnAwAJ
-
 [THEMEPACKAGES]: https://groups.google.com/forum/#!search/appvm$20theme/qubes-users/RyVeDiEZ6D0/YR4ITjgdYX0J
-
 [DCONF1]: http://www.mattfischer.com/blog/?p=431
-
 [DCONF2]: https://wiki.gnome.org/Projects/dconf/SystemAdministrators
-
 [UNIFORMTHEME]: https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications
-
 [Minimal]: ../templates/fedora-minimal/
-
 [VPNNM]:  ../vpn/#set-up-a-proxyvm-as-a-vpn-gateway-using-networkmanager
-
 [VPN]:  ../vpn/#set-up-a-proxyvm-as-a-vpn-gateway-using-iptables-and-cli-scripts

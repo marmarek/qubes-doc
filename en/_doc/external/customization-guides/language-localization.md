@@ -35,9 +35,11 @@ The pinyin input method will be installed in a TemplateVM to make it available a
 
 5. You will likely get an error message telling you to paste the following into your bashrc:
 
-        export GTK_IM_MODULE=ibus
-        export XMODIFIERS=@im=ibus
-        export QT_IM_MODULE=ibus
+    ```
+    export GTK_IM_MODULE=ibus
+    export XMODIFIERS=@im=ibus
+    export QT_IM_MODULE=ibus
+    ```
 
    Copy the text into your `~/.bashrc` file with your favorite text editor.
    You will need to do this for any AppVM in which you wish to use pinyin input.

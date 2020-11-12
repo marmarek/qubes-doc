@@ -7,10 +7,12 @@ title: Removing TemplateVM Packages
 ---
 
 # Removing TemplateVM Packages
+
 When removing any packages from a default TemplateVM, be sure to check what's being removed by `apt autoremove` or `dnf`. 
 When removing certain packages, for instance Thunderbird, `apt` and `dnf` will attempt to remove many packages required by qubes for the template to function correctly under qubes.
 
 As an example from a terminal in a TemplateVM:
+
 ```shell_session
 $ sudo apt remove thunderbird
 Reading package lists... Done
@@ -47,19 +49,26 @@ If you'd still like to remove one of these applications without breaking your Te
 ## Removing Only Packages Not Needed for a Qubes TemplateVM
 
 ### Debian
- 1. In your TemplateVM terminal run:
- ```shell_session $ apt remove package-name```
+
+1. In your TemplateVM terminal run:
+
+```shell_session 
+    $ apt remove package-name
+```
+
  Note the packages "no longer required"
- 2. If the list of "no longer required" packages includes anything beginning with `qubes-` or `salt-` make a note to yourself to **never** run `$ sudo apt autoremove` on this TemplateVM
+2. If the list of "no longer required" packages includes anything beginning with `qubes-` or `salt-` make a note to yourself to **never** run `$ sudo apt autoremove` on this TemplateVM
 
 **Recommended but optional:** Use `apt-mark` to make `apt autoremove` safe again. 
+
 ```shell_session
-$ sudo apt-mark manual package-name package-name
+    $ sudo apt-mark manual package-name package-name
 ```
 
 Replace package-names with actual `qubes-*` and `salt-*` packages you'd like to retain. 
 
 For example, still in your TemplateVM terminal: 
+
 ```shell_session
 $ sudo apt-mark manual qubes-core-agent-dom0-updates qubes-core-agent-passwordless-root qubes-gpg-split qubes-img-converter qubes-input-proxy-sender qubes-mgmt-salt-vm-connector qubes-pdf-converter salt-common salt-ssh qubes-usb-proxy
 ```
@@ -67,29 +76,36 @@ $ sudo apt-mark manual qubes-core-agent-dom0-updates qubes-core-agent-passwordle
 `$ apt autoremove` should now be safe to use.
 
 ### Fedora
+
 In your TemplateVM terminal, run:
+
 ```shell_session
 $ dnf remove --noautoremove package-name
 ```
 
- 
 ## Recovering A TemplateVM which you've already removed needed qubes-* packages
+
 If you've already removed packages, run `apt autoremove` and restarted your VM you've lost passwordless sudo access. 
 You can login as root, open a terminal in dom0 and run: 
+
 ```shell_session
 $ qvm-run -u root vmname xterm
 ```
+
 This will open an xterm terminal in the TemplateVM named `vmname`
 
 Once you're logged in as root, reinstall these packages & their dependencies: 
 
 ### Debian
+
 ```shell_session
 $ sudo apt install qubes-core-agent-dom0-updates qubes-core-agent-passwordless-root qubes-gpg-split qubes-img-converter qubes-input-proxy-sender qubes-mgmt-salt-vm-connector qubes-pdf-converter salt-common salt-ssh
 ```
 
 ### Fedora
+
 Similar to Debian for example (package names may vary):
+
 ```shell_session
 $ sudo dnf install qubes-core-agent-dom0-updates qubes-core-agent-passwordless-root qubes-gpg-split qubes-img-converter qubes-input-proxy-sender qubes-mgmt-salt-vm-connector qubes-pdf-converter salt-common salt-ssh
 ```

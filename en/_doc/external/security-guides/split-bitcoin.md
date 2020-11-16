@@ -9,12 +9,10 @@ title: Split Bitcoin
 How to Set Up a Split Bitcoin Wallet in Qubes
 =============================================
 
-
 What is a "Split" Bitcoin Wallet?
 ---------------------------------
 
 A "split" bitcoin wallet is a strategy of protecting your bitcoin by having your wallet split into an offline "[cold storage](https://en.bitcoin.it/wiki/Cold_storage)" wallet and an online "watching only" wallet.
-
 
 A "Watching" Wallet and a "Cold" Wallet
 ---------------------------------------

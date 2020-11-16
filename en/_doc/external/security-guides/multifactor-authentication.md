@@ -32,69 +32,79 @@ open-source one-time password tool, to generate authentication codes. This
 method presents several benefits over relying on a consumer smartphone app or
 SMS:
 
- * `oathtool` includes the [time-based one-time password (TOTP)][TOTP]
+* `oathtool` includes the [time-based one-time password (TOTP)][TOTP]
    algorithm, which is the same algorithm used by [Google Authenticator][], one
    of the most commonly used authenticator apps. This means that we can use
    `oathtool` as a complete open-source replacement for Google Authenticator
    (which became propriety (closed-source) in May 2013 after version 2.21).
 
- * By keeping all of our authenticator data as plain text files in a dedicated
-   VM, we have complete control over the secret keys used to generate our
-   authentication tokens, and we can back up, copy, and transfer our
-   authenticator data at will.
+* By keeping all of our authenticator data as plain text files in a dedicated
+  VM, we have complete control over the secret keys used to generate our
+  authentication tokens, and we can back up, copy, and transfer our
+  authenticator data at will.
 
- * By creating a minimal environment in which to run `oathtool` from the command
-   line, we can minimize our attack surface relative to most smartphone apps and
-   SMS. Consumer smartphones are typically internet-facing devices which are
-   increasingly targeted by malware. Most smartphones are bundled with
-   proprietary software which allows service providers almost complete control
-   over the device. Likewise, consumer SMS messages are often cleartext
-   communications which can feasibly be intercepted and read by third parties.
-   (In cases in which SMS messages are encrypted on the network by the service
-   provider, the service provider itself still has full access, which means that
-   the contents of such messages could be read by unscrupulous admins or turned
-   over to government agencies.)
+* By creating a minimal environment in which to run `oathtool` from the command
+  line, we can minimize our attack surface relative to most smartphone apps and
+  SMS. Consumer smartphones are typically internet-facing devices which are
+  increasingly targeted by malware. Most smartphones are bundled with
+  proprietary software which allows service providers almost complete control
+  over the device. Likewise, consumer SMS messages are often cleartext
+  communications which can feasibly be intercepted and read by third parties.
+  (In cases in which SMS messages are encrypted on the network by the service
+  provider, the service provider itself still has full access, which means that
+  the contents of such messages could be read by unscrupulous admins or turned
+  over to government agencies.)
 
- * Using `oathtool` in a dedicated, network-isolated Qubes VM allows us to
-   achieve a unique combination of security and convenience. The strong isolation
-   Qubes provides allows us to reap the full security benefits of MFA, while
-   virtualization frees us from having to worry about finding and handling a
-   second physical device.
-
+* Using `oathtool` in a dedicated, network-isolated Qubes VM allows us to
+  achieve a unique combination of security and convenience. The strong isolation
+  Qubes provides allows us to reap the full security benefits of MFA, while
+  virtualization frees us from having to worry about finding and handling a
+  second physical device.
 
 Optional Preparation Steps
 --------------------------
 
- 1. Start with a minimal template. In this example, we'll use the
-    [minimal Fedora template][FedoraMinimal]. Get it if you haven't already done
-    so:
+1. Start with a minimal template. In this example, we'll use the
+   [minimal Fedora template][FedoraMinimal]. Get it if you haven't already done
+   so:
 
-        [user@dom0 ~]$ sudo qubes-dom0-update qubes-template-fedora-30-minimal
+    ```bash_session
+    [user@dom0 ~]$ sudo qubes-dom0-update qubes-template-fedora-30-minimal
+    ```
 
- 2. Since we'll be making some modifications, you may want to clone the minimal
-    template:
+2. Since we'll be making some modifications, you may want to clone the minimal
+   template:
 
-        [user@dom0 ~]$ qvm-clone fedora-30-minimal fedora-30-min-mfa
- 
- 3. To open a root shell on the minimal template (for details, see [Passwordless Root]), run the following command:
+    ```bash_session
+    [user@dom0 ~]$ qvm-clone fedora-30-minimal fedora-30-min-mfa
+    ```
 
-        [user@dom0 ~]$ qvm-run -u root fedora-30-min-mfa xterm
+3. To open a root shell on the minimal template (for details, see [Passwordless Root]), run the following command:
 
- 4. Since this is going to be a minimal environment in which we run `oathtool`
-    from the command line, we'll install only a couple of packages:
+    ```bash_session
+    [user@dom0 ~]$ qvm-run -u root fedora-30-min-mfa xterm
+    ```
 
-        [root@fedora-30-min-mfa ~]# dnf install oathtool vim-minimal
-        [root@fedora-30-min-mfa ~]$ poweroff
+4. Since this is going to be a minimal environment in which we run `oathtool`
+   from the command line, we'll install only a couple of packages:
 
- 5. Create an AppVM and set it to use the TemplateVM we just created:
+    ```bash_session
+    [root@fedora-30-min-mfa ~]# dnf install oathtool vim-minimal
+    [root@fedora-30-min-mfa ~]$ poweroff
+    ```
 
-        [user@dom0 ~]$ qvm-create -l black mfa
-        [user@dom0 ~]$ qvm-prefs -s mfa template fedora-30-min-mfa
+5. Create an AppVM and set it to use the TemplateVM we just created:
 
- 6. Isolate the new AppVM from the network:
+    ```bash_session
+    [user@dom0 ~]$ qvm-create -l black mfa
+    [user@dom0 ~]$ qvm-prefs -s mfa template fedora-30-min-mfa
+    ```
 
-        [user@dom0 ~]$ qvm-prefs -s mfa netvm none
+6. Isolate the new AppVM from the network:
 
+    ```bash_session
+    [user@dom0 ~]$ qvm-prefs -s mfa netvm none
+    ```
 
 Using the MFA AppVM
 -------------------
@@ -103,84 +113,91 @@ Now that we have an AppVM set up to use `oathtool` securely, let's use it with
 an external service. This process will vary slightly from service to service but
 is largely the same.
 
- 1. Proceed with setting up multi-factor authentication as you normally would.
-    If you are prompted to scan a QR code, instead select the option (if
-    available) to view the secret key as text:
+1. Proceed with setting up multi-factor authentication as you normally would.
+   If you are prompted to scan a QR code, instead select the option (if
+   available) to view the secret key as text:
 
     ![Secret Key Example 0](/attachment/wiki/Multi-factorAuthentication/secret-key-example-0.png)
 
-    You should then see the secret key as text:
+   You should then see the secret key as text:
 
     ![Secret Key Example 1](/attachment/wiki/Multi-factorAuthentication/secret-key-example-1.png)
 
-    Note that the length and format of the secret key may vary by service:
+   Note that the length and format of the secret key may vary by service:
 
     ![Secret Key Example 2](/attachment/wiki/Multi-factorAuthentication/secret-key-example-2.png)
 
- 2. In your MFA AppVM, you can now use `oathtool` to generate base32 TOTP
-    authentication tokens just like Google Authenticator would. In this example,
-    we'll use the secret key `xd2n mx5t ekg6 h6bi u74d 745k n4m7 zy3x` from the
-    second image above (substitute your own):
+2. In your MFA AppVM, you can now use `oathtool` to generate base32 TOTP
+   authentication tokens just like Google Authenticator would. In this example,
+   we'll use the secret key `xd2n mx5t ekg6 h6bi u74d 745k n4m7 zy3x` from the
+   second image above (substitute your own):
 
-        [user@mfa ~]$ oathtool --base32 --totp "xd2n mx5t ekg6 h6bi u74d 745k n4m7 zy3x"
-        279365
+    ```bash_session
+    [user@mfa ~]$ oathtool --base32 --totp "xd2n mx5t ekg6 h6bi u74d 745k n4m7 zy3x"
+    279365
+    ```
 
-    The output is `279365`. This is what you would enter when prompted for an
-    authenticator code. (Note that this is a *time*-based one-time password,
-    which means that your VM's clock must be sufficiently accurate in order to
-    generate a valid token. Qubes handles VM time syncing automatically, so you
-    normally shouldn't have to worry about this. As usual, the token will change
-    after a short period of time.)
+   The output is `279365`. This is what you would enter when prompted for an
+   authenticator code. (Note that this is a *time*-based one-time password,
+   which means that your VM's clock must be sufficiently accurate in order to
+   generate a valid token. Qubes handles VM time syncing automatically, so you
+   normally shouldn't have to worry about this. As usual, the token will change
+   after a short period of time.)
 
- 3. To make this easier on ourselves in the future, we can create a simple shell
-    script for each service we use. (The example service here is a Google
-    account, using the example key from above. You'll get a unique secret key
-    from each service.) Create the script like so:
+3. To make this easier on ourselves in the future, we can create a simple shell
+   script for each service we use. (The example service here is a Google
+   account, using the example key from above. You'll get a unique secret key
+   from each service.) Create the script like so:
 
-        [user@mfa ~]$ > google
-        [user@mfa ~]$ vi google
+    ```shell_session
+    [user@mfa ~]$ > google
+    [user@mfa ~]$ vi google
 
-        #!/usr/bin/env bash
-        ##My Google Account
-        ##me@gmail.com
-        oathtool --base32 --totp "xd2n mx5t ekg6 h6bi u74d 745k n4m7 zy3x"
+    #!/usr/bin/env bash
+    ##My Google Account
+    ##me@gmail.com
+    oathtool --base32 --totp "xd2n mx5t ekg6 h6bi u74d 745k n4m7 zy3x"
 
-        [user@mfa ~]$ chmod +x google
+    [user@mfa ~]$ chmod +x google
+    ```
 
-    Since the secret key stored in the script never changes, we should never
-    have to update this script, but we can easily do so if we ever want to.
+   Since the secret key stored in the script never changes, we should never
+   have to update this script, but we can easily do so if we ever want to.
 
- 4. Now, whenever Google prompts us for an authenticator code, all we have to do
-    is this:
+4. Now, whenever Google prompts us for an authenticator code, all we have to do
+   is this:
 
-        [user@mfa ~]$ ./google
-        640916
+    ```shell_session
+    [user@mfa ~]$ ./google
+    640916
+    ```
 
-    Done!
+   Done!
 
- 5. Now you can create scripts for any other TOTP-supporting services you use,
-    and enjoy the security and ease of quickly generating authentication tokens
-    right from your Qubes VM command-line:
+5. Now you can create scripts for any other TOTP-supporting services you use,
+   and enjoy the security and ease of quickly generating authentication tokens
+   right from your Qubes VM command-line:
 
-        [user@mfa ~]$ ./github
-        495272
-        [user@mfa ~]$ ./aws
-        396732
-        [user@mfa ~]$ ./facebook
-        851956
-        [user@mfa ~]$ ./dropbox
-        294106
-        [user@mfa ~]$ ./microsoft
-        295592
-        [user@mfa ~]$ ./slack
-        501731
-        [user@mfa ~]$ ./wordpress
-        914625
-        [user@mfa ~]$ ./tumblr
-        701463
+    ```shell_session
+    [user@mfa ~]$ ./github
+    495272
+    [user@mfa ~]$ ./aws
+    396732
+    [user@mfa ~]$ ./facebook
+    851956
+    [user@mfa ~]$ ./dropbox
+    294106
+    [user@mfa ~]$ ./microsoft
+    295592
+    [user@mfa ~]$ ./slack
+    501731
+    [user@mfa ~]$ ./wordpress
+    914625
+    [user@mfa ~]$ ./tumblr
+    701463
+    ```
 
-    For a more complete list of compatible services, see [here][usage].
-
+   For a more complete list of compatible services, see [here][usage].
 
 [YubiKey]: /doc/YubiKey/
 [MFA]: https://en.wikipedia.org/wiki/Multi-factor_authentication

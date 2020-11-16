@@ -34,23 +34,31 @@ Always obtain a trusted key fingerprint via other channels, and always check any
 
 1. (Optional)Create a TemplateVM (Debian, 9 is used as an example but feel free to use any more updated by changing the 9 to a 10, etc.)
 
-       [user@dom0 ~]$ sudo qubes-dom0-update qubes-template-debian-9
+    ```bash_session
+    [user@dom0 ~]$ sudo qubes-dom0-update qubes-template-debian-9
+    ```
 
 2. Open a terminal in Debian 9 (Or your previously chosen template)
 
-       [user@dom0 ~]$ qvm-run -a debian-9 gnome-terminal
-       
+    ```bash_session
+    [user@dom0 ~]$ qvm-run -a debian-9 gnome-terminal
+    ```
+
 3. Use these commands in your terminal (If you chose a different distribution, such as buster, substitute that for xenial in the 3rd command)
 
-       (Optional)[user@debian-8 ~]$ sudo apt-get install curl
-       [user@debian-8 ~]$ curl -s -x 127.0.0.1:8082 https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
-       [user@debian-8 ~]$ echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-       [user@debian-8 ~]$ sudo apt update && sudo apt install signal-desktop
+    ```bash_session
+    (Optional)[user@debian-8 ~]$ sudo apt-get install curl
+    [user@debian-8 ~]$ curl -s -x 127.0.0.1:8082 https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+    [user@debian-8 ~]$ echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+    [user@debian-8 ~]$ sudo apt update && sudo apt install signal-desktop
+    ```
 
 5. Shutdown the TemplateVM (substitute your template name if needed) :
 
-        [user@dom0 ~]$ qvm-shutdown debian-9
-        
+    ```bash_session
+    [user@dom0 ~]$ qvm-shutdown debian-9
+    ```
+
 6. Create an AppVM based on this TemplateVM
 7. With your mouse select the `Q` menu -> `Domain: "AppVM Name"` ->  'AppVM name: Qube Settings' -> OK -> 'Applications'
 (or `"AppVM Name": VM Settings` -> `Applications`). 

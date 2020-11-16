@@ -12,13 +12,11 @@ ref: 68
 title: TorVM
 ---
 
-Known issues:
--------------
+## Known issues:
 
--   [Service doesn't start without (even empty) user torrc](https://groups.google.com/d/msg/qubes-users/fyBVmxIpbSs/R5mxUcIEZAQJ)
+* [Service doesn't start without (even empty) user torrc](https://groups.google.com/d/msg/qubes-users/fyBVmxIpbSs/R5mxUcIEZAQJ)
 
-Qubes TorVM (qubes-tor)
-==========================
+# Qubes TorVM (qubes-tor)
 
 Qubes TorVM is a deprecated ProxyVM service that provides torified networking to
 all its clients. **If you are interested in TorVM, you will find the
@@ -51,70 +49,85 @@ See [this article](https://blog.invisiblethings.org/2011/09/28/playing-with-qube
    This includes system updates to the TorVM. Only traffic from VMs using TorVM
    as their NetVM is torified.
 
-Installation
-============
-
+# Installation
 
 0. *(Optional)* If you want to use a separate vm template for your TorVM
 
-        qvm-clone fedora-23 fedora-23-tor
+    ```
+    qvm-clone fedora-23 fedora-23-tor
+    ```
 
 1. In dom0, create a proxy vm and disable unnecessary services and enable qubes-tor
 
+    ```
+    qvm-create -p torvm
+    qvm-service torvm -d qubes-netwatcher
+    qvm-service torvm -d qubes-firewall
+    qvm-service torvm -e qubes-tor
 
-        qvm-create -p torvm
-        qvm-service torvm -d qubes-netwatcher
-        qvm-service torvm -d qubes-firewall
-        qvm-service torvm -e qubes-tor
-
-        # if you  created a new template in the previous step
-        qvm-prefs torvm -s template fedora-23-tor
+    # if you  created a new template in the previous step
+    qvm-prefs torvm -s template fedora-23-tor
+    ```
 
 2. From your TemplateVM, install the torproject Fedora repo
 
-        sudo yum install qubes-tor-repo
+    ```
+    sudo yum install qubes-tor-repo
+    ```
 
 3. Then, in the template, install the TorVM init scripts
 
-        sudo yum install qubes-tor
+    ```
+    sudo yum install qubes-tor
+    ```
 
 5. Configure an AppVM to use TorVM as its NetVM (for example a vm named anon-web)
 
-        qvm-prefs -s anon-web netvm torvm
-        ... repeat for any other AppVMs you want torified...
+    ```
+    qvm-prefs -s anon-web netvm torvm
+    ```
+
+    ... repeat for any other AppVMs you want torified...
 
 6. Shutdown the TemplateVM.
 7. Set the prefs of your TorVM to use the default sys-net or sys-firewall as its NetVM
 
-        qvm-prefs -s torvm netvm sys-net
+    ```
+    qvm-prefs -s torvm netvm sys-net
+    ```
 
 8. Start the TorVM and any AppVM you have configured to be route through the TorVM
 9. From the AppVMs, verify torified connectivity, e.g. by visiting
    `https://check.torproject.org`.
 
-
-### Troubleshooting ###
-
+### Troubleshooting
 
 1. Check if the qubes-tor service is running (on the torvm)
 
-        [user@torvm] $ sudo service qubes-tor status
+    ```bash_session
+    [user@torvm] $ sudo service qubes-tor status
+    ```
 
 2. Tor logs to syslog, so to view messages use
 
-        [user@torvm] $ sudo grep Tor /var/log/messages
+    ```bash_session
+    [user@torvm] $ sudo grep Tor /var/log/messages
+    ```
 
 3. Restart the qubes-tor service (and repeat 1-2)
 
-        [user@torvm] $ sudo service qubes-tor restart
+    ```bash_session
+    [user@torvm] $ sudo service qubes-tor restart
+    ```
 
 4. You may need to manually create the private data directory and set its permissions:
 
-        [user@torvm] $ sudo mkdir /rw/usrlocal/lib/qubes-tor
-        [user@torvm] $ sudo chown user:user /rw/usrlocal/lib/qubes-tor
+    ```bash_session
+    [user@torvm] $ sudo mkdir /rw/usrlocal/lib/qubes-tor
+    [user@torvm] $ sudo chown user:user /rw/usrlocal/lib/qubes-tor
+    ```
 
-Usage
-=====
+# Usage
 
 Applications should "just work" behind a TorVM, however there are some steps
 you can take to protect anonymity and increase performance.
@@ -155,11 +168,11 @@ behind the TorVM.
 5. In dom0, right click the KDE Application Launcher Menu (AKA "Start Menu") and left click "Edit Applications..."
 6. In the KDE Menu Editor, find your AnonVM's group and create a new item (or make a copy of an existing item).
 7. Edit the following fields on the "General" tab:
-   * Name: `my-new-anonvm: Tor Browser`
-   * Command: `qvm-run -q --tray -a my-new-anonvm 'TOR_SKIP_LAUNCH=1 TOR_SKIP_CONTROLPORTTEST=1 TOR_SOCKS_PORT=9050 TOR_SOCKS_HOST=1.2.3.4 ./tor-browser_en-US/Browser/start-tor-browser'`
-     * Replace `my-new-anonvm` with the name of your AnonVM.
-     * Replace `1.2.3.4` with your TorVM's internal Qubes IP address, which can be viewed in Qubes VM Manager by clicking "View" --> "IP" or by running `qvm-ls -n` in dom0.
-     * Replace `en-US` with your locale ID, if different.
+  * Name: `my-new-anonvm: Tor Browser`
+  * Command: `qvm-run -q --tray -a my-new-anonvm 'TOR_SKIP_LAUNCH=1 TOR_SKIP_CONTROLPORTTEST=1 TOR_SOCKS_PORT=9050 TOR_SOCKS_HOST=1.2.3.4 ./tor-browser_en-US/Browser/start-tor-browser'`
+    * Replace `my-new-anonvm` with the name of your AnonVM.
+    * Replace `1.2.3.4` with your TorVM's internal Qubes IP address, which can be viewed in Qubes VM Manager by clicking "View" --> "IP" or by running `qvm-ls -n` in dom0.
+    * Replace `en-US` with your locale ID, if different.
 8. Click "Save" in the KDE Menu Editor.
 
 Tor Browser should now work correctly in your AnonVM when launched via the shortcut you just created.
@@ -195,23 +208,25 @@ access with different stream isolation settings:
               Same as default settings listed above, but additionally traffic
               is isolated based on destination port and destination address.
 
-
 ## Custom Tor Configuration
 
 Default tor settings are found in the following file and are the same across
 all TorVMs.
 
-      /usr/lib/qubes-tor/torrc
+```
+    /usr/lib/qubes-tor/torrc
+```
 
 You can override these settings in your TorVM, or provide your own custom
 settings by appending them to:
 
-      /rw/config/qubes-tor/torrc
+```
+    /rw/config/qubes-tor/torrc
+```
 
 For information on tor configuration settings `man tor`
 
-Threat Model
-============
+# Threat Model
 
 TorVM assumes the same Adversary Model as [TorBrowser][tor-threats], but does
 not, by itself, have the same security and privacy requirements.
@@ -252,9 +267,8 @@ For more paranoid use cases the SOCKS proxy port 9049 is provided that has all
 stream isolation options enabled. User applications will require manual
 configuration to use this socks port.
 
+# Future Work
 
-Future Work
-===========
 * Integrate Vidalia
 * Create Tor Browser packages w/out bundled tor
 * Use local DNS cache to speedup queries (pdnsd)
@@ -262,8 +276,7 @@ Future Work
 * Fix Tor's openssl complaint
 * Support custom firewall rules (to support running a relay)
 
-Acknowledgements
-================
+# Acknowledgements
 
 Qubes TorVM is inspired by much of the previous work done in this area of
 transparent torified solutions. Notably the following:

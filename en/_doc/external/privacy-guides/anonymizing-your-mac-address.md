@@ -8,12 +8,10 @@ ref: 67
 title: Anonymizing your MAC Address
 ---
 
-Anonymizing your MAC Address
-============================
+# Anonymizing your MAC Address
 
 Although it is not the only metadata broadcast by network hardware, changing the default [MAC Address](https://en.wikipedia.org/wiki/MAC_address) of your hardware could be [an important step in protecting privacy](https://tails.boum.org/contribute/design/MAC_address/#index1h1).
 Currently, Qubes OS *does not* automatically "anonymize" or spoof the MAC Address, so unless this gets implemented by default you can randomize your MAC Address with the following guide.
-
 
 ## Upgrading and configuring Network Manager in Qubes
 
@@ -22,7 +20,6 @@ In particular, versions 1.4.2 and later should be well suited for Qubes. Qubes R
 However, use of the NetworkManager GUI to set these options is **unreliable** - there are numerous reports of changes not being saved for particular cards or interfaces.
 You should check carefully that any settings you make in the GUI are saved, before relying on this method.
 If the settings are not saved, you can use the method described below using a config file.
-
 
 Network Manager 1.4.2 or later is available from the Fedora 25 repository as well as the Debian 10 repository.
 
@@ -98,14 +95,14 @@ set -e -o pipefail
 
 #NOTE: mv is atomic on most systems
 if [ -f "/rw/config/protected-files.d/protect_hostname.txt" ] && rand="$RANDOM" && mv "/etc/hosts.lock" "/etc/hosts.lock.$rand" ; then
-	name="PC-$rand"
-	echo "$name" > /etc/hostname
-	hostname "$name"
-	#NOTE: NetworkManager may set it again after us based on DHCP or /etc/hostname, cf. `man NetworkManager.conf` @hostname-mode
-	
-	#from /usr/lib/qubes/init/qubes-early-vm-config.sh
-	if [ -e /etc/debian_version ]; then
-            ipv4_localhost_re="127\.0\.1\.1"
+    name="PC-$rand"
+    echo "$name" > /etc/hostname
+    hostname "$name"
+    #NOTE: NetworkManager may set it again after us based on DHCP or /etc/hostname, cf. `man NetworkManager.conf` @hostname-mode
+
+    #from /usr/lib/qubes/init/qubes-early-vm-config.sh
+    if [ -e /etc/debian_version ]; then
+                ipv4_localhost_re="127\.0\.1\.1"
         else
             ipv4_localhost_re="127\.0\.0\.1"
         fi
@@ -114,6 +111,7 @@ if [ -f "/rw/config/protected-files.d/protect_hostname.txt" ] && rand="$RANDOM" 
 fi
 exit 0
 ```
+
 Assuming that you're using `sys-net` as your network VM, your `sys-net` hostname should now be `PC-[number]` with a different `[number]` each time your `sys-net` is started.
 
 Please note that the above script should _not_ be added to [/rw/config/rc.local](/doc/config-files/)) as that is executed only _after_ the network fully started.

@@ -20,8 +20,7 @@ ref: 69
 title: Whonix for Privacy & Anonymity
 ---
 
-Whonix for Privacy & Anonymity
-==============================
+# Whonix for Privacy & Anonymity
 
 To improve your privacy and anonymity on the internet, you can install the
 Whonix Template on your Qubes machine.
@@ -55,5 +54,5 @@ Note: To install Whonix in Qubes, you must [install Qubes](/doc/installation-gui
 
 ## Support for Whonix
 
-*  [Whonix Support](https://www.whonix.org/wiki/Support) - General Whonix, Debian, Tor, etc... related issues
-*  [Whonix Qubes Forum](https://forums.whonix.org/c/qubes) - Whonix specific issues
+* [Whonix Support](https://www.whonix.org/wiki/Support) - General Whonix, Debian, Tor, etc... related issues
+* [Whonix Qubes Forum](https://forums.whonix.org/c/qubes) - Whonix specific issues

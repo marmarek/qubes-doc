@@ -21,11 +21,11 @@ Qubes Windows Tools
 
 Qubes Windows Tools are a set of programs and drivers that provide integration of Windows AppVMs with the rest of the Qubes system. Currently the following features are available for Windows VMs after installation of those tools:
 
--   **Qubes Video Driver** - provides for the Seamless GUI mode that integrates apps windows onto the common Qubes trusted desktop
--   **File sender/receiver** - Support for [secure clipboard copy/paste](/doc/copy-paste/) between the Windows VM and other AppVMs
--   ***File sender/receiver** - Support for [secure file exchange](/doc/copying-files/) between the Windows VM and other AppVMs
--   **Copy/Edit in Disposable VM** - Support for editing files in DisposableVMs as well as for qvm-run and generic qrexec for the Windows VM (e.g. ability to run custom service within/from the Windows VM)
--   **Xen PV drivers** for Windows that increase performance compared to qemu emulated devices
+- **Qubes Video Driver** - provides for the Seamless GUI mode that integrates apps windows onto the common Qubes trusted desktop
+- **File sender/receiver** - Support for [secure clipboard copy/paste](/doc/copy-paste/) between the Windows VM and other AppVMs
+- ***File sender/receiver** - Support for [secure file exchange](/doc/copying-files/) between the Windows VM and other AppVMs
+- **Copy/Edit in Disposable VM** - Support for editing files in DisposableVMs as well as for qvm-run and generic qrexec for the Windows VM (e.g. ability to run custom service within/from the Windows VM)
+- **Xen PV drivers** for Windows that increase performance compared to qemu emulated devices
 
 Below is a breakdown of the feature availability depending on the windows version:
 
@@ -45,6 +45,7 @@ Below is a breakdown of the feature availability depending on the windows versio
 Qubes Windows Tools are open source and are distributed under a GPL license.
 
 NOTES:
+
 - Qubes Windows Tools are currently unmaintained
 - Currently only 64-bit versions of Windows 7 and Windows 10 are supported by Qubes Windows Tools. Only emulated SVGA GPU is supported (although [there has been reports](https://groups.google.com/forum/#!topic/qubes-users/cmPRMOkxkdA) on working GPU passthrough).
 - __This page documents the process of installing Qubes Windows Tools on versions up to R3.2.__. Installation on Qubes R4.0 is possible but is a work in progress and there are limitations/bugs (see [issue #3585](https://github.com/QubesOS/qubes-issues/issues/3585)).
@@ -63,43 +64,46 @@ This will allow you to install the Qubes Windows Tools on Windows 10 both as a S
 
 > **Note:** seamless mode is currently not available for windows. Please check the top of this document for the full feature availability breakdown.
 
- 1. In the Windows 10 VM, download from the [XEN website](https://xenproject.org/downloads/windows-pv-drivers/windows-pv-drivers-9-series/windows-pv-drivers-9-0-0/) the installation kits for Xen bus (`xenbus`) and storage drivers (`xenvbd`) Version 9.0.0 (two files`xenvbd.tar`and `xenbus.tar`).
+1. In the Windows 10 VM, download from the [XEN website](https://xenproject.org/downloads/windows-pv-drivers/windows-pv-drivers-9-series/windows-pv-drivers-9-0-0/) the installation kits for Xen bus (`xenbus`) and storage drivers (`xenvbd`) Version 9.0.0 (two files`xenvbd.tar`and `xenbus.tar`).
  
- 2. Use an archive extractor like [7-zip](https://www.7-zip.org/) to extract the contents of the `.tar` files.
+2. Use an archive extractor like [7-zip](https://www.7-zip.org/) to extract the contents of the `.tar` files.
  
- 3. Install `xenvbd` and `xenbus` by starting the file `dpinst.exe` from the `x64` directories of the extracted tar-files. If during installation, the Xen driver requests a reboot, select "No" and let the installation continue.
+3. Install `xenvbd` and `xenbus` by starting the file `dpinst.exe` from the `x64` directories of the extracted tar-files. If during installation, the Xen driver requests a reboot, select "No" and let the installation continue.
  
- 4. After installation, reboot.
+4. After installation, reboot.
 
- 5. Download the Qubes Windows Tools (`qubes-tools-4.0.1.3.exe`) from [the qubes FTP server](https://ftp.qubes-os.org/qubes-windows-tools/) and move it to `C:\`.
+5. Download the Qubes Windows Tools (`qubes-tools-4.0.1.3.exe`) from [the qubes FTP server](https://ftp.qubes-os.org/qubes-windows-tools/) and move it to `C:\`.
  
- 6. Check the integrity of the file `qubes-tools-4.0.1.3.exe`by comparing its hash checksum. This can be done using the Windows command `certutil` on the windows command prompt (`cmd.exe`) and specifying an appropriate hash algorithm like:
-        
-		certutil --hashfile C:\qubes-tools-4.0.1.3.exe SHA256
+6. Check the integrity of the file `qubes-tools-4.0.1.3.exe`by comparing its hash checksum. This can be done using the Windows command `certutil` on the windows command prompt (`cmd.exe`) and specifying an appropriate hash algorithm like:
 
-	And compare it the value to `148A2A993F0C746B48FA6C5C9A5D1B504E09A7CFBA3FB931A4DCF86FDA4EC9B1` (**it has to exactly match for security reasons**). If it matches, feel free to continue the installation. If not, repeat the download to make sure it was not corrupted due to a network problem. If keeps on not matching it might be an attacker attempting to do something nasty to your system -- Ask for support.
+```        
+   certutil --hashfile C:\qubes-tools-4.0.1.3.exe SHA256
+```
 
-    > **Note**: this is a workaround for installing the qubes windows tools on windows 10 since the standard way is broken.
+And compare it the value to `148A2A993F0C746B48FA6C5C9A5D1B504E09A7CFBA3FB931A4DCF86FDA4EC9B1` (**it has to exactly match for security reasons**). If it matches, feel free to continue the installation. If not, repeat the download to make sure it was not corrupted due to a network problem. If keeps on not matching it might be an attacker attempting to do something nasty to your system -- Ask for support.
 
- 7. Install Qubes Windows Tools 4.0.1.3 by starting `qubes-tools-4.0.1.3.exe`, not selecting the `Xen PV disk drivers` and the `Move user profiles` (which would probably lead to problems in Windows, anyhow). If during installation, the Xen driver requests a reboot, select "No" and let the installation continue - the system will be rebooted later.
+   > **Note**: this is a workaround for installing the qubes windows tools on windows 10 since the standard way is broken.
 
- 8. Shut down Windows.
+7. Install Qubes Windows Tools 4.0.1.3 by starting `qubes-tools-4.0.1.3.exe`, not selecting the `Xen PV disk drivers` and the `Move user profiles` (which would probably lead to problems in Windows, anyhow). If during installation, the Xen driver requests a reboot, select "No" and let the installation continue - the system will be rebooted later.
 
- 9. On a `dom0` terminal write: *(where `<VMname>` is the name of your Windows 10 VM)*
+8. Shut down Windows.
+
+9. On a `dom0` terminal write: *(where `<VMname>` is the name of your Windows 10 VM)*
+
+```  
+   qvm-features <VMname> gui 1
+```
+
+10. Reboot Windows. If the VM starts, but does not show any window then shutdown Windows from the Qube manager and reboot Windows once more.
+ 
+11. Now the system should be up, with QWT running correctly.
+ 
+12. Lastly to enable file copy operations to a Windows 10 VM the `default_user` property should be set the `<username>` that you use to login to the Windows VM. This can be done via the following command on a `dom0` terminal: *(where `<VMname>` is the name of your Windows 10 VM)*
   
-		qvm-features <VMname> gui 1
-
- 10. Reboot Windows. If the VM starts, but does not show any window then shutdown Windows from the Qube manager and reboot Windows once more.
- 
- 11. Now the system should be up, with QWT running correctly.
- 
- 12. Lastly to enable file copy operations to a Windows 10 VM the `default_user` property should be set the `<username>` that you use to login to the Windows VM. This can be done via the following command on a `dom0` terminal: *(where `<VMname>` is the name of your Windows 10 VM)*
-  
-		`qvm-prefs <VMname> default_user <username>`
+    `qvm-prefs <VMname> default_user <username>`
 
      > **Note:** If this property is not set or set to a wrong value, files copied to this VM are stored in the folder `C:\Windows\System32\config\systemprofile\Documents\QubesIncoming\<source_VM>`.
-	 > If the target VM is an AppVM, this has the consequence that the files are stored in the corresponding TemplateVM and so are lost on AppVM shutdown.
-
+     > If the target VM is an AppVM, this has the consequence that the files are stored in the corresponding TemplateVM and so are lost on AppVM shutdown.
 
 Installing Qubes guest tools in Windows 7 VMs
 ---------------------------------------------
@@ -122,9 +126,9 @@ This package brings the ISO with Qubes Windows Tools that is passed to the VM wh
 
 Before proceeding with the installation we need to disable Windows mechanism that allows only signed drivers to be installed, because currently (beta releases) the drivers we provide as part of the Windows Tools are not digitally signed with a publicly recognizable certificate. To do that:
 
--   Start command prompt as Administrator, i.e. right click on the Command Prompt icon (All Programs -> Accessories) and choose "Run as administrator"
--   In the command prompt type `bcdedit /set testsigning on`
--   Reboot your Windows VM
+- Start command prompt as Administrator, i.e. right click on the Command Prompt icon (All Programs -> Accessories) and choose "Run as administrator"
+- In the command prompt type `bcdedit /set testsigning on`
+- Reboot your Windows VM
 
 In the future this step will not be necessary anymore, because we will sign our drivers with a publicly verifiable certificate. However, it should be noted that even now, the fact that those drivers are not digitally signed, this doesn't affect security of the Windows VM in 'any' way. This is because the actual installation ISO (the `qubes-windows-tools-*.iso` file) is distributed as a signed RPM package and its signature is verified by the `qubes-dom0-update` utility once it's being installed in Dom0. The only downside of those drivers not being signed is the inconvenience to the user that he or she must disable the signature enforcement policy before installing the tools.
 
@@ -159,6 +163,7 @@ Installing Xen's PV drivers in the VM will lower its resources usage when using 
 2. installing Qubes Windows Tools (QWT), which bundles Xen's PV drivers.
 
 Notes about using Xen's VBD (storage) PV driver:
+
 - **Windows 7:** installing the driver requires a fully updated VM or else you'll likely get a BSOD and a VM in a difficult to fix state. Updating Windows takes *hours* and for casual usage there isn't much of a performance between the disk PV driver and the default one; so there is likely no need to go through the lengthy Windows Update process if your VM doesn't have access to untrusted networks and if you don't use I/O intensive apps. If you plan to update your newly installed Windows VM it is recommended that you do so *before* installing Qubes Windows Tools (QWT). If QWT are installed, you should temporarily re-enable the standard VGA adapter in Windows and disable Qubes' (see the section above).
 - the option to install the storage PV driver is disabled by default in Qubes Windows Tools 
 - in case you already had QWT installed without the storage PV driver and you then updated the VM, you may then install the driver from Xen's site (xenvbd.tar).
@@ -167,13 +172,11 @@ Notes about using Xen's VBD (storage) PV driver:
 
 - **Windows 10:** The version 9.0.0 Xen drivers have to be installed before installing Qubes Windows Tools. Installing them on a system with QWT installed is likely to produce a system which crashes or has the tools in a non-functional state. Even if the tools were installed and then removed before installing the Xen drivers, they probably will not work as expected.
 
-
 With Qubes Windows Tools installed the early graphical console provided in debugging mode isn't needed anymore since Qubes' display driver will be used instead of the default VGA driver:
 
 ~~~
 qvm-prefs -s win7new debug false
 ~~~
-
 
 Using Windows AppVMs in seamless mode
 -------------------------------------
@@ -232,17 +235,17 @@ To facilitate such separation of user profiles, Qubes Windows Tools provide an o
 It's a selectable feature of the installer, enabled by default, but working only for Windows 7. 
 If that feature is selected during installation, completion of the process requires two reboots:
 
--   The private disk is initialized and formatted on the first reboot after tools installation. It can't be done **during** the installation because Xen mass storage drivers are not yet active.
--   User profiles are moved to the private disk on the next reboot after the private disk is initialized. 
+- The private disk is initialized and formatted on the first reboot after tools installation. It can't be done **during** the installation because Xen mass storage drivers are not yet active.
+- User profiles are moved to the private disk on the next reboot after the private disk is initialized. 
 Reboot is required because the "mover utility" runs very early in the boot process so OS can't yet lock any files in there. 
 This can take some time depending on the profiles' size and because the GUI agent is not yet active dom0/Qubes Manager may complain that the AppVM failed to boot. 
 That's a false alarm (you can increase AppVM's default boot timeout using `qvm-prefs`), the VM should appear "green" in Qubes Manager shortly after.
 
 For Windows 10, the user directories have to be moved manually, because the automatic transfer during QWT installation is bound to crash due to undocumented new features of NTFS, and a system having the directory `users`on another disk than `C:` will break on Windows update. So the following steps should be taken:
 
--  The Windows disk manager may be used to add the private volume as disk `D:`, and you may, using the documented Windows operations, move the user directories `C:\users\<username>\Documents` to this new disk, allowing depending AppVMs to have their own private volumes. Moving the hidden application directories `AppData`, however, is likely to invite trouble - the same trouble that occurs if, during QWT installation, the option `Move user profiles` is selected.
+- The Windows disk manager may be used to add the private volume as disk `D:`, and you may, using the documented Windows operations, move the user directories `C:\users\<username>\Documents` to this new disk, allowing depending AppVMs to have their own private volumes. Moving the hidden application directories `AppData`, however, is likely to invite trouble - the same trouble that occurs if, during QWT installation, the option `Move user profiles` is selected.
 
--  Configuration data like those stored in directories like `AppData` still remain in the TemplateVM, such that their changes are lost each time the AppVM shuts down. In order to make permanent changes to these configuration data, they have to be changed in the TemplateVM, meaning that applications have to be started there, which violates and perhaps even endangers the security of the TemplateVM. Such changes should be done only if absolutely necessary and with great care. It is a good idea to test them first in a cloned TemplateVM before applying them in the production VM.
+- Configuration data like those stored in directories like `AppData` still remain in the TemplateVM, such that their changes are lost each time the AppVM shuts down. In order to make permanent changes to these configuration data, they have to be changed in the TemplateVM, meaning that applications have to be started there, which violates and perhaps even endangers the security of the TemplateVM. Such changes should be done only if absolutely necessary and with great care. It is a good idea to test them first in a cloned TemplateVM before applying them in the production VM.
 
 It also makes sense to disable Automatic Updates for all the template-based AppVMs -- of course this should be done in the Template VM, not in individual AppVMs, because the system-wide settings are stored in the root filesystem (which holds the system-wide registry hives). Then, periodically check for updates in the Template VM and the changes will be carried over to any child AppVMs.
 
@@ -259,11 +262,11 @@ Qubes Windows Tools (QWT for short) contain several components than can be enabl
 
 - Shared components (required): common libraries used by QWT components.
 - Xen PV drivers: drivers for the virtual hardware exposed by Xen.
-   - Base Xen PV Drivers (required): paravirtual bus and interface drivers.
-   - Xen PV Disk Drivers: paravirtual storage drivers.
-   - Xen PV Network Drivers: paravirtual network drivers.
+  - Base Xen PV Drivers (required): paravirtual bus and interface drivers.
+  - Xen PV Disk Drivers: paravirtual storage drivers.
+  - Xen PV Network Drivers: paravirtual network drivers.
 - Qubes Core Agent: qrexec agent and services. Needed for proper integration with Qubes.
-   - Move user profiles: user profile directory (c:\users) is moved to VM's private disk backed by private.img file in dom0 (useful mainly for HVM templates).
+  - Move user profiles: user profile directory (c:\users) is moved to VM's private disk backed by private.img file in dom0 (useful mainly for HVM templates).
 - Qubes GUI Agent: video driver and gui agent that enable seamless showing of Windows applications on the secure Qubes desktop.
 - Disable UAC: User Account Control may interfere with QWT and doesn't really provide any additional benefits in Qubes environment.
 
@@ -318,8 +321,8 @@ Troubleshooting
 
 If the VM is inaccessible (doesn't respond to qrexec commands, gui is not functioning), try to boot it in safe mode:
 
--   `qvm-start --debug vmname`
--   mash F8 on the boot screen to enable boot options and select Safe Mode (optionally with networking)
+- `qvm-start --debug vmname`
+- mash F8 on the boot screen to enable boot options and select Safe Mode (optionally with networking)
 
 Safe Mode should at least give you access to logs (see above).
 

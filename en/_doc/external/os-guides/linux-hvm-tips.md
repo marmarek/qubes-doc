@@ -23,17 +23,19 @@ Screen resolution
 
 Some kernel/Xorg combinations use only 640x480 in HVM, which is quite small. 
 To enable maximum resolution, some changes in the Xorg configuration are needed:
-1.  Force "vesa" video driver
-2.  Provide wide horizontal synchronization range
+1. Force "vesa" video driver
+2. Provide wide horizontal synchronization range
 
 To achieve it (all commands to be run as root):
 
-1.  Generate XOrg configuration (if you don't have it):
+1. Generate XOrg configuration (if you don't have it):
+
     ~~~
     X -configure :1 && mv ~/xorg.conf.new /etc/X11/xorg.conf
     ~~~
 
-1.  Add HorizSync line to Monitor section, it should look something like:
+1. Add HorizSync line to Monitor section, it should look something like:
+
     ~~~
     Section "Monitor"
             Identifier   "Monitor0"
@@ -43,7 +45,8 @@ To achieve it (all commands to be run as root):
     EndSection
     ~~~
 
-1.  Change driver to "vesa" in Device section:
+1. Change driver to "vesa" in Device section:
+
     ~~~
     Section "Device"
             # (...)

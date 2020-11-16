@@ -12,12 +12,13 @@ If you would like to use a stable, predictable, manageable and reproducible dist
 
 For the minimal version, please see [Minimal TemplateVMs](/doc/templates/minimal/)
 
-
 ## Installation
 
 The standard CentOS TemplateVM can be installed with the following command in dom0, where `X` is the desired version number:
 
-    [user@dom0 ~]$ sudo qubes-dom0-update --enablerepo=qubes-templates-community qubes-template-centos-X
+```
+[user@dom0 ~]$ sudo qubes-dom0-update --enablerepo=qubes-templates-community qubes-template-centos-X
+```
 
 To switch, reinstall and uninstall a CentOS TemplateVM that is already installed in your system, see *How to [switch], [reinstall] and [uninstall]*.
 
@@ -27,9 +28,9 @@ After a fresh install, we recommend to [Update the TemplateVM](/doc/software-upd
 
 ## Want to contribute?
 
-*   [How can I contribute to the Qubes Project?](/doc/contributing/)
+* [How can I contribute to the Qubes Project?](/doc/contributing/)
 
-*   [Guidelines for Documentation Contributors](/doc/doc-guidelines/)
+* [Guidelines for Documentation Contributors](/doc/doc-guidelines/)
 
 [switch]: /doc/templates/#switching
 [reinstall]: /doc/reinstall-template/

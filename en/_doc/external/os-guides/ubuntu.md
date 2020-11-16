@@ -31,6 +31,7 @@ On the "Choose Pre-Built Packages Repositories" page you must not select either 
 This is because Qubes does not provide offical Pre-Built packages for Ubuntu.  
 
 Once you have completed setup, in the qubes-builder directory, run:
+
 ```
 make qubes-vm
 make template
@@ -40,8 +41,6 @@ The build for Ubuntu 16.04 LTS (Xenial) is straightforward.
 
 The build for Ubuntu 18.04 LTS (Bionic) is straightforward.
 
-
-
 Installing the template
 -------
 
@@ -49,9 +48,11 @@ You must copy the template you have built in to dom0 and install it there.
 Rather than do this manually, there is a script you can use.  
 
 In dom0, run :
+
 ```
 qvm-run -p <build_qube> 'cat /home/user/qubes-builder/qubes-src/linux-template-builder/rpm/install-templates.sh ' > install-templates.sh
 ```
+
 If you have built other templates, edit the `install-templates.sh` to ensure you only retain the templates you want to install.  
 Then run `./install-templates.sh`
 

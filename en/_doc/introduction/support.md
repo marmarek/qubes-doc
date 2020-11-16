@@ -26,7 +26,6 @@ see the [issue tracker]. These issues are constantly being updated and may
 contain workarounds for problems that you're experiencing, so it's worth
 [searching the issue tracker] as a first step.
 
-
 ## Staying safe ##
 
 The Qubes mailing lists and forum are open to the public. The contents are
@@ -62,7 +61,6 @@ risk giving malicious advice in signed messages to public mailing lists. Since
 every contribution to the Qubes OS Project is publicly visible and
 cryptographically signed, anyone would be in a position to [verify] that these
 came from the same keyholder.
-
 
 ## Discussion guidelines ##
 
@@ -144,7 +142,6 @@ Likewise, if you see that something in the documentation should be changed,
 don't simply point it out in a discussion venue. Instead, [submit the
 change][contributing to the documentation].
 
-
 ### Specific mailing list rules and notes ###
 
 #### Use the correct list ####
@@ -225,12 +222,10 @@ example, we encourage discussants to use [Split GPG] to sign all of their
 messages to the lists, but we do not endorse the use of these Google Groups
 as web forums. For that, we have a separate, dedicated [forum].
 
-
 ## Mailing lists ##
 
 This section covers each of our individual [mailing lists][wiki-ml], with
 details about the purpose of each list and how to use it.
-
 
 ### qubes-announce ###
 
@@ -245,26 +240,25 @@ required. Any email address will work.) To unsubscribe, send a blank email to
 `qubes-announce+unsubscribe@googlegroups.com`. This list also has an optional
 [Google Groups web interface][qubes-announce-web].
 
-
 ### qubes-users ###
 
 This list is for helping users solve various daily problems with Qubes OS.
 Examples of topics or questions suitable for this list include:
 
- * [HCL] reports
- * Installation problems
- * Hardware compatibility problems
- * Questions of the form: "How do I...?"
+* [HCL] reports
+* Installation problems
+* Hardware compatibility problems
+* Questions of the form: "How do I...?"
 
 Please try searching both the Qubes website and the archives of the mailing
 lists before sending a question. In addition, please make sure that you have
 read and understood the following basic documentation prior to posting to the
 list:
 
- * The [Installation Guide], [System Requirements], and [HCL] (for problems
-   related to installing Qubes OS)
- * The [User FAQ]
- * The [documentation] (for questions about how to use Qubes OS)
+* The [Installation Guide], [System Requirements], and [HCL] (for problems
+  related to installing Qubes OS)
+* The [User FAQ]
+* The [documentation] (for questions about how to use Qubes OS)
 
 You don't have to subscribe in order to post to this list. However, subscribing
 makes your messages less likely to be marked as spam and allows you to receive
@@ -277,20 +271,19 @@ send a blank email to `qubes-users+unsubscribe@googlegroups.com`. This list
 also has an optional [Google Groups web interface][qubes-users-web] and
 [traditional mail archive][qubes-users-archive].
 
-
 ### qubes-devel ###
 
 This list is primarily intended for people who are interested in contributing to
 Qubes or who are willing to learn more about its architecture and
 implementation. Examples of topics and questions suitable for this list include:
 
- * Questions about why we made certain architecture or implementation decisions.
-   * For example: "Why did you implement XYZ this way and not the other way?"
- * Questions about code layout and where code is for certain functionality.
- * Discussions about proposed new features, patches, etc.
-   * For example: "I would like to implement feature XYZ."
- * Contributed code and patches.
- * Security discussions which are relevant to Qubes in some way.
+* Questions about why we made certain architecture or implementation decisions.
+  * For example: "Why did you implement XYZ this way and not the other way?"
+* Questions about code layout and where code is for certain functionality.
+* Discussions about proposed new features, patches, etc.
+  * For example: "I would like to implement feature XYZ."
+* Contributed code and patches.
+* Security discussions which are relevant to Qubes in some way.
 
 You must be subscribed in order to post to this list. To subscribe, send a
 blank email to `qubes-devel+subscribe@googlegroups.com`. (Note: A Google
@@ -301,7 +294,6 @@ unsubscribe, send a blank email to `qubes-devel+unsubscribe@googlegroups.com`.
 This list also has an optional [Google Groups web interface][qubes-devel-web]
 and [traditional mail archive][qubes-devel-archive].
 
-
 ### qubes-project ###
 
 This list is for non-technical discussion and coordination around the
@@ -309,10 +301,10 @@ Qubes OS project.
 
 Examples of topics or question suitable for this list include:
 
- * Participation (talks, workshops, etc.) at upcoming events
- * Project funding applications and strategies
- * FOSS governance discussions
- * Most Github issues tagged "[business]"
+* Participation (talks, workshops, etc.) at upcoming events
+* Project funding applications and strategies
+* FOSS governance discussions
+* Most Github issues tagged "[business]"
 
 You don't have to subscribe in order to post to this list. However, subscribing
 makes your messages less likely to be marked as spam and allows you to receive
@@ -324,7 +316,6 @@ immediately, please allow time for moderation to occur. To unsubscribe, send a
 blank email to `qubes-project+unsubscribe@googlegroups.com`. This list also
 also has an optional [Google Groups web interface][qubes-project-web].
 
-
 ### qubes-translation ###
 
 This list is for discussion around the localization and translation of Qubes OS,
@@ -332,9 +323,9 @@ its documentation, and the website.
 
 Examples of topics or question suitable for this list include:
 
- * Questions about or issues with [Transifex], the translation platform we use
- * Who is managing localization for a given language
- * Most Github issues tagged "[localization]"
+* Questions about or issues with [Transifex], the translation platform we use
+* Who is managing localization for a given language
+* Most Github issues tagged "[localization]"
 
 You don't have to subscribe in order to post to this list. However, subscribing
 makes your messages less likely to be marked as spam and allows you to receive
@@ -346,7 +337,6 @@ not appear immediately, please allow time for moderation to occur. To
 unsubscribe, send a blank email to
 `qubes-translation+unsubscribe@googlegroups.com`. This list also has an
 optional [Google Groups web interface][qubes-translation-web].
-
 
 ## Forum ##
 
@@ -397,14 +387,13 @@ addition, we fully expect that many community members -- especially the most
 active ones -- will choose to participate in both venues. (Again, for those who
 still prefer interacting via email, Discourse supports that too!)
 
-
 ## Unofficial chat channels ##
 
 The following unofficial chat channels are maintained by the community:
 
- * Matrix, Qubes-related: <https://matrix.to/#/#cybersec-qubes_os:matrix.org>
- * Matrix, strictly Qubes: <https://matrix.to/#/#Qubes-OS:matrix.org>
- * `#qubes` channel on freenode.net via traditional IRC clients or: <https://webchat.freenode.net/>
+* Matrix, Qubes-related: <https://matrix.to/#/#cybersec-qubes_os:matrix.org>
+* Matrix, strictly Qubes: <https://matrix.to/#/#Qubes-OS:matrix.org>
+* `#qubes` channel on freenode.net via traditional IRC clients or: <https://webchat.freenode.net/>
 
 [mailing lists]: #mailing-lists
 [wiki-ml]: https://en.wikipedia.org/wiki/Electronic_mailing_list

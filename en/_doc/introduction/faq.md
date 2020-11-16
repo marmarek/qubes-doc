@@ -104,7 +104,6 @@ Booting your computer from a live CD (or DVD) when you need to perform sensitive
 For example, popular live OSes (such as [Tails] and other Linux distributions) are still **monolithic** in the sense that all software is still running in the same OS.
 This means, once again, that if your session is compromised, then all the data and activities performed within that same session are also potentially compromised.
 
-
 ### How does Qubes OS compare to running VMs in a conventional OS?
 
 Not all virtual machine software is equal when it comes to security.
@@ -123,7 +122,6 @@ Qubes makes it so that multiple VMs running under a Type 1 hypervisor can be sec
 For example, it puts all of your application windows on the same desktop with special colored borders indicating the trust levels of their respective VMs.
 It also allows for things like secure copy/paste operations between VMs, securely copying and transferring files between VMs, and secure networking between VMs and the Internet.
 
-
 ### How does Qubes OS compare to using a separate physical machine?
 
 Using a separate physical computer for sensitive activities can certainly be more secure than using one computer with a conventional OS for everything, but there are still risks to consider.
@@ -133,22 +131,21 @@ Briefly, here are some of the main pros and cons of this approach relative to Qu
   <i class="fa fa-check"></i> <strong>Pros</strong>
 </div>
 
- * Physical separation doesn't rely on a hypervisor. (It's very unlikely that an attacker will break out of Qubes' hypervisor, but if one were to manage to do so, one could potentially gain control over the entire system.)
- * Physical separation can be a natural complement to physical security.
-	(For example, you might find it natural to lock your secure laptop in a safe when you take your unsecure laptop out with you.)
+- Physical separation doesn't rely on a hypervisor. (It's very unlikely that an attacker will break out of Qubes' hypervisor, but if one were to manage to do so, one could potentially gain control over the entire system.)
+- Physical separation can be a natural complement to physical security.
+  (For example, you might find it natural to lock your secure laptop in a safe when you take your unsecure laptop out with you.)
 
 <div class="focus">
     <i class="fa fa-times"></i> <strong>Cons</strong>
 </div>
 
- * Physical separation can be cumbersome and expensive, since we may have to obtain and set up a separate physical machine for each security level we need.
- * There's generally no secure way to transfer data between physically separate computers running conventional OSes.
-	(Qubes has a secure inter-VM file transfer system to handle this.)
- * Physically separate computers running conventional OSes are still independently vulnerable to most conventional attacks due to their monolithic nature.
- * Malware which can bridge air gaps has existed for several years now and is becoming increasingly common.
+- Physical separation can be cumbersome and expensive, since we may have to obtain and set up a separate physical machine for each security level we need.
+- There's generally no secure way to transfer data between physically separate computers running conventional OSes.
+  (Qubes has a secure inter-VM file transfer system to handle this.)
+- Physically separate computers running conventional OSes are still independently vulnerable to most conventional attacks due to their monolithic nature.
+- Malware which can bridge air gaps has existed for several years now and is becoming increasingly common.
 
 (For more on this topic, please see the paper [Software compartmentalization vs. physical separation][paper-compart].)
-
 
 ### What is the main concept behind Qubes?
 
@@ -210,25 +207,25 @@ See the [XSA Tracker].
 
 Whenever starting a discussion about another (micro)kernel or hypervisor in relation to Qubes, we strongly suggest including answers to the following questions first:
 
-1.  What kinds of containers does it use for isolation? Processes? PV VMs? Fully virtualized VMs (HVMs)? And what underlying h/w technology is used (ring0/3, VT-x)?
-2.  Does it require specially written/built applications (e.g. patched Firefox)?
-3.  Does it require custom drivers, or can it use Linux/Windows ones?
-4.  Does it support VT-d, and does it allow for the creation of untrusted driver domains?
-5.  Does it support S3 sleep?
-6.  Does it work on multiple CPUs/Chipsets?
-7.  What are the performance costs, more or less? (e.g. "XYZ prevents concurrent execution of two domains/processes on shared cores of a single processor", etc.)
-8.  Other special features? E.g. eliminates cooperative covert channels between VMs?
+1. What kinds of containers does it use for isolation? Processes? PV VMs? Fully virtualized VMs (HVMs)? And what underlying h/w technology is used (ring0/3, VT-x)?
+2. Does it require specially written/built applications (e.g. patched Firefox)?
+3. Does it require custom drivers, or can it use Linux/Windows ones?
+4. Does it support VT-d, and does it allow for the creation of untrusted driver domains?
+5. Does it support S3 sleep?
+6. Does it work on multiple CPUs/Chipsets?
+7. What are the performance costs, more or less? (e.g. "XYZ prevents concurrent execution of two domains/processes on shared cores of a single processor", etc.)
+8. Other special features? E.g. eliminates cooperative covert channels between VMs?
 
 Here are the answers for Xen 4.1 (which we use as of 2014-04-28):
 
-1.  PV and HVM Virtual Machines (ring0/3 for PV domains, VT-x/AMD-v for HVMs).
-2.  Runs unmodified usermode apps (binaries).
-3.  Runs unmodified Linux drivers (dom0 and driver domains). PV VMs require special written pvdrivers.
-4.  Full VT-d support including untrusted driver domains.
-5.  S3 sleep supported well.
-6.  Works on most modern CPUs/Chipsets.
-7.  Biggest performance hit on disk operations (especially in Qubes when complex 2-layer mapping used for Linux qubes). No GPU virtualization.
-8.  Mostly Works<sup>TM</sup> :)
+1. PV and HVM Virtual Machines (ring0/3 for PV domains, VT-x/AMD-v for HVMs).
+2. Runs unmodified usermode apps (binaries).
+3. Runs unmodified Linux drivers (dom0 and driver domains). PV VMs require special written pvdrivers.
+4. Full VT-d support including untrusted driver domains.
+5. S3 sleep supported well.
+6. Works on most modern CPUs/Chipsets.
+7. Biggest performance hit on disk operations (especially in Qubes when complex 2-layer mapping used for Linux qubes). No GPU virtualization.
+8. Mostly Works<sup>TM</sup> :)
 
 ### Which virtualization modes do VMs use?
 
@@ -255,6 +252,7 @@ Please refer to [this page].
 ### Why is dom0 so old?
 
 Please see:
+
 - [Installing and updating software in dom0]
 - [Note on dom0 and EOL]
 
@@ -317,7 +315,6 @@ So, if feature X isn't enabled, it's most likely for one of three reasons:
 
 If it seems like a feature that we can and should enable, please [let us know][reporting-bugs]!
 
-
 ## Users
 
 ### Can I watch YouTube videos in qubes?
@@ -333,8 +330,8 @@ However, Qubes does allow for the use of accelerated graphics (OpenGL) in Dom0â€
 
 For further discussion about the potential for GPU passthrough on Xen/Qubes, please see the following threads:
 
--   [GPU passing to HVM]
--   [Clarifications on GPU security]
+- [GPU passing to HVM]
+- [Clarifications on GPU security]
 
 ### Is Qubes a multi-user system?
 
@@ -346,7 +343,6 @@ See [here] for details.
 
 However, in Qubes 4.x we will be implementing management functionality.
 See [Admin API] and [Core Stack] for more details.
-
 
 ### What are the system requirements for Qubes OS?
 
@@ -442,7 +438,6 @@ You shouldn't do that, because it poses a security risk for your Qubes OS instal
 But if you understand the risk and accept it, read [documentation on multibooting].
 It begins with an explanation of the risks with such a setup.
 
-
 ### Which version of Qubes am I running?
 
 See [here][version].
@@ -497,16 +492,18 @@ This is an intended feature.
 A device which was previously assigned to a less trusted qube could attack dom0 if it were automatically reassigned there. 
 In order to re-enable the device in dom0, either:
 
- * Reboot the physical machine.
+- Reboot the physical machine.
 
 or
 
- * Go to the sysfs (`/sys/bus/pci`), find the right device, detach it from the pciback driver and attach back to the original driver. Replace `<BDF>` with your device, for example `00:1c.2`:
+- Go to the sysfs (`/sys/bus/pci`), find the right device, detach it from the pciback driver and attach back to the original driver. Replace `<BDF>` with your device, for example `00:1c.2`:
 
-        echo 0000:<BDF> > /sys/bus/pci/drivers/pciback/unbind
-        MODALIAS=`cat /sys/bus/pci/devices/0000:<BDF>/modalias`
-        MOD=`modprobe -R $MODALIAS | head -n 1`
-        echo 0000:<BDF> > /sys/bus/pci/drivers/$MOD/bind
+    ```
+    echo 0000:<BDF> > /sys/bus/pci/drivers/pciback/unbind
+    MODALIAS=`cat /sys/bus/pci/devices/0000:<BDF>/modalias`
+    MOD=`modprobe -R $MODALIAS | head -n 1`
+    echo 0000:<BDF> > /sys/bus/pci/drivers/$MOD/bind
+    ```
 
 See also [here][assign_devices].
 
@@ -534,7 +531,9 @@ For Debian:
 1. (Recommended) Clone an existing Debian TemplateVM
 2. Install VLC in that TemplateVM:
 
-       $ sudo apt install vlc
+    ```bash_session
+    $ sudo apt install vlc
+    ```
 
 3. Use VLC to play your video files.
 
@@ -544,7 +543,9 @@ For Fedora:
 2. [Enable the appropriate RPMFusion repos in the desired Fedora TemplateVM][Enable RPMFusion].
 3. Install VLC in that TemplateVM:
 
-       $ sudo dnf install vlc
+    ```bash_session
+    $ sudo dnf install vlc
+    ```
 
 4. Use VLC to play your video files.
 
@@ -609,7 +610,9 @@ I see a screen popup with SeaBios and 4 lines, last one being `Probing EDD (edd=
 
 From a `dom0` prompt, enter:
 
-    qvm-prefs <HVMname> kernel ""
+```
+qvm-prefs <HVMname> kernel ""
+```
 
 ### When I try to install a TemplateVM, it says no match is found.
 
@@ -634,11 +637,11 @@ Usually, this is due to network problems (especially if downloading updates over
 Often, the problem can be resolved by trying again on a different connection (a different Tor circuit, if using Tor) or waiting and trying again later.
 Here are some examples of non-Qubes reports about this problem:
 
- - <https://ask.fedoraproject.org/en/question/88086/error-failed-to-synchronize-cache-for-repo-fedora/>
- - <https://unix.stackexchange.com/questions/390805/repos-not-working-on-fedora-error-failed-to-synchronize-cache-for-repo-update>
- - <https://www.reddit.com/r/Fedora/comments/74nldq/fedora_26_dnf_error_failed_to_synchronize_cache/>
- - <https://bugzilla.redhat.com/show_bug.cgi?id=1494178>
- - <https://stackoverflow.com/questions/45318256/error-failed-to-synchronize-cache-for-repo-updates>
+- <https://ask.fedoraproject.org/en/question/88086/error-failed-to-synchronize-cache-for-repo-fedora/>
+- <https://unix.stackexchange.com/questions/390805/repos-not-working-on-fedora-error-failed-to-synchronize-cache-for-repo-update>
+- <https://www.reddit.com/r/Fedora/comments/74nldq/fedora_26_dnf_error_failed_to_synchronize_cache/>
+- <https://bugzilla.redhat.com/show_bug.cgi?id=1494178>
+- <https://stackoverflow.com/questions/45318256/error-failed-to-synchronize-cache-for-repo-updates>
 
 More examples can be found by searching for "Failed to synchronize cache for repo" (with quotation marks) on your preferred search engine.
 
@@ -650,6 +653,7 @@ The full message looks like:
 [FAILED] Failed to start Load Kernel Modules.
 See 'systemctl status systemd-modules-load.service' for details.
 ```
+
 This is cosmetic only, and can safely be ignored.
 
 ### Why is Qubes so slow and how can I make it faster?
@@ -669,7 +673,6 @@ There is no particular configuration that will be ideal for everyone (despite ho
 Please don't ask for your favorite program to be installed by default or for some setting that obviously varies by user preference to be changed so that it matches *your* preference.
 This is an incredibly selfish attitude that demonstrates a complete lack of consideration for the thousands of other Qubes users who don't happen to share your preferences.
 
-
 ## Developers
 
 ### Are there restrictions on the software that the Qubes developers are willing to use?
@@ -678,10 +681,10 @@ Yes.
 In general, the Qubes developers will not use a piece of software unless there is an *easy* way to verify both its **integrity** and **authenticity**, preferably via PGP signatures (see [Verifying Signatures](/security/verifying-signatures/)).
 Specifically:
 
- * If PGP signatures are used, the signing key(s) should have well-publicized fingerprint(s) verifiable via multiple independent channels or be accessible to the developers through a web of trust.
- * If the software is security-sensitive and requires communication with the outside world, a "split" implementation is highly preferred (for examples, see [Split GPG](/doc/split-gpg/) and [Split Bitcoin](/doc/split-bitcoin/)).
- * If the software has dependencies, these should be packaged and available in repos for a [current, Qubes-supported version](/doc/supported-versions/#templatevms) of Fedora (preferred) or Debian (unless all the insecure dependencies can run in an untrusted VM in a "split" implementation).
- * If the software must be built from source, the source code and any builders must be signed.
+- If PGP signatures are used, the signing key(s) should have well-publicized fingerprint(s) verifiable via multiple independent channels or be accessible to the developers through a web of trust.
+- If the software is security-sensitive and requires communication with the outside world, a "split" implementation is highly preferred (for examples, see [Split GPG](/doc/split-gpg/) and [Split Bitcoin](/doc/split-bitcoin/)).
+- If the software has dependencies, these should be packaged and available in repos for a [current, Qubes-supported version](/doc/supported-versions/#templatevms) of Fedora (preferred) or Debian (unless all the insecure dependencies can run in an untrusted VM in a "split" implementation).
+- If the software must be built from source, the source code and any builders must be signed.
    (Practically speaking, the more cumbersome and time-consuming it is to build from source, the less likely the developers are to use it.)
 
 ### Why does dom0 need to be 64-bit?
@@ -714,11 +717,11 @@ See the discussion on issue [#1014](https://github.com/QubesOS/qubes-issues/issu
 
 The policy is there mostly to ease maintenance, on several levels:
 
- * Less modifications means easier migration to new upstream distribution
+- Less modifications means easier migration to new upstream distribution
    releases.
- * The upstream documentation matches the distribution running in the Qubes VM.
- * We're less likely to introduce Qubes-specific issues.
- * Each officially supported distribution (ideally) should offer the same set of
+- The upstream documentation matches the distribution running in the Qubes VM.
+- We're less likely to introduce Qubes-specific issues.
+- Each officially supported distribution (ideally) should offer the same set of
    Qubes-specific features - a change in one supported distribution should be
    followed also in others, including new future distributions.
 

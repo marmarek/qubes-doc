@@ -63,7 +63,6 @@ Please try not to get offended if you perceive your contributions as being met w
 
 The initial published version of this Code of Conduct was adapted from the [Contributor Covenant, version 1.4] and the [Rust Code of Conduct].
 
-
 [history of changes]: https://github.com/QubesOS/qubes-doc/commits/master/about/code-of-conduct.md
 [discussion]: https://github.com/QubesOS/qubes-issues/issues/2163
 [Citizen Code of Conduct]: http://citizencodeofconduct.org/

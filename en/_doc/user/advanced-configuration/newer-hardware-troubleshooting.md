@@ -26,5 +26,4 @@ Compare this with the output of `rpm -q kernel`.
 If the start of `uname -r` matches one of the versions printed by `rpm`, then you're still using the Linux LTS kernel, and you'll probably need to manually fix your boot settings.
 If `uname -r` reports a higher version number, then you've successfully booted with the kernel shipped by `kernel-latest`.
 
-
 [dom0-kernel-upgrade]: /doc/software-update-dom0/#kernel-upgrade

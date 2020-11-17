@@ -87,10 +87,10 @@ The module used defines which parameters can be passed to it.
 There is a list of [officially available states][salt-doc-states].
 There are many very useful states:
 
-* For [managing files][salt-doc-states-file]: Use this to create files or 
+- For [managing files][salt-doc-states-file]: Use this to create files or 
   directories and change them (append lines, replace text, set their content etc.)
-* For [installing and uninstalling][salt-doc-states-pkg] packages.
-* For [executing shell commands][salt-doc-states-cmd].
+- For [installing and uninstalling][salt-doc-states-pkg] packages.
+- For [executing shell commands][salt-doc-states-cmd].
 
 With these three states you can define most of the configuration of a VM.
 
@@ -159,19 +159,27 @@ with a `.` in their name.
 Now, because we use custom extensions to manage top files (instead of just
 enabling them all), to enable a particular top file you should issue command:
 
-    $ qubesctl top.enable my-new-vm
+```
+$ qubesctl top.enable my-new-vm
+```
 
 To list all enabled top files:
 
-    $ qubesctl top.enabled
+```
+$ qubesctl top.enabled
+```
 
 And to disable one:
 
-    $ qubesctl top.disable my-new-vm
+```
+$ qubesctl top.disable my-new-vm
+```
 
 To apply the states to dom0 and all VMs:
 
-    $ qubesctl --all state.highstate
+```
+$ qubesctl --all state.highstate
+```
 
 (More information on the `qubesctl` command further down.)
 
@@ -230,7 +238,6 @@ If you do so, then you need to pass additional arguments to the `qubesctl` tool:
       --app              Target all AppVMs
       --all              Target all non-disposable VMs (TemplateVMs and AppVMs)
 
-
 To apply a state to all templates, call `qubesctl --templates state.highstate`.
 
 The actual configuration is applied using `salt-ssh` (running over `qrexec` 
@@ -275,14 +282,14 @@ Let's start with a quick example:
 It uses the Qubes-specific `qvm.present` state, which ensures that the domain is
 present (if not, it creates it).
 
-* The `name` flag informs Salt that the domain should be named `salt-test` (not 
+- The `name` flag informs Salt that the domain should be named `salt-test` (not 
   `my new and shiny VM`).
-* The `template` flag informs Salt which template should be used for the domain.
-* The `label` flag informs Salt what color the domain should be.
-* The `mem` flag informs Salt how much RAM should be allocated to the domain.
-* The `vcpus` flag informs Salt how many Virtual CPUs should be allocated to the 
+- The `template` flag informs Salt which template should be used for the domain.
+- The `label` flag informs Salt what color the domain should be.
+- The `mem` flag informs Salt how much RAM should be allocated to the domain.
+- The `vcpus` flag informs Salt how many Virtual CPUs should be allocated to the 
   domain
-* The `proxy` flag informs Salt that the domain should be a ProxyVM.
+- The `proxy` flag informs Salt that the domain should be a ProxyVM.
 
 As you will notice, the options are the same (or very similar) to those used in 
 `qvm-prefs`.
@@ -299,11 +306,15 @@ without the `.sls` extension.
 
 To enable the particular top file you should issue the command:
 
-    $ qubesctl top.enable my-new-vm
+```
+$ qubesctl top.enable my-new-vm
+```
 
 To apply the state:
 
-    $ qubesctl state.highstate
+```
+$ qubesctl state.highstate
+```
 
 ### Example of Configuring a VM's System from Dom0
 
@@ -323,11 +334,15 @@ Then the appropriate top file (`/srv/salt/mc-everywhere.top`):
 
 Now you need to enable the top file:
 
-    $ qubesctl top.enable mc-everywhere
+```
+$ qubesctl top.enable mc-everywhere
+```
 
 And apply the configuration:
 
-    $ qubesctl --all state.highstate
+```
+$ qubesctl --all state.highstate
+```
 
 ## All Qubes-specific States
 
@@ -371,15 +386,16 @@ Ensures the specified domain is running:
       qvm.running:
         - name: salt-test4
 
-
 ## Virtual Machine Formulae
 
 You can use these formulae to download, install, and configure VMs in Qubes.
 These formulae use pillar data to define default VM names and configuration details.
 The default settings can be overridden in the pillar data located in:
+
 ```
 /srv/pillar/base/qvm/init.sls
 ```
+
 In dom0, you can apply a single state with `sudo qubesctl state.sls STATE_NAME`.
 For example, `sudo qubesctl state.sls qvm.personal` will create a `personal` VM (if it does not already exist) with all its dependencies (TemplateVM, `sys-firewall`, and `sys-net`).
 
@@ -474,16 +490,18 @@ Updates dom0
 
 Updates domUs. Example to update all TemplateVMs:
 
-    sudo qubesctl --skip-dom0 --templates state.sls update.qubes-vm
+```
+sudo qubesctl --skip-dom0 --templates state.sls update.qubes-vm
+```
 
 Useful options:
 
- - `--max-concurrency` --- Limits how many templates are updated at the same time.
-   Adjust to your available RAM.
-   The default is 4, and the GUI updater sets it to 1.
- - `--targets=vm1,vm2,...` --- Limit to specific VMs, instead of all of them.
-   (Use instead of `--templates` or `--standalones`.)
- - `--show-output` --- Show an update summary instead of just OK/FAIL.
+- `--max-concurrency` --- Limits how many templates are updated at the same time.
+  Adjust to your available RAM.
+  The default is 4, and the GUI updater sets it to 1.
+- `--targets=vm1,vm2,...` --- Limit to specific VMs, instead of all of them.
+  (Use instead of `--templates` or `--standalones`.)
+- `--show-output` --- Show an update summary instead of just OK/FAIL.
 
 For other options, see `qubesctl --help`.
 
@@ -497,10 +515,10 @@ Additional pillar data is available to ease targeting configurations (for exampl
 
 VM type. Possible values:
 
- - `admin` - Administration domain (`dom0`)
- - `template` - Template VM
- - `standalone` - Standalone VM
- - `app` - Template based AppVM
+- `admin` - Administration domain (`dom0`)
+- `template` - Template VM
+- `standalone` - Standalone VM
+- `app` - Template based AppVM
 
 ### `qubes:template`
 
@@ -509,7 +527,6 @@ Template name on which a given VM is based (if any).
 ### `qubes:netvm`
 
 VM which provides network to the given VM
-
 
 ## Debugging
 
@@ -523,8 +540,10 @@ If the log does not contain useful information:
    executed in the management VM.
 5. Get the last two lines:
 
+    ```shell_session
     $ export PATH="/usr/lib/qubes-vm-connector/ssh-wrapper:$PATH"
     $ salt-ssh "$target_vm" $salt_command
+    ```
 
   Adjust $target_vm (VM_NAME) and $salt_command (state.highstate).
 6. Execute them, fix problems, repeat.
@@ -536,8 +555,10 @@ If the log does not contain useful information:
 The fedora-24-minimal package is missing the `sudo` package.
 You can install it via:
 
-    $ qvm-run -p -u root fedora-24-minimal-template 'dnf install -y sudo'
-    
+```shell_session
+$ qvm-run -p -u root fedora-24-minimal-template 'dnf install -y sudo'
+```
+
 The `-p` will cause the execution to wait until the package is installed.
 Having the `-p` flag is important when using a state with `cmd.run`.
 
@@ -552,13 +573,13 @@ The solution is to shut down the updateVM between each install:
 
 ## Further Reading
 
-* [Salt documentation][salt-doc]
-* [Salt states][salt-doc-states] ([files][salt-doc-states-file], [commands][salt-doc-states-cmd], 
+- [Salt documentation][salt-doc]
+- [Salt states][salt-doc-states] ([files][salt-doc-states-file], [commands][salt-doc-states-cmd], 
   [packages][salt-doc-states-pkg], [ordering][salt-doc-states-order])
-* [Top files][salt-doc-top]
-* [Jinja templates][jinja]
-* [Qubes specific modules][salt-qvm-doc]
-* [Formulas for default Qubes VMs][salt-virtual-machines-states]
+- [Top files][salt-doc-top]
+- [Jinja templates][jinja]
+- [Qubes specific modules][salt-qvm-doc]
+- [Formulas for default Qubes VMs][salt-virtual-machines-states]
 
 [salt-doc]: https://docs.saltstack.com/en/latest/
 [salt-qvm-doc]: https://github.com/QubesOS/qubes-mgmt-salt-dom0-qvm/blob/master/README.rst

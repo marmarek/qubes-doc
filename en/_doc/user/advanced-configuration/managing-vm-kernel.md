@@ -8,8 +8,7 @@ ref: 173
 title: Managing VM kernel
 ---
 
-VM kernel managed by dom0
-=========================
+# VM kernel managed by dom0
 
 By default, VMs kernels are provided by dom0.
 (See [here][dom0-kernel-upgrade] for information about upgrading kernels in dom0.)
@@ -60,8 +59,7 @@ nopat
 [user@dom0 ~]$ qvm-prefs -s work kernelopts "nopat apparmor=1 security=apparmor"
 ~~~
 
-Installing different kernel using Qubes kernel package
-----------------------------------
+## Installing different kernel using Qubes kernel package
 
 VM kernels are packages by Qubes team in `kernel-qubes-vm` packages.
 Generally, the system will keep the three newest available versions.
@@ -152,8 +150,7 @@ Installation of the new package is unaffected by this event.
 
 The newly installed package is set as the default VM kernel.
 
-Installing different VM kernel based on dom0 kernel
----------------------------------------------------
+## Installing different VM kernel based on dom0 kernel
 
 It is possible to package a kernel installed in dom0 as a VM kernel.
 This makes it possible to use a VM kernel which is not packaged by Qubes team.
@@ -219,20 +216,18 @@ mke2fs 1.42.12 (29-Aug-2014)
 --> Done.
 ~~~
 
-Kernel files structure
------------------------
+## Kernel files structure
 
 Kernel for a VM is stored in `/var/lib/qubes/vm-kernels/KERNEL_VERSION` directory (`KERNEL_VERSION` replaced with actual version). Qubes 4.x supports the following files there:
 
-- `vmlinuz` - kernel binary (may not be a Linux kernel)
-- `initramfs` - initramfs for the kernel to load
-- `modules.img` - ext4 filesystem image containing Linux kernel modules (to be mounted at `/lib/modules`); additionally it should contain a copy of `vmlinuz` and `initramfs` in its root directory (for loading by qemu inside stubdomain)
-- `default-kernelopts-common.txt` - default kernel options, in addition to those specified with `kernelopts` qube property (can be disabled with `no-default-kernelopts` feature)
+* `vmlinuz` - kernel binary (may not be a Linux kernel)
+* `initramfs` - initramfs for the kernel to load
+* `modules.img` - ext4 filesystem image containing Linux kernel modules (to be mounted at `/lib/modules`); additionally it should contain a copy of `vmlinuz` and `initramfs` in its root directory (for loading by qemu inside stubdomain)
+* `default-kernelopts-common.txt` - default kernel options, in addition to those specified with `kernelopts` qube property (can be disabled with `no-default-kernelopts` feature)
 
 All the files besides `vmlinuz` are optional in Qubes R4.1 or newer. In Qubes R4.0, `vmlinuz` and `initramfs` are both required to be present.
 
-Using kernel installed in the VM
---------------------------------
+## Using kernel installed in the VM
 
 Both debian-9 and fedora-26 templates already have grub and related tools preinstalled so if you want to use one of the distribution kernels, all you need to do is clone either template to a new one, then:
 
@@ -280,6 +275,7 @@ If you require `PV` mode, install `grub2-xen` in dom0 and change the template's 
 Booting to a kernel inside the template is not supported under `PVH`.
 
 ### Installing kernel in Debian VM
+
 #### Distribution kernel
 
 Apply the following instruction in a Debian TemplateVM or in a Debian StandaloneVM.
@@ -293,7 +289,6 @@ sudo apt install linux-image-amd64 linux-headers-amd64 grub2 qubes-kernel-vm-sup
 ~~~
 
 If you are doing that on a qube based on "Debian Minimal" template, a grub gui will popup during the installation, asking you where you want to install the grub loader. You must select /dev/xvda (check the box using the space bar, and validate your choice with "Enter".)
-
 
 You can safely ignore this error message:
 `grub2-probe: error: cannot find a GRUB drive for /dev/mapper/dmroot. Check your device.map`
@@ -322,42 +317,50 @@ Start the VM.
 The process of using Qubes VM kernel with distribution kernel is complete. 
 
 #### Custom kernel
+
 Any kernel can be installed. Just make sure to install kernel headers as well.
 
 If you are building the kernel manually, do this using `dkms` and `initramfs-tools`.
 
 Run DKMS. Replace this <kernel-version> with actual kernel version.
 
-    sudo dkms autoinstall -k <kernel-version>
-    
+```bash_session
+sudo dkms autoinstall -k <kernel-version>
+```
+
 For example.
-    
-    sudo dkms autoinstall -k 4.19.0-6-amd64
-    
+
+```bash_session
+sudo dkms autoinstall -k 4.19.0-6-amd64
+```
+
 Update initramfs.
-    
-    sudo update-initramfs -u
+
+```bash_session
+sudo update-initramfs -u
+```
 
 The output should look like this:
 
-	$ sudo dkms autoinstall -k 3.16.0-4-amd64
+```shell_session
+$ sudo dkms autoinstall -k 3.16.0-4-amd64
 
-	u2mfn:
-	Running module version sanity check.
-	 - Original module
-	   - No original module exists within this kernel
-	 - Installation
-	   - Installing to /lib/modules/3.16.0-4-amd64/updates/dkms/
+u2mfn:
+Running module version sanity check.
+  - Original module
+    - No original module exists within this kernel
+  - Installation
+    - Installing to /lib/modules/3.16.0-4-amd64/updates/dkms/
 
-	depmod....
+depmod....
 
-	DKMS: install completed.
-	$ sudo update-initramfs -u
-	update-initramfs: Generating /boot/initrd.img-3.16.0-4-amd64
+  DKMS: install completed.
+$ sudo update-initramfs -u
+update-initramfs: Generating /boot/initrd.img-3.16.0-4-amd64
+```
 
 #### Troubleshooting
 
 In case of problems, visit the [VM Troubleshooting guide](/doc/vm-troubleshooting/#vm-kernel-troubleshooting) to learn how to access the VM console, view logs and fix a VM kernel installation. 
-
 
 [dom0-kernel-upgrade]: /doc/software-update-dom0/#kernel-upgrade

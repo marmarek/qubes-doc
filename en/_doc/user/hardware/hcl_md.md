@@ -22,14 +22,14 @@ The [HCL](/hcl) is a compilation of reports generated and submitted by users acr
  Please first consult the data sheets (CPU, chipset, motherboard) prior to buying new hardware for Qubes.
  Make sure it meets the [System Requirements](/doc/system-requirements/) and search in particular for support of:
 
--   HVM ("AMD virtualization (AMD-V)", "Intel virtualization (VT-x)", "VIA virtualization (VIA VT)")
--   IOMMU ("AMD I/O Virtualization Technology (AMD-Vi)", "Intel Virtualization Technology for Directed I/O (VT-d)")
--   TPM ("Trusted Platform Module (TPM)" connected to a "20-pin TPM header" on motherboards.)
+- HVM ("AMD virtualization (AMD-V)", "Intel virtualization (VT-x)", "VIA virtualization (VIA VT)")
+- IOMMU ("AMD I/O Virtualization Technology (AMD-Vi)", "Intel Virtualization Technology for Directed I/O (VT-d)")
+- TPM ("Trusted Platform Module (TPM)" connected to a "20-pin TPM header" on motherboards.)
 
 If using the list to make a purchasing decision, we recommend that you choose hardware with:
 
--   the best achievable Qubes security level (green columns in HVM, IOMMU, TPM)
--   and general machine compatibility (green columns in Qubes version, dom0 kernel, remarks).
+- the best achievable Qubes security level (green columns in HVM, IOMMU, TPM)
+- and general machine compatibility (green columns in Qubes version, dom0 kernel, remarks).
 
 Also see [Certified Hardware] and [Hardware Testing].
 
@@ -48,7 +48,6 @@ Please consider sending the **HCL Support Files** `.cpio.gz` file as well. To ge
 
 **Please note:**
  The **HCL Support Files** may contain numerous hardware details, including serial numbers. If, for privacy or security reasons, you do not wish to make this information public, please **do not** send the `.cpio.gz` file to the public mailing list.
-
 
 [Certified Hardware]: /doc/certified-hardware/
 [Hardware Testing]: /doc/hardware-testing/

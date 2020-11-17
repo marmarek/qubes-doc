@@ -29,10 +29,10 @@ So, creating a large number of qubes is cheap: each one needs only as much disk 
 
 If you've installed Qubes OS using the default options, a few qubes have already been created for you:
 
- - work
- - personal
- - untrusted
- - vault
+- work
+- personal
+- untrusted
+- vault
 
 Each qube, apart from having a distinct name, is also assigned a **label**, which is one of several predefined colors.
 The trusted window manager uses these colors in order to draw colored borders around the windows of applications running in each qube.
@@ -59,30 +59,28 @@ Dom0 shouldn't be used for anything else.
 In particular, [you should never run user applications in dom0][dom0-precautions].
 (That's what your qubes are for!)
 
-
 GUI and command-line tools
 --------------------------
 
 All aspects of Qubes OS can be controlled using command-line tools run in a dom0 terminal. 
 Opening a terminal in dom0 can be done in several ways:
 
- - Go to the Application Launcher and click **Terminal Emulator**.
- - Press `Alt+F3`, type `xfce terminal` and press Enter twice.
- - Right-click on the desktop and select **Open Terminal Here**.
+- Go to the Application Launcher and click **Terminal Emulator**.
+- Press `Alt+F3`, type `xfce terminal` and press Enter twice.
+- Right-click on the desktop and select **Open Terminal Here**.
 
 Various command-line tools are described as part of this guide, and the whole reference can be found [here][tools].
 
 Alternatively, you can use a suite of GUI tools, most of which are available through desktop widgets:
 
- - The **Domains Widget** allows you to manage running qubes, turn them on and off, and monitor memory usage.
- - The **Devices Widget** allows you to attach and detach devices -- such as USB drives and cameras -- to qubes.
- - The **Disk Space Widget** will notify you if you're ever running out of disk space.
- - The **Updates Widget** will inform you when template updates are available.
+- The **Domains Widget** allows you to manage running qubes, turn them on and off, and monitor memory usage.
+- The **Devices Widget** allows you to attach and detach devices -- such as USB drives and cameras -- to qubes.
+- The **Disk Space Widget** will notify you if you're ever running out of disk space.
+- The **Updates Widget** will inform you when template updates are available.
 
 ![q40_widgets.png](/attachment/wiki/GettingStarted/r4.1-q40_widgets.png)
 
 For an overview of the entire system, you can use the **Qube Manager** (go to the Application Launcher → System Tools → Qube Manager), which displays the states of all the qubes in your system.
-
 
 Starting apps
 -------------
@@ -102,14 +100,17 @@ If you'd like to add more, enter the qube's **Qube Settings** and add them on th
 
 To start apps from the terminal in dom0, type:
 
-    $ qvm-run <qube_name> <app_command> [arguments]
+```shell_session
+$ qvm-run <qube_name> <app_command> [arguments]
+```
 
 e.g.:
 
-    $ qvm-run untrusted firefox
-    
-This command will start the qube if it is not already running.
+```shell_session
+$ qvm-run untrusted firefox
+```
 
+This command will start the qube if it is not already running.
 
 Adding, removing, and listing qubes
 -----------------------------------
@@ -119,10 +120,9 @@ If you need to add or remove qubes, simply use the Qube Manager's **Add** and **
 
 You can also add, remove, and list qubes from the command line using the following tools:
 
- - `qvm-create`
- - `qvm-remove`
- - `qvm-ls`
-
+- `qvm-create`
+- `qvm-remove`
+- `qvm-ls`
 
 How many qubes do I need?
 -------------------------
@@ -138,10 +138,8 @@ You'll also be able to easily [copy][copy-files] any files you need to the newly
 Still not sure?
 You might find it helpful to read [this article][partitioning], which describes how one of the Qubes OS architects partitions her digital life into security domains.
 
-
 Important tasks
 ---------------
-
 
 It's very important to [keep Qubes updated][update] to ensure you have the latest security updates.
 Frequently updating is one of the best ways to remain secure against new threats.
@@ -152,27 +150,29 @@ The [Qubes backup system] allows you to do this securely and easily.
 Here are some other tasks you're likely to want to perform.
 (A full list is available in the [Common Tasks] section of the documentation.)
 
- * [Copying and Pasting Text Between Domains][copy-paste]
- * [Copying and Moving Files Between Domains][copy-files]
- * [Copying from (and to) dom0]
- * [Fullscreen Mode]
- * [DisposableVMs]
- * [Device Handling] (block, USB, and PCI devices)
+- [Copying and Pasting Text Between Domains][copy-paste]
+- [Copying and Moving Files Between Domains][copy-files]
+- [Copying from (and to) dom0]
+- [Fullscreen Mode]
+- [DisposableVMs]
+- [Device Handling] (block, USB, and PCI devices)
 
 If you encounter any problems, please visit the [Help, Support, and Mailing Lists] page.
 
-## Compatible Hardware
+Compatible Hardware
+-------------------
 
 Make sure your hardware is [compatible](/hcl/), as Qubes OS cannot run on every type of computer. Also, check out [Qubes-certified Laptops](/doc/certified-laptops/).
 
-## Downloads
+Downloads
+---------
 
 [Download](/downloads/) an ISO, learn how to verify its authenticity and integrity, and follow our guides to install Qubes OS. Looking for the source code? You'll find it on [GitHub](https://github.com/QubesOS).
 
-## Documentation
+Documentation
+-------------
 
 Peruse our extensive library of [documentation](/doc/) for users and developers of Qubes OS. You can even help us [improve](/doc/doc-guidelines/) it!
-
 
 [getting-started-32]: /getting-started-32/
 [downloading]: /downloads/

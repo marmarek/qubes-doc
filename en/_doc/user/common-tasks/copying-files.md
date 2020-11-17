@@ -32,7 +32,6 @@ GUI
 
 4. You can now move them whenever you like in the qube B filesystem using the file manager there.
 
-
 CLI
 ---
 
@@ -43,7 +42,6 @@ qvm-copy [--without-progress] file [file]+
 ```
 qvm-move [--without-progress] file [file]+
 ```
-
 
 On inter-qube file copy security
 ----------------------------------

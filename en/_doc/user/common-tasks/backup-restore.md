@@ -23,7 +23,6 @@ This is true of all computing, not just the use of Qubes.
 Data loss can and does occur in myriad and unexpected ways.
 A standard recommendation is to make backups at least weekly: three copies in two different formats, one off-site.
 
-
 Creating a Backup
 -----------------
 
@@ -70,7 +69,6 @@ Creating a Backup
    This step is optional but strongly recommended.
    A backup is useless if you can't restore your data from it, and you can't be sure that your backup is good until you try to restore.
 
-
 Restoring from a Backup
 -----------------------
 
@@ -88,10 +86,10 @@ This brings up the **Qubes Restore VMs** window.
    Once you've located the backup file, double-click it or select it and hit **OK**.
 
 3. There are three options you may select when restoring from a backup:
-   1.  **ignore missing templates and net VMs**: If any of the VMs in your backup depended upon a NetVM or TemplateVM that is not present in (i.e., "missing from") the current system, checking this box will ignore the fact that they are missing and restore the VMs anyway and set them to use the default NetVM and system default template.
-   2.  **ignore username mismatch**: This option applies only to the restoration of dom0's home directory.
+   1. **ignore missing templates and net VMs**: If any of the VMs in your backup depended upon a NetVM or TemplateVM that is not present in (i.e., "missing from") the current system, checking this box will ignore the fact that they are missing and restore the VMs anyway and set them to use the default NetVM and system default template.
+   2. **ignore username mismatch**: This option applies only to the restoration of dom0's home directory.
    If your backup was created on a Qubes system which had a different dom0 username than the dom0 username of the current system, then checking this box will ignore the mismatch between the two usernames and proceed to restore the home directory anyway.
-   3.  **Verify backup integrity, do not restore the data**: This will scan the backup file for corrupted data.
+   3. **Verify backup integrity, do not restore the data**: This will scan the backup file for corrupted data.
    However, it does not currently detect if it is missing data as long as it is a correctly structured, non-corrupted backup file.
    See [issue #3498](https://github.com/QubesOS/qubes-issues/issues/3498) for more details.
 
@@ -109,7 +107,6 @@ If there are any issues preventing the restore, they will be listed here and the
 Qubes will proceed to restore from your backup. 
 Once the progress bar has completed, you may click **Finish**.
 
-
 Emergency Backup Recovery without Qubes
 ---------------------------------------
 
@@ -119,10 +116,9 @@ In the event a Qubes system is unavailable, you can access your data on any GNU/
 
 Refer to the following for emergency restore of a backup created on:
 
- * [Qubes R4 or newer](/doc/backup-emergency-restore-v4/)
- * [Qubes R3](/doc/backup-emergency-restore-v3/)
- * [Qubes R2 or older](/doc/backup-emergency-restore-v2/)
-
+- [Qubes R4 or newer](/doc/backup-emergency-restore-v4/)
+- [Qubes R3](/doc/backup-emergency-restore-v3/)
+- [Qubes R2 or older](/doc/backup-emergency-restore-v2/)
 
 Migrating Between Two Physical Machines
 ---------------------------------------
@@ -135,17 +131,17 @@ Choosing a Backup Passphrase
 
 Here are some things to consider when selecting a passphrase for your backups:
 
- * If you plan to store the backup for a long time or on third-party servers, you should make sure to use a very long, high-entropy passphrase. 
+- If you plan to store the backup for a long time or on third-party servers, you should make sure to use a very long, high-entropy passphrase. 
  (Depending on the decryption passphrase you use for your system drive, this may necessitate selecting a stronger passphrase. 
  If your system drive decryption passphrase is already sufficiently strong, it may not.)
- * An adversary who has access to your backups may try to substitute one backup for another. 
+- An adversary who has access to your backups may try to substitute one backup for another. 
  For example, when you attempt to retrieve a recent backup, the adversary may instead give you a very old backup containing a compromised VM. 
  If you're concerned about this type of attack, you may wish to use a different passphrase for each backup, e.g., by appending a number or date to the passphrase.
- * If you're forced to enter your system drive decryption passphrase in plain view of others (where it can be shoulder-surfed), then you may want to use a different passphrase for your backups (even if your system drive decryption passphrase is already maximally strong).
+- If you're forced to enter your system drive decryption passphrase in plain view of others (where it can be shoulder-surfed), then you may want to use a different passphrase for your backups (even if your system drive decryption passphrase is already maximally strong).
  On the other hand, if you're careful to avoid shoulder-surfing and/or have a passphrase that's difficult to detect via shoulder-surfing, then this may not be a problem for you.
 
 Notes
 -----
 
- * For the technical details of the backup system, please refer to [this thread](https://groups.google.com/d/topic/qubes-devel/TQr_QcXIVww/discussion).
- * If working with symlinks, note the issues described in [this thread](https://groups.google.com/d/topic/qubes-users/EITd1kBHD30/discussion).
+- For the technical details of the backup system, please refer to [this thread](https://groups.google.com/d/topic/qubes-devel/TQr_QcXIVww/discussion).
+- If working with symlinks, note the issues described in [this thread](https://groups.google.com/d/topic/qubes-users/EITd1kBHD30/discussion).

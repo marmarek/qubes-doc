@@ -41,6 +41,7 @@ To do this:
 2. Create a custom `.desktop` file in `/usr/share/applications` (you may need to first create the subdirectory).
    Look in `/usr/share/applications` for existing examples, or see the full [file specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
    It will be something like:
+
    ```
    [Desktop Entry]
    Version=1.0
@@ -53,6 +54,7 @@ To do this:
    Categories=Office;Scanning;
    Exec=vuescan
    ```
+
 3. In dom0, run `qvm-sync-appmenus <TemplateVMName>`.
 4. Go to VM Settings of the AppVM(s) to which you want to add the new shortcut, then the Applications tab.
    Move the newly created shortcut to the right under selected.
@@ -80,7 +82,6 @@ What about applications in DispVMs?
 
 [See here](/doc/disposablevm-customization/).
 
-
 Fixing shortcuts
 ----------------
 
@@ -98,7 +99,6 @@ In dom0:
 ```
 $ rm -i ~/.local/share/applications/my-old-vm-*
 ```
-
 
 Behind the scenes
 -----------------

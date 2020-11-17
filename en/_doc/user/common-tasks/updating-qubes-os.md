@@ -15,9 +15,9 @@ If you're instead looking to upgrade from your current version of Qubes OS to a 
 It is very important to keep your Qubes OS system up-to-date to ensure you have the latest [security] updates, as well as the latest non-security enhancements and bug fixes.
 Fully updating your Qubes OS system means updating:
 
- - [Dom0]
- - [TemplateVMs]
- - [StandaloneVMs] (if you have any)
+- [Dom0]
+- [TemplateVMs]
+- [StandaloneVMs] (if you have any)
 
 Visit the pages above to see to how to update each one.
 
@@ -28,7 +28,6 @@ They set their own [schedule] for when each Fedora release reaches [end-of-life]
 You can always find out when an operating system reaches EOL from the upstream project that maintains it, but we also make EOL [announcements] and publish guides for official TemplateVM operating systems as a convenience to Qubes users.
 When this happens, you should make sure to follow the guide to upgrade to a supported version of that operating system (see the [Fedora upgrade guides] and the [Debian upgrade guides]).
 The one exception is dom0, which [doesn't have to be upgraded][dom0-eol].
-
 
 [supported version of Qubes OS]: /doc/supported-versions/#qubes-os
 [Upgrade Guides]: /doc/upgrade/

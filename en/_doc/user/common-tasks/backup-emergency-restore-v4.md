@@ -20,7 +20,6 @@ mind. No special Qubes-specific tools are required to access data backed up by
 Qubes. In the event a Qubes system is unavailable, you can access your data on
 any GNU/Linux system with the following procedure.
 
-
 Required `scrypt` Utility
 -------------------------
 
@@ -72,7 +71,6 @@ any GNU/Linux system.
  7. (Optional) Create an alias for the new binary.
 
         [user@restore ~]$ alias scrypt="scrypt-*/usr/bin/scrypt"
-
 
 Emergency Recovery Instructions
 -------------------------------

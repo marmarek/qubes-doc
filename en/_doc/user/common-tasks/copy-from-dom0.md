@@ -11,11 +11,9 @@ ref: 198
 title: Copying from (and to) dom0
 ---
 
-Copying from (and to) dom0
-==========================
+# Copying from (and to) dom0
 
-Copying **from** dom0
----------------------
+## Copying **from** dom0
 
 To copy a file from dom0 to a VM (domU), simply use `qvm-copy-to-vm`:
 
@@ -25,34 +23,33 @@ qvm-copy-to-vm <dest-vm> <file>
 
 The file will arrive in your destination VM in the `~/QubesIncoming/dom0/` directory.
 
-### Copying logs from dom0 ###
+### Copying logs from dom0 
 
 In order to easily copy/paste the contents of logs from dom0 to the inter-VM clipboard, you can simply:
 
-1.  Right-click on the desired VM in the Qubes VM Manager.
-2.  Click "Logs."
-3.  Click on the desired log.
-4.  Click "Copy to Qubes clipboard."
+1. Right-click on the desired VM in the Qubes VM Manager.
+2. Click "Logs."
+3. Click on the desired log.
+4. Click "Copy to Qubes clipboard."
 
 You may now paste the log contents to any VM as you normally would (i.e., Ctrl-Shift-V, then Ctrl-V).
 
-### Copy/paste from dom0 ###
+### Copy/paste from dom0 
 
 For data other than logs, there are several options:
 
-1.  Use the **Qubes Clipboard** widget:
+1. Use the **Qubes Clipboard** widget:
     - Copy text to the clipboard normally in dom0.
     - Click the **Qubes Clipboard** icon in the Notification Area.
     - Click "Copy dom0 clipboard".
     - Receive a notification that text has been copied to the inter-qube clipboard.
     - Press Ctrl + Shift + V in a qube to paste into the desired qube's clipboard.
     - Paste normally within that qube.
-2.  Copy it as a file (see above)
-3.  Write the data you wish to copy into `/var/run/qubes/qubes-clipboard.bin`, then `echo -n dom0 > /var/run/qubes/qubes-clipboard.bin.source`.
+2. Copy it as a file (see above)
+3. Write the data you wish to copy into `/var/run/qubes/qubes-clipboard.bin`, then `echo -n dom0 > /var/run/qubes/qubes-clipboard.bin.source`.
     Then use Ctrl-Shift-V to paste the data to the desired VM.
 
-Copying **to** dom0
--------------------
+## Copying **to** dom0
 
 Copying anything into dom0 is not advised, since doing so can compromise the security of your Qubes system.
 For this reason, there is no simple means of copying anything into dom0, unlike [copying from dom0](#copying-from-dom0) and [copying files between VMs](/doc/copying-files/).

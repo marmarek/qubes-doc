@@ -6,8 +6,7 @@ ref: 98
 title: Updating Debian and Whonix
 ---
 
-Updating Debian and Whonix
-==========================
+# Updating Debian and Whonix
 
 Despite Qubes shipping with [Debian Templates](/doc/templates/debian/), most of Qubes core components run on Fedora and thus our documentation has better coverage for Fedora. However, Qubes has been working closely with the [Whonix](https://whonix.org) project which is based on Debian.
 
@@ -86,7 +85,6 @@ Install these packages without verification [y/N]?
 
 Don't proceed! Press `N` and `<enter>`. Running `apt-get update` again should fix it. If not, something is broken or it's a [Man in the middle attack](https://www.whonix.org/wiki/Warning#Man-in-the-middle_attacks), which isn't that unlikely, since we are updating over Tor exit relays and some of them are malicious. Try to [change your Tor circuit](https://www.whonix.org/wiki/Arm#Arm).
 
-
 ### Signature Verification Warnings
 
 There should be none at the moment. If there was such a warning, it would look like this:
@@ -136,5 +134,5 @@ Be careful. If the updated file isn't coming from Whonix specific package (some 
 
 How could you find out if the file is coming from a Whonix specific package or not?
 
-* Whonix specific packages are sometimes called `whonix-...`. In the example above it's saying `Setting up ifupdown ...`, so the file isn't coming from a Whonix specific package. In this case, you should press `n` as advised in the paragraph above.
-* If the package name does include `whonix-...`, it's a Whonix specific package. In that case, your safest bet should be pressing `y`, but then you would lose your customized settings. You can re-add them afterwards. Such conflicts will hopefully rarely happen, if you use [Whonix modular flexible .d style configuration folders](https://www.whonix.org/wiki/Whonix_Configuration_Files).
+- Whonix specific packages are sometimes called `whonix-...`. In the example above it's saying `Setting up ifupdown ...`, so the file isn't coming from a Whonix specific package. In this case, you should press `n` as advised in the paragraph above.
+- If the package name does include `whonix-...`, it's a Whonix specific package. In that case, your safest bet should be pressing `y`, but then you would lose your customized settings. You can re-add them afterwards. Such conflicts will hopefully rarely happen, if you use [Whonix modular flexible .d style configuration folders](https://www.whonix.org/wiki/Whonix_Configuration_Files).

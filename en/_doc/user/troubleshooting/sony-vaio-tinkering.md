@@ -53,8 +53,8 @@ $ sudo bash
 
 This script takes care about the following:
 
--   Setting i8042.nopnp for your installed system
--   Adding special option for the sound module (so you can get sound)
--   Adding pm-suspend scripts that take care about restoring your screen after resume
+- Setting i8042.nopnp for your installed system
+- Adding special option for the sound module (so you can get sound)
+- Adding pm-suspend scripts that take care about restoring your screen after resume
 
 ... now, having done this all, you will surely feel unprecedented satisfaction and you will love your Vaio very much! ;)

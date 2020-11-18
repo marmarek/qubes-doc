@@ -6,7 +6,7 @@ ref: 235
 title: Media Troubleshooting
 ---
 
-# Video and Audio Troubleshooting #
+# Video and Audio Troubleshooting 
 
 ## Can't play media videos in a VM due to missing codecs
 
@@ -19,6 +19,7 @@ You can do this in multiple different TemplateVM distros by following the instru
 Playing videos may cause lags since software decoding uses a lot of CPU. 
 
 Depending on your video player, there are some settings that may smoothen video plays:
+
 * If using VLC media player, go to Tools--> Preferences --> Video --> Output. 
 By default, the Output is set to "Automatic".  
 Go through the list and try out other output options to see if any makes videos run smoother. 

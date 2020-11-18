@@ -15,9 +15,10 @@ ref: 95
 title: Lenovo ThinkPad Troubleshooting
 ---
 
-# Lenovo ThinkPad Troubleshooting #
+# Lenovo ThinkPad Troubleshooting 
 
-## Instructions to create USB installation medium for newer (UEFI-only) ThinkPads ##
+## Instructions to create USB installation medium for newer (UEFI-only) ThinkPads 
+
 Some newer ThinkPads (e.g. T470, T470p, [P51](https://www.svensemmler.org/blog/2017/12/17/qubes-on-thinkpad-p51.html), ThinkPad 25, but not the [P53](https://github.com/QubesOS/qubes-issues/issues/5851)) are likely to fail installation attempts made from a USB stick that was created with dd or Rufus, and even from a DVD burned using official ISO images - if the ThinkPad is configured for UEFI boot. If you don't want to use Legacy Mode as a workaround, the following instructions should help you create a Qubes Installation USB stick that works in UEFI-only mode.
 
 In a nutshell, you need to use the Fedora livecd-tools to make a Qubes Installation USB Stick from the Qubes ISO image, then update the label on the partition of that USB stick to "BOOT", and then update the BOOT/EFI/BOOTX64.cfg file on the USB stick so that all labels point to BOOT. In more detail:
@@ -35,24 +36,24 @@ In a nutshell, you need to use the Fedora livecd-tools to make a Qubes Installat
 8. When imaging is complete, change the partition label to BOOT: ``# dosfslabel /dev/sdd1 BOOT``
 9. Now create a mount point and mount the partition:
 
-   ``# mkdir /mnt/qinst``
-
-   ``# mount /dev/sdd1 /mnt/qinst/``
+    ```
+    # mkdir /mnt/qinst
+    # mount /dev/sdd1 /mnt/qinst/
+    ```
 
 10. Use your favorite editor to edit the file */mnt/qinst/EFI/BOOT/BOOTX64.cfg*: Replace all instances of ``LABEL=Qubes-R4.0-rc3-x86_64`` with ``LABEL=BOOT``. There is typically no space in front of ``LABEL``, but there is a space at the end of the portion you replace.
 11. Unmount the Qubes Installation USB stick: ``# umount /dev/sdd*`` and disconnect it.
 
 That's it! You can now reboot the machine with the Qubes USB Installation stick attached, and press F12 to select it as the boot device at startup. Proceed to install Qubes OS normally. Enjoy!
 
-## ThinkPads with Intel HD 3000 graphics ##
+## ThinkPads with Intel HD 3000 graphics 
 
 Several ThinkPad models have Intel HD 3000 graphics, including the T420s and the
 T520. Some users with these laptops have experienced random reboots, which were
 solved by adding `i915.enable_rc6=0` as a kernel parameter to
 `GRUB_CMDLINE_LINUX` in the file `/etc/default/grub` in dom0.
 
-
-## Instructions for getting your Lenovo Thinkpad X201 & X200 laptop working with Qubes/Linux ##
+## Instructions for getting your Lenovo Thinkpad X201 & X200 laptop working with Qubes/Linux 
 
 For being able to boot the installer from USB, you have to disable VT-d in the BIOS.
 Enter the BIOS by hitting F1, go to Config - CPU and then disable VT-d there.
@@ -66,7 +67,7 @@ After the installation, you have to set a startup-parameter for Xen, to be able 
 
 Then reboot, enter BIOS and re-enable VT-d.
 
-### Getting scrolling with the Trackpoint and the Middle Button to work ###
+### Getting scrolling with the Trackpoint and the Middle Button to work 
 
 1. Create a script with the following content:
 
@@ -80,16 +81,15 @@ Then reboot, enter BIOS and re-enable VT-d.
 
 2. Add the script to the startup-items of your desktop environment.
 
-
-## Instructions for getting your Lenovo 450 laptop working with Qubes/Linux ##
+## Instructions for getting your Lenovo 450 laptop working with Qubes/Linux 
 
 Lenovo 450 uses UEFI, so some settings are needed to get Qubes (or Fedora) to boot, otherwise Qubes install USB stick will reboot right after boot selector screen and not continue install.
 
-### Setting UEFI options to get Qubes install to boot ###
+### Setting UEFI options to get Qubes install to boot 
 
-1.  Enable Legacy USB mode
-2.  Disable all Secure Boot and UEFI options, but leave this enabled: Config / USB / USB UEFI BIOS SUPPORT
-3.  Save settings and reboot
-5.  Install Qubes
+1. Enable Legacy USB mode
+2. Disable all Secure Boot and UEFI options, but leave this enabled: Config / USB / USB UEFI BIOS SUPPORT
+3. Save settings and reboot
+5. Install Qubes
 
 ... and now enjoy :) These settings may be needed also in other UEFI computers.

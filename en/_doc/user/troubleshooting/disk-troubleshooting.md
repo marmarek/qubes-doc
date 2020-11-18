@@ -41,13 +41,13 @@ Find the most recent one and place in /var/lib/qubes/qubes.xml instead of the em
 In any case you'll need some disk space to start the VM. Check `df -h` output if you have some. 
 If not, here are some hints how to free some disk space:
 
-1.  Clean yum cache.
+1. Clean yum cache.
 
     ~~~
     sudo dnf clean all
     ~~~
 
-2.  Delete `.img` files of a less important VM, which can be found in `/var/lib/qubes/appvms/`.
+2. Delete `.img` files of a less important VM, which can be found in `/var/lib/qubes/appvms/`.
     Then, when the system is working again, clean up the rest.
 
     ~~~
@@ -56,13 +56,13 @@ If not, here are some hints how to free some disk space:
 
     With this method, you lose the data of one VM, but it'll work more reliably.
 
-3.  Decrease the filesystem safety margin (5% by default).
+3. Decrease the filesystem safety margin (5% by default).
 
     ~~~
     sudo tune2fs -m 4 /dev/mapper/vg_dom0-lv_root
     ~~~
 
-4.  Remove some unneeded files in dom0 home (if you have any, most likely not). Also look for unneeded files in `/var/log` in dom0, and `/var/log/qubes`. 
+4. Remove some unneeded files in dom0 home (if you have any, most likely not). Also look for unneeded files in `/var/log` in dom0, and `/var/log/qubes`. 
 
 The above steps applies to old VM disks format. These steps may work on Qubes 4.0, but are not default anymore. By default, Qubes 4.0 now uses LVM. The equivalent steps are:
 

@@ -6,13 +6,14 @@ ref: 234
 title: USB Troubleshooting
 ---
 
-# USB troubleshooting #
+# USB troubleshooting 
 
-## disp-sys-usb does not start ##
+## disp-sys-usb does not start 
+
 If the disp-sys-usb does not start, it could be due to a PCI passthrough problem. 
 For more details on this issue along with possible solutions, look at [PCI passthrough issues](/doc/pci-troubleshooting/#pci-passthrough-issues).
 
-## Can't attach a USB device / USB device not showing in qvm-usb  ##
+## Can't attach a USB device / USB device not showing in qvm-usb  
 
 To successfully attach a USB device, you require a VM dedicated to handling the USB input and output. 
 For guidance setting up a USB qube, see the [USB documentation](/doc/usb-devices/#creating-and-using-a-usb-qube). 
@@ -27,7 +28,7 @@ If this isn't an option, you can manually recover from the situation by followin
 Upon trying to attach a USB device using the `qvm-usb -a vm-name device-vm-name:device` command, you may face the error `Device attach failed: no device info received, connection failed, check backend side for details`. 
 This error mainly arises due to problems specific to the particular device, such as the device being incompatible with qvm-usb or a broken cable.
 
-## usbVM does not boot after creating and assigning USB controllers to it ## 
+## usbVM does not boot after creating and assigning USB controllers to it 
 
 This is probably because one of the controllers does not support reset. 
 In Qubes R2 any such errors were ignored. In Qubes R3.x they are not.
@@ -40,36 +41,43 @@ You can remove this controller from the usbVM, and see if this allows the VM to 
 Alternatively you may be able to disable USB 3.0 in the BIOS.
 If the BIOS does not have the option to disable USB 3.0, try running the following command in dom0 to [force USB 2.0 modes for the USB ports][force_usb2]:
 
-        lspci -nn | grep USB | cut -d '[' -f3 | cut -d ']' -f1 | xargs -I@ setpci -H1 -d @ d0.l=0
-
+```
+lspci -nn | grep USB | cut -d '[' -f3 | cut -d ']' -f1 | xargs -I@ setpci -H1 -d @ d0.l=0
+```
 
 Errors suggesting this issue:
 
- - in `xl dmesg` output:
+- in `xl dmesg` output:
 
-        (XEN) [VT-D] It's disallowed to assign 0000:00:1a.0 with shared RMRR at dbe9a000 for Dom19.
-        (XEN) XEN_DOMCTL_assign_device: assign 0000:00:1a.0 to dom19 failed (-1)
+    ```
+    (XEN) [VT-D] It's disallowed to assign 0000:00:1a.0 with shared RMRR at dbe9a000 for Dom19.
+    (XEN) XEN_DOMCTL_assign_device: assign 0000:00:1a.0 to dom19 failed (-1)
+    ```
 
- - during `qvm-start sys-usb`:
+- during `qvm-start sys-usb`:
 
-        internal error: Unable to reset PCI device [...]  no FLR, PM reset or bus reset available.
-
+    `
+    internal error: Unable to reset PCI device [...]  no FLR, PM reset or bus reset available.
+    `
 
 Another solution would be to set the pci_strictreset option in dom0:
 
- - In Qubes R4.x, when attaching the PCI device to the VM (where `<BDF>` can be obtained from running `qvm-pci`):
+- In Qubes R4.x, when attaching the PCI device to the VM (where `<BDF>` can be obtained from running `qvm-pci`):
 
-        qvm-pci attach --persistent --option no-strict-reset=true usbVM dom0:<BDF>
+    ```
+    qvm-pci attach --persistent --option no-strict-reset=true usbVM dom0:<BDF>
+    ```
 
- - In Qubes R3.x, by modifying the VM's properties:
+- In Qubes R3.x, by modifying the VM's properties:
 
-        qvm-prefs usbVM -s pci_strictreset false
+    ```
+    qvm-prefs usbVM -s pci_strictreset false
+    ```
 
 These options allow the VM to ignore the error and the VM will start.
 Please review the notes in the `qvm-prefs` man page and [here][assign_devices] and be aware of the potential risks. 
 
-
-## Can't use keyboard or mouse after creating sys-usb  ##
+## Can't use keyboard or mouse after creating sys-usb  
 
 You risk locking yourself out of your computer if you have a USB keyboard and use full disk encryption alongside sys-usb. 
 On boot, the keyboard may be inactive, preventing you from entering your LUKS decryption password. 

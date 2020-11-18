@@ -2,15 +2,13 @@
 lang: en
 layout: doc
 permalink: /doc/vm-troubleshooting/
-redirect_from:
-- /doc/remove-vm-manually/
 ref: 223
 title: VM Troubleshooting
 ---
 
-# VM troubleshooting #
+# VM troubleshooting 
 
-## VM Kernel troubleshooting ##
+## VM Kernel troubleshooting 
 
 This troubleshoot applies to the non-default kernel choice described in the [Managing VM docs](https://www.qubes-os.org/doc/managing-vm-kernel/#using-kernel-installed-in-the-vm). 
 
@@ -21,7 +19,7 @@ In any case you can later access the VM's logs (especially the VM console log `/
 
 You can always set the kernel back to some dom0-provided value to fix a VM kernel installation.
 
-## Qubes starts, but no VMs load ##
+## Qubes starts, but no VMs load 
 
 First, try to start a particular VM, check any failure message and direct further steps based on that.
 
@@ -36,25 +34,27 @@ When a template is marked as 'installed by package manager', but cannot be unins
 
 1. Check the state of `installed_by_rpm`
 
-       $ qvm-prefs template-vm-name
+    ```
+    $ qvm-prefs template-vm-name
+    ```
 
 2. If `installed_by_rpm - True]`, mark the template as not installed by package manager
 
-       $ qvm-prefs template-vm-name installed_by_rpm false
+    ```
+    $ qvm-prefs template-vm-name installed_by_rpm false
+    ```
 
 3. Re-check the state of `installed_by_rpm`
 
 - If `installed_by_rpm - False`, remove the template like you would a regular qube:
 
-       $ qvm-remove template-vm-name
+    ```
+    $ qvm-remove template-vm-name
+    ```
 
 - If `installed_by_rpm` remains `True`, reboot your computer to bring qubes.xml in sync with qubesd, and try again to remove the template.
 
-
-[normal method]: /doc/templates/#uninstalling
-
-
-## Fixing package installation errors ##
+## Fixing package installation errors 
 
 By default, templates in 4.0 only have a loopback interface.
 
@@ -63,13 +63,17 @@ For example, Samba expects to be configured using a network interface post insta
 
 One solution is to add a dummy interface to allow the package to install correctly:
 
-    ip link add d0 type dummy
-    ip addr add 192.168.0.1/24 dev d0
-    ip link set d0 up
+```
+ip link add d0 type dummy
+ip addr add 192.168.0.1/24 dev d0
+ip link set d0 up
+```
 
-## "Cannot connect to qrexec agent" error ##
+## "Cannot connect to qrexec agent" error 
 
 If you face this error when starting a VM, look into the VM logs at `/var/log/xen/console/guest-VMNAME.log`. 
 Common reasons that may be revealed are: too low memory, corrupted files or a VM crash on startup. 
 
 If the error occurs as a result of too little initial memory, increase the initial memory from 200MB to 400MB by navigating to VM settings » Advanced » Initial memory.
+
+[normal method]: /doc/templates/#uninstalling

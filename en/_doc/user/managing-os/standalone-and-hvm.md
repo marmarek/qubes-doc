@@ -18,10 +18,10 @@ A [StandaloneVM](/doc/glossary/#standalonevm) is a type of VM in Qubes that is c
 Unlike TemplateVMs, however, StandaloneVMs do not supply their root filesystems to other VMs.
 Examples of situations in which StandaloneVMs can be useful include:
 
- * VMs used for development (dev environments often require a lot of specific packages and tools)
- * VMs used for installing untrusted packages.
-   Normally, you install digitally signed software from Red Hat/Fedora repositories, and it's reasonable that such software has non malicious *installation* scripts (rpm pre/post scripts).
-   However, when you would like to install some packages from less trusted sources, or unsigned, then using a dedicated (untrusted) standalone VM might be a better way.
+- VMs used for development (dev environments often require a lot of specific packages and tools)
+- VMs used for installing untrusted packages.
+  Normally, you install digitally signed software from Red Hat/Fedora repositories, and it's reasonable that such software has non malicious *installation* scripts (rpm pre/post scripts).
+  However, when you would like to install some packages from less trusted sources, or unsigned, then using a dedicated (untrusted) standalone VM might be a better way.
 
 Meanwhile, a [Hardware-assisted Virtual Machine (HVM)](/doc/glossary/#hvm), also known as a "Fully-Virtualized Virtual Machine," utilizes the virtualization extensions of the host CPU.
 These are typically contrasted with [Paravirtualized (PV)](/doc/glossary/#pv) VMs.
@@ -38,13 +38,11 @@ In practice, however, it is most common for StandaloneVMs to be HVMs and for HVM
 In fact, this is so common that [StandaloneHVMs](/doc/glossary/#standalonehvm) are typically just called "HVMs."
 Hence, this page covers both topics.
 
-
 ## Creating a StandaloneVM
 
 You can create a StandaloneVM in the Qube Manager by selecting the "Type" of "Standalone qube copied from a template" or "Empty standalone qube (install your own OS)."
 
 Alternatively, from the dom0 command line:
-
 
 ```
 qvm-create --class StandaloneVM --label <label> --property virt_mode=hvm <vmname>
@@ -53,19 +51,21 @@ qvm-create --class StandaloneVM --label <label> --property virt_mode=hvm <vmname
 (Note: Technically, `virt_mode=hvm` is not necessary for every StandaloneVM.
 However, it makes sense if you want to use a kernel from within the VM.)
 
-
 ## Creating an HVM
 
 ### Using the GUI:  
+
 In Qube Manager, select "Create new qube" from the Qube menu, or select the "Create a new qube" button.  
 In the "create new qube" dialog box set Type to "Empty standalone qube (install your own OS)".  
 If "install system from device" is selected (which is by default), then `virt_mode` will be set to `hvm` automatically.
 Otherwise, open the newly created qube's Settings GUI and in the "Advanced" tab select `HVM` in the virtualization mode drop-down list.
 Also, make sure "Kernel" is set to `(none)` on the same tab.
 
-### Command line:  
+## Command line:  
+
 Qubes are template-based by default so you must set the `--class StandaloneVM` option to create a StandaloneVM:
 (name and label color are for illustration purposes).
+
 ~~~
 qvm-create my-new-vm --class StandaloneVM --property virt_mode=hvm --property kernel='' --label=green
 ~~~
@@ -76,9 +76,7 @@ If you receive an error like this one, then you must first enable VT-x in your B
 libvirt.libvirtError: invalid argument: could not find capabilities for arch=x86_64
 ~~~
 
-
 Make sure that you give the new qube adequate memory to install and run.
-
 
 ## Installing an OS in an HVM
 
@@ -86,14 +84,19 @@ You will have to boot the qube with the installation media "attached" to it. You
 At the command line you can do this in three ways:
 
 1. If you have the physical cdrom media and a disk drive
+
     ~~~
     qvm-start my-new-vm --cdrom=/dev/cdrom
     ~~~
+
 2. If you have an ISO image of the installation media located in dom0
+
     ~~~
     qvm-start my-new-vm --cdrom=dom0:/usr/local/iso/installcd.iso
     ~~~
+
 3. If you have an ISO image of the installation media located in a qube (obviously the qube where the media is located must be running)
+
     ~~~
     qvm-start my-new-vm --cdrom=someVM:/home/user/installcd.iso
     ~~~
@@ -104,7 +107,6 @@ Next, the qube will start booting from the attached installation media, and you 
 Whenever the installer wants to "reboot the system" it actually shuts down the qube, and Qubes won't automatically start it.
 You may have to restart the qube several times in order to complete installation, (as is the case with Windows 7 installations).
 Several invocations of `qvm-start` command (as shown above) might be needed.
-
 
 ## Setting up networking for HVMs
 
@@ -127,7 +129,6 @@ Alternatively, one can use the `qvm-ls -n` command to obtain the same informatio
 The DNS IP addresses are `10.139.1.1` and `10.139.1.2`.
 There is [opt-in support](/doc/networking/#ipv6) for IPv6 forwarding.
 
-
 ## Using TemplateBasedHVMs
 
 Qubes allows HVMs to share a common root filesystem from a select TemplateVM (see [TemplateHVM](/doc/glossary/#templatehvm) and [TemplateBasedHVM](/doc/glossary/#templatebasedhvm)).
@@ -146,7 +147,6 @@ You can then create a new qube using the new template.
 If you use this Template as it is, then any HVMs that use it will effectively be DisposableVMs - all file system changes will be wiped when the HVM is closed down.
 
 Please see [this page](/doc/windows-appvms/) for specific advice on installing and using Windows-based Templates.
-
 
 ## Cloning HVMs
 
@@ -248,7 +248,6 @@ drive             : None
 timezone          : localtime
 ~~~
 
-
 ## Assigning PCI devices to HVMs
 
 HVM domains (including Windows VMs) can be [assigned PCI devices](/doc/assigning-devices/) just like normal AppVMs.
@@ -259,7 +258,6 @@ This can be achieved under a Windows HVM by opening the Device Manager, selectin
 This is illustrated on the screenshot below:
 
 ![r2b1-win7-usb-disable.png](/attachment/wiki/HvmCreate/r2b1-win7-usb-disable.png)
-
 
 ## Converting VirtualBox VMs to Qubes HVMs
 
@@ -333,10 +331,9 @@ List filetypes supported by qemu-img:
 qemu-img -h | tail -n1
 ~~~
 
-
 ## Further reading
 
 Other documents related to HVM:
 
--   [Windows VMs](/doc/windows-vm/)
--   [LinuxHVMTips](/doc/linux-hvm-tips/)
+- [Windows VMs](/doc/windows-vm/)
+- [LinuxHVMTips](/doc/linux-hvm-tips/)

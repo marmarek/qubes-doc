@@ -13,14 +13,15 @@ How to Reinstall a TemplateVM
 
 If you suspect your [TemplateVM] is broken, misconfigured, or compromised, you can reinstall any TemplateVM that was installed from the Qubes repository.
 
-
 Automatic Method
 ----------------
 
 First, copy any files that you wish to keep from the TemplateVM's `/home` and `/rw` folders to a safe storage location.
 Then, in a dom0 terminal, run:
 
-    $ sudo qubes-dom0-update --action=reinstall qubes-template-package-name
+```
+$ sudo qubes-dom0-update --action=reinstall qubes-template-package-name
+```
 
 Replace `qubes-template-package-name` with the name of the *package* of the template you wish to reinstall.
 For example, use `qubes-template-fedora-25` if you wish to reinstall the `fedora-25` template.
@@ -35,10 +36,11 @@ If you receive a message about them being unsupported, review the manual reinsta
 **Reminder:** If you're trying to reinstall a template that is not in an enabled repo, you must enable that repo.
 For example:
 
-    $ sudo qubes-dom0-update --enablerepo=qubes-templates-community --action=reinstall qubes-template-whonix-ws
+```
+$ sudo qubes-dom0-update --enablerepo=qubes-templates-community --action=reinstall qubes-template-whonix-ws
+```
 
 **Note:** VMs that are using the reinstalled template will not be affected until they are restarted.
-
 
 Manual Method
 -------------
@@ -59,21 +61,29 @@ If you want to reinstall more than one TemplateVM, repeat these instructions for
 
 3. Uninstall the target TemplateVM from dom0:
 
-        $ sudo dnf remove <template-package-name>
+    ```
+    $ sudo dnf remove <template-package-name>
+    ```
 
    For example, to uninstall the `whonix-gw` template:
 
-        $ sudo dnf remove qubes-template-whonix-gw
+    ```
+    $ sudo dnf remove qubes-template-whonix-gw
+    ```
 
 4. Reinstall the target TemplateVM in dom0:
 
-        $ sudo qubes-dom0-update --enablerepo=<optional-additional-repo> \
-          <template-package-name>
+    ```shell_session
+    $ sudo qubes-dom0-update --enablerepo=<optional-additional-repo> \
+       <template-package-name>
+    ```
 
    For example, to install the `whonix-gw` template:
 
-        $ sudo qubes-dom0-update --enablerepo=qubes-templates-community \
-          qubes-template-whonix-gw
+    ```shell_session
+    $ sudo qubes-dom0-update --enablerepo=qubes-templates-community \
+       qubes-template-whonix-gw
+    ```
 
 5. If you temporarily changed all VMs based on the target TemplateVM to the clone template in step 3, change them back to the new target TemplateVM now.
    If you instead removed all VMs based on the old target TemplateVM, you can recreate your desired VMs from the newly reinstalled target TemplateVM now.
@@ -81,6 +91,5 @@ If you want to reinstall more than one TemplateVM, repeat these instructions for
 6. Delete the cloned template.
    You can do this in Qubes Manager by right-clicking on the VM and clicking **Remove VM**, or you can use the
    command `qvm-remove <vm-name>` in dom0.
-
 
 [TemplateVM]: /doc/templates/

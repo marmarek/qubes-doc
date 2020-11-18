@@ -80,7 +80,6 @@ Live USB variant:
 3. Introduce more useful preconfigured VMs setup, especially including
    Whonix/Tor VMs.
 
-
 Current limitations
 -------------------
 
@@ -105,7 +104,6 @@ expectations accordingly.)
 7. UEFI boot doesn't work, and if you try booting Qubes Live USB via UEFI, Xen
    will not be started, rendering the whole experiment unusable.
 
-
 Downloading and burning
 -----------------------
 
@@ -114,7 +112,9 @@ Downloading and burning
 2. "Burn" (copy) the ISO onto a USB drive (replace `/dev/sdX` with your USB
    drive device):
 
-        $ sudo dd if=Qubes-R3.0-rc2-x86_64-LIVE.iso of=/dev/sdX
+    ```
+    $ sudo dd if=Qubes-R3.0-rc2-x86_64-LIVE.iso of=/dev/sdX
+    ```
 
    Note that you should specify the whole device, (e.g. `/dev/sdc`, not a single
    partition, e.g. `/dev/sdc1`).

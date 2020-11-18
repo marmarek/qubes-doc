@@ -6,7 +6,7 @@ ref: 170
 title: Device Handling Security
 ---
 
-# Device Handling Security #
+# Device Handling Security 
 
 Any additional ability a VM gains is additional attack surface.
 It's a good idea to always attach the minimum entity required in a VM.
@@ -15,8 +15,7 @@ For example, attaching a full USB-device offers [more attack surface than attach
 attaching a full block device (e.g. `sda`) again offers more attack surface than attaching a single partition (e.g. `sda1`), since the targetVM doesn't have to parse the partition-table.
 (Attaching a full block device offers the advantage that most file-managers will mount and display them correctly, whereas they don't expect single partitions to be added and therefore don't handle them correctly.)
 
-
-## PCI Security ##
+## PCI Security 
 
 Attaching a PCI device to a qube has serious security implications.
 It exposes the device driver running in the qube to an external device (and sourceVM, which contains the device - e.g. `sys-usb`).
@@ -45,8 +44,7 @@ You're potentially weakening the device isolation, especially if your system is 
 This increases the VM's ability to run a [side channel attack] and vulnerability to the same.
 See [Xen PCI Passthrough: PV guests and PCI quirks] and [Software Attacks on Intel VT-d] \(page 7) for more details.
 
-
-## USB Security ##
+## USB Security
 
 The connection of an untrusted USB device to dom0 is a security risk since the device can attack an arbitrary USB driver (which are included in the linux kernel), exploit bugs during partition-table-parsing or simply pretend to be a keyboard.
 There are many ready-to-use implementations of such attacks, e.g. a [USB Rubber Ducky][rubber duck].
@@ -57,7 +55,6 @@ To avoid this risk, use a [USB qube].
 
 Attaching a USB device to a VM (USB passthrough) will **expose your target qube** to most of the [security issues][USB security] associated with the USB-stack.
 If possible, use a method specific for particular device type (for example, block devices described above), instead of this generic one.
-
 
 ## Security Warning On USB Input Devices 
 
@@ -77,7 +74,6 @@ One possibility is to set up the screen locker to require an additional step to 
 One way to achieve this is to use a [YubiKey], or some other hardware token, or even to manually enter a one-time password.
 
 Support for [two factor authentication][qubes u2f proxy] was recently added, though there are [issues][4661].
-
 
 [USB security]:https://blog.invisiblethings.org/2011/05/31/usb-security-challenges.html "ITL blog post on USB security"
 [rubber duck]: https://shop.hak5.org/products/usb-rubber-ducky-deluxe

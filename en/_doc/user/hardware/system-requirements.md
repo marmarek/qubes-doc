@@ -82,4 +82,3 @@ title: System Requirements
 [AMD-Vi (also known as AMD IOMMU)]: https://en.wikipedia.org/wiki/X86_virtualization#I.2FO_MMU_virtualization_.28AMD-Vi_and_Intel_VT-d.29
 [EPT]: https://en.wikipedia.org/wiki/Second_Level_Address_Translation#Extended_Page_Tables
 [RVI]: https://en.wikipedia.org/wiki/Second_Level_Address_Translation#Rapid_Virtualization_Indexing
-

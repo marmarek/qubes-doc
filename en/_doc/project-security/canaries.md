@@ -11,4 +11,3 @@ Qubes Canaries
 ==============
 
 Qubes Canaries are published through the [Qubes Security Pack](/security/pack/).
-

@@ -1,7 +1,6 @@
 ---
 lang: en
 layout: doc
-title: In-place upgrade of Debian TemplateVMs
 permalink: /doc/template/debian/upgrade/
 redirect_from:
 - /doc/template/debian/upgrade-8-to-9/
@@ -10,6 +9,7 @@ redirect_from:
 - /doc/DebianTemplateUpgrade8/
 - /wiki/DebianTemplateUpgrade8/
 ref: 133
+title: In-place upgrade of Debian TemplateVMs
 ---
 
 # Upgrading Debian TemplateVMs

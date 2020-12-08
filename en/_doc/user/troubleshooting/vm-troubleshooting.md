@@ -92,4 +92,3 @@ This normally means you already have the template installed.
 It may be that you have the matching package installed, but you removed or renamed the template.
 Check `rpm -q qubes-template-<name>`.
 If it lists the package, but you don't really have the template present (`qvm-ls` doesn't list it), you need to clean up leftovers of the package with `rpm -e --noscripts qubes-template-<name>`, then install it normally.
-

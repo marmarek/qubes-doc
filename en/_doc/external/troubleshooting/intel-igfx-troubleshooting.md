@@ -24,11 +24,7 @@ Newer versions of the Linux kernel have renamed the `i915.preliminary_hw_support
   Rebuild grub config (`grub2-mkconfig -o /boot/grub2/grub.cfg`)   
 * EFI: `/boot/efi/EFI/qubes/xen.cfg`, `kernel=` line(s)
 
-<<<<<<< HEAD:en/_doc/user/troubleshooting/intel-igfx-troubleshooting.md
-## IOMMU 
-=======
 ## IOMMU-related issues ##
->>>>>>> 17544f463355f789fdebb04238866bccab8353f4:en/_doc/external/troubleshooting/intel-igfx-troubleshooting.md
 
 Dom0 Kernels currently included in Qubes have issues related to VT-d (IOMMU) and some versions of the integrated Intel Graphics Chip.
 Depending on the specific hardware / software combination the issues are quite wide ranging, from apparently harmless log errors, to VM window refresh issues, to complete screen corruption and crashes rendering the machine unusable with Qubes.

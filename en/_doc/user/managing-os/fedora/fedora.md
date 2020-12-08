@@ -56,4 +56,3 @@ There are two ways to upgrade your TemplateVM to a new Fedora release:
 [Updating software in TemplateVMs]: /doc/software-update-domu/#updating-software-in-templatevms
 [Upgrading Fedora TemplateVMs]: /doc/template/fedora/upgrade/
 [install]: /doc/templates/#installing
-

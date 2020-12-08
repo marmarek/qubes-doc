@@ -101,4 +101,3 @@ We aim to announce both types of events one month in advance in order to remind 
 [Whonix]: /doc/whonix/
 [Whonix Project]: https://www.whonix.org/
 [Debian-LTS]: https://wiki.debian.org/LTS
-

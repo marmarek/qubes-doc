@@ -16,4 +16,3 @@ Qubes Security Bulletins (QSBs)
 ===============================
 
 Qubes Security Bulletins (QSBs) are published through the [Qubes Security Pack](/security/pack/).
-

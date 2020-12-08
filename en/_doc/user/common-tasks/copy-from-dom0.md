@@ -80,4 +80,3 @@ Note that you can use the same method to copy files from dom0 to domUs (if, for 
 
 
     cat /path/to/file_in_dom0 | qvm-run --pass-io <dest-vm> 'cat > /path/to/file_name_in_appvm'
-

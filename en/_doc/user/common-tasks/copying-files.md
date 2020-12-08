@@ -1,7 +1,6 @@
 ---
 lang: en
 layout: doc
-title: Copying and moving files between qubes
 permalink: /doc/copying-files/
 redirect_from:
 - /en/doc/copying-files/

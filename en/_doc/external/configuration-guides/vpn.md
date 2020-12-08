@@ -324,5 +324,4 @@ If you want to update your TemplateVMs through the VPN, you can enable the `qube
 
 ## Troubleshooting
 
-See the [VPN Troubleshooting](/doc/vpn-troubleshooting/) guide for tips on how to fix common VPN issues. 
-
+See the [VPN Troubleshooting](/doc/vpn-troubleshooting/) guide for tips on how to fix common VPN issues.

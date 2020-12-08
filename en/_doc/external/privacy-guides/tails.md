@@ -63,4 +63,3 @@ Depending on your threat model, this might induce too much risk.
 ## Troubleshooting
 
 See the [Tails Troubleshooting guide](/doc/tails-troubleshooting/).
-

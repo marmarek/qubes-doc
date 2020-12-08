@@ -411,4 +411,3 @@ Consider giving back to the Qubes community and helping other users by [generati
 [advanced configuration]: /doc/#advanced-configuration
 [hcl-howto]: /doc/hcl/#generating-and-submitting-new-reports
 [Get Started]: /getting-started/
-

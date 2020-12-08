@@ -101,4 +101,3 @@ Depending on your operating system, open a terminal in the TemplateVM and enter 
 
 * Fedora: `sudo dnf install qubes-usb-proxy`
 * Debian/Ubuntu: `sudo apt-get install qubes-usb-proxy`
-

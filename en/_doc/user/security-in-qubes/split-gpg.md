@@ -418,4 +418,3 @@ As always, exercise caution and use your good judgment.)
 [current-limitations]: #current-limitations
 [RPC Policy]: /doc/rpc-policy/
 [Thunderbird:OpenPGP:Smartcards]: https://wiki.mozilla.org/Thunderbird:OpenPGP:Smartcards
-

@@ -22,13 +22,7 @@ Boot your system using the "failsafe" boot menu, that should have been automatic
 
 If the X Window System doesn't start now, this is probably a non-Xen related issue and this guide will probably not help you.
 
-<<<<<<< HEAD:en/_doc/user/troubleshooting/nvidia-troubleshooting.md
-Configure X with nouveau
----------------------
-=======
-
 ### Configure X with nouveau
->>>>>>> 17544f463355f789fdebb04238866bccab8353f4:en/_doc/external/troubleshooting/nvidia-troubleshooting.md
 
 Assuming your X Window System works fine now when you booted from the "failsafe" configuration, do the next steps...
 
@@ -82,18 +76,10 @@ Assuming your X Window System works fine now when you booted from the "failsafe"
 
     If you see a terminal window in the top left corner, it means you most likely succeeded, even if your keyboard or mouse do not work now (don't worry about them).
 
-<<<<<<< HEAD:en/_doc/user/troubleshooting/nvidia-troubleshooting.md
-8. Reboot and let the system boot from the normal boot configuration. You should be able to use X under Xen now.
-
-Disabling Nouveau
----------------------
-
-=======
  8. Reboot and let the system boot from the normal boot configuration. You should be able to use X under Xen now.
 
 ## Boot failure after GRUB menu / System freezes followed by reboot
 
->>>>>>> 17544f463355f789fdebb04238866bccab8353f4:en/_doc/external/troubleshooting/nvidia-troubleshooting.md
 If Qubes fails to properly boot after the GRUB Boot menu and you are stuck on a black screen that displays messages starting with `nouveau` then it means that the nouveau driver failed to launch properly.
 
 One way to get rid of this for now is to disable nouveau.
@@ -112,9 +98,6 @@ Tip: In case you only have an external monitor it is advised to attach it direct
 
 If you're seeing this error then that means another graphics card (most likely an integrated one) acted as failsafe. Disabling nouveau has the consequences of disabling nvidia support altogether.
 
-<<<<<<< HEAD:en/_doc/user/troubleshooting/nvidia-troubleshooting.md
-1. Verify that that GRUB Boot Menu is displaying, you should be presented with two options and a progressbar/timer than goes rather fast.
-=======
 #### EFI
 
  1. Open a terminal in dom0.
@@ -142,7 +125,6 @@ If you're seeing this error then that means another graphics card (most likely a
 #### GRUB
 
  1. Verify that that GRUB Boot Menu is displaying, you should be presented with two options and a progressbar/timer than goes rather fast.
->>>>>>> 17544f463355f789fdebb04238866bccab8353f4:en/_doc/external/troubleshooting/nvidia-troubleshooting.md
 
     ~~~
     Qubes
@@ -201,8 +183,6 @@ You'll have to do the following to make this change persistent, so that it will 
     ~~~
     sudo grub2-mkconfig -o /boot/grub2/grub.cfg
     ~~~
-<<<<<<< HEAD:en/_doc/user/troubleshooting/nvidia-troubleshooting.md
-=======
 
 ## Lack of video output during Nvidia driver installation
 
@@ -244,4 +224,3 @@ Run `dmesg > dmesg.nomodeset.out` to gather an initial dmesg output.
 
 ### Exfiltrate the dmesg outputs
 Allow the system to boot normally, log in as user root, and sneakernet the files off the system for analysis, review, bug logging, et cetera.
->>>>>>> 17544f463355f789fdebb04238866bccab8353f4:en/_doc/external/troubleshooting/nvidia-troubleshooting.md

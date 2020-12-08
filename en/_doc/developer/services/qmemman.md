@@ -81,4 +81,3 @@ Notes
 -----
 
 Conventional means of viewing the memory available to Qubes will give incorrect values for `dom0` since commands such as `free` will only show the memory allocated for `dom0`. Run the `xl info` command in `dom0` and read the `total_memory` field to see the total memory available to Qubes.
-

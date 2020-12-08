@@ -73,4 +73,3 @@ And all these components are "glued together" by the Qubes Core Stack.
 This diagram illustrates the location of all these components in the overall
 system architecture. Unlike the other Qubes architecture diagram above, this one
 takes an AppVM-centric approach.
-

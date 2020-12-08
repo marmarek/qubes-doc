@@ -442,4 +442,3 @@ The following unofficial chat channels are maintained by the community:
 [IRC]: #unofficial-chat-channels
 [Reddit]: https://www.reddit.com/r/Qubes/
 [hcl-howto]: /doc/hcl/#generating-and-submitting-new-reports
-

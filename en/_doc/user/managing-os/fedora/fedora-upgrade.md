@@ -1,7 +1,6 @@
 ---
 lang: en
 layout: doc
-title: In-place upgrade of Fedora TemplateVMs
 permalink: /doc/template/fedora/upgrade/
 redirect_from:
 - /doc/template/fedora/upgrade-26-to-27/
@@ -21,6 +20,7 @@ redirect_from:
 - /wiki/FedoraTemplateUpgrade28/
 - /doc/template/fedora/upgrade-29-to-30/
 ref: 137
+title: In-place upgrade of Fedora TemplateVMs
 ---
 
 # Upgrading Fedora TemplateVMs

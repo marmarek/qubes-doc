@@ -229,4 +229,3 @@ QWT
 An abbreviation of Qubes [Windows Tools](#windows-tools).
 
 [pr-748]: https://github.com/QubesOS/qubes-doc/pull/748
-

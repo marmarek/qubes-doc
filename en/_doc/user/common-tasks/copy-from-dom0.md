@@ -16,14 +16,15 @@ title: Copying from (and to) dom0
 This page covers copying files and clipboard text between [dom0](/doc/glossary/#dom0) and [domUs](/doc/glossary/#domu).
 Since dom0 is special, the processes are different from [copying and pasting text between qubes](/doc/copy-paste/) and [copying and moving files between qubes](/doc/copying-files/).
 
-
 ## Copying **from** dom0
 
 ### Copying files from dom0
 
 To copy a file from dom0 to a VM, simply use `qvm-copy-to-vm`:
 
-    qvm-copy-to-vm <target_vm> <file>
+```
+qvm-copy-to-vm <target_vm> <file>
+```
 
 The file will arrive in the target VM in the `/home/user/QubesIncoming/dom0/` directory.
 
@@ -59,7 +60,7 @@ In order to easily copy/paste the contents of logs from dom0 to the inter-VM cli
 
  4. Click "Copy to Qubes clipboard."
 
-You may now paste the log contents in qube as you normally would (e.g., Ctrl+Shift+V, then Ctrl+V).	
+You may now paste the log contents in qube as you normally would (e.g., Ctrl+Shift+V, then Ctrl+V).
 
 ## Copying **to** dom0
 
@@ -74,9 +75,12 @@ If you are determined to copy some files to dom0 anyway, you can use the followi
 (If you want to copy text, first save it into a text file.)
 Run this command in a dom0 terminal:
 
-    qvm-run --pass-io <src-vm> 'cat /path/to/file_in_src_domain' > /path/to/file_name_in_dom0
+```
+qvm-run --pass-io <src-vm> 'cat /path/to/file_in_src_domain' > /path/to/file_name_in_dom0
+```
 
 Note that you can use the same method to copy files from dom0 to domUs (if, for some reason, you don't want to use `qvm-copy-to-vm`):
 
-
-    cat /path/to/file_in_dom0 | qvm-run --pass-io <dest-vm> 'cat > /path/to/file_name_in_appvm'
+```
+cat /path/to/file_in_dom0 | qvm-run --pass-io <dest-vm> 'cat > /path/to/file_name_in_appvm'
+```

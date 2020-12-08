@@ -50,7 +50,6 @@ There are three basic steps in this process:
 
 If you run into any problems, please consult the [Troubleshooting FAQ] below.
 
-
 ### Preparation
 
 Before we begin, you'll need a program that can verify PGP signatures.
@@ -68,7 +67,6 @@ Open a terminal to enter commands.
 The commands below will use `gpg2`, but if that doesn't work for you, try `gpg` instead.
 If that still doesn't work, please consult the documentation for your specific program (see links above).
 
-
 ### 1. Get the Qubes Master Signing Key and verify its authenticity
 
 Every file published by the Qubes Project (ISO, RPM, TGZ files and Git repositories) is digitally signed by one of the developer keys or Release Signing Keys.
@@ -85,7 +83,6 @@ There are several ways to get the Qubes Master Signing Key.
     ```
 
 - Fetch it with GPG:
-
 
     ```shell_session
     $ gpg2 --fetch-keys https://keys.qubes-os.org/keys/qubes-master-signing-key.asc
@@ -105,8 +102,9 @@ There are several ways to get the Qubes Master Signing Key.
 
 - Get it from a public [keyserver] (specified on first use with `--keyserver <URI>` along with keyserver options to include key signatures), e.g.:
 
-       $ gpg2 --keyserver-options no-self-sigs-only,no-import-clean --keyserver hkp://pool.sks-keyservers.net:11371 --recv-keys 0x427F11FD0FAA4B080123F01CDDFA1A3E36879494
-
+    ```shell_session
+    $ gpg2 --keyserver-options no-self-sigs-only,no-import-clean --keyserver hkp://pool.sks-keyservers.net:11371 --recv-keys 0x427F11FD0FAA4B080123F01CDDFA1A3E36879494
+    ```
 
 The Qubes Master Signing Key is also available in the [Qubes Security Pack] and in the archives of the project's [developer][devel-master-key-msg] and [user][user-master-key-msg] [mailing lists].
 
@@ -149,19 +147,16 @@ Here are some ideas for how to do that:
 - Text, email, call, video chat, snail mail, or meet up with people you know to confirm the fingerprint.
 - Repeat the above from different computers and devices.
 
-
 Once you've obtained the fingerprint from enough independent sources in enough different ways that you feel confident that you know the genuine fingerprint, keep it in a safe place.
 Every time you need to check whether a key claiming to be the Qubes Master Signing Key is authentic, compare that key's fingerprint to your trusted copy and confirm they match.
 
 Now that you've imported the authentic Qubes Master Signing Key, set its trust level to "ultimate" so that it can be used to automatically verify all the keys signed by the Qubes Master Signing Key (in particular, Release Signing Keys).
 
 ```
-    $ gpg2 --edit-key 0x427F11FD0FAA4B080123F01CDDFA1A3E36879494
-    gpg (GnuPG) 1.4.18; Copyright (C) 2014 Free Software Foundation, Inc.
-    This is free software: you are free to change and redistribute it.
-    There is NO WARRANTY, to the extent permitted by law.
-
-    
+$ gpg2 --edit-key 0x427F11FD0FAA4B080123F01CDDFA1A3E36879494
+gpg (GnuPG) 1.4.18; Copyright (C) 2014 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
     
 pub  4096R/36879494  created: 2010-04-01  expires: never       usage: SC
                      trust: unknown       validity: unknown
@@ -200,32 +195,32 @@ gpg> q
 
 Now, when you import any of the legitimate Qubes developer keys and Release Signing Keys used to sign ISOs, RPMs, TGZs, Git tags, and Git commits, they will already be trusted in virtue of being signed by the Qubes Master Signing Key.
 
-
 Before proceeding to the next step, make sure the Qubes Master Signing Key is in your keyring with the correct trust level.
 (Note: We have already verified the authenticity of the key, so this final check is not about security.
 Rather, it's just a sanity check to make sure that we've imported the key into our keyring correctly.)
 
-    $ gpg2 -k "Qubes Master Signing Key"
-    pub   rsa4096 2010-04-01 [SC]
-          427F11FD0FAA4B080123F01CDDFA1A3E36879494
-    uid           [ultimate] Qubes Master Signing Key
+```
+$ gpg2 -k "Qubes Master Signing Key"
+pub   rsa4096 2010-04-01 [SC]
+      427F11FD0FAA4B080123F01CDDFA1A3E36879494
+uid           [ultimate] Qubes Master Signing Key
+```
 
 If you don't see the Qubes Master Signing Key here with a trust level of "ultimate," go back and follow the instructions in this section carefully.
-
-
 
 ### 2. Get the Release Signing Key
 
 The filename of the Release Signing Key for your version is usually `qubes-release-X-signing-key.asc`, where `X` is the major version number of your Qubes release.
 There are several ways to get the Release Signing Key for your Qubes release.
 
+- If you have access to an existing Qubes installation, the release keys are available in dom0 in `/etc/pki/rpm-gpg/RPM-GPG-KEY-qubes-*`.
+  These can be [copied][copy-from-dom0] into other VMs for further use.
+  In addition, every other VM contains the release key corresponding to that installation's release in `/etc/pki/rpm-gpg/RPM-GPG-KEY-qubes-*`.
+  If you wish to use one of these keys, make sure to import it into your keyring, e.g.:
 
- - If you have access to an existing Qubes installation, the release keys are available in dom0 in `/etc/pki/rpm-gpg/RPM-GPG-KEY-qubes-*`.
-   These can be [copied][copy-from-dom0] into other VMs for further use.
-   In addition, every other VM contains the release key corresponding to that installation's release in `/etc/pki/rpm-gpg/RPM-GPG-KEY-qubes-*`.
-   If you wish to use one of these keys, make sure to import it into your keyring, e.g.:
-
-       $ gpg2 --import /etc/pki/rpm-gpg/RPM-GPG-KEY-qubes-*
+    ```
+    $ gpg2 --import /etc/pki/rpm-gpg/RPM-GPG-KEY-qubes-*
+    ```
 
 - Fetch it with GPG:
 
@@ -263,10 +258,12 @@ A `sig-` prefix would indicate a bad signature and `sig%` would mean that gpg en
 It is not necessary to independently verify the authenticity of the Release Signing Key, since you already verified the authenticity of the Qubes Master Signing Key.
 Before proceeding to the next step, make sure the Release Signing Key is in your keyring:
 
-    $ gpg2 -k "Qubes OS Release"
-    pub   rsa4096 2017-03-06 [SC]
-          5817A43B283DE5A9181A522E1848792F9E2795E9
-    uid           [  full  ] Qubes OS Release X Signing Key
+```
+$ gpg2 -k "Qubes OS Release"
+pub   rsa4096 2017-03-06 [SC]
+      5817A43B283DE5A9181A522E1848792F9E2795E9
+uid           [  full  ] Qubes OS Release X Signing Key
+```
 
 If you don't see the correct Release Signing Key here, go back and follow the instructions in this section carefully.
 
@@ -455,7 +452,6 @@ The problem could be one or more of the following:
 
 You don't have `gpg2` installed.
 Please install it using the method appropriate for your environment (e.g., via your package manager).
-
 
 ### Why am I getting "No such file or directory"?
 

@@ -76,7 +76,7 @@ Assuming your X Window System works fine now when you booted from the "failsafe"
 
     If you see a terminal window in the top left corner, it means you most likely succeeded, even if your keyboard or mouse do not work now (don't worry about them).
 
- 8. Reboot and let the system boot from the normal boot configuration. You should be able to use X under Xen now.
+8. Reboot and let the system boot from the normal boot configuration. You should be able to use X under Xen now.
 
 ## Boot failure after GRUB menu / System freezes followed by reboot
 
@@ -100,17 +100,17 @@ If you're seeing this error then that means another graphics card (most likely a
 
 #### EFI
 
- 1. Open a terminal in dom0.
+1. Open a terminal in dom0.
 
- 2. To edit the `xen.cfg` file using the `nano` editor:
+2. To edit the `xen.cfg` file using the `nano` editor:
 
     ~~~ 
     sudo nano /boot/efi/EFI/qubes/xen.cfg
     ~~~
 
- 3. Locate the three `kernel=` lines. Press the left/right arrow keys to position the cursor at the end of the lines, after `rhgb quiet`.
+3. Locate the three `kernel=` lines. Press the left/right arrow keys to position the cursor at the end of the lines, after `rhgb quiet`.
 
- 4. Add the following:
+4. Add the following:
 
     ~~~
     nouveau.modeset=0 rd.driver.blacklist=nouveau video=vesa:off
@@ -118,13 +118,13 @@ If you're seeing this error then that means another graphics card (most likely a
 
     This will disable nouveau until the option is manually edited back to its original state.
 
- 5. Press the `Ctrl+X` keys, then `y` to save changes. 
+5. Press the `Ctrl+X` keys, then `y` to save changes. 
    
- 6. Reboot 
+6. Reboot 
 
 #### GRUB
 
- 1. Verify that that GRUB Boot Menu is displaying, you should be presented with two options and a progressbar/timer than goes rather fast.
+1. Verify that that GRUB Boot Menu is displaying, you should be presented with two options and a progressbar/timer than goes rather fast.
 
     ~~~
     Qubes
@@ -189,6 +189,7 @@ You'll have to do the following to make this change persistent, so that it will 
 Specifically, the notes below are aimed to help when during Nvidia driver installation, the GRUB menu shows up fine, the installation environment starts loading, and then the display(s) go into standby mode. This is, typically, related to some sort of an issue with the kernel's KMS/video card modules.
 
 ### Initial setup.
+
 *Note*: The steps below do *not* produce a fully-functional Qubes OS install. Rather, only a dom0 instance is functional, and there is no networking there. However, they can be used to gather data in order to troubleshoot video card issues and/or possible other basic kernel module issues.
 
 1. Append `nomodeset ip=dhcp inst.nokill inst.vnc` to the kernel command line. Remove `rhgb` and `quiet` to see the kernel messages scroll by, which may help in further diagnostics.
@@ -209,10 +210,12 @@ Specifically, the notes below are aimed to help when during Nvidia driver instal
 *Note* If the kernel parameters do *not* include `quiet` and `rhgb`, the kernel messages can easily obscure the LUKS passphrase prompt. Additionally, each character entered will cause the LUKS passphrase prompt to repeat onto next line. Both of these are cosmetic. The trade-off between kernel messages and the easy-to-spot LUKS passphrase prompt is left as an exercise to the user.
 
 ### Gather initial `dmesg` output
+
 If all is well, the newly-installed Qubes OS instance should allow for user root to log in. 
 Run `dmesg > dmesg.nomodeset.out` to gather an initial dmesg output.
 
 ### Gather the 'video no worky' `dmesg` output
+
 1. Reboot and interrupt the Grub2's process, modifying the kernel parameters to no longer contain `nomodeset`.
    * If the LUKS passphrase was set, blindly enter it.
 2. Wait for the system to finish booting (about 5 minutes, typically).
@@ -223,4 +226,5 @@ Run `dmesg > dmesg.nomodeset.out` to gather an initial dmesg output.
    * Should this step fail, perhaps by the time step #3 was undertaken, the OS hasn't finished coming up yet. Please retry, possibly with a different TTY (say, 3 or 4 - so CTRL-ALT-F3?)
 
 ### Exfiltrate the dmesg outputs
+
 Allow the system to boot normally, log in as user root, and sneakernet the files off the system for analysis, review, bug logging, et cetera.

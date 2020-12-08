@@ -150,20 +150,24 @@ When you install a new template or upgrade a clone of a template, it is recommen
    (Note that this is a single command to ensure that `sys-usb` restarts.
    If it does not, you will not be able to use your USB keyboard or mouse.)
 
-        [user@dom0 ~]$ qvm-shutdown --wait sys-usb; qvm-prefs sys-usb template <new_template>; qvm-start sys-usb
+    ```
+    [user@dom0 ~]$ qvm-shutdown --wait sys-usb; qvm-prefs sys-usb template <new_template>; qvm-start sys-usb
+    ```
 
 3. Base AppVMs on the new template.
 
-        Applications Menu --> System Tools --> Qubes Template Manager
-
+    `
+    Applications Menu --> System Tools --> Qubes Template Manager
+    `
 
 4. Base the [DisposableVM Template] on the new template.
 
-        [user@dom0 ~]$ qvm-create -l red -t <new_template> <new_template_dvm>
-        [user@dom0 ~]$ qvm-prefs <new_template_dvm> template_for_dispvms True
-        [user@dom0 ~]$ qvm-features <new_template_dvm> appmenus-dispvm 1
-        [user@dom0 ~]$ qubes-prefs default-dispvm <new_template_dvm>
-
+    ```
+    [user@dom0 ~]$ qvm-create -l red -t <new_template> <new_template_dvm>
+    [user@dom0 ~]$ qvm-prefs <new_template_dvm> template_for_dispvms True
+    [user@dom0 ~]$ qvm-features <new_template_dvm> appmenus-dispvm 1
+    [user@dom0 ~]$ qubes-prefs default-dispvm <new_template_dvm>
+    ```
 
 ## Advanced
 

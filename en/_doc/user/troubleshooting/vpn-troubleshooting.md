@@ -6,14 +6,16 @@ ref: 240
 title: VPN Troubleshooting
 ---
 
-# VPN Troubleshooting Guide #
+# VPN Troubleshooting Guide 
 
 ## Tips 
 
 * If using qubes-vpn, check the VPN service's log in the VPN VM by running:
+
     ~~~
     sudo journalctl -u qubes-vpn-handler
     ~~~
+
 * Always test your basic VPN connection before adding scripts. 
 
 * Test DNS: Ping a familiar domain name from an appVM. It should print the IP address for the domain.

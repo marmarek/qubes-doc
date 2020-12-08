@@ -19,6 +19,7 @@ To fix this issue on Qubes 3.2:
 1. During VM setup, force a reboot and press `OPTION` key.
 
 2. You will reach the grub shell
+
    ~~~
    configfile /EFI/qubes/grub.cfg
    ~~~
@@ -28,6 +29,7 @@ To fix this issue on Qubes 3.2:
 4. Once booted, press Fn+CTRL+ALT+F4 to open a shell.
 
 5. Log into the system
+
    ~~~
    sudo su -
    systemctl disable qubes-netvm
@@ -39,14 +41,19 @@ To fix this issue on Qubes 3.2:
 Rather, open its setting and remove the Wi-Fi adapter from the Selected devices using the Qubes Manager. 
 You can also remove it from the command line, if you know the BDF of the adapter. 
 You can see the list of devices attached to sys-net and their associated BDFs by running:
+
     ~~~
     qvm-pci -l sys-net
     ~~~
+
 For a device with a BDF of `04:00.0`, you can remove it with:
+
     ~~~
     qvm-pci -d sys-net 04:00.0
     ~~~
+
 9. In a dom0 terminal, run:
+
     ~~~
     sudo su -
     xl pci-assignable-list
@@ -54,6 +61,7 @@ For a device with a BDF of `04:00.0`, you can remove it with:
     qvm-start sys-net
     xl pci-attach sys-net DEVICE_BDF
     ~~~
+
 Be sure to replace "DEVICE_BDF" with the actual BDF of the Wi-Fi adapter. 
 
 After following the above steps, you should be able to launch sys-net with Wi-Fi access. These steps can be automated in a custom `systemd` service.
@@ -92,6 +100,7 @@ After installing Qubes 3.2 on a MacBook Air 13" mid-2011 (MacBookAir 4,2), it ma
 To fix the problem, you need to [remove the Wi-Fi card from your Mac][bluetooth-replacement] or put the Wi-Fi adapter into PCI passthrough, as explained below:
 
 1. Run in a terminal:
+
     ~~~
     # diskutil list
     (find your usb device)
@@ -105,18 +114,22 @@ prompted. Select continue and after mounting the HD filesystem and launching a
 shell, `chroot` as instructed.
 
 3. Find your Wi-Fi card:
+
     ~~~
     # lspci
     ...
     02:00.0 Network controller: Broadcom Corporation BCM43224 802.11a/b/g/n (rev 01)
     ~~~
+
 In the above example, the device has a BDF of `02:00.0`. 
 To assign this device to the sys-net VM:
+
     ~~~
     # qvm-pci -a sys-net 02:00.0
     ~~~
 
 4. Create `/etc/systemd/system/qubes-pre-netvm.service` with:
+
     ~~~
     [Unit]
     Description=Netvm fix for Broadcom
@@ -155,9 +168,11 @@ You can install Qubes 3.2 on a MacBook Pro Retina, 15 inch, Mid-2015 (MacBookPro
    1. Download [rEFInd] refind-bin-0.10.4.zip. Note that this file is not signed, so decide if you trust it or not. The SHA1 sum is 3d69c23b7d338419e5559a93cd6ae3ec66323b1e 
    2. Unzip it and run the installer, which installs rEFInd on the internal SSD
    3. If installation fails due to SIP, reboot in recovery mode, open a terminal and run the command:
+
    ~~~
    csrutil disable
    ~~~
+
    4. Reboot. You will see some icons.
    5. Choose Boot EFI\BOOT\xen.efi from ANACONDA. After a while, the graphical installer is up (keyboard and touchpad working)
 
@@ -182,26 +197,32 @@ Now, despite XEN configuration is still broken, you have a rescue system booting
 TBV1: chainloading XEN does not work, unless you specify the right disk prefix, eg: (hd1,gpt4)
 TBV2: grub.cfg set the wrong disk in "set root" command
 TBV3: in case you reach grub shell, you can 
+
 ~~~
 ls
 ~~~
+
 and also reload config file and change it manually before booting
+
 ~~~
 configfile /EFI/qubes/grub.cfg
 ~~~
-Then press "e", edit `grub.cfg` and boot by pressing Fn+F10.
 
+Then press "e", edit `grub.cfg` and boot by pressing Fn+F10.
 
 ## Can't boot using XEN bootloader
 
 You may be unable to boot Qubes 3.2 using `EFI/qubes/xen.efi` on a MacBook Mid-2015 because the XEN bootloader configuration is broken. This issue is accompanied by the GRUB2 configuration being broken as well. After [fixing the GRUB configuration](/doc/macbook-troubleshooting/#cant-boot-using-grub2), follow the following steps to fix the bootloader. This troubleshoot assumes you are performing a [UEFI boot, using rEFInd](/doc/macbook-troubleshooting/#cant-boot-the-installer).
 
-*  Fix grub2 configuration, which uses wrong command for EFI boot
-*  Analyzing `/mnt/sysimage/var/log/anaconda/program.log`, you may find the faulty commands issued by the Anaconda installer.
+* Fix grub2 configuration, which uses wrong command for EFI boot
+* Analyzing `/mnt/sysimage/var/log/anaconda/program.log`, you may find the faulty commands issued by the Anaconda installer.
+
     ~~~
     chrooot /mnt/sysimage
     ~~~
+
 * Edit the `/boot/efi/EFI/qubes/xen.cfg` file to add the following content:
+
     ~~~
     [global]
     default=4.4.14-11.pvops.qubes.x868_64
@@ -212,7 +233,7 @@ You may be unable to boot Qubes 3.2 using `EFI/qubes/xen.efi` on a MacBook Mid-2
     ramdisk=initramfs-4.4.14-11.pvops.qubes.x86_64.img
     ~~~
 
-*  The main mistake is that `efibootmgr` needs the right commands. Just in case, reapply all the commands, adapting them to your own disk layout (`-d /dev/sdxxx -p partition_number`)
+* The main mistake is that `efibootmgr` needs the right commands. Just in case, reapply all the commands, adapting them to your own disk layout (`-d /dev/sdxxx -p partition_number`)
 
 ~~~
 grep Running /mnt/sysimage/var/log/anaconda/program.log | tail -n 20
@@ -237,7 +258,6 @@ To fix this issue, kill audio support with this quick workaround:
 1. Open a dom0 terminal as root 
 2. Edit `/etc/pulse/client.conf` and add `autospawn = no`
 3. As normal user, kill pulseaudio with the command `pulseaudio --kill`
-
 
 [bluetooth-replacement]: https://www.ifixit.com/Guide/MacBook+Air+13-Inch+Mid+2011+AirPort-Bluetooth+Card+Replacement/6360
 [rEFInd]: http://www.rodsbooks.com/refind/getting.html

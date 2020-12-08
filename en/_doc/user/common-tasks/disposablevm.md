@@ -61,9 +61,9 @@ You can change this behaviour for individual VMs: in the Application Menu, open 
 Here you can edit the "Default DisposableVM" setting to specify which DisposableVM Template will be used to launch DisposableVMs from that VM.
 This can also be changed from the command line with:
 
-
-    qvm-prefs <VM> default_dispvm <DISPOSABLEVM_TEMPLATE>
-
+```
+qvm-prefs <VM> default_dispvm <DISPOSABLEVM_TEMPLATE>
+```
 
 For example, `anon-whonix` has been set to use `whonix-ws-dvm` as its `default_dispvm`, instead of the system default.
 You can even set an AppVM that has also been configured as a DisposableVM Template to use itself, so DisposableVMs launched from within the AppVM/DisposableVM Template would inherit the same settings.
@@ -88,11 +88,11 @@ Some DisposableVM Templates will automatically create a menu item to launch a DV
 qvm-features deb-dvm appmenus-dispvm 1
 ```
 
-
 To launch a DisposableVM Template from the command line, in dom0 please type the following:
-    
-    qvm-run --dispvm=<DISPOSABLEVM_TEMPLATE> --service qubes.StartApp+NameOfApp
 
+``` 
+qvm-run --dispvm=<DISPOSABLEVM_TEMPLATE> --service qubes.StartApp+NameOfApp
+```
 
 ```    
 qvm-run --dispvm=NameOfDVM --service qubes.StartApp+NameOfApp

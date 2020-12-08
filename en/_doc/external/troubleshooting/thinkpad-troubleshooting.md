@@ -53,7 +53,7 @@ T520. Some users with these laptops have experienced random reboots, which were
 solved by adding `i915.enable_rc6=0` as a kernel parameter to
 `GRUB_CMDLINE_LINUX` in the file `/etc/default/grub` in dom0.
 
-## Can't boot the installer from a USB on Thinkpad X201 & X200 ##
+## Can't boot the installer from a USB on Thinkpad X201 & X200 
 
 For being able to boot the installer from USB, you have to disable VT-d in the BIOS.
 Enter the BIOS by hitting F1, go to Config - CPU and then disable VT-d there.

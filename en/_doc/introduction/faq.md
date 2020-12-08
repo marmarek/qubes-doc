@@ -615,7 +615,6 @@ See [VM Troubleshooting](/doc/vm-troubleshooting/#no-match-found-when-trying-to-
 
 See [Update Troubleshooting](/doc/update-troubleshooting/#failed-to-synchronize-cache-for-repo-errors-when-updating-fedora-templates).
 
-
 ### I see a "Failed to start Load Kernel Modules" message on boot
 
 The full message looks like:

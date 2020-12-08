@@ -47,7 +47,6 @@ qvm-copy [--without-progress] file [file]+
 qvm-move [--without-progress] file [file]+
 ```
 
-
 Security
 --------
 

@@ -74,10 +74,9 @@ ip link set d0 up
 If you face this error when starting a VM, look into the VM logs at `/var/log/xen/console/guest-VMNAME.log`. 
 Common reasons that may be revealed are: too low memory, corrupted files or a VM crash on startup. 
 
-
 If the error occurs as a result of too little initial memory, increase the initial memory from 200MB to 400MB by navigating to VM settings » Advanced » Initial memory. 
 
-## "No match found" when trying to install a TemplateVM ##
+## "No match found" when trying to install a TemplateVM 
 
 For example:
 

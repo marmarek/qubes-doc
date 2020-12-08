@@ -6,7 +6,7 @@ ref: 237
 title: Tails Troubleshooting
 ---
 
-# Tails Troubleshooting Guide #
+# Tails Troubleshooting Guide 
 
 ## Black screen during startup
 
@@ -22,6 +22,7 @@ This problem seems to arise because Tails sizes to the height of the screen, but
 Either remove the title bar altogether, or move the window upwards using ALT+drag.
 
 ## Persistent tools do not work
+
 The persistence tools, such as persistent volume, may not work because Tails has not been launched from USB. 
 The HVM disk(s) can be configured and mounted from within Tails to provide persistent storage.
 If you want to use an existing USB persistent volume: 
@@ -31,4 +32,5 @@ If you want to use an existing USB persistent volume:
 4. Unlock the persistent volume in Tails-greeter and use it as normal.
 
 ## Tails qube doesn't shut down cleanly
+
 If the Tails qube will not shut down cleanly, you can kill it from the GUI Manager or enter ```qvm-kill Tails``` in the console.

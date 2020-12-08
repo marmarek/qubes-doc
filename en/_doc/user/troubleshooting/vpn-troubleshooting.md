@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: VPN Troubleshooting
 permalink: /doc/vpn-troubleshooting/
+ref: 240
+title: VPN Troubleshooting
 ---
 
 # VPN Troubleshooting Guide #
@@ -28,4 +30,4 @@ After suspend/resume, OpenVPN may not automatically reconnect. In order to get i
 
 After setting up OpenVPN and restarting the VM, you may be repeatedly getting the popup "Ready to start link", but the VPN isn't connected. 
 
-To figure out the root of the problem, check the VPN logs in `/var/logs/syslog`. The log may reveal issues like missing OpenVPN libraries, which you can then install. 
+To figure out the root of the problem, check the VPN logs in `/var/logs/syslog`. The log may reveal issues like missing OpenVPN libraries, which you can then install.

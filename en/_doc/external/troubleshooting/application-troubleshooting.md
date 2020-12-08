@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Application Troubleshooting
 permalink: /doc/application-troubleshooting/
+ref: 236
+title: Application Troubleshooting
 ---
 
 # Troubleshooting default applications on Qubes #
@@ -42,4 +44,3 @@ You can open LibreOffice as a larger window using this workaround:
 3. Search for "ooSetupFactoryWindowAttributes".
 4. Scroll right to see the values set for each component as a string value. For example:  `61,61,1807,982;5;38,56,1807,982;`. These window position values are specified as: `x-pos,y-pos,width,height ; window-state ; maximized-x-pos,maximized-y-pos,maximized-width,maximized-height`. Edit the third and fourth values to your desired width and height (for example, to 1800 and 900).
 5. Do this once for every template and the program will always open at this size.
-

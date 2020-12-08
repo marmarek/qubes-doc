@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Update Troubleshooting
 permalink: /doc/update-troubleshooting/
+ref: 239
+title: Update Troubleshooting
 ---
 
 # Fixing issues that arise during updating #
@@ -47,5 +49,3 @@ In dom0, open a terminal and run `sudo qubes-dom0-update`.
 Depending on your operating system, open a terminal in the TemplateVMs and run:
 * Fedora: `sudo dnf upgrade`
 * Debian: `apt-get update && apt-get dist-upgrade`
-
-

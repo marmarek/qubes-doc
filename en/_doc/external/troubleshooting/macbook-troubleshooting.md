@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Apple MacBook Troubleshooting
 permalink: /doc/macbook-troubleshooting/
+ref: 238
+title: Apple MacBook Troubleshooting
 ---
 
 # Apple MacBook Troubleshooting

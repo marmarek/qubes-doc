@@ -1,7 +1,9 @@
 ---
+lang: en
 layout: doc
-title: Tails Troubleshooting
 permalink: /doc/tails-troubleshooting/
+ref: 237
+title: Tails Troubleshooting
 ---
 
 # Tails Troubleshooting Guide #
@@ -30,4 +32,3 @@ If you want to use an existing USB persistent volume:
 
 ## Tails qube doesn't shut down cleanly
 If the Tails qube will not shut down cleanly, you can kill it from the GUI Manager or enter ```qvm-kill Tails``` in the console.
-

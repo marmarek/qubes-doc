@@ -132,4 +132,3 @@ This can be achieved under a Windows HVM by opening the Device Manager, selectin
 This is illustrated on the screenshot below:
 
 ![r2b1-win7-usb-disable.png](/attachment/wiki/HvmCreate/r2b1-win7-usb-disable.png)
-

@@ -61,9 +61,9 @@ You can change this behaviour for individual VMs: in the Application Menu, open 
 Here you can edit the "Default DisposableVM" setting to specify which DisposableVM Template will be used to launch DisposableVMs from that VM.
 This can also be changed from the command line with:
 
-```
-qvm-prefs <vmname> default_dispvm <dvmtemplatename>
-```
+
+    qvm-prefs <VM> default_dispvm <DISPOSABLEVM_TEMPLATE>
+
 
 For example, `anon-whonix` has been set to use `whonix-ws-dvm` as its `default_dispvm`, instead of the system default.
 You can even set an AppVM that has also been configured as a DisposableVM Template to use itself, so DisposableVMs launched from within the AppVM/DisposableVM Template would inherit the same settings.
@@ -88,7 +88,11 @@ Some DisposableVM Templates will automatically create a menu item to launch a DV
 qvm-features deb-dvm appmenus-dispvm 1
 ```
 
-To launch a DVM from the command line, in dom0 please type the following:
+
+To launch a DisposableVM Template from the command line, in dom0 please type the following:
+    
+    qvm-run --dispvm=<DISPOSABLEVM_TEMPLATE> --service qubes.StartApp+NameOfApp
+
 
 ```    
 qvm-run --dispvm=NameOfDVM --service qubes.StartApp+NameOfApp
@@ -126,7 +130,9 @@ Note that the `qvm-open-in-dvm` process will not exit until you close the applic
 ## Starting an arbitrary program in a DisposableVM from an AppVM 
 
 Sometimes it can be useful to start an arbitrary program in a DisposableVM.
-This can be done from an AppVM by running
+The DisposableVM will stay running so long as the process which started the DisposableVM has not exited. 
+Some applications, such as GNOME Terminal, do not wait for the application to close before the process exits (details [here](https://github.com/QubesOS/qubes-issues/issues/2581#issuecomment-272664009)).
+Starting an arbitrary program can be done from an AppVM by running
 
 ~~~
 [user@vault ~]$ qvm-run '@dispvm' xterm
@@ -137,13 +143,15 @@ The created DisposableVM can be accessed via other tools (such as `qvm-copy-to-v
 ## Starting an arbitrary application in a DisposableVM via command line from dom0 
 
 The Application Launcher has shortcuts for opening a terminal and a web browser in dedicated DisposableVMs, since these are very common tasks.
-However, it is possible to start an arbitrary application in a DisposableVM directly from dom0 by running:
+The DisposableVM will stay running so long as the process which started the DisposableVM has not exited. 
+Some applications, such as GNOME Terminal, do not wait for the application to close before the process exits (details [here](https://github.com/QubesOS/qubes-issues/issues/2581#issuecomment-272664009)).
+It is possible to start an arbitrary application in a DisposableVM directly from dom0 by running:
 
 ~~~
-$ qvm-run --dispvm=dvm-template --service qubes.StartApp+xterm
+$ qvm-run --dispvm=<DISPOSABLEVM_TEMPLATE> --service qubes.StartApp+xterm
 ~~~
 
-The label color will be inherited from the `dvm-template`.
+The label color will be inherited from `<DISPOSABLEVM_TEMPLATE>`.
 (The DisposableVM Application Launcher shortcut used for starting programs runs a very similar command to the one above.)
 
 ### Opening a link in a DisposableVM based on a non-default DisposableVM Template from a qube 
@@ -154,25 +162,25 @@ Obviously, you can't use the default DisposableVM Template, since it has no netw
 You can do that with this command from the `email` qube (as long as your RPC policies allow it):
 
 ~~~
-$ qvm-open-in-vm @dispvm:online-dvm-template https://www.qubes-os.org
+$ qvm-open-in-vm @dispvm:<ONLINE_DISPOSABLEVM_TEMPLATE> https://www.qubes-os.org
 ~~~
 
-This will create a new DisposableVM based on `online-dvm-template`, open the default web browser in that DisposableVM, and navigate to `https://www.qubes-os.org`.
+This will create a new DisposableVM based on `<ONLINE_DISPOSABLEVM_TEMPLATE>`, open the default web browser in that DisposableVM, and navigate to `https://www.qubes-os.org`.
 
 #### Example of RPC policies to allow this behavior
 
 In dom0, add the following line at the beginning of the file `/etc/qubes-rpc/policy/qubes.OpenURL`
 
 ~~~
-@anyvm @dispvm:online-dvm-template allow
+@anyvm @dispvm:<ONLINE_DISPOSABLEVM_TEMPLATE> allow
 ~~~
 
 This line means: 
 - FROM: Any VM
-- TO: A DisposableVM based on the `online-dvm-template` TemplateVM
+- TO: A DisposableVM based on `<ONLINE_DISPOSABLEVM_TEMPLATE>`
 - WHAT: Allow sending an "Open URL" request
 
-In other words, any VM will be allowed to create a new DisposableVM based on `online-dvm-template` and open a URL inside of that DisposableVM.
+In other words, any VM will be allowed to create a new DisposableVM based on `<ONLINE_DISPOSABLEVM_TEMPLATE>` and open a URL inside of that DisposableVM.
 
 More information about RPC policies for DisposableVMs can be found [here][qrexec].
 

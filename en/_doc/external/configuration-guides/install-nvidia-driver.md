@@ -134,6 +134,7 @@ mv /root/xorg.conf.new /etc/X11/xorg.conf
 
 Reboot to verify all this works.
 
+<<<<<<< HEAD:en/_doc/user/troubleshooting/install-nvidia-driver.md
 # Troubleshooting lack of video output during installation
 
 Specifically, the notes below are aimed to help when the GRUB menu shows up fine, the installation environment starts loading, and then the display(s) go into standby mode. This is, typically, related to some sort of an issue with the kernel's KMS/video card modules.
@@ -178,3 +179,9 @@ Run `dmesg > dmesg.nomodeset.out` to gather an initial dmesg output.
 ## Exfiltrate the dmesg outputs
 
 Allow the system to boot normally, log in as user root, and sneakernet the files off the system for analysis, review, bug logging, et cetera.
+=======
+## Troubleshooting lack of video output during installation
+
+The GRUB menu may show up fine, the installation environment starts loading, and then the display(s) go into standby mode. This is, typically, related to some sort of an issue with the kernel's KMS/video card modules. See the [Nvidia Troubleshooting](/doc/nvidia-troubleshooting/#lack-of-video-output-during-nvidia-driver-installation) guide for troubleshooting steps. 
+
+>>>>>>> 17544f463355f789fdebb04238866bccab8353f4:en/_doc/external/configuration-guides/install-nvidia-driver.md

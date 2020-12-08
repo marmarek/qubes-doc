@@ -360,6 +360,10 @@ Frequently updating is one of the best ways to remain secure against new threats
 It is extremely important to make regular backups so that you don't lose your data unexpectedly.
 The [Qubes backup system] allows you to do this securely and easily.
 
+### Submit your HCL report
+
+Consider giving back to the Qubes community and helping other users by [generating and submitting a Hardware Compatibility List (HCL) report][hcl-howto].
+
 ### Get Started
 
 [Get Started] with Qubes, and read more about [Common Tasks] and [Managing Operating Systems within Qubes].
@@ -370,7 +374,9 @@ The [Qubes backup system] allows you to do this securely and easily.
   We urge you to read it! It may very well contain the answers to your questions. 
   (Since the documentation is a community effort, we'd also greatly appreciate your help in [improving] it!)
 
-* If you don't find your answer in the documentation, please see [Help, Support, Mailing Lists, and Forum] for places to ask.
+ * If issues arise during installation, see the [Installation Troubleshooting](/doc/installation-troubleshooting) guide. 
+
+ * If you don't find your answer in the documentation, please see [Help, Support, Mailing Lists, and Forum] for places to ask.
 
 * Please do **not** email individual members of the Qubes team with questions about installation or other problems. 
    Instead, please see [Help, Support, Mailing Lists, and Forum] for appropriate places to ask questions.
@@ -403,5 +409,6 @@ The [Qubes backup system] allows you to do this securely and easily.
 [Tor]: https://www.torproject.org/
 [TemplateVMs]: /doc/templates/
 [advanced configuration]: /doc/#advanced-configuration
+[hcl-howto]: /doc/hcl/#generating-and-submitting-new-reports
 [Get Started]: /getting-started/
 

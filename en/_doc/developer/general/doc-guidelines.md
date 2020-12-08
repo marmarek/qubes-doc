@@ -20,6 +20,8 @@ If you notice a problem or some way it can be improved, please [edit the documen
 
 ## Security
 
+*Also see: [Should I trust this website?](/faq/#should-i-trust-this-website)*
+
 All pull requests against [qubes-doc] must pass review prior to be merged, except in the case of [external documentation] (see [#4693]).
 This process is designed to ensure that contributed text is accurate and non-malicious.
 This process is a best effort that should provide a reasonable degree of assurance, but it is not foolproof.
@@ -64,42 +66,42 @@ Ok, let's start.
 Every documentation page has an "Edit this page" button.
 It may be on the side (in the desktop layout):
 
-![edit-button-desktop](/attachment/wiki/doc-edit/03-button2.png)
+[![edit-button-desktop](/attachment/wiki/doc-edit/03-button2.png)](/attachment/wiki/doc-edit/03-button2.png)
 
 Or at the bottom (in the mobile layout):
 
-![edit-button-mobile](/attachment/wiki/doc-edit/02-button1.png)
+[![edit-button-mobile](/attachment/wiki/doc-edit/02-button1.png)](/attachment/wiki/doc-edit/02-button1.png)
 
 When you click on it, you'll be prompted for your GitHub username and password (if you aren't already logged in).
 You can also create an account from here.
 
-![github-sign-in](/attachment/wiki/doc-edit/04-sign-in.png)
+[![github-sign-in](/attachment/wiki/doc-edit/04-sign-in.png)](/attachment/wiki/doc-edit/04-sign-in.png)
 
 If this is your first contribution to the documentation, you need to "fork" the repository (make your own copy). It's easy --- just click the big green button on the next page.
 This step is only needed the first time you make a contribution.
 
-![fork](/attachment/wiki/doc-edit/05-fork.png)
+[![fork](/attachment/wiki/doc-edit/05-fork.png)](/attachment/wiki/doc-edit/05-fork.png)
 
 Now you can make your modifications.
 You can also preview the changes to see how they'll be formatted by clicking the "Preview changes" tab.
 If you're making formatting changes, please [render the site locally] to verify that everything looks correct before submitting any changes.
 
-![edit](/attachment/wiki/doc-edit/06-edit.png)
+[![edit](/attachment/wiki/doc-edit/06-edit.png)](/attachment/wiki/doc-edit/06-edit.png)
 
 Once you're finished, describe your changes at the bottom and click "Propose file change".
 
-![commit](/attachment/wiki/doc-edit/07-commit-msg.png)
+[![commit](/attachment/wiki/doc-edit/07-commit-msg.png)](/attachment/wiki/doc-edit/07-commit-msg.png)
 
 After that, you'll see exactly what modifications you've made.
 At this stage, those changes are still in your own copy of the documentation ("fork").
 If everything looks good, send those changes to us by pressing the "Create pull request" button.
 
-![pull-request](/attachment/wiki/doc-edit/08-review-changes.png)
+[![pull-request](/attachment/wiki/doc-edit/08-review-changes.png)](/attachment/wiki/doc-edit/08-review-changes.png)
 
 You will be able to adjust the pull request message and title there.
 In most cases, the defaults are ok, so you can just confirm by pressing the "Create pull request" button again.
 
-![pull-request-confirm](/attachment/wiki/doc-edit/09-create-pull-request.png)
+[![pull-request-confirm](/attachment/wiki/doc-edit/09-create-pull-request.png)](/attachment/wiki/doc-edit/09-create-pull-request.png)
 
 That's all!
 We will review your changes.
@@ -108,19 +110,71 @@ Otherwise, we may have some questions for you, which we'll post in a comment on 
 (GitHub will automatically notify you if we do.)
 If, for some reason, we can't accept your pull request, we'll post a comment explaining why we can't.
 
-![done](/attachment/wiki/doc-edit/10-done.png)
+[![done](/attachment/wiki/doc-edit/10-done.png)](/attachment/wiki/doc-edit/10-done.png)
 
 ## How to add images
 
-To add an image to a page, use the following syntax in the main document:
+To add an image to a page, use the following syntax in the main document.
+This will make the image a hyperlink to the image file, allowing the reader to click on the image in order to view the image by itself.
 
 ```
-![Image Title](/attachment/wiki/page-title/image-filename.png)
+[![Image Title](/attachment/wiki/page-title/image-filename.png)](/attachment/wiki/page-title/image-filename.png)
 ```
 
 Then, submit your image(s) in a separate pull request to the [qubes-attachment] repository using the same path and filename.
+This is the only permitted way to include images.
+Do not link to images on other websites.
 
-## Version-specific Documentation
+
+## Organizational guidelines
+
+### Do not duplicate documentation
+
+Duplicating documentation is almost always a bad idea.
+There are many reasons for this.
+The main one is that almost all documentation has to be updated as some point.
+When similar documentation appears in more than one place, it is very easy for it to get updated in one place but not the others (perhaps because the person updating it doesn't realize it's in more than once place).
+When this happens, the documentation as a whole is now inconsistent, and the outdated documentation becomes a trap, especially for novice users.
+Such traps are often more harmful than if the documentation never existed in the first place.
+The solution is to **link** to existing documentation rather than duplicating it.
+There are some exceptions to this policy (e.g., information that is certain not to change for a very long time), but they are rare.
+
+### Core vs. external documentation
+
+*See [#4693](https://github.com/QubesOS/qubes-issues/issues/4693) for more information.*
+
+Core documentation resides in the [Qubes OS Project's official repositories](https://github.com/QubesOS/), mainly in [qubes-doc].
+External documentation can be anywhere else (such as forums, community websites, and blogs), but there is an especially large collection in the [Qubes Community](https://github.com/Qubes-Community) project.
+External documentation should not be submitted to [qubes-doc].
+If you've written a piece of documentation that is not appropriate for [qubes-doc], we encourage you to submit it to the [Qubes Community](https://github.com/Qubes-Community) project instead.
+At the time of this writing, there is also a section of external documentation in [qubes-doc] that is in the process of being moved to the [Qubes Community](https://github.com/Qubes-Community) project (see [#4693](https://github.com/QubesOS/qubes-issues/issues/4693)).
+
+The main difference between **core** (or **official**) and **external** (or **community** or **unofficial**) documentation is whether it documents software that is officially written and maintained by the Qubes OS Project.
+The purpose of this distinction is to keep the core docs maintainable and high-quality by limiting them to the software output by the Qubes OS Project.
+In other words, we take responsibility for documenting all of the software we put out into the world, but it doesn't make sense for us to take on the responsibility of documenting or maintaining documentation for anything else.
+For example, Qubes OS may use a popular Linux distribution for an official [TemplateVM](/doc/templates/).
+However, it would not make sense for a comparatively small project like ours, with modest funding and a lean workforce, to attempt to document software belonging to a large, richly-funded project with an army of paid and volunteer contributors, especially when they probably already have documentation of their own.
+This is particularly true when it comes to Linux in general.
+Although many users who are new to Qubes are also new to Linux, it makes absolutely no sense for our comparatively tiny project to try to document Linux in general when there is already a plethora of documentation out there.
+
+Many contributors do not realize that the there is a significant amount of work involved in *maintaining* documentation after it has been written.
+They may wish to write documentation and submit it to the core docs, but they see only their own writing process and fail to consider that it will have to be kept up-to-date and consistent with the rest of the docs for years afterward.
+Submissions to the core docs also have to go through a review process to ensure accuracy before being merged (see [security](#security)), which takes up valuable time from the team.
+We aim to maintain high quality standards for the core docs (style and mechanics, formatting), which also takes up a lot of time.
+If the documentation involves anything external to the Qubes OS Project (such as a website, platform, program, protocol, framework, practice, or even a reference to a version number), the documentation is likely to become outdated when that external thing changes.
+It's also important to periodically review and update this documentation, especially when a new Qubes release comes out.
+Periodically, there may be technical or policy changes that affect all the core documentation.
+The more documentation there is relative to maintainers, the harder all of this will be.
+Since there are many more people who are willing to write documentation than to maintain it, these individually small incremental additions amount to a significant maintenance burden for the project.
+
+On the positive side, we consider the existence of community documentation to be a sign of a healthy ecosystem, and this is quite common in the software world.
+The community is better positioned to write and maintain documentation that applies, combines, and simplifies the official documentation, e.g., tutorials that explain how to install and use various programs in Qubes, how to create custom VM setups, and introductory tutorials that teach basic Linux concepts and commands in the context of Qubes.
+In addition, just because the Qubes OS Project has officially written and maintains some flexible framework, such as `qrexec`, it does not make sense to include every tutorial that says "here's how to do something cool with `qrexec`" in the core docs.
+Such tutorials generally also belong in the community documentation.
+
+### Version-specific documentation
+
+*See [#5308](https://github.com/QubesOS/qubes-issues/issues/5308) for potential changes to this policy.*
 
 We maintain only one set of documentation for Qubes OS.
 We do not maintain a different set of documentation for each version of Qubes.
@@ -227,14 +281,33 @@ For further discussion about version-specific documentation in Qubes, see [here]
 
 * Familiarize yourself with the terms defined in the [glossary]. Use these
    terms consistently and accurately throughout your writing.
+ * Syntactically distinguish variables in commands.
+   For example, this is ambiguous:
+
+       $ qvm-run --dispvm=dvm-template --service qubes.StartApp+xterm
+
+   It should instead be:
+
+       $ qvm-run --dispvm=<DVM_TEMPLATE> --service qubes.StartApp+xterm
+
+   Note that we syntactically distinguish variables in three ways:
+   1. Surrounding them in angled brackets (`< >`)
+   2. Using underscores (`_`) between words
+   3. Using all capital letters
 
 ## Markdown Conventions
 
 All the documentation is written in Markdown for maximum accessibility.
 When making contributions, please try to observe the following style conventions:
 
-* Use spaces instead of tabs.
-* In order to enable offline browsing, use relative paths (e.g., `/doc/doc-guidelines/` instead of `https://www.qubes-os.org/doc/doc-guidelines/`, except when the source text will be reproduced outside of the Qubes website repo.
+ * Use spaces instead of tabs.
+ * Do not write HTML inside Markdown documents (except in rare, unavoidable cases, such as alerts).
+   In particular, never include HTML or CSS for styling, formatting, or white space control.
+   That belongs in the (S)CSS files instead.
+ * Link only to images in [qubes-attachment] (see [instructions above](#how-to-add-images)).
+   Do not link to images on other websites.
+ * In order to enable offline browsing, use relative paths (e.g., `/doc/doc-guidelines/` instead of `https://www.qubes-os.org/doc/doc-guidelines/`, except when the source text will be reproduced outside of the Qubes website repo.
+
    Examples of exceptions:
   * [QSBs] (intended to be read as plain text)
   * [News] posts (plain text is reproduced on the [mailing lists][support])

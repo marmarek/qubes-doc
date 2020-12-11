@@ -33,7 +33,7 @@ In order to edit rules for a given qube, select it in the Qubes Manager and pres
 ![r4.1-manager-firewall.png](/attachment/wiki/QubesFirewall/r4.1-manager-firewall.png)
 
 *R4.0 note:* ICMP and DNS are no longer accessible in the GUI, but can be changed via `qvm-firewall` described below.
-Connections to Updates Proxy are no longer made over network so can not be allowed or blocked with firewall rules (see [R4.0 Updates proxy](https://www.qubes-os.org/doc/software-update-vm/) for more detail.
+Connections to Updates Proxy are no longer made over network so can not be allowed or blocked with firewall rules (see [R4.0 Updates proxy](/doc/software-update-vm/) for more detail.
 
 Note that if you specify a rule by DNS name it will be resolved to IP(s) *at the moment of applying the rules*, and not on the fly for each new connection.
 This means it will not work for servers using load balancing.
@@ -88,7 +88,7 @@ The sys-firewall-2 proxy ensures that:
 2. Changes to the Qubes firewall by the Qubes maintainers cannot lead to unwanted information leakage in combination with user rules deployed in the network service qube.
 3. A compromise of the network service qube does not compromise the Qubes firewall.
 
-For the VPN service please also look at the [VPN documentation](/doc/vpn).
+For the VPN service please also look at the [VPN documentation](https://github.com/Qubes-Community/Contents/blob/master/docs/configuration/vpn.md).
 
 Enabling networking between two qubes
 -------------------------------------

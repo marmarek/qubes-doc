@@ -721,7 +721,7 @@ If you need to support not-fully-updated systems, check for the existence of `/u
 
 Yes, Qubes natively supports automation via [Salt (SaltStack)][Salt].
 There is also the unofficial [ansible-qubes toolkit][ansible].
-(**Warning:** Since this is an external project that has not been reviewed or endorsed by the Qubes team, [allowing it to manage dom0 may be a security risk](/doc/security-guidelines/#dom0-precautions).)
+(**Warning:** Since this is an external project that has not been reviewed or endorsed by the Qubes team, [allowing it to manage dom0 may be a security risk](https://github.com/Qubes-Community/Contents/blob/master/docs/security/security-guidelines.md#dom0-precautions).)
 
 [4.x System Requirements]: /doc/system-requirements/#qubes-release-4x 
 [Admin API]: /news/2017/06/27/qubes-admin-api/
@@ -746,7 +746,7 @@ There is also the unofficial [ansible-qubes toolkit][ansible].
 [dm-crypt]: https://en.wikipedia.org/wiki/Dm-crypt
 [doc-signing keys]: https://github.com/QubesOS/qubes-secpack/tree/master/keys/doc-signing
 [documentation guidelines]: /doc/doc-guidelines
-[documentation on multibooting]: /doc/multiboot/ 
+[documentation on multibooting]: https://github.com/Qubes-Community/Contents/blob/master/docs/configuration/multiboot.md 
 [Enable RPMFusion]: /doc/software-update-domu/#rpmfusion-for-fedora-templatevms
 [file]: /doc/copying-files
 [firewalls]: /doc/firewall
@@ -766,7 +766,7 @@ There is also the unofficial [ansible-qubes toolkit][ansible].
 [network]: /doc/networking/
 [Note on dom0 and EOL]: /doc/supported-versions/#note-on-dom0-and-eol
 [paper-compart]: https://invisiblethingslab.com/resources/2014/Software_compartmentalization_vs_physical_separation.pdf
-[Qubes Certified Hardware]: https://www.qubes-os.org/news/2016/07/21/new-hw-certification-for-q4/
+[Qubes Certified Hardware]: /news/2016/07/21/new-hw-certification-for-q4/
 [Qubes-Whonix]: /doc/whonix/
 [render]: https://github.com/QubesOS/qubesos.github.io/blob/master/README.md#instructions
 [Salt]: /doc/salt/

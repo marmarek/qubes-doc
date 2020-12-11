@@ -42,7 +42,7 @@ When it is essential to avoid leaving any trace, consider using [Tails](https://
 
 ## DisposableVMs and Networking 
 
-Similarly to how AppVMs are based on their underlying [TemplateVM](https://www.qubes-os.org/doc/glossary/#templatevm), DisposableVMs are based on their underlying [DisposableVM Template](https://www.qubes-os.org/doc/glossary/#disposablevm-template).
+Similarly to how AppVMs are based on their underlying [TemplateVM](/doc/glossary/#templatevm), DisposableVMs are based on their underlying [DisposableVM Template](/doc/glossary/#disposablevm-template).
 R4.0 introduces the concept of multiple DisposableVM Templates, whereas R3.2 was limited to only one.
 
 On a fresh installation of Qubes, the default DisposableVM Template is called `fedora-XX-dvm` (where `XX` is the Fedora version of the default TemplateVM).
@@ -100,7 +100,7 @@ qvm-run --dispvm=NameOfDVM --service qubes.StartApp+NameOfApp
 
 ## Opening a file in a DisposableVM via GUI 
 
-In an AppVM's file manager, right click on the file you wish to open in a DisposableVM, then choose "Open in DisposableVM". 
+In an AppVM's file manager, right click on the file you wish to open in a DisposableVM, then choose "View in DisposableVM" or "Edit in DisposableVM". 
 Wait a few seconds and the default application for this file type should appear displaying the file content. 
 This app is running in its own dedicated VM -- a DisposableVM created for the purpose of viewing or editing this very file. 
 Once you close the viewing application the whole DisposableVM will be destroyed. 

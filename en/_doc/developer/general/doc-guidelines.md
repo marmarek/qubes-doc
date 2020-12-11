@@ -141,13 +141,11 @@ There are some exceptions to this policy (e.g., information that is certain not 
 
 ### Core vs. external documentation
 
-*See [#4693](https://github.com/QubesOS/qubes-issues/issues/4693) for more information.*
-
 Core documentation resides in the [Qubes OS Project's official repositories](https://github.com/QubesOS/), mainly in [qubes-doc].
 External documentation can be anywhere else (such as forums, community websites, and blogs), but there is an especially large collection in the [Qubes Community](https://github.com/Qubes-Community) project.
 External documentation should not be submitted to [qubes-doc].
 If you've written a piece of documentation that is not appropriate for [qubes-doc], we encourage you to submit it to the [Qubes Community](https://github.com/Qubes-Community) project instead.
-At the time of this writing, there is also a section of external documentation in [qubes-doc] that is in the process of being moved to the [Qubes Community](https://github.com/Qubes-Community) project (see [#4693](https://github.com/QubesOS/qubes-issues/issues/4693)).
+However, *linking* to external documentation from [qubes-doc] is perfectly fine.
 
 The main difference between **core** (or **official**) and **external** (or **community** or **unofficial**) documentation is whether it documents software that is officially written and maintained by the Qubes OS Project.
 The purpose of this distinction is to keep the core docs maintainable and high-quality by limiting them to the software output by the Qubes OS Project.
@@ -171,6 +169,8 @@ On the positive side, we consider the existence of community documentation to be
 The community is better positioned to write and maintain documentation that applies, combines, and simplifies the official documentation, e.g., tutorials that explain how to install and use various programs in Qubes, how to create custom VM setups, and introductory tutorials that teach basic Linux concepts and commands in the context of Qubes.
 In addition, just because the Qubes OS Project has officially written and maintains some flexible framework, such as `qrexec`, it does not make sense to include every tutorial that says "here's how to do something cool with `qrexec`" in the core docs.
 Such tutorials generally also belong in the community documentation.
+
+See [#4693](https://github.com/QubesOS/qubes-issues/issues/4693) for more background information.
 
 ### Version-specific documentation
 
@@ -306,15 +306,13 @@ When making contributions, please try to observe the following style conventions
    That belongs in the (S)CSS files instead.
  * Link only to images in [qubes-attachment] (see [instructions above](#how-to-add-images)).
    Do not link to images on other websites.
- * In order to enable offline browsing, use relative paths (e.g., `/doc/doc-guidelines/` instead of `https://www.qubes-os.org/doc/doc-guidelines/`, except when the source text will be reproduced outside of the Qubes website repo.
-
+ * In order to enable offline browsing and automatic onion redirection, always use relative (rather than absolute) links, e.g., `/doc/doc-guidelines/` instead of `https://www.qubes-os.org/doc/doc-guidelines/`.
    Examples of exceptions:
-  * [QSBs] (intended to be read as plain text)
-  * [News] posts (plain text is reproduced on the [mailing lists][support])
-  * URLs that appear inside code blocks (e.g., in comments and document templates)
-  * Files like `README.md` and `CONTRIBUTING.md`
-* Insert a newline at, and only at, the end of each sentence, except when the text will be reproduced outside of the Qubes website repo (see previous item for examples).
-  * Rationale: This practice results in one sentence per line, which is most appropriate for source that consists primarily of natural language text.
+   * The signed plain text portions of [QSBs] and [Canaries]
+   * URLs that appear inside code blocks (e.g., in comments and document templates)
+   * Files like `README.md` and `CONTRIBUTING.md`
+ * Insert a newline at, and only at, the end of each sentence, except when the text will be reproduced outside of the Qubes website repo (see previous item for examples).
+   * Rationale: This practice results in one sentence per line, which is most appropriate for source that consists primarily of natural language text.
      It results in the most useful diffs and facilitates translation into other languages while mostly preserving source readability.
 * If appropriate, make numerals in numbered lists match between Markdown source and HTML output.
   * Rationale: In the event that a user is required to read the Markdown source directly, this will make it easier to follow, e.g., numbered steps in a set of instructions.
@@ -375,6 +373,7 @@ Please try to write good commit messages, according to the
 [version-example]: /doc/template/fedora/upgrade-25-to-26/
 [version-thread]: https://groups.google.com/d/topic/qubes-users/H9BZX4K9Ptk/discussion
 [QSBs]: /security/bulletins/
+[Canaries]: /security/canaries/
 [News]: /news/
 [md]: https://daringfireball.net/projects/markdown/
 [git-commit]: /doc/coding-style/#commit-message-guidelines

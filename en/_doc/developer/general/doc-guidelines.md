@@ -125,7 +125,6 @@ Then, submit your image(s) in a separate pull request to the [qubes-attachment] 
 This is the only permitted way to include images.
 Do not link to images on other websites.
 
-
 ## Organizational guidelines
 
 ### Do not duplicate documentation

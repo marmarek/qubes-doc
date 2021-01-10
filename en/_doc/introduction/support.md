@@ -144,6 +144,13 @@ Likewise, if you see that something in the documentation should be changed,
 don't simply point it out in a discussion venue. Instead, [submit the
 change][contributing to the documentation].
 
+### Moderation ###
+
+The moderation team aims to enforce our [Code of Conduct][coc].
+Beyond this, users should not expect any specific action from the moderation team.
+Specifically, users should not request that posts or messages be deleted or edited by a moderator.
+Users are reminded that, in most venues, anything posted will be sent out as an email to other others, and these emails cannot be deleted from others' inboxes.
+
 ### Specific mailing list rules and notes ###
 
 #### Use the correct list ####
@@ -388,6 +395,20 @@ growth of community participation and improves everyone's experience. In
 addition, we fully expect that many community members -- especially the most
 active ones -- will choose to participate in both venues. (Again, for those who
 still prefer interacting via email, Discourse supports that too!)
+
+## Social media ##
+
+The Qubes OS Project has a presence on several social media platforms, including:
+
+* [Twitter](https://twitter.com/QubesOS)
+* [Reddit](https://www.reddit.com/r/Qubes/)
+* [Facebook](https://www.facebook.com/QubesOS/)
+* [LinkedIn](https://www.linkedin.com/company/qubes-os/)
+
+Generally speaking, these are not intended to be primary support venues.
+(Those would be [qubes-users](#qubes-users) and the [forum](#forum).)
+Rather, these are primarily intended to be a way to more widely disseminate items published on the [news](/news/) page.
+If you use one of these platforms, you may find it convenient to follow the Qubes OS Project there as a way of receiving Qubes news.
 
 ## Unofficial chat channels ##
 

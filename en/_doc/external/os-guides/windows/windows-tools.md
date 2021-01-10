@@ -2,7 +2,7 @@
 lang: en
 layout: doc
 title: Qubes Windows Tools
-redirect_to: https://github.com/Qubes-Community/Contents/blob/master/docs/os/windows-tools.md
+redirect_to: https://github.com/Qubes-Community/Contents/blob/master/docs/os/windows/windows-tools.md
 redirect_from:
 - /doc/windows-tools/
 - /doc/windows-appvms/

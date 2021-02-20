@@ -47,7 +47,7 @@ For example, you could use the colors to show that qubes belong to the same doma
 You might use three or four qubes for work activities and give them all the same distinct color label, for instance.
 It's entirely up to you.
 
-![snapshot_40.png](/attachment/wiki/GettingStarted/r4.1-snapshot_40.png)
+![snapshot_40.png](/attachment/wiki/GettingStarted/r4.0-snapshot_40.png)
 
 In addition to qubes and templates, there's one special domain called [dom0], where many system tools and the desktop manager run.
 This is where you log in to the system.
@@ -78,7 +78,7 @@ Alternatively, you can use a suite of GUI tools, most of which are available thr
 - The **Disk Space Widget** will notify you if you're ever running out of disk space.
 - The **Updates Widget** will inform you when template updates are available.
 
-![q40_widgets.png](/attachment/wiki/GettingStarted/r4.1-q40_widgets.png)
+![q40_widgets.png](/attachment/wiki/GettingStarted/r4.0-q40_widgets.png)
 
 For an overview of the entire system, you can use the **Qube Manager** (go to the Application Launcher → System Tools → Qube Manager), which displays the states of all the qubes in your system.
 
@@ -91,9 +91,9 @@ You can start apps directly from the Application Launcher or the Application Fin
 Each qube has its own menu directory under the scheme `Domain: <name>`. 
 After navigating into one of these directories, simply click on the application you'd like to start:
 
-![menu1.png](/attachment/wiki/GettingStarted/r4.1-menu1.png)
+![menu1.png](/attachment/wiki/GettingStarted/r4.0-menu1.png)
 
-![menu2.png](/attachment/wiki/GettingStarted/r4.1-menu2.png)
+![menu2.png](/attachment/wiki/GettingStarted/r4.0-menu2.png)
 
 By default, each qube's menu contains only a few shortcuts. 
 If you'd like to add more, enter the qube's **Qube Settings** and add them on the Applications tab. 
@@ -159,21 +159,6 @@ Here are some other tasks you're likely to want to perform.
 
 If you encounter any problems, please visit the [Help, Support, and Mailing Lists] page.
 
-Compatible Hardware
--------------------
-
-Make sure your hardware is [compatible](/hcl/), as Qubes OS cannot run on every type of computer. Also, check out [Qubes-certified Laptops](/doc/certified-laptops/).
-
-Downloads
----------
-
-[Download](/downloads/) an ISO, learn how to verify its authenticity and integrity, and follow our guides to install Qubes OS. Looking for the source code? You'll find it on [GitHub](https://github.com/QubesOS).
-
-Documentation
--------------
-
-Peruse our extensive library of [documentation](/doc/) for users and developers of Qubes OS. You can even help us [improve](/doc/doc-guidelines/) it!
-
 [getting-started-32]: /getting-started-32/
 [downloading]: /downloads/
 [installing]: /doc/installation-guide/
@@ -195,3 +180,29 @@ Peruse our extensive library of [documentation](/doc/) for users and developers 
 [DisposableVMs]: /doc/disposablevm/
 [Device Handling]: /doc/device-handling/
 [Help, Support, and Mailing Lists]: /support/
+
+<hr class="more-top more-bottom">
+<div class="row">
+  <div class="col-lg-4 col-md-4 more-bottom">
+    <h2>Compatible Hardware</h2>
+    <p>Make sure your hardware is compatible, as Qubes OS cannot run on every type of computer. Also, check out <a href="/doc/certified-laptops/">Qubes-certified Laptops</a>.</p>
+    <a href="/hcl/" class="btn btn-primary">
+      <i class="fa fa-laptop"></i> Hardware Compatibility List
+    </a>
+  </div>
+  <div class="col-lg-4 col-md-4 more-bottom">
+    <h2>Downloads</h2>
+    <p>Download an ISO, learn how to verify its authenticity and integrity, and follow our guides to install Qubes OS. Looking for the source code? You'll find it on <a href="https://github.com/QubesOS">GitHub</a>.</p>
+    <a href="/downloads/" class="btn btn-primary">
+      <i class="fa fa-download"></i> Downloads
+    </a>
+  </div>
+  <div class="col-lg-4 col-md-4">
+    <h2>Documentation</h2>
+    <p>Peruse our extensive library of documentation for users and developers of Qubes OS. You can even help us <a href="/doc/doc-guidelines/">improve</a> it!</p>
+    <a href="/doc/" class="btn btn-primary">
+      <i class="fa fa-book"></i> Documentation
+    </a>
+  </div>
+</div>
+

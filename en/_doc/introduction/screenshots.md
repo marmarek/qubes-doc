@@ -91,7 +91,7 @@ Qubes' unique DisposableVMs (DispVMs) allow the user to open any file in a dispo
 
 * * * * *
 
-[![r4.0-convert-to-trusted-pdf-1.png](/attachment/wiki/QubesScreenshots/r4.0-convert-to-trusted-pdf-1.png)](/attachment/wiki/QubesScreenshots/r4.0-convert-to-trusted-pdf-1.png) [![r4.0-converting-pdf.png](/attachment/wiki/QubesScreenshots/r4.0-converting-pdf.png)](/attachment/wiki/QubesScreenshots/r4.0-converting-pdf.png)
+[![r4.0-convert-to-trusted-pdf-1.png](/attachment/wiki/QubesScreenshots/r4.0-convert-to-trusted-pdf-1.png)](/attachment/wiki/QubesScreenshots/r4.0-convert-to-trusted-pdf-1.png) [![r4.1-converting-pdf.png](/attachment/wiki/QubesScreenshots/r4.1-converting-pdf.png)](/attachment/wiki/QubesScreenshots/r4.1-converting-pdf.png)
 
 Qubes provides an advanced infrastructure for programming inter-VM services, such as a PDF converter for untrusted files (which is described in [this article](https://blog.invisiblethings.org/2013/02/21/converting-untrusted-pdfs-into-trusted.html)).
 
@@ -108,5 +108,3 @@ And some more screenshots:
 [![r4.0-xfce-red-and-green-terminals.png](/attachment/wiki/QubesScreenshots/r4.0-xfce-red-and-green-terminals.png)](/attachment/wiki/QubesScreenshots/r4.0-xfce-red-and-green-terminals.png)
 
 [![r2b3-windows-seamless-2.png](/attachment/wiki/QubesScreenshots/r2b3-windows-seamless-2.png)](/attachment/wiki/QubesScreenshots/r2b3-windows-seamless-2.png)
-
-

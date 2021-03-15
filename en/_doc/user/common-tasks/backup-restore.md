@@ -132,7 +132,6 @@ If the contents from the dom0 backup were instead to overwrite the existing file
 However, if you do wish to move all files from the dom0 backup out of the subdirectory into your current dom0 home directory (overwriting any existing files in the process), you may do so by following the instructions [here](https://stackoverflow.com/questions/20192070/how-to-move-all-files-including-hidden-files-into-parent-directory-via).
 Just remember that this can cause unexpected and desired configuration changes in dom0, depending on exactly which files you're adding and replacing.
 
-
 Emergency backup recovery without Qubes
 ---------------------------------------
 

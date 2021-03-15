@@ -101,6 +101,7 @@ Additionally, terminology is used inconsistently.
 - Giving a warning for using outdated versions.
 
 **Knowledge prerequisite**: 
+
 - Experience in virtual boxes and machines.
 - Basic Knowledge about Fedora linux architecture.
 - [Markdown][markdown]
@@ -172,7 +173,6 @@ Fixing this last point may require very close cooperation with developers, as th
 - [Markdown][markdown]
 
 **Mentor**: [Marek Marczykowski-Górecki][team]
-
 
 [gsod]: https://developers.google.com/season-of-docs/
 [team]: /team/

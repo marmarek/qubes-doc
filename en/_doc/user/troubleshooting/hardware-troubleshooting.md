@@ -53,7 +53,6 @@ The most straightforward way is to reboot the system.
 
 More information in [this discussion][layout_discussion] and [this GitHub issue][layout_issue].
 
-
 [dom0-kernel-upgrade]: /doc/software-update-dom0/#kernel-upgrade
 [hardware-reqs]: /doc/installation-guide/#hardware-requirements
 [layout_discussion]: https://groups.google.com/d/topic/qubes-devel/d8ZQ_62asKI/discussion

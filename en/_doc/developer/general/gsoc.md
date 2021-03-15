@@ -7,8 +7,7 @@ ref: 33
 title: Google Summer of Code
 ---
 
-2021 Google Summer of Code
-================
+# 2021 Google Summer of Code
 
 ## Information for Students
 
@@ -253,7 +252,6 @@ immune to altering past entries. See
 
 **Mentor**: [Frédéric Pierret](/team/)
 
-
 ### Whonix IPv6 and nftables support
 
 **Project**: Whonix IPv6 and nftables support
@@ -406,7 +404,6 @@ Some related discussion:
  
 **Mentor**: [Marek Marczykowski-Górecki](/team/)
 
-
 <!--
 
 REMOVED as of February 2021: work is being done on this
@@ -492,7 +489,6 @@ A [Fuzzer](https://en.wikipedia.org/wiki/Fuzzing) would help to automate part of
 
 **Mentor**: Inquire on [qubes-devel][ml-devel].
 
-
 ### Secure Boot support
 
 **Project**: Add support for protecting boot binaries with Secure Boot technology, using user-generated keys.
@@ -510,7 +506,6 @@ A [Fuzzer](https://en.wikipedia.org/wiki/Fuzzing) would help to automate part of
 
 **Mentor**: [Marek Marczykowski-Górecki](/team/)
 
-
 ### Reduce logging of Disposable VMs
 
 **Project**: Reduce logging of Disposable VMs
@@ -524,7 +519,6 @@ A [Fuzzer](https://en.wikipedia.org/wiki/Fuzzing) would help to automate part of
  - Basic knowledge of Linux system services management (systemd, syslog etc)
 
 **Mentor**: [Marek Marczykowski-Górecki](/team/)
-
 
 ## Past Projects
 
@@ -548,42 +542,42 @@ would override all the user changes there). More details:
 
 **Expected results**:
 
- - Design new mechanism for distributing templates (possibly including some
-   package format - either reuse something already existing, or design
-   new one). The mechanism needs to handle:
-   - integrity protection (digital signatures), not parsing any data in dom0
-     prior to signature verification
-   - efficient handling of large sparse files
-   - ability to deploy the template into various storage mechanisms (sparse
-     files, LVM thin volumes etc).
-   - template metadata, templates repository - enable the user to browse
-     available templates (probably should be done in dedicated VM, or DisposableVM)
-   - manual template removal by users (without it, see problems such 
-     as [#5509](https://github.com/QubesOS/qubes-issues/issues/5509)
- - Implement the above mechanism:
-   - tool to download named template - should perform download operation in
-     some VM (as dom0 have no network access), then transfer the data to dom0,
-     verify its integrity and then create Template VM and feed it's root
-     filesystem image with downloaded data.
-   - tool to browse templates repository - both CLI and GUI (preferably integrated 
-     with existing Template Manager tool)
-   - integrate both tools - user should be able to choose some template to be
-     installed from repository browsing tool - see
-     [#1705](https://github.com/QubesOS/qubes-issues/issues/1705) for some idea
-     (this one lacks integrity verification, but a similar service could
-     be developed with that added)
- - If new "package" format is developed, add support for it into
-   [linux-template-builder](https://github.com/QubesOS/qubes-linux-template-builder).
- - Document the mechanism.
- - Write unit tests and integration tests.
+- Design new mechanism for distributing templates (possibly including some
+  package format - either reuse something already existing, or design
+  new one). The mechanism needs to handle:
+  - integrity protection (digital signatures), not parsing any data in dom0
+    prior to signature verification
+  - efficient handling of large sparse files
+  - ability to deploy the template into various storage mechanisms (sparse
+    files, LVM thin volumes etc).
+  - template metadata, templates repository - enable the user to browse
+    available templates (probably should be done in dedicated VM, or DisposableVM)
+  - manual template removal by users (without it, see problems such 
+    as [#5509](https://github.com/QubesOS/qubes-issues/issues/5509)
+- Implement the above mechanism:
+  - tool to download named template - should perform download operation in
+    some VM (as dom0 have no network access), then transfer the data to dom0,
+    verify its integrity and then create Template VM and feed it's root
+    filesystem image with downloaded data.
+  - tool to browse templates repository - both CLI and GUI (preferably integrated 
+    with existing Template Manager tool)
+  - integrate both tools - user should be able to choose some template to be
+    installed from repository browsing tool - see
+    [#1705](https://github.com/QubesOS/qubes-issues/issues/1705) for some idea
+    (this one lacks integrity verification, but a similar service could
+    be developed with that added)
+- If new "package" format is developed, add support for it into
+  [linux-template-builder](https://github.com/QubesOS/qubes-linux-template-builder).
+- Document the mechanism.
+- Write unit tests and integration tests.
 
 **Knowledge prerequisite**:
 
- - Large files (disk images) handling (sparse files, archive formats)
- - Bash and Python scripting
- - Data integrity handling - digital signatures (gpg2, gpgv2)
- - PyGTK
- - RPM package format, (yum) repository basics
+- Large files (disk images) handling (sparse files, archive formats)
+- Bash and Python scripting
+- Data integrity handling - digital signatures (gpg2, gpgv2)
+- PyGTK
+- RPM package format, (yum) repository basics
 
 **Mentor**: [Marek Marczykowski-Górecki](/team/)
 

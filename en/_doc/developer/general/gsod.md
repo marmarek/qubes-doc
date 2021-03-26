@@ -96,6 +96,7 @@ Additionally, terminology is used inconsistently.
 **Brief explanation**: The Qubes OS is missing an installation guide for virtual machines. Users are installing an outdated and unsupported version of Qubes OS (3.2) instead of the supported version. There is unofficial [existing installation guide] for Qubes OS on a virtual box but it is misleading and lacks documentation. Usually, users face some errors and bugs while installing Qubes OS on a virtual machine.[virtual box issue]
 
 **Expected results**: 
+
 - Provide a new option of installation guide for users working on virtual machines.
 - Review existing problems and provide solutions to them.
 - Giving a warning for using outdated versions.
@@ -140,7 +141,6 @@ This could be helped by writing consolidated guide with with a clear list of sym
 **Project**: Improve Getting Started page
 
 **Brief explanation**: The [Getting Started page](https://www.qubes-os.org/getting-started/) is the place a new user would go to understand better how to use Qubes. It is currently has old screenshots not using the default desktop environment and could have much better flow. In addition, this improved page content may end up being served more directly to the user via the [offline documentation](#offline-documentation) or the [firstboot guide](#create-guide-on-firstboot-for-new-users). 
-
 **Expected results**: 
 
 - Review the existing page and website, similar pages for other OSes
@@ -192,3 +192,4 @@ Fixing this last point may require very close cooperation with developers, as th
 [2020-qubes-report]: https://gist.github.com/PROTechThor/bfe9b8b28295d88c438b6f6c754ae733
 [existing installation guide]: https://www.youtube.com/watch?v=mATI8Lht0Js
 [virtual box issue]: https://www.virtualbox.org/ticket/16771
+

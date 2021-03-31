@@ -11,7 +11,7 @@ ref: 188
 title: Device Handling
 ---
 
-# Device Handling 
+# Device Handling
 
 This is an overview of device handling in Qubes OS.
 For specific devices ([block], [USB] and [PCI] devices), please visit their respective pages.
@@ -100,11 +100,11 @@ DEVICE_CLASS however is required.
 **SYNOPSIS**:
 `qvm-device DEVICE_CLASS {action} [action-specific arguments] [options]`
 
-## Actions 
+## Actions
 
 Actions are applicable to every DEVICE_CLASS and expose some additional options.
 
-### Listing Devices 
+### Listing Devices
 
 The `list` action lists known devices in the system.
 `list` accepts VM-names to narrow down listed devices.
@@ -120,7 +120,7 @@ Requires `--all`.
 **SYNOPSIS**
 `qvm-device DEVICE_CLASS {list|ls|l} [--all [--exclude VM [VM [...]]] | VM [VM [...]]]`
 
-### Attaching Devices 
+### Attaching Devices
 
 The `attach` action assigns an exposed device to a VM.
 This makes the device available in the VM it's attached to.
@@ -136,7 +136,7 @@ If the device is unavailable (physically missing or sourceVM not started), booti
 **SYNOPSIS**
 `qvm-device DEVICE_CLASS {attach|at|a} targetVM sourceVM:deviceID [options]`
 
-### Detaching Devices 
+### Detaching Devices
 
 The `detach` action removes an assigned device from a targetVM.
 It won't be available afterwards anymore.

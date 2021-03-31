@@ -16,7 +16,7 @@ redirect_from:
 - /doc/InstallationGuideR3.0rc2/
 - /doc/live-usb/
 ref: 153
-title: Installation Guide
+title: Installation guide
 ---
 
 # Installation guide

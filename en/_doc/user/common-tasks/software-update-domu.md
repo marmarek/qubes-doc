@@ -25,7 +25,7 @@ To permanently install new software in a TemplateVM:
 2. Start either a terminal (e.g. `gnome-terminal`) or a dedicated software management application, such as `gpk-application`.
 3. Install software as normally instructed inside that operating system (e.g. `sudo dnf install <PACKAGE_NAME>` on Fedora, `sudo apt install <PACKAGE_NAME>` on Debian).
 4. Shut down the TemplateVM.
-5. Restart all [TemplateBasedVMs] based on the TemplateVM.
+5. Restart all [TemplateBasedVMs] based on the TemplateVM so the changes can take effect.
 6. (Optional) In the relevant [TemplateBasedVMs]' **Qube Settings**, go to the **Applications** tab, select the new application(s) from the list, and press OK.
     These new shortcuts will appear in the Applications Menu.
     (If you encounter problems, see [here][shortcuts] for troubleshooting.)
@@ -94,7 +94,7 @@ The following sections cover advanced topics pertaining to installing and updati
 
 ### RPMFusion for Fedora TemplateVMs
 
-If you would like to enable the [RPM Fusion] repositories, open a Terminal of the TemplateVM and type the following commands, depending on which RPM Fusion repositories you wish to enable (see [RPM Fusion] for details): 
+If you would like to enable the [RPM Fusion] repositories, open a Terminal of the TemplateVM and type the following commands, depending on which RPM Fusion repositories you wish to enable (see [RPM Fusion] for details):
 
 ~~~
 sudo dnf config-manager --set-enabled rpmfusion-free
@@ -239,8 +239,8 @@ Last metadata expiration check: 0:57:08 ago on Thu Nov 14 09:26:47 2019.
 Notifying dom0 about installed applications
 
 Installed:
-  snapd-2.42.1-1.fc30.x86_64                                              qubes-snapd-helper-1.0.1-1.fc30.noarch                           
-[...]                          
+  snapd-2.42.1-1.fc30.x86_64                                              qubes-snapd-helper-1.0.1-1.fc30.noarch
+[...]
 Complete!
 ```
 

@@ -15,9 +15,9 @@ title: Secondary Storage
 Suppose you have a fast but small primary SSD and a large but slow secondary HDD.
 You want to store a subset of your AppVMs on the HDD.
 
-## Instructions 
+## Instructions
 
-Qubes 4.0 is more flexible than earlier versions about placing different VMs on different disks. 
+Qubes 4.0 is more flexible than earlier versions about placing different VMs on different disks.
 For example, you can keep templates on one disk and AppVMs on another, without messy symlinks.
 
 These steps assume you have already created a separate [volume group](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/logical_volume_manager_administration/vg_admin#VG_create) and [thin pool](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/logical_volume_manager_administration/thinly_provisioned_volume_creation) (not thin volume) for your HDD.
@@ -87,13 +87,13 @@ Reboot the computer so the new luks device appears at /dev/mapper/luks-b209... a
 First create the physical volume
 
 ```
-sudo pvcreate /dev/mapper/luks-b20975aa-8318-433d-8508-6c23982c6cde 
+sudo pvcreate /dev/mapper/luks-b20975aa-8318-433d-8508-6c23982c6cde
 ```
 
 Then create the LVM volume group, we will use for example "qubes" as the <vg_name>:
 
 ```
-sudo vgcreate qubes /dev/mapper/luks-b20975aa-8318-433d-8508-6c23982c6cde 
+sudo vgcreate qubes /dev/mapper/luks-b20975aa-8318-433d-8508-6c23982c6cde
 ```
 
 And then use "poolhd0" as the <thin_pool_name> (LVM thin pool name):

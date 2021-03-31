@@ -104,7 +104,7 @@ In past various apt repositories were signed with expired key. If you want to se
 ~~~
 W: A error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://deb.torproject.org stable Release: The following signatures were invalid: KEYEXPIRED 1409325681 KEYEXPIRED 1409325681 KEYEXPIRED 1409325681 KEYEXPIRED 1409325681
 
-W: Failed to fetch http://deb.torproject.org/torproject.org/dists/stable/Release  
+W: Failed to fetch http://deb.torproject.org/torproject.org/dists/stable/Release
 W: Some index files failed to download. They have been ignored, or old ones used instead.
 ~~~
 

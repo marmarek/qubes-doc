@@ -223,7 +223,7 @@ Once the grub menu appears, choose "Advanced Options for Qubes (with Xen hypervi
 Next, the top menu item (for example, "Xen hypervisor, version 4.8.5-9.fc25").
 Select the kernel you want as default, and it will be remembered for next boot.
 
-## Updating over Tor 
+## Updating over Tor
 
 Requires installed [Whonix](/doc/privacy/whonix/).
 

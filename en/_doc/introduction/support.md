@@ -12,7 +12,7 @@ redirect_from:
 - /doc/QubesLists/
 - /wiki/QubesLists/
 ref: 122
-title: Help, Support, Mailing Listses/
+title: Help, Support, Mailing Lists, and Forum
 ---
 
 # Help, Support, Mailing Lists, and Forum
@@ -280,7 +280,7 @@ send a blank email to `qubes-users+unsubscribe@googlegroups.com`. This list
 also has an optional [Google Groups web interface][qubes-users-web] and
 [traditional mail archive][qubes-users-archive].
 
-### qubes-devel 
+### qubes-devel
 
 This list is primarily intended for people who are interested in contributing to
 Qubes or who are willing to learn more about its architecture and
@@ -303,7 +303,7 @@ unsubscribe, send a blank email to `qubes-devel+unsubscribe@googlegroups.com`.
 This list also has an optional [Google Groups web interface][qubes-devel-web]
 and [traditional mail archive][qubes-devel-archive].
 
-### qubes-project 
+### qubes-project
 
 This list is for non-technical discussion and coordination around the
 Qubes OS project.
@@ -325,7 +325,7 @@ immediately, please allow time for moderation to occur. To unsubscribe, send a
 blank email to `qubes-project+unsubscribe@googlegroups.com`. This list also
 also has an optional [Google Groups web interface][qubes-project-web].
 
-### qubes-translation 
+### qubes-translation
 
 This list is for discussion around the localization and translation of Qubes OS,
 its documentation, and the website.
@@ -347,7 +347,7 @@ unsubscribe, send a blank email to
 `qubes-translation+unsubscribe@googlegroups.com`. This list also has an
 optional [Google Groups web interface][qubes-translation-web].
 
-## Forum 
+## Forum
 
 We have a community forum for Qubes OS users:
 
@@ -361,7 +361,7 @@ fills this need for us, as it does for many other open-source projects. Thanks
 to their generous [free hosting for open source projects], we're pleased to be
 able to create this space for our community.
 
-### Why was this forum created? 
+### Why was this forum created?
 
 Previously, the only option for a forum-like experience was to interact with
 our mailing lists via Google Groups, but we understand all too well that the
@@ -372,7 +372,7 @@ ease-of-use, and modern social features that today's forums support. Moreover,
 Discourse features email integration for those who still prefer the traditional
 mailing list format.
 
-### How is this different from our mailing lists? 
+### How is this different from our mailing lists?
 
 To be clear, this is *not* a replacement for the mailing lists. This forum is
 simply an *additional* place for discussion. Certain types of discussions
@@ -385,7 +385,7 @@ users simply appreciate the ability to add a "reaction" to a message instead of
 having to add an entirely new reply. Whatever your reasons, it's up to you to
 decide where and how you want to join the conversation.
 
-### Does this split the community? 
+### Does this split the community?
 
 Many open-source projects (such as Fedora and Debian) have both mailing lists
 and forums (and additional discussion venues). In fact, Qubes already had

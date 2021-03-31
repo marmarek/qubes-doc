@@ -20,11 +20,11 @@ In Qubes OS, you run all your programs in lightweight [virtual machines (VMs)] c
 Not every app runs in its own qube.
 (That would be a big waste of resources!)
 Instead, each qube represents a [security domain] (e.g., "work," "personal," and "banking").
-By default, all qubes are based on a single, common [template], although you can create more templates if you wish. 
-When you create a new qube, you don't copy the whole system needed for this qube to work (which would include copying all the programs). 
-Instead, each qube *shares* the system with its respective template. 
-A qube has read-only access to the system of the template on which it's based, so a qube cannot modify a template in any way. 
-This is important, as it means that if a qube is ever compromised, the template on which it's based (and any other qubes based on that template) will still be safe. 
+By default, all qubes are based on a single, common [template], although you can create more templates if you wish.
+When you create a new qube, you don't copy the whole system needed for this qube to work (which would include copying all the programs).
+Instead, each qube *shares* the system with its respective template.
+A qube has read-only access to the system of the template on which it's based, so a qube cannot modify a template in any way.
+This is important, as it means that if a qube is ever compromised, the template on which it's based (and any other qubes based on that template) will still be safe.
 So, creating a large number of qubes is cheap: each one needs only as much disk space as is necessary to store its private files (e.g., the "home" folder).
 
 If you've installed Qubes OS using the default options, a few qubes have already been created for you:
@@ -37,7 +37,7 @@ If you've installed Qubes OS using the default options, a few qubes have already
 Each qube, apart from having a distinct name, is also assigned a **label**, which is one of several predefined colors.
 The trusted window manager uses these colors in order to draw colored borders around the windows of applications running in each qube.
 This is designed to allow you to quickly and easily identify the trust level of a given window at a glance.
-Most Qubes OS users associate red with what's untrusted and dangerous (like a red light -- stop! danger!), green with what's safe and trusted, and yellow and orange with things in the middle. 
+Most Qubes OS users associate red with what's untrusted and dangerous (like a red light -- stop! danger!), green with what's safe and trusted, and yellow and orange with things in the middle.
 This color scheme also extends to include blue and black, which are usually interpreted as indicating progressively more trusted domains than green, with black being ultimately trusted.
 However, it's totally up to you how you'd like to interpret these colors.
 Qubes OS doesn't assume anything about these colors.
@@ -62,7 +62,7 @@ In particular, [you should never run user applications in dom0][dom0-precautions
 GUI and command-line tools
 --------------------------
 
-All aspects of Qubes OS can be controlled using command-line tools run in a dom0 terminal. 
+All aspects of Qubes OS can be controlled using command-line tools run in a dom0 terminal.
 Opening a terminal in dom0 can be done in several ways:
 
 - Go to the Application Launcher and click **Terminal Emulator**.
@@ -88,15 +88,15 @@ Starting apps
 Apps can be started either by using the shortcuts in the Application Launcher menu or by using the command line (i.e., a terminal running in dom0).
 
 You can start apps directly from the Application Launcher or the Application Finder (`Alt+F3`).
-Each qube has its own menu directory under the scheme `Domain: <name>`. 
+Each qube has its own menu directory under the scheme `Domain: <name>`.
 After navigating into one of these directories, simply click on the application you'd like to start:
 
 ![menu1.png](/attachment/wiki/GettingStarted/r4.0-menu1.png)
 
 ![menu2.png](/attachment/wiki/GettingStarted/r4.0-menu2.png)
 
-By default, each qube's menu contains only a few shortcuts. 
-If you'd like to add more, enter the qube's **Qube Settings** and add them on the Applications tab. 
+By default, each qube's menu contains only a few shortcuts.
+If you'd like to add more, enter the qube's **Qube Settings** and add them on the Applications tab.
 
 To start apps from the terminal in dom0, type:
 
@@ -127,12 +127,12 @@ You can also add, remove, and list qubes from the command line using the followi
 How many qubes do I need?
 -------------------------
 
-That's a great question, but there's no one-size-fits-all answer. 
-It depends on the structure of your digital life, and this is at least a little different for everyone. 
+That's a great question, but there's no one-size-fits-all answer.
+It depends on the structure of your digital life, and this is at least a little different for everyone.
 If you plan on using your system for work, then it also depends on what kind of job you do.
 
-It's a good idea to start out with the three qubes created automatically by the installer: work, personal, and untrusted. 
-If and when you start to feel that some activity just doesn't fit into any of your existing qubes, or you want to partition some part of your life, you can easily create a new qube for it. 
+It's a good idea to start out with the three qubes created automatically by the installer: work, personal, and untrusted.
+If and when you start to feel that some activity just doesn't fit into any of your existing qubes, or you want to partition some part of your life, you can easily create a new qube for it.
 You'll also be able to easily [copy][copy-files] any files you need to the newly created qube.
 
 Still not sure?
@@ -205,4 +205,3 @@ If you encounter any problems, please visit the [Help, Support, and Mailing List
     </a>
   </div>
 </div>
-

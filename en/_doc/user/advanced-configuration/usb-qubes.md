@@ -163,45 +163,45 @@ The procedure to hide all USB controllers from dom0 is as follows:
 
 * GRUB2
 
-  1. Open the file `/etc/default/grub` in dom0.
-  2. Find the line that begins with `GRUB_CMDLINE_LINUX`.
-  3. Add `rd.qubes.hide_all_usb` to that line.
-  4. Save and close the file.
-  5. Run the command `grub2-mkconfig -o /boot/grub2/grub.cfg` in dom0.
-  6. Reboot.
+1. Open the file `/etc/default/grub` in dom0.
+2. Find the line that begins with `GRUB_CMDLINE_LINUX`.
+3. Add `rd.qubes.hide_all_usb` to that line.
+4. Save and close the file.
+5. Run the command `grub2-mkconfig -o /boot/grub2/grub.cfg` in dom0.
+6. Reboot.
 
 * EFI
- 
-  1. Open the file `/boot/efi/EFI/qubes/xen.cfg` in dom0.
-  2. Find the lines that begin with `kernel=`. There may be more than one.
-  3. Add `rd.qubes.hide_all_usb` to those lines.
-  4. Save and close the file.
-  5. Reboot.
+
+1. Open the file `/boot/efi/EFI/qubes/xen.cfg` in dom0.
+2. Find the lines that begin with `kernel=`. There may be more than one.
+3. Add `rd.qubes.hide_all_usb` to those lines.
+4. Save and close the file.
+5. Reboot.
 
 ## Removing a USB qube ##
 
 **Warning:** This procedure will result in your USB controller(s) being attached directly to dom0.
 
 * GRUB2
- 
-  1. Shut down the USB qube.
-  2. In Qubes Manager, right-click on the USB qube and select "Remove VM."
-  3. Open the file `/etc/default/grub` in dom0.
-  4. Find the line(s) that begins with `GRUB_CMDLINE_LINUX`.
-  5. If `rd.qubes.hide_all_usb` appears anywhere in those lines, remove it.
-  6. Save and close the file.
-  7. Run the command `grub2-mkconfig -o /boot/grub2/grub.cfg` in dom0.
-  8. Reboot.
+
+1. Shut down the USB qube.
+2. In Qubes Manager, right-click on the USB qube and select "Remove VM."
+3. Open the file `/etc/default/grub` in dom0.
+4. Find the line(s) that begins with `GRUB_CMDLINE_LINUX`.
+5. If `rd.qubes.hide_all_usb` appears anywhere in those lines, remove it.
+6. Save and close the file.
+7. Run the command `grub2-mkconfig -o /boot/grub2/grub.cfg` in dom0.
+8. Reboot.
 
 * EFI
- 
-  1. Shut down the USB qube.
-  2. In Qubes Manager, right-click on the USB qube and select "Remove VM."
-  3. Open the file `/boot/efi/EFI/qubes/xen.cfg` in dom0.
-  4. Find the line(s) that begins with `kernel=`.
-  5. If `rd.qubes.hide_all_usb` appears anywhere in those lines, remove it.
-  6. Save and close the file.
-  7. Reboot.
+
+1. Shut down the USB qube.
+2. In Qubes Manager, right-click on the USB qube and select "Remove VM."
+3. Open the file `/boot/efi/EFI/qubes/xen.cfg` in dom0.
+4. Find the line(s) that begins with `kernel=`.
+5. If `rd.qubes.hide_all_usb` appears anywhere in those lines, remove it.
+6. Save and close the file.
+7. Reboot.
 
 [remove your USB-qube]: #removing-a-usb-qube
 [security implications]: /doc/device-handling-security/#usb-security

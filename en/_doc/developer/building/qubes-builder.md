@@ -41,7 +41,7 @@ In order to use it, you should use an rpm-based distro, like Fedora :), and shou
 Usually you can install those packages by just issuing:
 
 ```shell
-    sudo dnf install gnupg git createrepo rpm-build make wget rpmdevtools python3-sh dialog rpm-sign dpkg-dev debootstrap python3-pyyaml devscripts perl-Digest-MD5 perl-Digest-SHA
+sudo dnf install gnupg git createrepo rpm-build make wget rpmdevtools python3-sh dialog rpm-sign dpkg-dev debootstrap python3-pyyaml devscripts perl-Digest-MD5 perl-Digest-SHA
 ```
 
 The build system creates build environments in chroots and so no other packages are needed on the host.
@@ -53,9 +53,9 @@ You can use the setup.sh script to create and modify this file.
 Alternatively, you can copy the provided default builder.conf, and modify it as needed, e.g.:
 
 ```shell
-    cp example-configs/qubes-os-master.conf builder.conf
-    # edit the builder.conf file and set the following variables:
-    NO_SIGN=1
+cp example-configs/qubes-os-master.conf builder.conf
+# edit the builder.conf file and set the following variables:
+NO_SIGN=1
 ```
 
 One additional useful requirement is that 'sudo root' must work without any prompt, which is default on most distros (e.g. 'sudo bash' brings you the root shell without asking for any password).
@@ -64,9 +64,9 @@ This is important as the builder needs to switch to root and then back to user s
 Additionally, if building with signing enabled (NO\_SIGN is not set), you must adjust \~/.rpmmacro file so that it points to the GPG key used for package signing, e.g.:
 
 ```bash
-    %_signature gpg
-    %_gpg_path /home/user/.gnupg
-    %_gpg_name AC1BF9B3  # <-- Key ID used for signing
+%_signature gpg
+%_gpg_path /home/user/.gnupg
+%_gpg_name AC1BF9B3  # <-- Key ID used for signing
 ```
 
 It is also recommended that you use an empty passphrase for the private key used for signing.
@@ -75,37 +75,37 @@ Contrary to a popular belief, this doesn't affect your key or sources security -
 So, to build Qubes you would do:
 
 ```shell
-    # Import the Qubes master key
-    gpg --recv-keys 0xDDFA1A3E36879494
-    
-    # Verify its fingerprint, set as 'trusted'.
-    # This is described here:
-    # https://www.qubes-os.org/doc/VerifyingSignatures
-    
-    wget https://keys.qubes-os.org/keys/qubes-developers-keys.asc
-    gpg --import qubes-developers-keys.asc
-    
-    git clone git://github.com/QubesOS/qubes-builder.git qubes-builder
-    cd qubes-builder
+# Import the Qubes master key
+gpg --recv-keys 0xDDFA1A3E36879494
 
-    # Verify its integrity:
-    git tag -v `git describe`
-    
-    cp example-configs/qubes-os-master.conf builder.conf
-    # edit the builder.conf file and set the following variables:
-    # NO_SIGN="1"
-    
-    # Download all components:
-    
-    make get-sources
-    
-    # And now to build all Qubes rpms (this will take a few hours): 
-    
-    make qubes
-    
-    # ... and then to build the ISO
-    
-    make iso
+# Verify its fingerprint, set as 'trusted'.
+# This is described here:
+# https://www.qubes-os.org/doc/VerifyingSignatures
+
+wget https://keys.qubes-os.org/keys/qubes-developers-keys.asc
+gpg --import qubes-developers-keys.asc
+
+git clone git://github.com/QubesOS/qubes-builder.git qubes-builder
+cd qubes-builder
+
+# Verify its integrity:
+git tag -v `git describe`
+
+cp example-configs/qubes-os-master.conf builder.conf
+# edit the builder.conf file and set the following variables:
+# NO_SIGN="1"
+
+# Download all components:
+
+make get-sources
+
+# And now to build all Qubes rpms (this will take a few hours):
+
+make qubes
+
+# ... and then to build the ISO
+
+make iso
 ```
 
 And this should produce a shiny new ISO.
@@ -113,10 +113,10 @@ And this should produce a shiny new ISO.
 You can also build selected component separately. Eg. to compile only gui virtualization agent/daemon:
 
 ```shell
-    make gui-daemon
+make gui-daemon
 ```
 
-You can get a full list from make help. 
+You can get a full list from make help.
 
 ## Making customized build
 
@@ -130,9 +130,9 @@ Here are some basic steps:
   - You can also set GIT\_PREFIX="marmarek/qubes-" to use marmarek's repo instead of "mainstream" - it contains newer (but less tested) versions
 3. Download unmodified sources
 
-```shell
-        make get-sources
-```
+    ```shell
+    make get-sources
+    ```
 
 4. **Make your modifications here**
 
@@ -144,15 +144,15 @@ Here are some basic steps:
 
 6. `get-sources` is already done, so continue with the next one. You can skip `sign-all` if you've disabled signing
 
-```shell
-        make vmm-xen core-admin linux-kernel gui-daemon template desktop-linux-kde installer-qubes-os manager linux-dom0-updates
-```
+    ```shell
+    make vmm-xen core-admin linux-kernel gui-daemon template desktop-linux-kde installer-qubes-os manager linux-dom0-updates
+    ```
 
-1. build iso installation image
+7. build iso installation image
 
-```shell
-        make iso
-```
+    ```shell
+    make iso
+    ```
 
 ### Use pre-built Qubes packages
 
@@ -161,15 +161,15 @@ This is especially true for `gcc`, which takes several hours to build.
 
 Before creating the `chroot`, add this to your `builder.conf`:
 
-```bash
-    USE_QUBES_REPO_VERSION = $(RELEASE)
+```
+USE_QUBES_REPO_VERSION = $(RELEASE)
 ```
 
 It will add the 'current' Qubes repository to your `chroot` environment.
 Next, specify which components (`gcc`, for example) you want to download instead of compiling:
 
-```bash
-    COMPONENTS := $(filter-out gcc,$(COMPONENTS))
+```
+COMPONENTS := $(filter-out gcc,$(COMPONENTS))
 ```
 
 Alternatively, edit the actual COMPONENTS list which is defined in the included version-dependent config from example-configs (see series of include directives near the beginning of `builder.conf`).
@@ -177,8 +177,8 @@ This way, you can build only the packages in which you are interested.
 
 If you also want to use the 'current-testing' repository, add this to your configuration:
 
-```bash
-    USE_QUBES_REPO_TESTING = 1
+```
+USE_QUBES_REPO_TESTING = 1
 ```
 
 In the case of an existing `chroot`, for mock-enabled builds, this works immediately because `chroot` is constructed each time separately.
@@ -187,7 +187,7 @@ For legacy builds, it will not add the necessary configuration into the build en
 Also, once enabled, disabling this setting will not disable repositories in relevant chroots.
 And even if it did, there could be some leftover packages installed from those repos (which may or may not be desirable).
 
-**Note**  
+**Note**
 If you are building Ubuntu templates, you cannot use this option.
 This is because Qubes does not provide official packages for Ubuntu templates.
 
@@ -198,9 +198,9 @@ Public keys used for that are stored in `keyrings/git`.
 By default Qubes developers' keys are imported automatically, but if you need some additional keys (for example your own), you can add them using:
 
 ```shell
-    GNUPGHOME=$PWD/keyrings/git gpg --import /path/to/key.asc
-    GNUPGHOME=$PWD/keyrings/git gpg --edit-key ID_OF_JUST_IMPORTED_KEY
-    # here use "trust" command to set key fully or ultimately trusted - only those keys are accepted by QubesBuilder
+GNUPGHOME=$PWD/keyrings/git gpg --import /path/to/key.asc
+GNUPGHOME=$PWD/keyrings/git gpg --edit-key ID_OF_JUST_IMPORTED_KEY
+# here use "trust" command to set key fully or ultimately trusted - only those keys are accepted by QubesBuilder
 ```
 
 All Qubes developers' keys are signed by the Qubes Master Signing Key (which is set as ultimately trusted key), so are trusted automatically.

@@ -41,7 +41,7 @@ It is critical to complete this step **before** proceeding to dom0 upgrade. Othe
     sudo yum update
     ```
 
-You'll need to accept "Qubes Release 3 Signing Key" - it is delivered by signed qubes-upgrade-vm package (verify that the message is about local file), so you don't need to manually verify it.
+    You'll need to accept "Qubes Release 3 Signing Key" - it is delivered by signed qubes-upgrade-vm package (verify that the message is about local file), so you don't need to manually verify it.
 
 4. Shutdown the template VM.
 
@@ -63,11 +63,11 @@ You'll need to accept "Qubes Release 3 Signing Key" - it is delivered by signed 
     sudo apt-get dist-upgrade
     ```
 
-There will be some error messages during the process, but our tests does
-not revealed any negative consequences.
-Update of `qubesdb-vm` package will restart the service, which will fail
-(after 3min timeout), but you can ignore this problem for now. After
-completing the whole upgrade the service will be properly restarted.
+    There will be some error messages during the process, but our tests does
+    not revealed any negative consequences.
+    Update of `qubesdb-vm` package will restart the service, which will fail
+    (after 3min timeout), but you can ignore this problem for now. After
+    completing the whole upgrade the service will be properly restarted.
 
 4. Shutdown the template VM.
 
@@ -82,7 +82,7 @@ Be sure to do steps described in this section after *all* your template and stan
     sudo qubes-dom0-update qubes-release
     ```
 
-This should install `qubes-release-2-12` in your Dom0.
+    This should install `qubes-release-2-12` in your Dom0.
 
 3. Upgrade dom0 to R3.0:
 
@@ -90,7 +90,7 @@ This should install `qubes-release-2-12` in your Dom0.
     sudo qubes-dom0-update --releasever=3.0
     ```
 
-After this step, until you reboot the system, most of the qvm-* tools will not work.
+    After this step, until you reboot the system, most of the qvm-* tools will not work.
 
 4. If above step completed successfully you should have `qubes-core-dom0` at least 3.0.8. If not, repeat above step with additional `--clean` option.
 
@@ -127,25 +127,25 @@ Because of above limitations, you will need to configure some of those manually.
 1. Check the VM network parameters, you will need them later:
 
     ```shell_session
-[user@dom0 ~]$ qvm-ls -n custom-template
--------------------+----+--------+-------+------+-------------+-------+-------------+---------+-------------+
-              name | on |  state | updbl | type |       netvm | label |          ip | ip back | gateway/DNS |
--------------------+----+--------+-------+------+-------------+-------+-------------+---------+-------------+
- [custom-template] |    | Halted |   Yes |  Tpl | *firewallvm | black | 10.137.1.53 |     n/a |  10.137.1.1 |
+    [user@dom0 ~]$ qvm-ls -n custom-template
+    -------------------+----+--------+-------+------+-------------+-------+-------------+---------+-------------+
+                  name | on |  state | updbl | type |       netvm | label |          ip | ip back | gateway/DNS |
+    -------------------+----+--------+-------+------+-------------+-------+-------------+---------+-------------+
+     [custom-template] |    | Halted |   Yes |  Tpl | *firewallvm | black | 10.137.1.53 |     n/a |  10.137.1.1 |
     ```
 
 2. Start the VM from command line:
 
     ```shell_session
-[user@dom0 ~]$ qvm-start custom-template
---> Loading the VM (type = TemplateVM)...
---> Starting Qubes DB...
---> Setting Qubes DB info for the VM...
---> Updating firewall rules...
---> Starting the VM...
---> Starting the qrexec daemon...
-Waiting for VM's qrexec agent.............................................................Cannot connect to 'custom-template' qrexec agent for 60 seconds, giving up
-ERROR: Cannot execute qrexec-daemon!
+    [user@dom0 ~]$ qvm-start custom-template
+    --> Loading the VM (type = TemplateVM)...
+    --> Starting Qubes DB...
+    --> Setting Qubes DB info for the VM...
+    --> Updating firewall rules...
+    --> Starting the VM...
+    --> Starting the qrexec daemon...
+    Waiting for VM's qrexec agent.............................................................Cannot connect to 'custom-template' qrexec agent for 60 seconds, giving up
+    ERROR: Cannot execute qrexec-daemon!
     ```
 
     You can interrupt with Ctrl-C that qrexec waiting process.

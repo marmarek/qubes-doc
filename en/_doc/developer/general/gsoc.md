@@ -401,7 +401,7 @@ Some related discussion:
 - Libvirt and Qubes toolstacks (C and python languages).
 - Xen debugging.
 - General ARM architecture knowledge.
- 
+
 **Mentor**: [Marek Marczykowski-Górecki](/team/)
 
 <!--
@@ -437,7 +437,7 @@ More information and further links can be found in the related issue:
 - Libvirt and Qubes toolstacks (C and python languages).
 - KVM or XEN internals
 - General ppc64 architecture knowledge.
- 
+
 **Mentor**: [Marek Marczykowski-Górecki](/team/)
 
 -->
@@ -455,7 +455,7 @@ Details, reference: [#2233](https://github.com/QubesOS/qubes-issues/issues/2233)
 
 - a simple way of setting up Android qubes with hardware emulation
   (distributed as a template or as a salt, handling various modern Android versions)
-- figuring out and implementing an easy and secure way to connect an Android 
+- figuring out and implementing an easy and secure way to connect an Android
   qube to a development qube with Android studio
 - documentation and tests
 
@@ -522,7 +522,7 @@ A [Fuzzer](https://en.wikipedia.org/wiki/Fuzzing) would help to automate part of
 
 ## Past Projects
 
-You can view the projects we had in 2017 in the [GSoC 2017 archive][2017-archive]. We also participated in GSoC 2020, and you can see the project in the [GSoC 2020 archive][2020-archive]. 
+You can view the projects we had in 2017 in the [GSoC 2017 archive][2017-archive]. We also participated in GSoC 2020, and you can see the project in the [GSoC 2020 archive][2020-archive].
 
 Here are some successful projects which have been implemented in the past by Google Summer of Code participants.
 

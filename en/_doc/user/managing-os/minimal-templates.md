@@ -70,7 +70,7 @@ To update or install packages, execute the following command in dom0 (where `X` 
 ```
 
 This opens a root terminal in the Minimal TemplateVM, from which you can use execute root commands without `sudo`.
-You will have to do this every time if you choose not to enable passwordless root. 
+You will have to do this every time if you choose not to enable passwordless root.
 
 If you want to be able to use `sudo` inside a Minimal TemplateVM (or TemplateBasedVMs based on a Minimal TemplateVM), open a root terminal as just instructed, then install the `qubes-core-agent-passwordless-root` package.
 
@@ -104,8 +104,8 @@ As usual, the required packages are to be installed in the running template with
 - [USB qube](/doc/usb-qubes/), such as the template for `sys-usb`: `qubes-usb-proxy` to provide USB devices to other Qubes and `qubes-input-proxy-sender` to provide keyboard or mouse input to dom0.
 - [VPN qube](https://github.com/Qubes-Community/Contents/blob/master/docs/configuration/vpn.md): Use the `dnf search "NetworkManager VPN plugin"` command to look up the VPN packages you need, based on the VPN technology you'll be using, and install them. Some GNOME related packages may be needed as well. After creation of a machine based on this template, follow the [VPN instructions](https://github.com/Qubes-Community/Contents/blob/master/docs/configuration/vpn.md#set-up-a-proxyvm-as-a-vpn-gateway-using-networkmanager) to configure it.
 - `default-mgmt-dvm`: requires `qubes-core-agent-passwordless-root` and `qubes-mgmt-salt-vm-connector`.
- 
-In Qubes 4.0, additional packages from the `qubes-core-agent` suite may be needed to make the customized minimal template work properly. 
+
+In Qubes 4.0, additional packages from the `qubes-core-agent` suite may be needed to make the customized minimal template work properly.
 These packages are:
 
 - `qubes-core-agent-nautilus`: This package provides integration with the Nautilus file manager (without it, items like "copy to VM/open in disposable VM" will not be shown in Nautilus).
@@ -157,7 +157,7 @@ As usual, the required packages are to be installed in the running template with
 - [VPN qube](https://github.com/Qubes-Community/Contents/blob/master/docs/configuration/vpn.md): You may need to install network-manager VPN packages, depending on the VPN technology you'll be using. After creating a machine based on this template, follow the [VPN howto](https://github.com/Qubes-Community/Contents/blob/master/docs/configuration/vpn.md#set-up-a-proxyvm-as-a-vpn-gateway-using-networkmanager) to configure it.
 - `default-mgmt-dvm`: requires `qubes-core-agent-passwordless-root` and `qubes-mgmt-salt-vm-connector`.
 
-In Qubes 4.0, additional packages from the `qubes-core-agent` suite may be needed to make the customized minimal template work properly. 
+In Qubes 4.0, additional packages from the `qubes-core-agent` suite may be needed to make the customized minimal template work properly.
 These packages are:
 
 - `qubes-core-agent-nautilus`: This package provides integration with the Nautilus file manager (without it, items like "copy to VM/open in disposable VM" will not be shown in Nautilus).
@@ -200,7 +200,7 @@ As usual, the required packages are to be installed in the running template with
 - [VPN qube](https://github.com/Qubes-Community/Contents/blob/master/docs/configuration/vpn.md): You may need to install network-manager VPN packages, depending on the VPN technology you'll be using. After creating a machine based on this template, follow the [VPN howto](https://github.com/Qubes-Community/Contents/blob/master/docs/configuration/vpn.md#set-up-a-proxyvm-as-a-vpn-gateway-using-networkmanager) to configure it.
 - `default-mgmt-dvm`: requires `qubes-core-agent-passwordless-root` and `qubes-mgmt-salt-vm-connector`.
 
-In Qubes 4.0, additional packages from the `qubes-core-agent` suite may be needed to make the customized minimal template work properly. 
+In Qubes 4.0, additional packages from the `qubes-core-agent` suite may be needed to make the customized minimal template work properly.
 These packages are:
 
 - `qubes-core-agent-nautilus`: This package provides integration with the Nautilus file manager (without it, items like "copy to VM/open in disposable VM" will not be shown in Nautilus).

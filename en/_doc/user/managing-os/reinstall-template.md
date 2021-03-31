@@ -28,7 +28,7 @@ For example, use `qubes-template-fedora-25` if you wish to reinstall the `fedora
 Only one template can be reinstalled at a time.
 
 Note that Qubes may initially refuse to perform the reinstall if the exact revision of the template package on your system is no longer in the Qubes online repository.
-In this case, you can specify `upgrade` as the action instead and the newer version will be used. 
+In this case, you can specify `upgrade` as the action instead and the newer version will be used.
 The other `dnf` package actions that are supported in addition to `reinstall` and `upgrade` are `upgrade-to` and `downgrade`.
 Note that the `upgrade`, `upgrade-to`, and `downgrade` commands are only supported under Fedora based UpdateVMs.
 If you receive a message about them being unsupported, review the manual reinstallation method below.
@@ -56,7 +56,7 @@ If you want to reinstall more than one TemplateVM, repeat these instructions for
 2. Temporarily change all VMs based on the target TemplateVM to the new clone template, or remove them.
 
    This can be a good idea if you have user data in these VMs that you want to keep.
-   On the other hand, if you suspect that these VMs (or the templates on which they are based) are broken, misconfigured, or compromised, you may want to remove them instead. 
+   On the other hand, if you suspect that these VMs (or the templates on which they are based) are broken, misconfigured, or compromised, you may want to remove them instead.
    You can do this in Qubes Manager by right-clicking on the VM and clicking **Remove VM**, or you can use the command `qvm-remove <vm-name>` in dom0.
 
 3. Uninstall the target TemplateVM from dom0:
@@ -87,7 +87,7 @@ If you want to reinstall more than one TemplateVM, repeat these instructions for
 
 5. If you temporarily changed all VMs based on the target TemplateVM to the clone template in step 3, change them back to the new target TemplateVM now.
    If you instead removed all VMs based on the old target TemplateVM, you can recreate your desired VMs from the newly reinstalled target TemplateVM now.
-   
+
 6. Delete the cloned template.
    You can do this in Qubes Manager by right-clicking on the VM and clicking **Remove VM**, or you can use the
    command `qvm-remove <vm-name>` in dom0.

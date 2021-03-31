@@ -16,7 +16,7 @@ ref: 168
 title: Split GPG
 ---
 
-# Qubes Split GPG 
+# Qubes Split GPG
 
 Split GPG implements a concept similar to having a smart card with your private GPG keys, except that the role of the "smart card" is played by another Qubes AppVM.
 This way one not-so-trusted domain, e.g. the one where Thunderbird is running, can delegate all crypto operations -- such as encryption/decryption and signing -- to another, more trusted, network-isolated domain.
@@ -27,7 +27,7 @@ This way the compromise of your domain where Thunderbird or another client app i
 
 This diagram presents an overview of the Split GPG architecture.
 
-## Advantages of Split GPG vs. traditional GPG with a smart card 
+## Advantages of Split GPG vs. traditional GPG with a smart card
 
 It is often thought that the use of smart cards for private key storage guarantees ultimate safety.
 While this might be true (unless the attacker can find a usually-very-expensive-and-requiring-physical-presence way to extract the key from the smart card) but only with regards to the safety of the private key itself.
@@ -42,7 +42,7 @@ This way it would be easy to spot unexpected requests to decrypt documents.
 [![r2-split-gpg-1.png](/attachment/wiki/SplitGpg/r2-split-gpg-1.png)](/attachment/wiki/SplitGpg/r2-split-gpg-1.png)
 [![r2-split-gpg-3.png](/attachment/wiki/SplitGpg/r2-split-gpg-3.png)](/attachment/wiki/SplitGpg/r2-split-gpg-3.png)
 
-## Configuring Split GPG 
+## Configuring Split GPG
 
 In dom0, make sure the `qubes-gpg-split-dom0` package is installed.
 
@@ -212,7 +212,7 @@ On a fresh Enigmail install, your need to change the default `Enigmail Junior Mo
 
 [![tb-enigmail-split-gpg-settings-2.png](/attachment/wiki/SplitGpg/tb-enigmail-split-gpg-settings-2.png)](/attachment/wiki/SplitGpg/tb-enigmail-split-gpg-settings-2.png)
 
-## Using Keybase with Split GPG 
+## Using Keybase with Split GPG
 
 Keybase, a security focused messaging and file-sharing app with GPG integration, can be configured to use Split GPG.
 
@@ -398,8 +398,8 @@ As always, exercise caution and use your good judgment.)
   Doing so won't provide any extra security anyway, as explained in the introduction and in [using Split GPG with subkeys].
   If you are generating a new key pair, or if you have a private key that already has a passphrase, you can use `gpg2 --edit-key <key_id>` then `passwd` to set an empty passphrase.
   Note that `pinentry` might show an error when you try to set an empty passphrase, but it will still make the change.
-  (See [this StackExchange answer][se-pinentry] for more information.) 
-  Note: The error shows only if you **do not** have graphical pinentry installed. 
+  (See [this StackExchange answer][se-pinentry] for more information.)
+  Note: The error shows only if you **do not** have graphical pinentry installed.
 
 [#474]: https://github.com/QubesOS/qubes-issues/issues/474
 [using Split GPG with subkeys]: #advanced-using-split-gpg-with-subkeys

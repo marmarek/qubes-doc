@@ -53,15 +53,15 @@ However, it makes sense if you want to use a kernel from within the VM.)
 
 ## Creating an HVM
 
-### Using the GUI:  
+### Using the GUI:
 
-In Qube Manager, select "Create new qube" from the Qube menu, or select the "Create a new qube" button.  
-In the "create new qube" dialog box set Type to "Empty standalone qube (install your own OS)".  
+In Qube Manager, select "Create new qube" from the Qube menu, or select the "Create a new qube" button.
+In the "create new qube" dialog box set Type to "Empty standalone qube (install your own OS)".
 If "install system from device" is selected (which is by default), then `virt_mode` will be set to `hvm` automatically.
 Otherwise, open the newly created qube's Settings GUI and in the "Advanced" tab select `HVM` in the virtualization mode drop-down list.
 Also, make sure "Kernel" is set to `(none)` on the same tab.
 
-## Command line:  
+## Command line:
 
 Qubes are template-based by default so you must set the `--class StandaloneVM` option to create a StandaloneVM:
 (name and label color are for illustration purposes).
@@ -80,7 +80,7 @@ Make sure that you give the new qube adequate memory to install and run.
 
 ## Installing an OS in an HVM
 
-You will have to boot the qube with the installation media "attached" to it. You may either use the GUI or use command line instructions. 
+You will have to boot the qube with the installation media "attached" to it. You may either use the GUI or use command line instructions.
 At the command line you can do this in three ways:
 
 1. If you have the physical cdrom media and a disk drive
@@ -111,7 +111,7 @@ Several invocations of `qvm-start` command (as shown above) might be needed.
 ## Setting up networking for HVMs
 
 Just like standard paravirtualized AppVMs, the HVM qubes get fixed IP addresses centrally assigned by Qubes.
-Normally Qubes agent scripts (or services on Windows) running within each AppVM are responsible for setting up networking within the VM according to the configuration created by Qubes (through [keys](/doc/vm-interface/#qubesdb) exposed by dom0 to the VM). 
+Normally Qubes agent scripts (or services on Windows) running within each AppVM are responsible for setting up networking within the VM according to the configuration created by Qubes (through [keys](/doc/vm-interface/#qubesdb) exposed by dom0 to the VM).
 Such centrally managed networking infrastructure allows for [advanced networking configuration](https://blog.invisiblethings.org/2011/09/28/playing-with-qubes-networking-for-fun.html).
 
 A generic HVM domain such as a standard Windows or Ubuntu installation, however, has no Qubes agent scripts running inside it initially and thus requires manual configuration of networking so that it matches the values assigned by Qubes for this qube.
@@ -132,7 +132,7 @@ There is [opt-in support](/doc/networking/#ipv6) for IPv6 forwarding.
 ## Using TemplateBasedHVMs
 
 Qubes allows HVMs to share a common root filesystem from a select TemplateVM (see [TemplateHVM](/doc/glossary/#templatehvm) and [TemplateBasedHVM](/doc/glossary/#templatebasedhvm)).
-This mode can be used for any HVM (e.g. FreeBSD running in a HVM). 
+This mode can be used for any HVM (e.g. FreeBSD running in a HVM).
 
 In order to create a TemplateHVM you use the following command, suitably adapted:
 

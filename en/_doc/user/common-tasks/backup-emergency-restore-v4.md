@@ -54,7 +54,7 @@ any GNU/Linux system.
 
  4. Verify the signature on the `scrypt` RPM.
 
-        [user@restore ~]$ rpm -K scrypt-*.rpm 
+        [user@restore ~]$ rpm -K scrypt-*.rpm
         scrypt-*.rpm: digests signatures OK
 
     The message `digests signatures OK` means that both the digest (i.e., the

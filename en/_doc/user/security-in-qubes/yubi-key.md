@@ -14,8 +14,7 @@ title: YubiKey in Qubes
 You can use a YubiKey to enhance Qubes user authentication, for example to mitigate risk of someone snooping the password.
 This can also slightly improve security when you have a [USB keyboard](/doc/device-handling-security/#security-warning-on-usb-input-devices).
 
-Challenge-response mode
-----------------------
+## Challenge-response mode
 
 In this mode, your YubiKey will generate a response based on the secret key, and a random challenge (instead of counter).
 This means that it isn't possible to generate a response in advance even if someone gets access to your YubiKey.
@@ -79,7 +78,7 @@ To use this mode you need to:
 
     Now run the following command to calculate your hashed password.
 
-    ```       
+    ```
     echo -n "$password" | openssl dgst -sha1
     ```
 

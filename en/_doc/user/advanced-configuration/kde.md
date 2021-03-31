@@ -32,9 +32,9 @@ You can also change your default login manager (lightdm) to the new KDE default:
 
 * disable the lightdm service:
 
-    ~~~  
+    ~~~
    $ sudo systemctl disable lightdm
-    ~~~  
+    ~~~
 
 * enable the sddm service:
 

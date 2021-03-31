@@ -55,7 +55,7 @@ The Qubes Security Team can be contacted via email at the following address:
 security at qubes-os dot org
 ```
 
-### Security Team PGP Key 
+### Security Team PGP Key
 
 Please use the [Security Team PGP Key] to encrypt all emails sent to this address.
 This key is signed by the [Qubes Master Signing Key].

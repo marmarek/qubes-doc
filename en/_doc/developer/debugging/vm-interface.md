@@ -63,7 +63,7 @@ VM after applying rules may signal some error, writing a message to
 `/qubes-iptables-error` key. This does not exclude any other way of
 communicating problems - like a popup.
 
-#### Firewall rules in 4.x 
+#### Firewall rules in 4.x
 
 QubesDB is also used to configure firewall in ProxyVMs. Each rule is stored as
 a separate entry, grouped on target VM:
@@ -203,7 +203,7 @@ Other Qrexec services installed by default:
       `qubes.VMExec+ls+--a+-2Fhome-2Fuser`
 - `qubes.VMExecGUI` - a variant of `qubes.VMExec` that waits for full VM
   startup first
-  
+
 Services called in GuiVM:
 
 - `policy.Ask`, `policy.Notify` - confirmation prompt and notifications for

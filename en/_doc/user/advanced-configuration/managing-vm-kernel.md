@@ -243,7 +243,7 @@ If you'd like to use a different kernel than default, continue reading.
 Install whatever kernel you want.
 You need to also ensure you have the `kernel-devel` package for the same kernel version installed.
 
-If you are using a distribution kernel package (`kernel` package), the initramfs and kernel modules may be handled automatically. 
+If you are using a distribution kernel package (`kernel` package), the initramfs and kernel modules may be handled automatically.
 If you are using a manually built kernel, you need to handle this on your own.
 Take a look at the `dkms` documentation, especially the `dkms autoinstall` command may be useful.
 If you did not see the `kernel` install rebuild your initramfs, or are using a manually built kernel, you will need to rebuild it yourself.
@@ -253,8 +253,8 @@ Replace the version numbers in the example below with the ones appropriate to th
 sudo dracut -f /boot/initramfs-4.15.14-200.fc26.x86_64.img 4.15.14-200.fc26.x86_64
 ~~~
 
-Once the kernel is installed, you need to create a GRUB configuration. 
-You may want to adjust some settings in `/etc/default/grub`; for example, lower `GRUB_TIMEOUT` to speed up VM startup. 
+Once the kernel is installed, you need to create a GRUB configuration.
+You may want to adjust some settings in `/etc/default/grub`; for example, lower `GRUB_TIMEOUT` to speed up VM startup.
 Then, you need to generate the actual configuration:
 In Fedora it can be done using the `grub2-mkconfig` tool:
 
@@ -308,13 +308,13 @@ Depends on `Virtualization` mode setting:
 
 The `Kernel` setting of the `Virtualization` mode setting:
 
-* If `Virtualization` is set to `PVH` -> `Kernel` -> choose `pvgrub2-pvh` -> OK 
-* If `Virtualization` is set to `PV` -> `Kernel` -> choose `pvgrub2` -> OK 
-* If `Virtualization` is set to `HVM` -> `Kernel` -> choose `none` -> OK 
+* If `Virtualization` is set to `PVH` -> `Kernel` -> choose `pvgrub2-pvh` -> OK
+* If `Virtualization` is set to `PV` -> `Kernel` -> choose `pvgrub2` -> OK
+* If `Virtualization` is set to `HVM` -> `Kernel` -> choose `none` -> OK
 
 Start the VM.
 
-The process of using Qubes VM kernel with distribution kernel is complete. 
+The process of using Qubes VM kernel with distribution kernel is complete.
 
 #### Custom kernel
 
@@ -361,6 +361,6 @@ update-initramfs: Generating /boot/initrd.img-3.16.0-4-amd64
 
 #### Troubleshooting
 
-In case of problems, visit the [VM Troubleshooting guide](/doc/vm-troubleshooting/#vm-kernel-troubleshooting) to learn how to access the VM console, view logs and fix a VM kernel installation. 
+In case of problems, visit the [VM Troubleshooting guide](/doc/vm-troubleshooting/#vm-kernel-troubleshooting) to learn how to access the VM console, view logs and fix a VM kernel installation.
 
 [dom0-kernel-upgrade]: /doc/software-update-dom0/#kernel-upgrade

@@ -102,7 +102,7 @@ Some users have noticed that on upgrading to Stretch, the `unattended-upgrade` p
 
 This package is pulled in as part of a Recommend chain, and can be purged.
 
-The lesson is that you should carefully look at what is being installed to your system, particularly if you run `dist-upgrade`. 
+The lesson is that you should carefully look at what is being installed to your system, particularly if you run `dist-upgrade`.
 
 ### Package installation errors in Qubes 4.0
 

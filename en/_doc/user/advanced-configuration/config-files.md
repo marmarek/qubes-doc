@@ -18,7 +18,7 @@ Qubes-specific VM config files
 ------------------------------
 
 These files are placed in `/rw`, which survives a VM restart.
-That way, they can be used to customize a single VM instead of all VMs based on the same template. 
+That way, they can be used to customize a single VM instead of all VMs based on the same template.
 The scripts here all run as root.
 
 - `/rw/config/rc.local` - script runs at VM startup.
@@ -27,7 +27,7 @@ The scripts here all run as root.
 
     ~~~
     # Store bluetooth keys in /rw to keep them across VM restarts
-    rm -rf /var/lib/bluetooth 
+    rm -rf /var/lib/bluetooth
     ln -s /rw/config/var-lib-bluetooth /var/lib/bluetooth
     ~~~
 
@@ -39,6 +39,7 @@ The scripts here all run as root.
 - `/rw/config/qubes-ip-change-hook` - script runs in NetVM after every external IP change and on "hardware" link status change.
 
 - In ProxyVMs (or AppVMs with `qubes-firewall` service enabled), scripts placed in the following directories will be executed in the listed order followed by `qubes-firewall-user-script` at start up.
+  Good place to write custom firewall rules.
 
     ~~~
     /etc/qubes/qubes-firewall.d

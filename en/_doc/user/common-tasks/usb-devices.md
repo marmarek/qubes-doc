@@ -8,7 +8,7 @@ ref: 195
 title: USB Devices
 ---
 
-# USB Devices 
+# USB Devices
 
 *This page is part of [device handling in qubes].*
 
@@ -29,11 +29,11 @@ Examples of valid cases for USB-passthrough:
 (If you are thinking to use a two-factor-authentication device, [there is an app for that][qubes u2f proxy].
 But it has some [issues][4661].)
 
-## Attaching And Detaching a USB Device 
+## Attaching And Detaching a USB Device
 
-### With Qubes Device Manager 
+### With Qubes Device Manager
 
-Click the device-manager-icon: ![device manager icon]  
+Click the device-manager-icon: ![device manager icon]
 A list of available devices appears.
 USB-devices have a USB-icon to their right: ![usb icon]
 
@@ -49,7 +49,7 @@ Hover on the attached device to display a list of running VMs.
 The one to which your device is connected will have an eject button ![eject icon] next to it.
 Click that and your device will be detached.
 
-### With The Command Line Tool 
+### With The Command Line Tool
 
 In dom0, you can use `qvm-usb` from the commandline to attach and detach devices.
 
@@ -88,14 +88,14 @@ sys-usb:2-5     058f:3822 058f_USB_2.0_Camera
 sys-usb:2-1     03f0:0641 PixArt_Optical_Mouse
 ```
 
-## Maintenance And Customisation 
+## Maintenance And Customisation
 
-### Creating And Using a USB qube 
+### Creating And Using a USB qube
 
 If you've selected to install a usb-qube during system installation, everything is already set up for you in `sys-usb`.
 If you've later decided to create a usb-qube, please follow [this guide][USB-qube howto].
 
-### Installation Of `qubes-usb-proxy` 
+### Installation Of `qubes-usb-proxy`
 
 To use this feature, the `qubes-usb-proxy` package needs to be installed in the templates used for the USB qube and qubes you want to connect USB devices to.
 This section exists for reference or in case something broke and you need to reinstall `qubes-usb-proxy`.
@@ -106,13 +106,13 @@ If you receive this error: `ERROR: qubes-usb-proxy not installed in the VM`, you
 - Fedora: `sudo dnf install qubes-usb-proxy`
 - Debian/Ubuntu: `sudo apt-get install qubes-usb-proxy`
 
-### Using USB Keyboards And Other Input Devices 
+### Using USB Keyboards And Other Input Devices
 
 **Warning:** especially keyboards need to be accepted by default when using them to login! Please make sure you carefully read and understood the **[security considerations]** before continuing!
 
 Mouse and keyboard setup are part of [setting up a USB-qube][keyboard setup].
 
-### Finding The Right USB Controller 
+### Finding The Right USB Controller
 
 Some USB devices are not compatible with the USB pass-through method Qubes employs.
 In situations like these, you can try to pass through the entire USB controller to a qube as PCI device.
@@ -126,7 +126,7 @@ First, find out which USB bus the device is connected to (note that these steps 
 lsusb
 ```
 
-For example, I want to attach a broadband modem to the NetVM. 
+For example, I want to attach a broadband modem to the NetVM.
 In the output of `lsusb` it may be listed as something like:
 
 ```
@@ -135,7 +135,7 @@ Bus 003 Device 003: ID 413c:818d Dell Computer Corp.
 
 (In this case, the device isn't fully identified)
 
-The device is connected to USB bus \#3. 
+The device is connected to USB bus \#3.
 Check which other devices are connected to the same bus, since *all* of them will be attach to the same VM.
 
 To find the right controller, follow the usb bus:

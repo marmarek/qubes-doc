@@ -95,19 +95,19 @@ The qrexec protocol is message-based.
 All messages share a common header followed by an optional data packet.
 
 ```c
-    /* uniform for all peers, data type depends on message type */
-    struct msg_header {
-       uint32_t type;           /* message type */
-       uint32_t len;            /* data length */
-    };
+/* uniform for all peers, data type depends on message type */
+struct msg_header {
+   uint32_t type;           /* message type */
+   uint32_t len;            /* data length */
+};
 ```
 
 When two peers establish connection, the server sends `MSG_HELLO` followed by `peer_info` struct:
 
 ```c
-    struct peer_info {
-       uint32_t version; /* qrexec protocol version */
-    };
+struct peer_info {
+   uint32_t version; /* qrexec protocol version */
+};
 ```
 
 The client then should reply with its own `MSG_HELLO` and `peer_info`.

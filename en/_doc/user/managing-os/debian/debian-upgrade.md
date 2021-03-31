@@ -43,7 +43,7 @@ The same general procedure may be used to upgrade any template based on the stan
 
 **Note:** The prompt on each line indicates where each command should be entered: `dom0`, `debian-<old>`, or `debian-<new>`, where `<old>` is the Debian version number *from* which you are upgrading, and `<new>` is the Debian version number *to* which you are upgrading.
 
-1. Ensure the existing template is not running. 
+1. Ensure the existing template is not running.
 
     ```
     [user@dom0 ~]$ qvm-shutdown debian-<old>
@@ -138,7 +138,7 @@ Please see [Debian's Buster upgrade instructions][buster].
 * If sound is not working, you may need to enable the Qubes testing repository to get the testing version of `qubes-gui-agent`.
   This can be done by editing the `/etc/apt/sources.list.d/qubes-r4.list` file and uncommenting the `Qubes Updates Candidates` repo.
 
-* User-initiated updates/upgrades may not run when a templateVM first starts. 
+* User-initiated updates/upgrades may not run when a templateVM first starts.
   This is due to a new Debian config setting that attempts to update automatically; it should be disabled with `sudo systemctl disable apt-daily.{service,timer}`.
 
 Relevant discussions:
@@ -160,7 +160,7 @@ We strongly recommend against using any Debian release that has reached [end-of-
 
 ## Additional information
 
-* Please note that, if you installed packages from one of the testing repositories, you must make sure that the repository is enabled in `/etc/apt/sources.list.d/qubes-r4.list` before attempting the upgrade. 
+* Please note that, if you installed packages from one of the testing repositories, you must make sure that the repository is enabled in `/etc/apt/sources.list.d/qubes-r4.list` before attempting the upgrade.
   Otherwise, your upgrade will [break](https://github.com/QubesOS/qubes-issues/issues/2418).
 
 * By default, Qubes uses code names in the `apt` sources files, although the templates are referred to by release number.

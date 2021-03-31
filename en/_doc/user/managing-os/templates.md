@@ -144,13 +144,13 @@ If this uninstallation command doesn't work, please see [How to Remove VMs Manua
 If the Applications Menu entry doesn't go away after you uninstall a TemplateVM, execute the following type of command in dom0:
 
 ```
-$ rm ~/.local/share/applications/<template-vm-name>
+$ rm ~/.local/share/applications/<template_vm_name>
 ```
 
 Applications Menu entries for backups of removed VMs can also be found in `/usr/local/share/applications/` of dom0.
 
 ```
-$ rm /usr/local/share/applications/<template-vm-name>
+$ rm /usr/local/share/applications/<template_vm_name>
 ```
 
 ## Reinstalling
@@ -208,8 +208,8 @@ No changes in any other directories in TemplateBasedVMs persist in this manner. 
 |TemplateBasedVM (3) | `/etc/skel` to `/home`, `/usr/local.orig` to `/usr/local` | `/rw` (includes `/home`, `/usr/local` and `bind-dirs`)
 |DisposableVM        | `/rw` (includes `/home`, `/usr/local` and `bind-dirs`)    | Nothing
 
-(1) Upon creation  
-(2) Following shutdown  
+(1) Upon creation
+(2) Following shutdown
 (3) Including any [DisposableVM Templates]
 
 ### Trusting your TemplateVMs

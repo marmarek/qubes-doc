@@ -115,7 +115,7 @@ The same general procedure may be used to upgrade any template based on the stan
        If this attempt is successful, proceed to step 4.
 
      * `dnf` may complain:
- 
+
         `
         At least X MB more space needed on the / filesystem.
         `
@@ -125,7 +125,7 @@ The same general procedure may be used to upgrade any template based on the stan
 
 4. Check that you are on the correct (new) Fedora release.
 
-    ``` 
+    ```
     [user@fedora-<new> ~]$ cat /etc/fedora-release
     ```
 

@@ -6,7 +6,7 @@ ref: 170
 title: Device Handling Security
 ---
 
-# Device Handling Security 
+# Device Handling Security
 
 Any additional ability a VM gains is additional attack surface.
 It's a good idea to always attach the minimum entity required in a VM.
@@ -15,7 +15,7 @@ For example, attaching a full USB-device offers [more attack surface than attach
 attaching a full block device (e.g. `sda`) again offers more attack surface than attaching a single partition (e.g. `sda1`), since the targetVM doesn't have to parse the partition-table.
 (Attaching a full block device offers the advantage that most file-managers will mount and display them correctly, whereas they don't expect single partitions to be added and therefore don't handle them correctly.)
 
-## PCI Security 
+## PCI Security
 
 Attaching a PCI device to a qube has serious security implications.
 It exposes the device driver running in the qube to an external device (and sourceVM, which contains the device - e.g. `sys-usb`).
@@ -56,7 +56,7 @@ To avoid this risk, use a [USB qube].
 Attaching a USB device to a VM (USB passthrough) will **expose your target qube** to most of the [security issues][USB security] associated with the USB-stack.
 If possible, use a method specific for particular device type (for example, block devices described above), instead of this generic one.
 
-## Security Warning On USB Input Devices 
+## Security Warning On USB Input Devices
 
 If you connect USB input devices (keyboard and mouse) to a VM, that VM will effectively have control over your system.
 Because of this, the benefits of using a [USB qube] entrusted with a keyboard or other interface device are much smaller than using a fully untrusted USB qube.

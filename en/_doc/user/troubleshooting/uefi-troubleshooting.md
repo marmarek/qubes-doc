@@ -6,15 +6,15 @@ ref: 177
 title: UEFI Troubleshooting
 ---
 
-# Troubleshooting UEFI related problems 
+# Troubleshooting UEFI related problems
 
-## Successfully installed in legacy mode, but had to change some kernel parameters 
+## Successfully installed in legacy mode, but had to change some kernel parameters
 
 If you've installed successfully in legacy mode but had to change some kernel parameters for it to work, you should try installing in UEFI mode with the same parameters.
 
 **Change the xen configuration on a USB media**
 
-01. Attach the usb disk, mount the EFI partition (second partition available on the disk) 
+01. Attach the usb disk, mount the EFI partition (second partition available on the disk)
 02. Open a terminal and enter the command `sudo su -`. Use your preferred text editor (e.g `nano`) to edit your xen config (`EFI/BOOT/BOOTX64.cfg`):
 
     ```
@@ -30,11 +30,11 @@ If you've installed successfully in legacy mode but had to change some kernel pa
 03. Edit `EFI/BOOT/BOOTX64.cfg` to add your params to the `kernel` configuration key
 04. Save your changes, unmount and dd to usb device
 
-## Installation freezes before displaying installer 
+## Installation freezes before displaying installer
 
 If you have an Nvidia card, see also [Nvidia Troubleshooting](https://github.com/Qubes-Community/Contents/blob/master/docs/troubleshooting/nvidia-troubleshooting.md#disabling-nouveau).
 
-### Removing `noexitboot` and `mapbs` 
+### Removing `noexitboot` and `mapbs`
 
 Some systems can freeze with the default UEFI install options.
 You can try the following to remove `noexitboot` and `mapbs`.
@@ -85,7 +85,7 @@ If removing `noexitboot` and `mapbs` did not help, you can try changing the `opt
 
 2. Boot the installer and continue to install as normal
 
-### Disable EFI runtime services 
+### Disable EFI runtime services
 
 On some early, buggy UEFI implementations, you may need to disable EFI under Qubes completely.
 This can sometimes be done by switching to legacy mode in your BIOS/UEFI configuration.
@@ -129,11 +129,11 @@ Consider this approach as a last resort, because it will make every Xen update a
 
 Whenever there is a kernel or Xen update for Qubes, you will need to follow [these steps](/doc/uefi-troubleshooting/#boot-device-not-recognized-after-installing) because your system is using the fallback UEFI bootloader in `[...]/EFI/BOOT` instead of directly booting to the Qubes entry under `[...]/EFI/qubes`.
 
-## Installation from USB stick hangs on black screen 
+## Installation from USB stick hangs on black screen
 
-Some laptops cannot read from an external boot device larger than 8GB. If you encounter a black screen when performing an installation from a USB stick, ensure you are using a USB drive less than 8GB, or a partition on that USB lesser than 8GB and of format FAT32. 
+Some laptops cannot read from an external boot device larger than 8GB. If you encounter a black screen when performing an installation from a USB stick, ensure you are using a USB drive less than 8GB, or a partition on that USB lesser than 8GB and of format FAT32.
 
-## Installation completes successfully but then boot loops or hangs on black screen 
+## Installation completes successfully but then boot loops or hangs on black screen
 
 There is a [common bug in UEFI implementation](http://xen.markmail.org/message/f6lx2ab4o2fch35r) affecting mostly Lenovo systems, but probably some others too.
 While some systems need `mapbs` and/or `noexitboot` disabled to boot, others require them enabled at all times.
@@ -169,15 +169,15 @@ Or if you have already rebooted after the first stage install and have encounter
     noexitboot=1
     ```
 
-**Note:** You must add these parameters on two separate new lines (one
-parameter on each line) at the end of each section that includes a kernel
-line (i.e., all sections except the first one, since it doesn't have a
-kernel line).
-    
+    **Note:** You must add these parameters on two separate new lines (one
+    parameter on each line) at the end of each section that includes a kernel
+    line (i.e., all sections except the first one, since it doesn't have a
+    kernel line).
+
 3. Type `reboot`.
 4. Continue with setting up default templates and logging in to Qubes.
 
-## Installation completes successfully but then system crash/restarts on next boot 
+## Installation completes successfully but then system crash/restarts on next boot
 
 Some Dell systems and probably others have [another bug in UEFI firmware](http://markmail.org/message/amw5336otwhdxi76).
 These systems need `efi=attr=uc` enabled at all times.
@@ -207,7 +207,7 @@ Or if you have already rebooted after the first stage install and have encounter
 3. Type `reboot`.
 4. Continue with setting up default templates and logging in to Qubes.
 
-## Boot device not recognized after installing 
+## Boot device not recognized after installing
 
 Some firmware will not recognize the default Qubes EFI configuration.
 As such, it will have to be manually edited to be bootable.
@@ -233,7 +233,7 @@ This will need to be done after every kernel and Xen update to ensure you use th
     cp /boot/efi/EFI/qubes/xen-4.8.3.efi /boot/efi/EFI/BOOT/BOOTX64.efi
     ```
 
-## Installation finished but "Qubes" boot option is missing and xen.cfg is empty / Installation fails with "failed to set new efi boot target" 
+## Installation finished but "Qubes" boot option is missing and xen.cfg is empty / Installation fails with "failed to set new efi boot target"
 
 In some cases installer fails to finish EFI setup and leave the system without a Qubes-specific EFI configuration.
 In such a case you need to finish those parts manually.
@@ -272,7 +272,7 @@ You can do that just after installation (switch to `tty2` with Ctrl-Alt-F2), or 
     efibootmgr -v -c -u -L Qubes -l /EFI/qubes/xen.efi -d /dev/sda -p 1 "placeholder /mapbs /noexitboot"
     ```
 
-## Accessing installer Rescue mode on UEFI 
+## Accessing installer Rescue mode on UEFI
 
 In UEFI mode, the installer does not have a boot menu, but boots directly into the installation wizard.
 To get into Rescue mode, you need to switch to tty2 (Ctrl+Alt+F2) and then execute:

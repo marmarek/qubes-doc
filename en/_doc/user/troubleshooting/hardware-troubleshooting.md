@@ -4,7 +4,7 @@ layout: doc
 permalink: /doc/hardware-troubleshooting/
 redirect_from:
 - /doc/newer-hardware-troubleshooting/
-ref: 242
+ref: 97
 title: Hardware Troubleshooting
 ---
 

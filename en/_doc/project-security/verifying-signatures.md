@@ -82,6 +82,14 @@ There are several ways to get the Qubes Master Signing Key.
     $ gpg2 --import /usr/share/qubes/qubes-master-key.asc
     ```
 
+- If you're on Fedora, you can get it in the `distribution-gpg-keys` package:
+    
+    ```shell_session
+    $ dnf install distribution-gpg-keys
+    ```
+
+- If you’re on Debian, it may already be included in your keyring.
+
 - Fetch it with GPG:
 
     ```shell_session
@@ -91,13 +99,7 @@ There are several ways to get the Qubes Master Signing Key.
 - Download it as a [file][Qubes Master Signing Key], then import it with GPG:
 
     ```shell_session
-    $ gpg2 --import ./qubes-master-signing-key.asc 
-    ```
-
-- Get it from a public [keyserver] (specified on first use with `--keyserver <URI>`, then saved in `~/.gnupg/gpg.conf`), e.g.:
-
-    ```shell_session
-    $ gpg2 --keyserver pool.sks-keyservers.net --recv-keys 0x427F11FD0FAA4B080123F01CDDFA1A3E36879494
+    $ gpg2 --import ./qubes-master-signing-key.asc
     ```
 
 - Get it from a public [keyserver] (specified on first use with `--keyserver <URI>` along with keyserver options to include key signatures), e.g.:
@@ -157,39 +159,39 @@ $ gpg2 --edit-key 0x427F11FD0FAA4B080123F01CDDFA1A3E36879494
 gpg (GnuPG) 1.4.18; Copyright (C) 2014 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
-    
+
 pub  4096R/36879494  created: 2010-04-01  expires: never       usage: SC
                      trust: unknown       validity: unknown
 [ unknown] (1). Qubes Master Signing Key
-    
+
 gpg> fpr
 pub   4096R/36879494 2010-04-01 Qubes Master Signing Key
 Primary key fingerprint: 427F 11FD 0FAA 4B08 0123  F01C DDFA 1A3E 3687 9494
-    
+
 gpg> trust
 pub  4096R/36879494  created: 2010-04-01  expires: never       usage: SC
                      trust: unknown       validity: unknown
 [ unknown] (1). Qubes Master Signing Key
-    
+
 Please decide how far you trust this user to correctly verify other users' keys
 (by looking at passports, checking fingerprints from different sources, etc.)
-    
+
    1 = I don't know or won't say
    2 = I do NOT trust
    3 = I trust marginally
    4 = I trust fully
    5 = I trust ultimately
    m = back to the main menu
-    
+
 Your decision? 5
 Do you really want to set this key to ultimate trust? (y/N) y
-  
+
 pub  4096R/36879494  created: 2010-04-01  expires: never       usage: SC
                      trust: ultimate      validity: unknown
 [ unknown] (1). Qubes Master Signing Key
 Please note that the shown key validity is not necessarily correct
 unless you restart the program.
-    
+
 gpg> q
 ```
 
@@ -234,7 +236,7 @@ There are several ways to get the Release Signing Key for your Qubes release.
   Once you've downloaded your Release Signing Key, import it with GPG:
 
     ```shell_session
-    $ gpg2 --keyserver-options no-self-sigs-only,no-import-clean --import ./qubes-release-X-signing-key.asc 
+    $ gpg2 --keyserver-options no-self-sigs-only,no-import-clean --import ./qubes-release-X-signing-key.asc
     ```
 
 The Release Signing Key should be signed by the Qubes Master Signing Key:
@@ -306,14 +308,14 @@ Inside, you should find text that looks similar to this:
 ```
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
-    
+
 3c951138b8b9867d8657f173c1b58b82 *Qubes-RX-x86_64.iso
 1fc9508160d7c4cba6cacc3025165b0f996c843f *Qubes-RX-x86_64.iso
 6b998045a513dcdd45c1c6e61ace4f1b4e7eff799f381dccb9eb0170c80f678a *Qubes-RX-x86_64.iso
 de1eb2e76bdb48559906f6fe344027ece20658d4a7f04ba00d4e40c63723171c62bdcc869375e7a4a4499d7bff484d7a621c3acfe9c2b221baee497d13cd02fe *Qubes-RX-x86_64.iso
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2
-    
+
 iQIcBAEBCAAGBQJX4XO/AAoJEMsRyh0D+lCCL9sP/jlZ26zhvlDEX/eaA/ANa/6b
 Dpsh/sqZEpz1SWoUxdm0gS+anc8nSDoCQSMBxnafuBbmwTChdHI/P7NvNirCULma
 9nw+EYCsCiNZ9+WCeroR8XDFSiDjvfkve0R8nwfma1XDqu1bN2ed4n/zNoGgQ8w0
@@ -379,7 +381,7 @@ Since `Qubes-RX-x86_64.iso.DIGESTS` is a clearsigned PGP file, we can use GPG to
 3. Verify the signature in the digest file:
 
     ```shell_session
-    $ gpg2 -v --verify Qubes-RX-x86_64.iso.DIGESTS 
+    $ gpg2 -v --verify Qubes-RX-x86_64.iso.DIGESTS
     gpg: armor header: Hash: SHA256
     gpg: armor header: Version: GnuPG v2
     gpg: original file name=''
@@ -484,7 +486,7 @@ For present purposes, you don't need them as long as you have the [Qubes Master 
 
 This is just a basic part of how OpenPGP works.
 Anyone can sign anyone else's public key and upload the signed public key to keyservers.
-Everyone is also free to revoke their own keys at any time (assuming they possess or can create a revocation certificate). 
+Everyone is also free to revoke their own keys at any time (assuming they possess or can create a revocation certificate).
 This has no impact on verifying Qubes ISOs, code, or keys.
 
 ### Why am I getting "verify signatures failed: unexpected data"?

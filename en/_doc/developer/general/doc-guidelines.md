@@ -41,7 +41,7 @@ If you see that something in the documentation should be fixed or improved, plea
 To report an issue with the documentation, please follow our standard [issue reporting guidelines][issue].
 (If you report an issue with the documentation, you will likely be asked to address it, unless there is a clear indication in your report that you are not willing or able to do so.)
 
-## How to Contribute
+## How to contribute
 
 Editing the documentation is easy, so if you see that a change should be made, please contribute it!
 
@@ -277,7 +277,7 @@ Good general content that was submitted only to one branch would effectively dis
 
 For further discussion about version-specific documentation in Qubes, see [here][version-thread].
 
-## Style Guidelines
+## Style guidelines
 
 * Familiarize yourself with the terms defined in the [glossary]. Use these
    terms consistently and accurately throughout your writing.
@@ -295,7 +295,7 @@ For further discussion about version-specific documentation in Qubes, see [here]
    2. Using underscores (`_`) between words
    3. Using all capital letters
 
-## Markdown Conventions
+## Markdown conventions
 
 All the documentation is written in Markdown for maximum accessibility.
 When making contributions, please try to observe the following style conventions:
@@ -316,7 +316,7 @@ When making contributions, please try to observe the following style conventions
      It results in the most useful diffs and facilitates translation into other languages while mostly preserving source readability.
 * If appropriate, make numerals in numbered lists match between Markdown source and HTML output.
   * Rationale: In the event that a user is required to read the Markdown source directly, this will make it easier to follow, e.g., numbered steps in a set of instructions.
-* Use hanging indentations  
+* Use hanging indentations
    where appropriate.
 * Use Atx-style headings: `# h1`, `##h 2`, `### h3`, etc.
 * When writing code blocks, use [syntax highlighting](https://github.github.com/gfm/#info-string) where [possible](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers) and use `[...]` for anything omitted.
@@ -353,7 +353,7 @@ When making contributions, please try to observe the following style conventions
 
 ([This][md] is a great source for learning about Markdown.)
 
-## Git Conventions
+## Git conventions
 
 Please try to write good commit messages, according to the
 [instructions in our coding style guidelines][git-commit].

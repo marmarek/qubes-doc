@@ -15,19 +15,19 @@ ref: 121
 title: Reporting bugs and other issues
 ---
 
-# Reporting bugs and other issues #
+# Reporting bugs and other issues
 
 All issues pertaining to the Qubes OS Project (including auxiliary infrastructure such as the [website]) are tracked in [qubes-issues], our GitHub issue tracker.
 If you're looking for help, please see [Help, Support, Mailing Lists, and Forum].
 
-## Important ##
+## Important
 
 - **To disclose a security issue confidentially, please see the [Security] page.**
 - **In all other cases, please do not email individual developers about issues.**
 - **Please note that many issues can be resolved by reading the [documentation].**
 - **If you see something that should be changed in the documentation, [submit a change][Documentation Guidelines].**
 
-## Search Tips ##
+## Search Tips
 
 [Search both open and closed issues.][qubes-issues-all]
 For example, you may be experiencing a bug that was just fixed, in which case the report for that bug is probably closed.
@@ -40,21 +40,21 @@ Only Qubes team members can apply labels.
 Every issue must have exactly one **type** (`T: bug`, `T: enhancement`, or `T: task`), exactly one **priority** (e.g., `P: major`), and at least one **component** (e.g., `C: core`).
 Issues may have additional labels, if applicable (e.g., `crypto`, `ux`).
 
-## Issue tracker guidelines ##
+## Issue tracker guidelines
 
-### Do not submit questions ###
+### Do not submit questions
 
 [qubes-issues] is not the place to ask questions.
 This includes, but is not limited to, troubleshooting questions and questions about how to do things with Qubes.
 Instead, see [Help, Support, Mailing Lists, and Forum] for appropriate place to ask questions.
 By contrast, [qubes-issues] is meant for tracking more general bugs, enhancements, and tasks that affect a broad range of Qubes users.
 
-### Every issue must be about a single, actionable thing ###
+### Every issue must be about a single, actionable thing
 
 If your issue is not actionable, please see [Help, Support, Mailing Lists, and Forum] for the appropriate place to post it.
 If your issue would be about more than one thing, file them as separate issues instead.
 
-### New issues should not be duplicates of existing issues ###
+### New issues should not be duplicates of existing issues
 
 Before you submit an issue, check to see whether it has already been reported.
 Search through the existing issues -- both open and closed -- by typing your key words in the **Filters** box.
@@ -66,14 +66,14 @@ For example, you can leave a comment with additional information to help the mai
 Adding a comment will subscribe you to email notifications, which can be helpful in getting important updates regarding the issue.
 If you don't have anything to add but still want to receive email updates, you can click the "Subscribe" button at the side or bottom of the comments.
 
-### Every issue must be of a single type ###
+### Every issue must be of a single type
 
 Every issue must be exactly one of the following types: a bug report (`bug`), a feature or improvement request (`enhancement`), or a task (`task`).
 Do not file multi-typed issues.
 Instead, file multiple issues of distinct types.
 The Qubes team will classify your issue according to its type.
 
-### New issues should include all relevant information ###
+### New issues should include all relevant information
 
 When you file a new issue, you should be sure to include the version of Qubes you're using, as well as versions of related software packages ([how to copy information out of dom0]).
 If your issue is related to hardware, provide as many details as possible about the hardware.
@@ -83,7 +83,7 @@ If you're reporting a bug in a package that is in a [testing] repository, please
 Project maintainers really appreciate thorough explanations.
 It usually helps them address the problem more quickly, so everyone wins!
 
-### Use the provided issue template ###
+### Use the provided issue template
 
 Please use the provided issue template.
 Do not delete it or remove parts of it.
@@ -93,7 +93,7 @@ Without this information, the issue is likely to be incomplete.
 It is also important to note the placement and content of the HTML comments in the issue template.
 These help us to have issues with a consistent format.
 
-### There are no guarantees that your issue will be addressed ###
+### There are no guarantees that your issue will be addressed
 
 Keep in mind that `qubes-issues` is an issue tracker, not a support system.
 Creating a new issue is simply a way for you to submit an item for the Qubes team's consideration.
@@ -102,7 +102,7 @@ Even if your issue is kept open, however, you should not expect it to be address
 At the time of this writing, there are well over one thousand open issues in `qubes-issues`.
 The Qubes team has its own roadmap and priorities, which will govern the manner and order in which open issues are addressed.
 
-## Following up afterward ##
+## Following up afterward
 
 If the Qubes developers make a code change that resolves your issue, then your GitHub issue will typically be closed from the relevant patch message.
 After that, the package containing the fix will move to the appropriate [testing] repository, then to the appropriate stable repository.
@@ -116,7 +116,7 @@ Each of these labels has a description that explains the label.
 We'll also leave a comment explaining why we're closing the issue with one of these specific resolutions.
 If the issue is closed without one of these specific resolutions, then it means, by default, that your reported bug was fixed or your requested enhancement was implemented.
 
-## See also ##
+## See also
 
 - [Help, Support, Mailing Lists, and Forum]
 - [Testing New Releases and Updates][testing]

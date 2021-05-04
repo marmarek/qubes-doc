@@ -17,10 +17,10 @@ Qubes OS
 --------
 
 A security-oriented operating system (OS).
-The main principle of Qubes OS is security by compartmentalization (or isolation), in which activities are compartmentalized (or isolated) in separate **qubes**.
+The main principle of Qubes OS is security by compartmentalization (or isolation), in which activities are compartmentalized (or isolated) in separate [qubes](#qube).
 
-* The official name is `Qubes OS` (note the capitalization and spacing).
-  However, in casual conversation this is often shortened to `Qubes`, and in technical contexts where spaces are not permitted, (e.g., usernames), the space may be omitted, as in `QubesOS`.
+* The official name is "Qubes OS" (note the capitalization and spacing).
+  However, in casual conversation this is often shortened to "Qubes," and in technical contexts where spaces are not permitted (e.g., usernames), the space may be omitted, as in `QubesOS`.
 
 VM
 --
@@ -100,14 +100,14 @@ AppVM
 -----
 
 Application Virtual Machine.
-A [VM](#vm) class.
+A type of [VM](#vm).
 Synonymous with [TemplateBasedVM](#templatebasedvm).
 
 NetVM
 -----
 
 *This is an old definition from before Qubes 4.0.
-NetVMs, as defined here, no longer exist in Qubes 4.0 or later (see [here][pr-748] for technical details).*
+NetVMs, as defined here, no longer exist in Qubes 4.0 or later (see [here](https://github.com/QubesOS/qubes-doc/pull/748) for technical details).*
 
 Network Virtual Machine.
 A type of [VM](#vm) that connects directly to a network.
@@ -121,7 +121,7 @@ ProxyVM
 -------
 
 *This is an old definition from before Qubes 4.0.
-ProxyVMs, as defined here, no longer exist in Qubes 4.0 or later (see [here][pr-748] for technical details).*
+ProxyVMs, as defined here, no longer exist in Qubes 4.0 or later (see [here](https://github.com/QubesOS/qubes-doc/pull/748) for technical details).*
 
 Proxy Virtual Machine.
 A type of [VM](#vm) that proxies network access for other VMs.
@@ -131,7 +131,7 @@ FirewallVM
 ----------
 
 *This is an old definition from before Qubes 4.0.
-FirewallVMs, as defined here, no longer exist in Qubes 4.0 or later (see [here][pr-748] for technical details).*
+FirewallVMs, as defined here, no longer exist in Qubes 4.0 or later (see [here](https://github.com/QubesOS/qubes-doc/pull/748) for technical details).*
 
 Firewall Virtual Machine.
 A type of [ProxyVM](#proxyvm) that is used to enforce network-level policies (a.k.a. "firewall rules").
@@ -228,4 +228,3 @@ QWT
 
 An abbreviation of Qubes [Windows Tools](#windows-tools).
 
-[pr-748]: https://github.com/QubesOS/qubes-doc/pull/748

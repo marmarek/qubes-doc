@@ -38,7 +38,7 @@ TBD
 
 ## Components
 
-![Admin API Architecture][admin-api-architecture]
+![Admin API Architecture](/attachment/wiki/AdminAPI/admin-api-architecture.svg)
 
 A central entity in the Qubes Admin API system is a `qubesd` daemon, which
 holds information about all domains in the system and mediates all actions (like
@@ -51,9 +51,8 @@ The `qubesd` daemon may be accessed from other domains through a set of qrexec
 API calls called the "Admin API". This API is the intended
 management interface supported by the Qubes OS. The API is stable. When called,
 the RPC handler performs basic validation and forwards the request to the
-`qubesd` via UNIX domain socket. The socket API is private and unstable. It is
-documented [FIXME currently it isn't -- woju 20161221] in the developer's
-documentation of the source code.
+`qubesd` via UNIX domain socket. The socket API is private, unstable, and not
+yet documented.
 
 ## The calls
 
@@ -356,4 +355,3 @@ In addition, there is a mechanism to prevent concurrent modifications of the pol
 
 <!-- vim: set ts=4 sts=4 sw=4 et : -->
 
-[admin-api-architecture]: /attachment/wiki/AdminAPI/admin-api-architecture.svg

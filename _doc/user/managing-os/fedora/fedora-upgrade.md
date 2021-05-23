@@ -161,12 +161,8 @@ The same general procedure may be used to upgrade any template based on the stan
     [user@dom0 ~]$ qubes-prefs --set default_template fedora-<new>
     ```
 
-10. (Optional) Remove the old template.
-    (Make sure to type the name of the old template, not the new one.)
-
-    ```
-    [user@dom0 ~]$ sudo dnf remove qubes-template-fedora-<old>
-    ```
+10. (Optional) [Uninstall the old template.](/doc/templates/#uninstalling)
+    Make sure that the template you're uninstalling is the old one, not the new one!
 
 ## Summary instructions for Fedora Minimal TemplateVMs
 
@@ -201,9 +197,9 @@ Also see [supported versions](/doc/supported-versions/).
 
 As mentioned above, you may encounter the following `dnf` error:
 
-`
+```
 At least X MB more space needed on the / filesystem.
-`
+```
 
 In this case, you have several options:
 

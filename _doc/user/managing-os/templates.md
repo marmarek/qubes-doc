@@ -105,12 +105,17 @@ After installing a fresh TemplateVM, we recommend performing the following steps
 
 ## Updating
 
-Updating TemplateVMs is an important part of [Updating Qubes OS](/doc/updating-qubes-os/).
-Please see [Updating software in TemplateVMs](/doc/software-update-domu/#updating-software-in-templatevms).
+Please see [Updating Qubes OS](/doc/updating-qubes-os/).
 
 ## Uninstalling
 
-To uninstall a TemplateVM, execute the following type of command in dom0:
+The procedure for uninstalling a TemplateVM depends on how it was created.
+
+If the TemplateVM was originaly created by cloning another TemplateVM, then you can delete it the same way as you would any other qube.
+In the Qube Manager, right-click on the TemplateVM and select **Delete qube**.
+(If you're not sure, you can safely try this method first to see if it works.)
+
+If, on the other hand, the TemplateVM came pre-installed or was installed by installing a template package in dom0, per the instructions [above](#installing), then you must execute the following type of command in dom0 in order to uninstall it:
 
 ```
 $ sudo dnf remove qubes-template-<name>

@@ -280,15 +280,19 @@ For further discussion about version-specific documentation in Qubes, see [here]
 ## Style guidelines
 
 * Familiarize yourself with the terms defined in the [glossary](/doc/glossary/). Use these
-   terms consistently and accurately throughout your writing.
- * Syntactically distinguish variables in commands.
+  terms consistently and accurately throughout your writing.
+* Syntactically distinguish variables in commands.
    For example, this is ambiguous:
 
-       $ qvm-run --dispvm=dvm-template --service qubes.StartApp+xterm
+   ```
+   $ qvm-run --dispvm=dvm-template --service qubes.StartApp+xterm
+   ```
 
    It should instead be:
 
-       $ qvm-run --dispvm=<DVM_TEMPLATE> --service qubes.StartApp+xterm
+   ```
+   $ qvm-run --dispvm=<DVM_TEMPLATE> --service qubes.StartApp+xterm
+   ```
 
    Note that we syntactically distinguish variables in three ways:
    1. Surrounding them in angled brackets (`< >`)
@@ -300,20 +304,20 @@ For further discussion about version-specific documentation in Qubes, see [here]
 All the documentation is written in Markdown for maximum accessibility.
 When making contributions, please try to observe the following style conventions:
 
- * Use spaces instead of tabs.
- * Do not write HTML inside Markdown documents (except in rare, unavoidable cases, such as alerts).
-   In particular, never include HTML or CSS for styling, formatting, or white space control.
-   That belongs in the (S)CSS files instead.
- * Link only to images in [qubes-attachment](https://github.com/QubesOS/qubes-attachment) (see [instructions above](#how-to-add-images)).
-   Do not link to images on other websites.
- * In order to enable offline browsing and automatic onion redirection, always use relative (rather than absolute) links, e.g., `/doc/doc-guidelines/` instead of `https://www.qubes-os.org/doc/doc-guidelines/`.
-   Examples of exceptions:
-   * The signed plain text portions of [QSBs](/security/bulletins/) and [Canaries](/security/canaries/)
-   * URLs that appear inside code blocks (e.g., in comments and document templates)
-   * Files like `README.md` and `CONTRIBUTING.md`
- * Insert a newline at, and only at, the end of each sentence, except when the text will be reproduced outside of the Qubes website repo (see previous item for examples).
-   * Rationale: This practice results in one sentence per line, which is most appropriate for source that consists primarily of natural language text.
-     It results in the most useful diffs and facilitates translation into other languages while mostly preserving source readability.
+* Use spaces instead of tabs.
+* Do not write HTML inside Markdown documents (except in rare, unavoidable cases, such as alerts).
+  In particular, never include HTML or CSS for styling, formatting, or white space control.
+  That belongs in the (S)CSS files instead.
+* Link only to images in [qubes-attachment](https://github.com/QubesOS/qubes-attachment) (see [instructions above](#how-to-add-images)).
+  Do not link to images on other websites.
+* In order to enable offline browsing and automatic onion redirection, always use relative (rather than absolute) links, e.g., `/doc/doc-guidelines/` instead of `https://www.qubes-os.org/doc/doc-guidelines/`.
+  Examples of exceptions:
+  * The signed plain text portions of [QSBs](/security/bulletins/) and [Canaries](/security/canaries/)
+  * URLs that appear inside code blocks (e.g., in comments and document templates)
+  * Files like `README.md` and `CONTRIBUTING.md`
+* Insert a newline at, and only at, the end of each sentence, except when the text will be reproduced outside of the Qubes website repo (see previous item for examples).
+  * Rationale: This practice results in one sentence per line, which is most appropriate for source that consists primarily of natural language text.
+    It results in the most useful diffs and facilitates translation into other languages while mostly preserving source readability.
 * If appropriate, make numerals in numbered lists match between Markdown source and HTML output.
   * Rationale: In the event that a user is required to read the Markdown source directly, this will make it easier to follow, e.g., numbered steps in a set of instructions.
 * Use hanging indentations

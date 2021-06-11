@@ -48,6 +48,7 @@ The firewall rules for each qube are saved in an XML file in that qube's directo
 ```
 /var/lib/qubes/appvms/<vm-name>/firewall.xml
 ```
+
 Rules are implemented on the netvm.
 
 You can also manually create rules in the qube itself using standard firewalling controls.

@@ -50,7 +50,6 @@ Read our [announcement](/news/2020/03/04/nitropad-x230-qubes-certification/) of 
 The [NitroPad T430](https://shop.nitrokey.com/shop/product/nitropad-t430-119) satisfies all hardware certification requirements for Qubes 4, offering users extensive hardware security options.
 Read our [announcement](/news/2021/06/01/nitropad-t430-qubes-certification/) of the certification for further details!
 
-
 ## Become Hardware Certified
 
 If you are a hardware vendor, you can have your hardware certified as compatible with Qubes OS.

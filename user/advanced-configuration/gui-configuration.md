@@ -29,6 +29,7 @@ For example, if you expect to use a 1080p display and a 4k display side-by-side,
 After making these adjustments, the qubes need to be restarted.
 
 In the case of multiple display with different orientations or if you plug/unplug displays, the following code will set correct memory size using xrandr.
+
 ```sh
 qvm-features dom0 gui-videoram-min $(xrandr --verbose | grep "Screen 0" | sed -e 's/.*current //' -e 's/\,.*//' | awk '{print $1*$3*4/1024}')
 ```

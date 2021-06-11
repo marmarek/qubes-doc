@@ -38,6 +38,7 @@ In case the boot partition is not set to "active" after copying the ISO, you can
 ## "Warning: dracut-initqueue timeout - starting timeout scripts" during installation
 
 This error message is related to the faulty creation of the USB installation medium.  If you receive this error message during installation, please make sure you have followed the instructions on [how to write your ISO to a USB key](/doc/installation-guide/#copying-the-iso-onto-the-installation-medium).  Specifically, the ``dd`` command listed on that page has been verified to solve this issue on multiple Qubes installation versions. 
+
 ```
 $ sudo dd if=Qubes-RX-x86_64.iso of=/dev/sdY status=progress bs=1048576 && sync
 ```

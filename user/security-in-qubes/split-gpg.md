@@ -16,14 +16,12 @@ ref: 168
 title: Split GPG
 ---
 
-# Qubes Split GPG
-
-Split GPG implements a concept similar to having a smart card with your private GPG keys, except that the role of the "smart card" is played by another Qubes AppVM.
+Split GPG implements a concept similar to having a smart card with your private GPG keys, except that the role of the "smart card" is played by another Qubes app qube.
 This way one not-so-trusted domain, e.g. the one where Thunderbird is running, can delegate all crypto operations -- such as encryption/decryption and signing -- to another, more trusted, network-isolated domain.
 This way the compromise of your domain where Thunderbird or another client app is running -- arguably a not-so-unthinkable scenario -- does not allow the attacker to automatically also steal all your keys.
 (We should make a rather obvious comment here that the so-often-used passphrases on private keys are pretty meaningless because the attacker can easily set up a simple backdoor which would wait until the user enters the passphrase and steal the key then.)
 
-[![split-gpg-diagram.png](/attachment/wiki/SplitGpg/split-gpg-diagram.png)](/attachment/wiki/SplitGpg/split-gpg-diagram.png)
+[![split-gpg-diagram.png](/attachment/doc/split-gpg-diagram.png)](/attachment/doc/split-gpg-diagram.png)
 
 This diagram presents an overview of the Split GPG architecture.
 
@@ -39,8 +37,8 @@ Unfortunately this problem of signing reliability is not solvable by Split GPG)
 With Qubes Split GPG this problem is drastically minimized, because each time the key is to be used the user is asked for consent (with a definable time out, 5 minutes by default), plus is always notified each time the key is used via a tray notification from the domain where GPG backend is running.
 This way it would be easy to spot unexpected requests to decrypt documents.
 
-[![r2-split-gpg-1.png](/attachment/wiki/SplitGpg/r2-split-gpg-1.png)](/attachment/wiki/SplitGpg/r2-split-gpg-1.png)
-[![r2-split-gpg-3.png](/attachment/wiki/SplitGpg/r2-split-gpg-3.png)](/attachment/wiki/SplitGpg/r2-split-gpg-3.png)
+[![r2-split-gpg-1.png](/attachment/doc/r2-split-gpg-1.png)](/attachment/doc/r2-split-gpg-1.png)
+[![r2-split-gpg-3.png](/attachment/doc/r2-split-gpg-3.png)](/attachment/doc/r2-split-gpg-3.png)
 
 ## Configuring Split GPG
 
@@ -66,9 +64,9 @@ For Fedora:
 
 ### Setting up the GPG backend domain
 
-First, create a dedicated AppVM for storing your keys (we will be calling it the GPG backend domain).
+First, create a dedicated app qube for storing your keys (we will be calling it the GPG backend domain).
 It is recommended that this domain be network disconnected (set its netvm to `none`) and only used for this one purpose.
-In later examples this AppVM is named `work-gpg`, but of course it might have any other name.
+In later examples this app qube is named `work-gpg`, but of course it might have any other name.
 
 Make sure that gpg is installed there.
 At this stage you can add the private keys you want to store there, or you can now set up Split GPG and add the keys later.
@@ -118,7 +116,7 @@ ssb   4096R/30498E2A 2012-11-15
 (...)
 ```
 
-Note that running normal `gpg -K` in the demo above shows no private keys stored in this AppVM.
+Note that running normal `gpg -K` in the demo above shows no private keys stored in this app qube.
 
 A note on `gpg` and `gpg2`:
 
@@ -127,20 +125,20 @@ If you encounter trouble while trying to set up Split GPG, make sure you're usin
 
 ### Advanced Configuration
 
-The `qubes-gpg-client-wrapper` script sets the `QUBES_GPG_DOMAIN` variable automatically based on the content of the file `/rw/config/gpg-split-domain`, which should be set to the name of the GPG backend VM. This file survives the AppVM reboot, of course.
+The `qubes-gpg-client-wrapper` script sets the `QUBES_GPG_DOMAIN` variable automatically based on the content of the file `/rw/config/gpg-split-domain`, which should be set to the name of the GPG backend VM. This file survives the app qube reboot, of course.
 
 ```shell_session
 [user@work-email ~]$ sudo bash
 [root@work-email ~]$ echo "work-gpg" > /rw/config/gpg-split-domain
 ```
 
-Split GPG's default qrexec policy requires the user to enter the name of the AppVM containing GPG keys on each invocation. To improve usability for applications like Thunderbird with Enigmail, in `dom0` place the following line at the top of the file `/etc/qubes-rpc/policy/qubes.Gpg`:
+Split GPG's default qrexec policy requires the user to enter the name of the app qube containing GPG keys on each invocation. To improve usability for applications like Thunderbird with Enigmail, in `dom0` place the following line at the top of the file `/etc/qubes-rpc/policy/qubes.Gpg`:
 
 ```
 work-email  work-gpg  allow
 ```
 
-where `work-email` is the Thunderbird + Enigmail AppVM and `work-gpg` contains your GPG keys.
+where `work-email` is the Thunderbird + Enigmail app qube and `work-gpg` contains your GPG keys.
 
 You may also edit the qrexec policy file for Split GPG in order to tell Qubes your default gpg vm (qrexec prompts will appear with the gpg vm preselected as the target, instead of the user needing to type a name in manually). To do this, append `,default_target=<vmname>` to `ask` in `/etc/qubes-rpc/policy/qubes.Gpg`. For the examples given on this page:
 
@@ -148,7 +146,7 @@ You may also edit the qrexec policy file for Split GPG in order to tell Qubes yo
 @anyvm  @anyvm  ask,default_target=work-gpg
 ```
 
-Note that, because this makes it easier to accept Split GPG's qrexec authorization prompts, it may decrease security if the user is not careful in reviewing presented prompts. This may also be inadvisable if there are multiple AppVMs with Split GPG set up.
+Note that, because this makes it easier to accept Split GPG's qrexec authorization prompts, it may decrease security if the user is not careful in reviewing presented prompts. This may also be inadvisable if there are multiple app qubes with Split GPG set up.
 
 ## Using Thunderbird
 
@@ -158,9 +156,9 @@ Starting with version 78, Thunderbird has a built-in PGP feature and no longer r
 
 In `work-email`, use the Thunderbird config editor (found at the bottom of preferences/options), and search for `mail.openpgp.allow_external_gnupg`. Switch the value to true. Still in config editor, search for `mail.openpgp.alternative_gpg_path`. Set its value to `/usr/bin/qubes-gpg-client-wrapper`. Restart Thunderbird after this change.
 
-[![tb78-1.png](/attachment/wiki/SplitGpg/tb78-1.png)](/attachment/wiki/SplitGpg/tb78-1.png)
-[![tb78-2.png](/attachment/wiki/SplitGpg/tb78-2.png)](/attachment/wiki/SplitGpg/tb78-2.png)
-[![tb78-3.png](/attachment/wiki/SplitGpg/tb78-3.png)](/attachment/wiki/SplitGpg/tb78-3.png)
+[![tb78-1.png](/attachment/doc/tb78-1.png)](/attachment/doc/tb78-1.png)
+[![tb78-2.png](/attachment/doc/tb78-2.png)](/attachment/doc/tb78-2.png)
+[![tb78-3.png](/attachment/doc/tb78-3.png)](/attachment/doc/tb78-3.png)
 
 You need to obtain your key ID which should be **exactly 16 characters**. Enter the command `qubes-gpg-client-wrapper -K --keyid-format long`:
 
@@ -180,24 +178,24 @@ ssb   rsa2048/370CE932085BA13B 2020-09-05 [E] [expires: 2022-09-05]
 
 Open the Account Settings and open the *End-to-End Encryption* tab of the respective email account. Click the *Add Key* button. You'll be offered the choice *Use your external key through GnuPG*. Select it and click Continue.
 
-[![tb78-4.png](/attachment/wiki/SplitGpg/tb78-4.png)](/attachment/wiki/SplitGpg/tb78-4.png)
-[![tb78-5.png](/attachment/wiki/SplitGpg/tb78-5.png)](/attachment/wiki/SplitGpg/tb78-5.png)
+[![tb78-4.png](/attachment/doc/tb78-4.png)](/attachment/doc/tb78-4.png)
+[![tb78-5.png](/attachment/doc/tb78-5.png)](/attachment/doc/tb78-5.png)
 
 The key ID reference you would need here is `777402E6D301615C`. Now paste or type the ID of the secret key that you would like to use. Be careful to enter it correctly, because your input isn't verified. Confirm to save this key ID. Now you can select the key ID to use.
 
-[![tb78-6.png](/attachment/wiki/SplitGpg/tb78-6.png)](/attachment/wiki/SplitGpg/tb78-6.png)
-[![tb78-7.png](/attachment/wiki/SplitGpg/tb78-7.png)](/attachment/wiki/SplitGpg/tb78-7.png)
+[![tb78-6.png](/attachment/doc/tb78-6.png)](/attachment/doc/tb78-6.png)
+[![tb78-7.png](/attachment/doc/tb78-7.png)](/attachment/doc/tb78-7.png)
 
 This key ID will be used to digitally sign or send an encrypted message with your account. For this to work, Thunderbird needs a copy of your public key. At this time, Thunderbird doesn't fetch the public key from `/usr/bin/qubes-gpg-client-wrapper`, you must manually import it. Export the key as follow (assuming the key ID would be `777402E6D301615C`):
 
-[![tb78-8.png](/attachment/wiki/SplitGpg/tb78-8.png)](/attachment/wiki/SplitGpg/tb78-8.png)
-[![tb78-9.png](/attachment/wiki/SplitGpg/tb78-9.png)](/attachment/wiki/SplitGpg/tb78-9.png)
+[![tb78-8.png](/attachment/doc/tb78-8.png)](/attachment/doc/tb78-8.png)
+[![tb78-9.png](/attachment/doc/tb78-9.png)](/attachment/doc/tb78-9.png)
 
 Use Thunderbird's Tools menu to open *OpenPGP Key Management*. In that window, use the File menu to access the *Import Public Key(s) From File* command. Open the file with your public key. After the import was successful, right click on the imported key in the list and select *Key Properties*. You must mark your own key as *Yes, I've verified in person this key has the correct fingerprint*.
 
 Once this is done, you should be able to send an encrypted and signed email by selecting *Require Encryption* or *Digitally Sign This Message* in the compose menu *Options* or *Security* toolbar button. You can try it by sending an email to yourself.
 
-[![tb78-10.png](/attachment/wiki/SplitGpg/tb78-10.png)](/attachment/wiki/SplitGpg/tb78-10.png)
+[![tb78-10.png](/attachment/doc/tb78-10.png)](/attachment/doc/tb78-10.png)
 
 For more details about using smart cards/Split GPG with Thunderbird PGP feature, please see [Thunderbird:OpenPGP:Smartcards](https://wiki.mozilla.org/Thunderbird:OpenPGP:Smartcards) from which the above documentation is inspired.
 
@@ -210,7 +208,7 @@ It is recommended to set up and use `/usr/bin/qubes-gpg-client-wrapper`, as disc
 
 On a fresh Enigmail install, your need to change the default `Enigmail Junior Mode`. Go to Thunderbird preferences and then privacy tab. Select `Force using S/MIME and Enigmail`. Then, in the preferences of Enigmail, make it point to `/usr/bin/qubes-gpg-client-wrapper` instead of the standard GnuPG binary:
 
-[![tb-enigmail-split-gpg-settings-2.png](/attachment/wiki/SplitGpg/tb-enigmail-split-gpg-settings-2.png)](/attachment/wiki/SplitGpg/tb-enigmail-split-gpg-settings-2.png)
+[![tb-enigmail-split-gpg-settings-2.png](/attachment/doc/tb-enigmail-split-gpg-settings-2.png)](/attachment/doc/tb-enigmail-split-gpg-settings-2.png)
 
 ## Using Keybase with Split GPG
 
@@ -224,7 +222,7 @@ The following command will configure Keybase to use `/usr/bin/qubes-gpg-client-w
 $ keybase config set gpg.command /usr/bin/qubes-gpg-client-wrapper
 ```
 
-Now that Keybase is configured to use `qubes-gpg-client-wrapper`, you will be able to use `keybase pgp select` to choose a GPG key from your backend GPG AppVM and link that key to your Keybase identity.
+Now that Keybase is configured to use `qubes-gpg-client-wrapper`, you will be able to use `keybase pgp select` to choose a GPG key from your backend GPG app qube and link that key to your Keybase identity.
 
 ## Using Git with Split GPG
 
@@ -273,7 +271,7 @@ Now you can use `git stag` to add a signed tag to a commit and `git vtag` to ver
 
 ## Importing public keys
 
-Use `qubes-gpg-import-key` in the client AppVM to import the key into the GPG backend VM.
+Use `qubes-gpg-import-key` in the client app qube to import the key into the GPG backend VM.
 
 ```shell_session
 [user@work-email ~]$ export QUBES_GPG_DOMAIN=work-gpg
@@ -282,7 +280,7 @@ Use `qubes-gpg-import-key` in the client AppVM to import the key into the GPG ba
 
 A safe, unspoofable user consent dialog box is displayed.
 
-[![r2-split-gpg-5.png](/attachment/wiki/SplitGpg/r2-split-gpg-5.png)](/attachment/wiki/SplitGpg/r2-split-gpg-5.png)
+[![r2-split-gpg-5.png](/attachment/doc/r2-split-gpg-5.png)](/attachment/doc/r2-split-gpg-5.png)
 
 Selecting "Yes to All" will add a line in the corresponding [RPC Policy](/doc/rpc-policy/) file.
 
@@ -343,14 +341,14 @@ In this example, the following keys are stored in the following locations (see b
    This is a network-isolated VM.
    The initial master keypair and subkeys are generated in this VM.
    The master secret key *never* leaves this VM under *any* circumstances.
-   No files or text is *ever* [copied](/doc/copying-files#security) or [pasted](/doc/copy-paste#security) into this VM under *any* circumstances.
+   No files or text is *ever* [copied](/doc/how-to-copy-and-move-files/#security) or [pasted](/doc/how-to-copy-and-paste-text/#security) into this VM under *any* circumstances.
 
 * `work-gpg`
 
    This is a network-isolated VM.
    This VM is used *only* as the GPG backend for `work-email`.
-   The secret subkeys (but *not* the master secret key) are [copied](/doc/copying-files#security) from the `vault` VM to this VM.
-   Files from less trusted VMs are *never* [copied](/doc/copying-files#security) into this VM under *any* circumstances.
+   The secret subkeys (but *not* the master secret key) are [copied](/doc/how-to-copy-and-move-files/#security) from the `vault` VM to this VM.
+   Files from less trusted VMs are *never* [copied](/doc/how-to-copy-and-move-files/#security) into this VM under *any* circumstances.
 
 * `work-email`
 
@@ -363,7 +361,7 @@ In this example, the following keys are stored in the following locations (see b
 In the standard Split GPG setup, there are at least two ways in which the `work-gpg` VM might be compromised.
 First, an attacker who is capable of exploiting a hypothetical bug in `work-email`'s [MUA](https://en.wikipedia.org/wiki/Mail_user_agent) could gain control of the `work-email` VM and send a malformed request which exploits a hypothetical bug in the GPG backend (running in the `work-gpg` VM), giving the attacker control of the `work-gpg` VM.
 Second, a malicious public key file which is imported into the `work-gpg` VM might exploit a hypothetical bug in the GPG backend which is running there, again giving the attacker control of the `work-gpg` VM.
-In either case, such an attacker might then be able to leak both the master secret key and its passphrase (if any is used, it would regularly be input in the work-gpg VM and therefore easily obtained by an attacker who controls this VM) back to the `work-email` VM or to another VM (e.g., the `netvm`, which is always untrusted by default) via the Split GPG protocol or other [covert channels](/doc/data-leaks).
+In either case, such an attacker might then be able to leak both the master secret key and its passphrase (if any is used, it would regularly be input in the work-gpg VM and therefore easily obtained by an attacker who controls this VM) back to the `work-email` VM or to another VM (e.g., the `netvm`, which is always untrusted by default) via the Split GPG protocol or other [covert channels](/doc/data-leaks/).
 Once the master secret key is in the `work-email` VM, the attacker could simply email it to himself (or to the world).
 
 In the alternative setup described in this section (i.e., the subkey setup), even an attacker who manages to gain access to the `work-gpg` VM will not be able to obtain the user's master secret key since it is simply not there.
@@ -371,7 +369,7 @@ Rather, the master secret key remains in the `vault` VM, which is extremely unli
 <sup>\*</sup> The attacker might nonetheless be able to leak the secret subkeys from the `work-gpg` VM in the manner described above, but even if this is successful, the secure master secret key can simply be used to revoke the compromised subkeys and to issue new subkeys in their place.
 (This is significantly less devastating than having to create a new *master* keypair.)
 
-<sup>\*</sup>In order to gain access to the `vault` VM, the attacker would require the use of, e.g., a general Xen VM escape exploit or a [signed, compromised package which is already installed in the TemplateVM](/doc/templates/#trusting-your-templatevms) upon which the `vault` VM is based.
+<sup>\*</sup>In order to gain access to the `vault` VM, the attacker would require the use of, e.g., a general Xen VM escape exploit or a [signed, compromised package which is already installed in the template](/doc/templates/#trusting-your-templates) upon which the `vault` VM is based.
 
 ### Subkey Tutorials and Discussions
 
@@ -390,7 +388,7 @@ As always, exercise caution and use your good judgment.)
   See ticket [#474](https://github.com/QubesOS/qubes-issues/issues/474) for more details and plans how to get around this problem, as well as the section on [using Split GPG with subkeys](#advanced-using-split-gpg-with-subkeys).
 
 * It doesn't solve the problem of allowing the user to know what is to be signed before the operation gets approved.
-  Perhaps the GPG backend domain could start a DisposableVM and have the to-be-signed document displayed there? To Be Determined.
+  Perhaps the GPG backend domain could start a disposable and have the to-be-signed document displayed there? To Be Determined.
 
 * The Split GPG client will fail to sign or encrypt if the private key in the GnuPG backend is protected by a passphrase.
   It will give an `Inappropriate ioctl for device` error.

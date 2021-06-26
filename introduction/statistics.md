@@ -51,13 +51,7 @@ For this purpose, we count an IP address as belonging to a Tor exit node if ther
 
 ### What kinds of data do you collect about Qubes users?
 
-We collect:
-
-- The IPv4 addresses that connect to the Qubes update servers
-- The number of requests from each IPv4 address
-- Standard server access and error logs
-
-We do not collect any other kinds of data about Qubes users.
+Please see our [Privacy Policy](/privacy/).
 
 ### Where can I find the raw data and source code?
 

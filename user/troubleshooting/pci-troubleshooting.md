@@ -6,7 +6,6 @@ ref: 230
 title: PCI Troubleshooting
 ---
 
-# PCI troubleshooting
 
 ## DMA errors
 
@@ -31,7 +30,7 @@ There is a way to enable permissive mode for it.
 See also: [this thread](https://groups.google.com/forum/#!topic/qubes-users/Fs94QAc3vQI) and the Xen wiki's [PCI passthrough](https://wiki.xen.org/wiki/Xen_PCI_Passthrough) page.
 Other times, you may instead need to disable the FLR requirement on a device.
 
-Both can be achieved during attachment with `qvm-pci` as described [PCI Devices documentation](/doc/pci-devices/#additional-attach-options).
+Both can be achieved during attachment with `qvm-pci` as described [PCI Devices documentation](/doc/how-to-use-pci-devices/#additional-attach-options).
 
 ## "Unable to reset PCI device" errors
 
@@ -152,5 +151,5 @@ Look at the [FAQs](/faq/#i-assigned-a-pci-device-to-a-qube-then-unassigned-itshu
 You may have an adapter (wired, wireless), that is not compatible with open-source drivers shipped by Qubes.
 You may need to install a binary blob, which provides drivers, from the linux-firmware package.
 
-Open a terminal and run `sudo dnf install linux-firmware` in the TemplateVM upon which your NetVM is based.
-You have to restart the NetVM after the TemplateVM has been shut down.
+Open a terminal and run `sudo dnf install linux-firmware` in the template upon which your NetVM is based.
+You have to restart the NetVM after the template has been shut down.

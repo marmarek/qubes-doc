@@ -1,13 +1,12 @@
 ---
 lang: en
-layout: sidebar
+layout: doc
 permalink: /downloads/mirrors/
 ref: 148
 title: Download Mirrors
 ---
 
-Qubes Download Mirrors
-======================
+**Note:** The Qubes OS Project has no control over or access to data collected at these mirrors.
 
 List of Download Mirrors
 ------------------------

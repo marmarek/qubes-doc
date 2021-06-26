@@ -1,6 +1,6 @@
 ---
 lang: en
-layout: sidebar
+layout: doc
 permalink: /support/
 redirect_from:
 - /help/
@@ -14,8 +14,6 @@ redirect_from:
 ref: 122
 title: Help, Support, Mailing Lists, and Forum
 ---
-
-# Help, Support, Mailing Lists, and Forum
 
 Help and support for Qubes OS is available from the [documentation](/doc/), the
 [mailing lists](#mailing-lists), and our [forum](#forum) which are explained below. The Qubes OS

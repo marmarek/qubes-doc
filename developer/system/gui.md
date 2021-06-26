@@ -8,11 +8,8 @@ redirect_from:
 - /doc/GUIdocs/
 - /wiki/GUIdocs/
 ref: 61
-title: GUI
+title: GUI Virtualization
 ---
-
-Qubes GUI protocol
-==================
 
 qubes_gui and qubes_guid processes
 ------------------------------------
@@ -68,7 +65,7 @@ To sum up, this solution has the following benefits:
 - no changes to Xorg code
 - minimal size of the supporting code
 
-![gui.png](/attachment/wiki/GUIdocs/gui.png)
+![gui.png](/attachment/doc/gui.png)
 
 Security markers on dom0 windows
 --------------------------------

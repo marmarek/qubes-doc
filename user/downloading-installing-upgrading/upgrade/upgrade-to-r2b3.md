@@ -10,8 +10,6 @@ ref: 157
 title: Upgrading to R2B3
 ---
 
-Upgrading Qubes R2 Beta 2 to R2 Beta 3
-======================================
 
 Current Qubes R2 Beta 2 (R2B2) systems can be upgraded in-place to the latest R2 Beta 3 (R2B3) release by following the procedure below. However, upgrading in-place is riskier than performing a clean installation, since there are more things which can go wrong. For this reason, **we strongly recommended that users perform a [clean installation](/doc/installation-guide/) of Qubes R2 Beta 3**.
 
@@ -22,11 +20,11 @@ Experienced users may be comfortable accepting the risks of upgrading in-place. 
 Upgrade all Template and Standalone VM(s)
 -----------------------------------------
 
-By default, in Qubes R2, there is only one Template VM, however users are free to create more Template VMs for special purposes, as well as Standalone VMs. More information on using multiple Template VMs, as well as Standalone VMs, can be found [here](/doc/software-update-vm/). The steps described in this section should be repeated in *all* user's Template and Standalone VMs.
+By default, in Qubes R2, there is only one template, however users are free to create more templates for special purposes, as well as Standalone VMs. More information on using multiple templates, as well as Standalone VMs, can be found [here](/doc/software-update-vm/). The steps described in this section should be repeated in *all* user's Template and Standalone VMs.
 
 It is critical to complete this step **before** proceeding to dom0 upgrade. Otherwise you will most likely ends with unusable system.
 
-1. Open terminal in the template VM (or standalone VM). E.g. use the Qubes Manager's right-click menu and choose Run Command in VM and type `gnome-terminal` there.
+1. Open terminal in the template (or standalone VM). E.g. use the Qubes Manager's right-click menu and choose Run Command in VM and type `gnome-terminal` there.
 2. Proceed with normal update in the template:
 
     ~~~

@@ -6,13 +6,12 @@ ref: 235
 title: Media Troubleshooting
 ---
 
-# Video and Audio Troubleshooting
 
 ## Can't play media videos in a VM due to missing codecs
 
 If you’re having trouble playing a video file in a qube, you’re probably missing the required codecs.
 The easiest way to resolve this is to install VLC Media Player and use that to play your video files.
-You can do this in multiple different TemplateVM distros by following the instructions [here](/faq/#how-do-i-play-video-files).
+You can do this in multiple different template distros by following the instructions [here](/faq/#how-do-i-play-video-files).
 
 ## Video lagging
 

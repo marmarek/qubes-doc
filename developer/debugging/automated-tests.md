@@ -9,7 +9,6 @@ ref: 45
 title: Automated Tests
 ---
 
-# Automated Tests
 
 ## Unit and Integration Tests
 
@@ -115,7 +114,7 @@ vm_qrexec_gui/TC_20_DispVM_fedora-21/test_030_edit_file
 
 Example test run:
 
-![snapshot-tests2.png](/attachment/wiki/developers/snapshot-tests2.png)
+![snapshot-tests2.png](/attachment/doc/snapshot-tests2.png)
 
 Tests are also compatible with nose2 test runner, so you can use this instead:
 

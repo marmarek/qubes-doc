@@ -1,6 +1,6 @@
 ---
 lang: en
-layout: sidebar
+layout: doc
 permalink: /faq/
 redirect_from:
 - /doc/user-faq/
@@ -12,10 +12,8 @@ redirect_from:
 - /doc/DevelFaq/
 - /wiki/DevelFaq/
 ref: 124
-title: Frequently Asked Questions
+title: Frequently Asked Questions (FAQ)
 ---
-
-# Frequently Asked Questions
 
 ## General & Security
 
@@ -23,14 +21,14 @@ title: Frequently Asked Questions
 
 Qubes OS is a security-oriented operating system (OS).
 The OS is the software that runs all the other programs on a computer.
-Some examples of popular OSes are Microsoft Windows, Mac OS X, Android, and iOS.
+Some examples of popular OSes are Windows, macOS, Android, and iOS.
 Qubes is free and open-source software (FOSS).
 This means that everyone is free to use, copy, and change the software in any way.
 It also means that the source code is openly available so others can contribute to and audit it.
 
 ### Why is OS security important?
 
-Most people use an operating system like Windows or OS X on their desktop and laptop computers.
+Most people use an operating system like Windows or macOS on their desktop and laptop computers.
 These OSes are popular because they tend to be easy to use and usually come pre-installed on the computers people buy.
 However, they present problems when it comes to security.
 For example, you might open an innocent-looking email attachment or website, not realizing that you're actually allowing malware (malicious software) to run on your computer.
@@ -80,7 +78,7 @@ For more information about how to use this powerful tool correctly and safely, p
 ### What about privacy in non-Whonix qubes?
 
 Qubes OS does not claim to provide special privacy (as opposed to security) properties in non-[Whonix](/doc/whonix/) qubes.
-This includes [DisposableVMs](/doc/disposablevm/).
+This includes [disposables](/doc/how-to-use-disposables/).
 
 For example, a standard [Fedora](/doc/templates/fedora/) qube is expected to have basically the same privacy properties as that upstream Fedora distribution, enhanced to some degree by the control Qubes provides over that qube.
 For most users, this level of privacy may be good enough for many common activities.
@@ -90,7 +88,7 @@ Privacy is far more difficult than is commonly understood.
 In addition to the [web browser](https://www.torproject.org/projects/torbrowser/design/), there is also [VM fingerprinting](https://www.whonix.org/wiki/VM_Fingerprinting) and [advanced deanonymization attacks](https://www.whonix.org/wiki/Advanced_Deanonymization_Attacks) that most users have never considered (and this is just to mention a few examples).
 The [Whonix Project](https://www.whonix.org/) specializes in [protecting against these risks](https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection).
 
-In order to achieve the same results in non-Whonix qubes (including DisposableVMs), one would have to reinvent Whonix.
+In order to achieve the same results in non-Whonix qubes (including disposables), one would have to reinvent Whonix.
 Such duplication of effort makes no sense when Whonix already exists and is already integrated into Qubes OS.
 
 Therefore, when you need privacy, you should use Whonix qubes.
@@ -170,7 +168,7 @@ It also has a very unique GUI virtualization infrastructure.
 ### What about safe languages and formally verified microkernels?
 
 In short: these are non-realistic solutions today.
-We discuss this in further depth in our [Architecture Specification document](/attachment/wiki/QubesArchitecture/arch-spec-0.3.pdf).
+We discuss this in further depth in our [Architecture Specification document](/attachment/doc/arch-spec-0.3.pdf).
 
 ### Why does Qubes use virtualization?
 
@@ -197,7 +195,7 @@ Very paranoid users, or those who are high-profile targets, might use a dozen or
 ### Why does Qubes use Xen instead of KVM or some other hypervisor?
 
 In short: we believe the Xen architecture allows for the creation of more secure systems (i.e. with a much smaller TCB, which translates to a smaller attack surface).
-We discuss this in much greater depth in our [Architecture Specification document](/attachment/wiki/QubesArchitecture/arch-spec-0.3.pdf).
+We discuss this in much greater depth in our [Architecture Specification document](/attachment/doc/arch-spec-0.3.pdf).
 
 ### How is Qubes affected by Xen Security Advisories (XSAs)?
 
@@ -253,7 +251,7 @@ Please refer to [this page](/doc/vm-sudo/).
 
 Please see:
 
-- [Installing and updating software in dom0](/doc/software-update-dom0/)
+- [Installing and updating software in dom0](/doc/how-to-install-software-in-dom0/)
 - [Note on dom0 and EOL](/doc/supported-versions/#note-on-dom0-and-eol)
 
 ### Do you recommend coreboot as an alternative to vendor BIOS?
@@ -327,7 +325,7 @@ Those won’t fly.
 We do not provide GPU virtualization for Qubes.
 This is mostly a security decision, as implementing such a feature would most likely introduce a great deal of complexity into the GUI virtualization infrastructure.
 However, Qubes does allow for the use of accelerated graphics (e.g. OpenGL) in dom0’s Window Manager, so all the fancy desktop effects should still work.
-AppVMs use a software-only (CPU-based) implementation of OpenGL, which may be good enough for basic games and applications.
+App qubes use a software-only (CPU-based) implementation of OpenGL, which may be good enough for basic games and applications.
 
 For further discussion about the potential for GPU passthrough on Xen/Qubes, please see the following threads:
 
@@ -359,9 +357,9 @@ See [Certified Hardware](/doc/certified-hardware/).
 
 ### How much disk space does each qube require?
 
-Each qube is created from a TemplateVM and shares the root filesystem with this TemplateVM (in a read-only manner).
+Each qube is created from a template and shares the root filesystem with this template (in a read-only manner).
 This means that each qube needs only as much disk space as is necessary to store its own private data.
-This also means that it is possible to update the software for several qubes simultaneously by running a single update process in the TemplateVM upon which those qubes are based.
+This also means that it is possible to update the software for several qubes simultaneously by running a single update process in the template upon which those qubes are based.
 (These qubes will then have to be restarted in order for the update to take effect in them.)
 
 ### How much memory is recommended for Qubes?
@@ -426,8 +424,8 @@ See introductions on Wikibooks: [here](https://en.wikibooks.org/wiki/Fedora_And_
 You may have an adapter (wired, wireless), that is not compatible with open-source drivers shipped by Qubes.
 You may need to install a binary blob, which provides drivers, from the linux-firmware package.
 
-Open a terminal and run `sudo dnf install linux-firmware` in the TemplateVM upon which your NetVM is based.
-You have to restart the NetVM after the TemplateVM has been shut down.
+Open a terminal and run `sudo dnf install linux-firmware` in the template upon which your NetVM is based.
+You have to restart the NetVM after the template has been shut down.
 
 ### Can I install Qubes OS together with other operating system (dual-boot/multi-boot)?
 
@@ -439,21 +437,21 @@ It begins with an explanation of the risks with such a setup.
 
 See [here](/doc/version-scheme/#check-installed-version).
 
-### My qubes lost internet access after a TemplateVM update. What should I do?
+### My qubes lost internet access after a template update. What should I do?
 
-See [Update Troubleshooting](/doc/update-troubleshooting/#lost-internet-access-after-a-templatevm-update).
+See [Update Troubleshooting](/doc/update-troubleshooting/#lost-internet-access-after-a-template-update).
 
 ### My keyboard layout settings are not behaving correctly. What should I do?
 
 See [Hardware Troubleshooting](/doc/hardware-troubleshooting/#keyboard-layout-settings-not-behaving-correctly).
 
-### My dom0 and/or TemplateVM update stalls when attempting to update via the GUI tool. What should I do?
+### My dom0 and/or template update stalls when attempting to update via the GUI tool. What should I do?
 
 This can usually be fixed by updating via the command line.
 
 In dom0, open a terminal and run `sudo qubes-dom0-update`.
 
-In your TemplateVMs, open a terminal and run `sudo dnf upgrade`.
+In your templates, open a terminal and run `sudo dnf upgrade`.
 
 ### How do I run a Windows HVM in non-seamless mode (i.e., as a single window)?
 
@@ -489,12 +487,12 @@ See also [here](/doc/assigning-devices/).
 
 If you're having trouble playing a video file in a qube, you're probably missing the required codecs.
 The easiest way to resolve this is to install VLC Media Player and use that to play your video files.
-You can do this in multiple different TemplateVM distros (Fedora, Debian, etc.).
+You can do this in multiple different template distros (Fedora, Debian, etc.).
 
 For Debian:
 
-1. (Recommended) Clone an existing Debian TemplateVM
-2. Install VLC in that TemplateVM:
+1. (Recommended) Clone an existing Debian template
+2. Install VLC in that template:
 
     ```bash_session
     $ sudo apt install vlc
@@ -504,9 +502,9 @@ For Debian:
 
 For Fedora:
 
-1. (Recommended) Clone an existing Fedora TemplateVM
-2. [Enable the appropriate RPMFusion repos in the desired Fedora TemplateVM](/doc/software-update-domu/#rpmfusion-for-fedora-templatevms).
-3. Install VLC in that TemplateVM:
+1. (Recommended) Clone an existing Fedora template
+2. [Enable the appropriate RPMFusion repos in the desired Fedora template](/doc/how-to-install-software/#rpmfusion-for-fedora-templates).
+3. Install VLC in that template:
 
     ```bash_session
     $ sudo dnf install vlc
@@ -527,7 +525,7 @@ From the top part of the list, click on the drive you want to attach, then selec
 Although you can also attach the entire USB device to a qube by selecting it from the bottom part of the list, in general this approach should not be used because you are exposing the target qube to unnecessary additional attack surface.
 
 Although external media such as external hard drives or flash drives plugged in via USB are available in the USB qube, it is not recommended to access them directly from inside the USB qube.
-See [Block (Storage) Devices](/doc/block-devices/) for more information.
+See [Block (Storage) Devices](/doc/how-to-use-block-storage-devices/) for more information.
 
 ### My encrypted drive doesn't appear in Debian qube.
 
@@ -579,9 +577,9 @@ From a `dom0` prompt, enter:
 qvm-prefs <HVMname> kernel ""
 ```
 
-### When I try to install a TemplateVM, it says no match is found.
+### When I try to install a template, it says no match is found.
 
-See [VM Troubleshooting](/doc/vm-troubleshooting/#no-match-found-when-trying-to-install-a-templatevm).
+See [VM Troubleshooting](/doc/vm-troubleshooting/#no-match-found-when-trying-to-install-a-template).
 
 ### I keep getting "Failed to synchronize cache for repo" errors when trying to update my Fedora templates
 
@@ -615,6 +613,10 @@ There is no particular configuration that will be ideal for everyone (despite ho
 Please don't ask for your favorite program to be installed by default or for some setting that obviously varies by user preference to be changed so that it matches *your* preference.
 This is an incredibly selfish attitude that demonstrates a complete lack of consideration for the thousands of other Qubes users who don't happen to share your preferences.
 
+### Software installed in a qube is gone after restarting. Why?
+
+Software must be [installed in the template](/doc/how-to-install-software/) on which your qube is based.
+
 ## Developers
 
 ### Are there restrictions on the software that the Qubes developers are willing to use?
@@ -625,7 +627,7 @@ Specifically:
 
 - If PGP signatures are used, the signing key(s) should have well-publicized fingerprint(s) verifiable via multiple independent channels or be accessible to the developers through a web of trust.
 - If the software is security-sensitive and requires communication with the outside world, a "split" implementation is highly preferred (for examples, see [Split GPG](/doc/split-gpg/) and [Split Bitcoin](/doc/split-bitcoin/)).
-- If the software has dependencies, these should be packaged and available in repos for a [current, Qubes-supported version](/doc/supported-versions/#templatevms) of Fedora (preferred) or Debian (unless all the insecure dependencies can run in an untrusted VM in a "split" implementation).
+- If the software has dependencies, these should be packaged and available in repos for a [current, Qubes-supported version](/doc/supported-versions/#templates) of Fedora (preferred) or Debian (unless all the insecure dependencies can run in an untrusted VM in a "split" implementation).
 - If the software must be built from source, the source code and any builders must be signed.
    (Practically speaking, the more cumbersome and time-consuming it is to build from source, the less likely the developers are to use it.)
 

@@ -1,14 +1,12 @@
 ---
-layout: sidebar
-title: Google Season of Docs
+lang: en
+layout: doc
 permalink: /gsod/
+ref: 242
+title: Google Season of Docs
 ---
 
-# 2020 Google Season of Docs
-
-Thank you for your interest in participating in the [2020 Google Season of Docs][gsod] program with the [Qubes OS team][team]. You can read more about the Google Season of Docs in the official [guides][gsod-doc] and [FAQ][gsod-faq].
-
-You can view the project we had in 2019 in the [2019 GSoD archive][2019-qubes-gsod] and the [2019 writer's report][2019-qubes-report].
+Thank you for your interest in participating in the [2021 Google Season of Docs](https://developers.google.com/season-of-docs/) program with the [Qubes OS team](/team/). You can read more about the Google Season of Docs in the official [guides](https://developers.google.com/season-of-docs/docs/) and [FAQ](https://developers.google.com/season-of-docs/docs/faq).
 
 ## Project Ideas List
 
@@ -31,6 +29,7 @@ Here's a suggested template for adding project ideas:
 
 **Mentor**: Name and email address.
 ```
+
 ### Offline documentation
 
 **Project**: Offline documentation
@@ -39,13 +38,13 @@ Here's a suggested template for adding project ideas:
 
 **Expected results**: 
 
- - Review [past discussions on the issue](https://github.com/QubesOS/qubes-issues/issues/1019)
- - Recommend workflow and platform for displaying offline documentation
- - Test workflow and platform to ensure usability and functionality
+- Review [past discussions on the issue](https://github.com/QubesOS/qubes-issues/issues/1019)
+- Recommend workflow and platform for displaying offline documentation
+- Test workflow and platform to ensure usability and functionality
 
 **Knowledge prerequisite**: 
 
- - [Markdown][markdown]
+- [Markdown][markdown]
 
 **Mentor**: [Marek Marczykowski-Górecki][team]
 
@@ -57,12 +56,12 @@ Here's a suggested template for adding project ideas:
 
 **Expected results**: 
 
- - Review [past discussions on the issue](https://github.com/QubesOS/qubes-issues/issues/1774)
- - Provide visual mock-ups and proposed text 
+- Review [past discussions on the issue](https://github.com/QubesOS/qubes-issues/issues/1774)
+- Provide visual mock-ups and proposed text 
   
 **Knowledge prerequisite**: 
 
- - some experience with Anaconda would be helpful
+- some experience with Anaconda would be helpful
 
 **Mentor**: [Marek Marczykowski-Górecki][team]
 
@@ -88,25 +87,6 @@ Additionally, terminology is used inconsistently.
 
 **Mentor**: [Marek Marczykowski-Górecki][team]
 
-### Consolidate troubleshooting guides
-
-**Project**: Consolidate troubleshooting guides
-
-**Brief explanation**: Troubleshooting guides are scattered across many pages and sometimes incomplete, leading to repeatedly posting the same instruction over and over when helping users to diagnose problems.
-This could be helped by writing consolidated guide with with a clear list of symptom-action layout.
-
-**Expected results**:
-
-- Review existing [troubleshooting guides](https://www.qubes-os.org/doc/#troubleshooting)
-- Review [issues][doc-issues] containing common troubleshooting steps (checking specific logs etc)
-- Propose updated, consolidated troubleshooting documentation, including its layout
-
-**Knowledge prerequisite**:
-
-- [Markdown][markdown]
-
-**Mentor**: [Marek Marczykowski-Górecki][team]
-
 ### Installation Guide for Qubes OS on Virtual Machines
 
 **Project**: Installation Guide for Qubes OS on Virtual Machines.
@@ -114,30 +94,81 @@ This could be helped by writing consolidated guide with with a clear list of sym
 **Brief explanation**: The Qubes OS is missing an installation guide for virtual machines. Users are installing an outdated and unsupported version of Qubes OS (3.2) instead of the supported version. There is unofficial [existing installation guide] for Qubes OS on a virtual box but it is misleading and lacks documentation. Usually, users face some errors and bugs while installing Qubes OS on a virtual machine.[virtual box issue]
 
 **Expected results**: 
- -Provide a new option of installation guide for users working on virtual machines.
- -Review existing problems and provide solutions to them.
- -Giving a warning for using outdated versions.
+
+- Provide a new option of installation guide for users working on virtual machines.
+- Review existing problems and provide solutions to them.
+- Giving a warning for using outdated versions.
 
 **Knowledge prerequisite**: 
- - Experience in virtual boxes and machines.
- - Basic Knowledge about Fedora linux architecture.
- - [Markdown][markdown]
+
+- Experience in virtual boxes and machines.
+- Basic Knowledge about Fedora linux architecture.
+- [Markdown][markdown]
  
 **Mentor**: [Marek Marczykowski-Górecki][team]
 
-[gsod]: https://developers.google.com/season-of-docs/
-[team]: /team/
-[gsod-doc]: https://developers.google.com/season-of-docs/docs/
-[gsod-faq]: https://developers.google.com/season-of-docs/docs/faq
-[gsod.md]: https://github.com/QubesOS/qubes-doc/blob/master/developer/general/gsod.md
-[gsod-2020-thread]: https://groups.google.com/d/msgid/qubes-project/aac9b148-4081-ebd8-cb9d-9a9191033484%40qubes-os.org
-[Documentation Guidelines]: /doc/doc-guidelines/
-[Help, Support, and Mailing Lists]: /support/
-[intro]: /intro/
-[getting started]: /getting-started/
-[markdown]: https://daringfireball.net/projects/markdown/
-[doc-issues]: https://github.com/QubesOS/qubes-issues/issues?q=is%3Aopen+is%3Aissue+label%3A%22C%3A+doc%22
-[2019-qubes-gsod]:  https://developers.google.com/season-of-docs/docs/2019/participants/project-qubes
-[2019-qubes-report]: https://refre.ch/report-qubesos/
-[existing installation guide]: https://www.youtube.com/watch?v=mATI8Lht0Js
-[virtual box issue]: https://www.virtualbox.org/ticket/16771
+## Past Projects
+
+You can view the project we had in 2019 in the [2019 GSoD archive](https://developers.google.com/season-of-docs/docs/2019/participants/project-qubes) and the [2019 writer's report](https://refre.ch/report-qubesos/).
+
+You can also view the project we had in 2020 in the [2020 GSoD archive](https://developers.google.com/season-of-docs/docs/2020/participants/project-qubesos-c1e0) and the [2020 writer's report](https://gist.github.com/PROTechThor/bfe9b8b28295d88c438b6f6c754ae733).
+
+Here are some successful projects which have been implemented in the past by Google Season of Docs participants. 
+
+### Consolidate troubleshooting guides
+
+**Project**: Consolidate troubleshooting guides
+
+**Brief explanation**: Troubleshooting guides are scattered across many pages and sometimes incomplete, leading to repeatedly posting the same instruction over and over when helping users to diagnose problems.
+This could be helped by writing a consolidated guide with a clear list of symptom-action layout.
+
+**Expected results**:
+
+- Review existing [troubleshooting guides](/doc/#troubleshooting)
+- Review [issues](https://github.com/QubesOS/qubes-issues/issues?q=is%3Aopen+is%3Aissue+label%3A%22C%3A+doc%22) containing common troubleshooting steps (checking specific logs etc)
+- Propose updated, consolidated troubleshooting documentation, including its layout
+
+**Knowledge prerequisite**:
+
+- [Markdown](https://daringfireball.net/projects/markdown/)
+
+**Mentor**: [Marek Marczykowski-Górecki](/team/)
+
+### Improve Getting Started page
+
+**Project**: Improve Getting Started page
+
+**Brief explanation**: The [Getting Started page](https://www.qubes-os.org/doc/how-to-get-started/) is the place a new user would go to understand better how to use Qubes. It is currently has old screenshots not using the default desktop environment and could have much better flow. In addition, this improved page content may end up being served more directly to the user via the [offline documentation](https://github.com/QubesOS/qubes-issues/issues/1019) or the firstboot guide. 
+
+**Expected results**: 
+
+- Review the existing page and website, similar pages for other OSes
+- Provide visual mock-ups and proposed text 
+
+**Knowledge prerequisite**: 
+
+- basic Qubes OS knowledge
+- [Markdown](https://daringfireball.net/projects/markdown/)
+
+**Mentor**: [Michael Carbone](/team/)
+
+### Rewrite qrexec documentation
+
+**Project**: Rewrite qrexec documentation
+
+**Brief explanation**: Current qrexec (qubes remote exec) documentation is hard to follow, important informations are hidden within a wall of text.
+Some parts are split into multiple sections, for example version specific to avoid duplication, but it doesn't help reading it.
+Additionally, protocol documentation describes only few specific use cases, instead of being clear and precise protocol specification.
+Fixing this last point may require very close cooperation with developers, as the current documentation doesn't multiple corner cases (that's one of the issue with its current shape).
+
+**Expected results**:
+
+- Review existing [qrexec documentation](https://www.qubes-os.org/doc/qrexec3/) and an [issue about it](https://github.com/QubesOS/qubes-issues/issues/1392)
+- Propose updated, consolidated admin documentation (policy writing, adding services)
+- Propose consolidated protocol specification, based on the current documentation, and cooperation with developers
+
+**Knowledge prerequisite**:
+
+- [Markdown](https://daringfireball.net/projects/markdown/)
+
+**Mentor**: [Marek Marczykowski-Górecki](/team/)

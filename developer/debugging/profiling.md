@@ -1,22 +1,20 @@
 ---
+lang: en
 layout: doc
-title: Profiling
 permalink: /doc/profiling/
 redirect_from:
 - /en/doc/profiling/
 - /doc/Profiling/
 - /wiki/Profiling/
+ref: 48
+title: Python Profiling
 ---
-
-Profiling
-=========
 
 This is a python profiling primer.
 
 For the purpose of this document, `qubes-dev` is name of the domain used for postprocessing profiling stats.
 
-Requirements
-------------
+## Requirements
 
 ~~~
 yum install gprof2dot graphviz
@@ -30,10 +28,9 @@ mkdir -p ~/profiling
 qvm-run -p qubes-dev 'cat ~/profiling/Upload.sh' > ~/profiling/Upload.sh
 ~~~
 
--   WARNING: this will obviously be running third-party code which is not signed by ITL nor Fedora. You have been warned.
+- WARNING: this will obviously be running third-party code which is not signed by ITL nor Fedora. You have been warned.
 
-Workflow
---------
+## Workflow
 
 ### Identify function responsible for some slow action
 
@@ -43,17 +40,21 @@ You have to select the area in which you suspect less than optimal performance. 
 
 Replace
 
-    def foo(self, bar):
-        # function content
+```python
+def foo(self, bar):
+    # function content
+```
 
 with
 
-    def foo(self, *args, **kwargs):
-        profile.runctx('self.real_foo(*args, **kwargs)', globals(), locals(),
-            time.strftime('/home/user/profiling/foo-%Y%m%d-%H%M%S.pstats'))
+```python
+def foo(self, *args, **kwargs):
+    profile.runctx('self.real_foo(*args, **kwargs)', globals(), locals(),
+        time.strftime('/home/user/profiling/foo-%Y%m%d-%H%M%S.pstats'))
 
-    def real_foo(self, bar):
-        # function content
+def real_foo(self, bar):
+    # function content
+```
 
 ### Run application
 
@@ -88,11 +89,10 @@ This creates `index.html` with all SVG graphics linked to TXT files, ready for u
 make REMOTE=example.com:public_html/qubes/profiling/ upload
 ~~~
 
-Example
--------
+## Example
 
 This example is from `qubes-manager` (`qubesmanager/main.py`).
 
-!["update\_table-20140424-170010.svg"](//attachment/wiki/Profiling/update_table-20140424-170010.svg)
+!["update\_table-20140424-170010.svg"](//attachment/doc/update_table-20140424-170010.svg)
 
 It is apparent that the problem is around `get_disk_usage`, which calls something via `subprocess.call`. It does this 15 times, probably once per VM.

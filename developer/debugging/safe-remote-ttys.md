@@ -1,14 +1,12 @@
 ---
+lang: en
 layout: doc
-title: Safe Remote Dom0 Terminals
 permalink: /doc/safe-remote-ttys/
 redirect_from:
 - /en/doc/safe-remote-ttys/
-- /doc/safe-remote-ttys/
+ref: 49
+title: Safe Remote Dom0 Terminals
 ---
-
-Safe Remote Dom0 Terminals
-==========================
 
 If you do not have working graphics in Dom0, then using a terminal can be quite annoying!
 This was the case for the author while trying to debug PCI-passthrough of a machine's primary (only) GPU.

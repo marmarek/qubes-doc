@@ -1,10 +1,10 @@
 ---
+lang: en
 layout: doc
-title: "Qrexec: Socket-based services"
 permalink: /doc/qrexec-socket-services/
+ref: 42
+title: 'Qrexec: Socket-based Services'
 ---
-
-# Qrexec: Socket-based services
 
 *This page describes how to implement and use new socket-backed services for qrexec. See [qrexec](/doc/qrexec/) for general overview of the qrexec framework.*
 
@@ -20,11 +20,15 @@ If the file is a Unix socket, qrexec will try to connect to it.
 Before passing user input, the socket service will receive a null-terminated service descriptor, i.e. the part after `QUBESRPC`.
 When running in a VM, this is:
 
-    <service_name> <source>\0
+```
+<service_name> <source>\0
+```
 
 When running in dom0, it is:
 
-    <service_name> <source> <target_type> <target>\0
+```
+<service_name> <source> <target_type> <target>\0
+```
 
 (The target type can be `name`, in which case target is a domain name, or `keyword`, in which the target is a keyword like `@dispvm`).
 
@@ -58,6 +62,7 @@ See the below example.
 
 `qrexec-policy-agent` is the program that handles "ask" prompts for Qubes RPC calls.
 It is a good example of an application that:
+
 * Uses Python and asyncio.
 * Runs as a daemon, to save some overhead on starting process.
 * Runs as a normal user.
@@ -223,8 +228,8 @@ echo -e 'policy.Ask dom0\0<input data>' | nc -U /etc/qubes-rpc/policy.Ask
 
 ## Further reading
 
-* [Qrexec overview][qrexec](/doc/qrexec/)
-* [Qrexec internals][qrexec](/doc/qrexec-internals/)
+* [Qrexec overview](/doc/qrexec/)
+* [Qrexec internals](/doc/qrexec-internals/)
 * [qubes-core-qrexec](https://github.com/QubesOS/qubes-core-qrexec/) repository - contains the above example
 * [systemd.socket](https://www.freedesktop.org/software/systemd/man/systemd.socket.html) - socket unit configuration
 * [Streams in Python asyncio](https://docs.python.org/3/library/asyncio-stream.html)

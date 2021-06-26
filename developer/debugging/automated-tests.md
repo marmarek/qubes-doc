@@ -1,20 +1,18 @@
 ---
+lang: en
 layout: doc
-title: Automated Tests
 permalink: /doc/automated-tests/
 redirect_from:
 - /en/doc/automated-tests/
 - /doc/AutomatedTests/
+ref: 45
+title: Automated Tests
 ---
 
-Automated Tests
-===============
+## Unit and Integration Tests
 
-Unit and Integration Tests
---------------------------
-
-Starting with Qubes R3 we use [python unittest][unittest] to perform automatic tests of Qubes OS. 
-Despite the name, we use it for both [unit tests](https://en.wikipedia.org/wiki/Unit_tests) and [integration tests](https://en.wikipedia.org/wiki/Integration_tests). 
+Starting with Qubes R3 we use [python unittest](https://docs.python.org/3/library/unittest.html) to perform automatic tests of Qubes OS.
+Despite the name, we use it for both [unit tests](https://en.wikipedia.org/wiki/Unit_tests) and [integration tests](https://en.wikipedia.org/wiki/Integration_tests).
 The main purpose is, of course, to deliver much more stable releases.
 
 The integration tests must be run in dom0, but some unit tests can run inside a VM as well.
@@ -46,79 +44,84 @@ Our test runner runs mostly the same as the standard one, but it has some nice a
 
 You can use `python3 -m qubes.tests.run -h` to get usage information:
 
-    [user@dom0 ~]$ python3 -m qubes.tests.run -h
-    usage: run.py [-h] [--verbose] [--quiet] [--list] [--failfast] [--no-failfast]
-                  [--do-not-clean] [--do-clean] [--loglevel LEVEL]
-                  [--logfile FILE] [--syslog] [--no-syslog] [--kmsg] [--no-kmsg]
-                  [TESTNAME [TESTNAME ...]]
+```
+[user@dom0 ~]$ python3 -m qubes.tests.run -h
+usage: run.py [-h] [--verbose] [--quiet] [--list] [--failfast] [--no-failfast]
+              [--do-not-clean] [--do-clean] [--loglevel LEVEL]
+              [--logfile FILE] [--syslog] [--no-syslog] [--kmsg] [--no-kmsg]
+              [TESTNAME [TESTNAME ...]]
 
-    positional arguments:
-      TESTNAME              list of tests to run named like in description
-                            (default: run all tests)
+positional arguments:
+  TESTNAME              list of tests to run named like in description
+                        (default: run all tests)
 
-    optional arguments:
-      -h, --help            show this help message and exit
-      --verbose, -v         increase console verbosity level
-      --quiet, -q           decrease console verbosity level
-      --list, -l            list all available tests and exit
-      --failfast, -f        stop on the first fail, error or unexpected success
-      --no-failfast         disable --failfast
-      --loglevel LEVEL, -L LEVEL
-                            logging level for file and syslog forwarding (one of:
-                            NOTSET, DEBUG, INFO, WARN, WARNING, ERROR, CRITICAL;
-                            default: DEBUG)
-      --logfile FILE, -o FILE
-                            if set, test run will be also logged to file
-      --syslog              reenable logging to syslog
-      --no-syslog           disable logging to syslog
-      --kmsg, --very-brave-or-very-stupid
-                            log most important things to kernel ring-buffer
-      --no-kmsg, --i-am-smarter-than-kay-sievers
-                            do not abuse kernel ring-buffer
-      --allow-running-along-qubesd
-                            allow running in parallel with qubesd; this is
-                            DANGEROUS and WILL RESULT IN INCONSISTENT SYSTEM STATE
-      --break-to-repl       break to REPL after tests
+optional arguments:
+  -h, --help            show this help message and exit
+  --verbose, -v         increase console verbosity level
+  --quiet, -q           decrease console verbosity level
+  --list, -l            list all available tests and exit
+  --failfast, -f        stop on the first fail, error or unexpected success
+  --no-failfast         disable --failfast
+  --loglevel LEVEL, -L LEVEL
+                        logging level for file and syslog forwarding (one of:
+                        NOTSET, DEBUG, INFO, WARN, WARNING, ERROR, CRITICAL;
+                        default: DEBUG)
+  --logfile FILE, -o FILE
+                        if set, test run will be also logged to file
+  --syslog              reenable logging to syslog
+  --no-syslog           disable logging to syslog
+  --kmsg, --very-brave-or-very-stupid
+                        log most important things to kernel ring-buffer
+  --no-kmsg, --i-am-smarter-than-kay-sievers
+                        do not abuse kernel ring-buffer
+  --allow-running-along-qubesd
+                        allow running in parallel with qubesd; this is
+                        DANGEROUS and WILL RESULT IN INCONSISTENT SYSTEM STATE
+  --break-to-repl       break to REPL after tests
 
-    When running only specific tests, write their names like in log, in format:
-    MODULE+"/"+CLASS+"/"+FUNCTION. MODULE should omit initial "qubes.tests.".
-    Example: basic/TC_00_Basic/test_000_create
+When running only specific tests, write their names like in log, in format:
+MODULE+"/"+CLASS+"/"+FUNCTION. MODULE should omit initial "qubes.tests.".
+Example: basic/TC_00_Basic/test_000_create
+```
 
 For instance, to run only the tests for the fedora-21 template, you can use the `-l` option, then filter the list:
 
-    [user@dom0 ~]$ python3 -m qubes.tests.run -l | grep fedora-21
-    network/VmNetworking_fedora-21/test_000_simple_networking
-    network/VmNetworking_fedora-21/test_010_simple_proxyvm
-    network/VmNetworking_fedora-21/test_020_simple_proxyvm_nm
-    network/VmNetworking_fedora-21/test_030_firewallvm_firewall
-    network/VmNetworking_fedora-21/test_040_inter_vm
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_000_start_shutdown
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_010_run_gui_app
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_050_qrexec_simple_eof
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_051_qrexec_simple_eof_reverse
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_052_qrexec_vm_service_eof
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_053_qrexec_vm_service_eof_reverse
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_060_qrexec_exit_code_dom0
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_065_qrexec_exit_code_vm
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_100_qrexec_filecopy
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_110_qrexec_filecopy_deny
-    vm_qrexec_gui/TC_00_AppVM_fedora-21/test_120_qrexec_filecopy_self
-    vm_qrexec_gui/TC_20_DispVM_fedora-21/test_000_prepare_dvm
-    vm_qrexec_gui/TC_20_DispVM_fedora-21/test_010_simple_dvm_run
-    vm_qrexec_gui/TC_20_DispVM_fedora-21/test_020_gui_app
-    vm_qrexec_gui/TC_20_DispVM_fedora-21/test_030_edit_file
-    [user@dom0 ~]$ sudo -E python3 -m qubes.tests.run -v `python3 -m qubes.tests.run -l | grep fedora-21`
+```
+[user@dom0 ~]$ python3 -m qubes.tests.run -l | grep fedora-21
+network/VmNetworking_fedora-21/test_000_simple_networking
+network/VmNetworking_fedora-21/test_010_simple_proxyvm
+network/VmNetworking_fedora-21/test_020_simple_proxyvm_nm
+network/VmNetworking_fedora-21/test_030_firewallvm_firewall
+network/VmNetworking_fedora-21/test_040_inter_vm
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_000_start_shutdown
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_010_run_gui_app
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_050_qrexec_simple_eof
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_051_qrexec_simple_eof_reverse
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_052_qrexec_vm_service_eof
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_053_qrexec_vm_service_eof_reverse
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_060_qrexec_exit_code_dom0
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_065_qrexec_exit_code_vm
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_100_qrexec_filecopy
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_110_qrexec_filecopy_deny
+vm_qrexec_gui/TC_00_AppVM_fedora-21/test_120_qrexec_filecopy_self
+vm_qrexec_gui/TC_20_DispVM_fedora-21/test_000_prepare_dvm
+vm_qrexec_gui/TC_20_DispVM_fedora-21/test_010_simple_dvm_run
+vm_qrexec_gui/TC_20_DispVM_fedora-21/test_020_gui_app
+vm_qrexec_gui/TC_20_DispVM_fedora-21/test_030_edit_file
+[user@dom0 ~]$ sudo -E python3 -m qubes.tests.run -v `python3 -m qubes.tests.run -l | grep fedora-21`
+```
 
 Example test run:
 
-![snapshot-tests2.png](/attachment/wiki/developers/snapshot-tests2.png)
+![snapshot-tests2.png](/attachment/doc/snapshot-tests2.png)
 
 Tests are also compatible with nose2 test runner, so you can use this instead:
 
-    sudo systemctl stop qubesd; sudo -E nose2 -v --plugin nose2.plugins.loader.loadtests qubes.tests; sudo systemctl start qubesd
+```bash
+sudo systemctl stop qubesd; sudo -E nose2 -v --plugin nose2.plugins.loader.loadtests qubes.tests; sudo systemctl start qubesd
+```
 
-This may be especially useful together with various nose2 plugins to store tests results (for example `nose2.plugins.junitxml`), to ease presenting results. This is what we use on [OpenQA].
-
+This may be especially useful together with various nose2 plugins to store tests results (for example `nose2.plugins.junitxml`), to ease presenting results. This is what we use on [OpenQA](http://open.qa/).
 
 ### Unit testing inside a VM
 
@@ -132,6 +135,7 @@ its dependency [qubes-core-qrexec](https://github.com/QubesOS/qubes-core-qrexec)
 The below example however will assume that you set up a build environment as described in the [Qubes Builder documentation](/doc/qubes-builder/).
 
 Assuming you cloned the `qubes-builder` repository to your home directory inside a fedora VM, you can use the following commands to run the unit tests:
+
 ```{.bash}
 cd ~
 sudo dnf install python3-pip lvm2 python35 python3-virtualenv
@@ -158,30 +162,31 @@ the current stable branch.
 
 Test runs can be altered using environment variables:
 
- - `DEFAULT_LVM_POOL` - LVM thin pool to use for tests, in `VolumeGroup/ThinPool` format
- - `QUBES_TEST_PCIDEV` - PCI device to be used in PCI passthrough tests (for example sound card)
- - `QUBES_TEST_TEMPLATES` - space separated list of templates to run tests on; if not set, all installed templates are tested
- - `QUBES_TEST_LOAD_ALL` - load all tests (including tests for all templates) when relevant test modules are imported; this needs to be set for test runners not supporting [load_tests protocol](https://docs.python.org/3/library/unittest.html#load-tests-protocol)
+- `DEFAULT_LVM_POOL` - LVM thin pool to use for tests, in `VolumeGroup/ThinPool` format
+- `QUBES_TEST_PCIDEV` - PCI device to be used in PCI passthrough tests (for example sound card)
+- `QUBES_TEST_TEMPLATES` - space separated list of templates to run tests on; if not set, all installed templates are tested
+- `QUBES_TEST_LOAD_ALL` - load all tests (including tests for all templates) when relevant test modules are imported; this needs to be set for test runners not supporting [load_tests protocol](https://docs.python.org/3/library/unittest.html#load-tests-protocol)
 
 ### Adding a new test to core-admin
+
 After adding a new unit test to [core-admin/qubes/tests](https://github.com/QubesOS/qubes-core-admin/tree/master/qubes/tests) you'll have to include it in [core-admin/qubes/tests/\_\_init\_\_.py](https://github.com/QubesOS/qubes-core-admin/tree/master/qubes/tests/__init__.py)
 
-
 #### Editing `__init__.py`
+
 You'll also need to add your test at the bottom of the `__init__.py` file, in the method `def load_tests`, in the for loop with `modname`.
 Again, given the hypothetical `example.py` test:
 
 ~~~python
-    for modname in (
-            'qubes.tests.basic',
-            'qubes.tests.dom0_update',
-            'qubes.tests.network',
-            'qubes.tests.vm_qrexec_gui',
-            'qubes.tests.backup',
-            'qubes.tests.backupcompatibility',
-            'qubes.tests.regressions',
-            'qubes.tests.example', # This is our newly added test
-            ):
+for modname in (
+        'qubes.tests.basic',
+        'qubes.tests.dom0_update',
+        'qubes.tests.network',
+        'qubes.tests.vm_qrexec_gui',
+        'qubes.tests.backup',
+        'qubes.tests.backupcompatibility',
+        'qubes.tests.regressions',
+        'qubes.tests.example', # This is our newly added test
+        ):
 ~~~
 
 ### Testing PyQt applications
@@ -213,7 +218,7 @@ class SomeTestCase(unittest.TestCase):
         # first test that actually use event loop will try to dereference (already
         # destroyed) objects, resulting in SEGV
         self.loop = quamash.QEventLoop(self.qtapp)
-    
+
     def tearDown(self):
         [...]
         # process any pending events before destroying the object
@@ -237,15 +242,14 @@ class SomeTestCase(unittest.TestCase):
         gc.collect()
 ~~~
 
+## Installation Tests with openQA
 
-Installation Tests with openQA
-------------------------------
+**URL:** <https://openqa.qubes-os.org/>
 
-**URL:** <https://openqa.qubes-os.org/>  
 **Tests:** <https://github.com/marmarek/openqa-tests-qubesos>
 
 Manually testing the installation of Qubes OS is a time-consuming process.
-We use [openQA] to automate this process.
+We use [OpenQA](http://open.qa/) to automate this process.
 It works by installing Qubes in KVM and interacting with it as a user would, including simulating mouse clicks and keyboard presses.
 Then, it checks the output to see whether various tests were passed, e.g. by comparing the virtual screen output to screenshots of a successful installation.
 
@@ -255,7 +259,3 @@ In practice, however, either Xen or QEMU crashes when this is attempted.
 Nonetheless, PV works well, which is sufficient for automated installation testing.
 
 Thanks to an anonymous donor, our openQA system is hosted in a datacenter on hardware that meets these requirements.
-
-[unittest]: https://docs.python.org/3/library/unittest.html
-[OpenQA]: http://open.qa/
-

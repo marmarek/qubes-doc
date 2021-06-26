@@ -1,15 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Dom0 Secure Updates
 permalink: /doc/dom0-secure-updates/
 redirect_from:
 - /en/doc/dom0-secure-updates/
 - /doc/Dom0SecureUpdates/
 - /wiki/Dom0SecureUpdates/
+ref: 43
+title: Dom0 Secure Updates
 ---
-
-Qubes Dom0 secure update procedure
-==================================
 
 Reasons for Dom0 updates
 ------------------------
@@ -18,9 +17,9 @@ Normally there should be few reasons for updating software in Dom0. This is beca
 
 However, we anticipate some other situations when updating Dom0 software might be required:
 
--   Updating drivers/libs for new hardware support
--   Correcting non-security related bugs (e.g. new buttons for qubes manager)
--   Adding new features (e.g. GUI backup tool)
+- Updating drivers/libs for new hardware support
+- Correcting non-security related bugs (e.g. new buttons for qubes manager)
+- Adding new features (e.g. GUI backup tool)
 
 Problems with traditional network-based update mechanisms
 ---------------------------------------------------------
@@ -42,7 +41,7 @@ The qubes-receive-updates script processes the untrusted input from Update VM: i
 
 Once qubes-receive-updates finished unpacking and verifying the updates, the updates are placed in ``qubes-receive-updates`` directory in Dom0 filesystem. Those updates are now trusted. Dom0 is configured (see /etc/yum.conf in Dom0) to use this directory as a default (and only) [yum repository](https://github.com/QubesOS/qubes-core-admin-linux/blob/release2/dom0-updates/qubes-cached.repo).
 
-Finally, qubes-dom0-update runs ``yum update`` that fetches the rpms from qubes-cached repo and installs them as usual.
+Finally, qubes-dom0-update runs ``yum update`` that fetches the RPMs from qubes-cached repo and installs them as usual.
 
 Security benefit of our update mechanism
 ----------------------------------------

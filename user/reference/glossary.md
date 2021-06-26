@@ -1,203 +1,215 @@
 ---
+lang: en
 layout: doc
-title: Glossary
 permalink: /doc/glossary/
 redirect_from:
 - /en/doc/glossary/
 - /doc/Glossary/
 - /wiki/Glossary/
+ref: 140
+title: Glossary
 ---
 
-Glossary of Qubes Terminology
-=============================
+## admin qube
 
-Qubes OS
---------
-A security-oriented operating system (OS). 
-The main principle of Qubes OS is security by compartmentalization (or isolation), in which activities are compartmentalized (or isolated) in separate **qubes**.
+A type of [qube](#qube) used for administering Qubes OS.
 
- * The official name is `Qubes OS` (note the capitalization and spacing).
-   However, in casual conversation this is often shortened to `Qubes`, and in technical contexts where spaces are not permitted, (e.g., usernames), the space may be omitted, as in `QubesOS`.
+* Currently, the only admin qube is [dom0](#dom0).
 
-VM
---
-An abbreviation for "virtual machine." 
-A software implementation of a machine (for example, a computer) that executes programs like a physical machine.
+## app qube
 
-Qube
-----
-A user-friendly term for a [VM](#vm) in Qubes OS.
+Any [qube](#qube) that does not have a root filesystem of its own. Every app
+qube is based on a [template](#template) from which it borrows the root
+filesystem.
 
- * Example: "In Qubes OS, you do your banking in your 'banking' qube and your web surfing in your 'untrusted' qube. That way, if your 'untrusted' qube is compromised, your banking activities will remain secure."
+* Previously known as: `AppVM`, `TemplateBasedVM`.
 
- * "Qube" is an informal term intended to make it easier for less technical users to understand Qubes OS and learn how to use it. In technical discussions, the other, more precise terms defined on this page are to be preferred.
+* Historical note: This term originally meant "a qube intended for running user
+  software applications" (hence the name "app").
 
- * The term "qube" should be lowercase unless it is the first word in a sentence. Note that starting a sentence with the plural of "qube" (i.e., "Qubes...") can be ambiguous, since it may not be clear whether the referent is a collection of qubes or [Qubes OS](#qubes-os).
+## disposable
 
-Domain
-------
-**In Qubes OS:** An area or set of activities in one's digital life that has certain security requirements and therefore involves the use of certain [qubes](#qube).
-For example, suppose your "email" domain encompasses the activity of sending PGP-encrypted email.
-This domain may include your email qube and your [Split GPG](/doc/split-gpg) qube.
-Note that domains and qubes are not the same thing.
-In this example, your "email" domain includes the use of two qubes.
-Furthermore, a qube can fall under multiple domains simultaneously.
-For example, your Split GPG qube may also be part of your "software development" domain if you PGP-sign your Git commits.
+A type of temporary [app qube](#app-qube) that self-destructs when its
+originating window closes. Each disposable is based on a [disposable
+template](#disposable-template).
 
-**In Xen:** A synonym for [VM](#vm). See [Domain on the Xen Wiki](https://wiki.xenproject.org/wiki/Domain).
+See [How to Use Dispoables](/doc/how-to-use-disposables/).
 
-dom0
-----
-Domain Zero. 
-Also known as the **host** domain, dom0 is the initial VM started by the Xen hypervisor on boot. 
-Dom0 runs the Xen management toolstack and has special privileges relative to other domains, such as direct access to most hardware. 
-(Note that the use of [domain](#domain) for a synonym for [VM](#vm) is specific to Xen. Qubes diverges from this practice. See: [domain](#domain).)
+* Previously known as: `DisposableVM`, `DispVM`.
 
-domU
-----
-Unprivileged Domain. 
-Also known as **guest** domains, domUs are the counterparts to dom0. 
-All VMs except dom0 are domUs. 
-By default, most domUs lack direct hardware access. 
-(Note that the use of [domain](#domain) for a synonym for [VM](#vm) is specific to Xen. Qubes diverges from this practice. See: [domain](#domain).)
+## disposable template
 
-TemplateVM
-----------
-[Template Virtual Machine](/doc/templates/).
-Any [VM](#vm) that supplies its root filesystem to another VM. 
-TemplateVMs are intended for installing and updating software applications, but not for running them.
+Any [app qube](#app-qube) on which [disposables](#disposable) are based. A
+disposable template shares its user directories (and, indirectly, the root
+filesystem of the regular [template](#template) on which it is based) with all
+[disposables](#disposable) based on it.
 
- * Colloquially, TemplateVMs are often referred to as "templates."
- * Since every TemplateVM supplies its *own* root filesystem to at least one other VM, no TemplateVM can be based on another TemplateVM.
-   In other words, no TemplateVM is a [TemplateBasedVM](#templatebasedvm).
- * Since every TemplateVM supplies its *root* filesystem to at least one other VM, no [DisposableVM Template](#disposablevm-template) is a TemplateVM.
+* Not to be confused with the concept of a regular [template](#template) that
+  is itself disposable, which does not exist in Qubes OS.
 
-TemplateBasedVM
----------------
-Any [VM](#vm) that depends on a [TemplateVM](#templatevm) for its root filesystem.
+* Disposable templates must be app qubes. They cannot be regular
+  [templates](#template).
 
-Standalone(VM)
---------------
-[Standalone (Virtual Machine)](/doc/standalone-and-hvm/).
-In general terms, a [VM](#vm) is described as **standalone** if and only if it does not depend on any other VM for its root filesystem. 
-(In other words, a VM is standalone if and only if it is not a TemplateBasedVM.) 
-More specifically, a **StandaloneVM** is a type of VM in Qubes that is created by cloning a TemplateVM. 
-Unlike TemplateVMs, however, StandaloneVMs do not supply their root filesystems to other VMs. 
-(Therefore, while a TemplateVM is a type of standalone VM, it is not a StandaloneVM.)
+* Every [disposable](#disposable) is based on a disposable template, which is
+  in turn based on a regular [template](#template).
 
-AppVM
------
-Application Virtual Machine.
-A [VM](#vm) class.
-Synonymous with [TemplateBasedVM](#templatebasedvm).
+* Unlike [disposables](#disposable), disposable templates have the persistence
+  properties of normal [app qubes](#app-qube).
 
-NetVM
------
-*This is an old definition from before Qubes 4.0.
-NetVMs, as defined here, no longer exist in Qubes 4.0 or later (see [here][pr-748] for technical details).*
+* Previously known as: `DisposableVM Template`, `DVM Template`, `DVM`.
 
-Network Virtual Machine.
-A type of [VM](#vm) that connects directly to a network.
-Other VMs gain access to a network by connecting to a NetVM (usually indirectly, via a [FirewallVM](#firewallvm)).
-A NetVM called `sys-net` is created by default in most Qubes installations.
+## dom0
 
-Alternatively, "NetVM" may refer to whichever VM is directly connected to a VM for networking purposes. 
-For example, if `untrusted` is directly connected to `sys-firewall` for network access, then it is accurate to say, "`sys-firewall` is `untrusted`'s NetVM," even though `sys-firewall` is a ProxyVM.
+[Domain](#domain) zero. A type of [admin qube](#admin-qube). Also known as the
+**host** domain, dom0 is the initial qube started by the Xen hypervisor on
+boot. Dom0 runs the Xen management toolstack and has special privileges
+relative to other domains, such as direct access to most hardware.
 
-ProxyVM
--------
-*This is an old definition from before Qubes 4.0.
-ProxyVMs, as defined here, no longer exist in Qubes 4.0 or later (see [here][pr-748] for technical details).*
+* The term "dom0" is a common noun and should follow the capitalization rules
+  of common nouns.
 
-Proxy Virtual Machine. 
-A type of [VM](#vm) that proxies network access for other VMs. 
-Typically, a ProxyVM sits between a NetVM and another VM (such as an AppVM or a TemplateVM) that requires network access.
+## domain
 
-FirewallVM
-----------
-*This is an old definition from before Qubes 4.0.
-FirewallVMs, as defined here, no longer exist in Qubes 4.0 or later (see [here][pr-748] for technical details).*
+In Xen, a synonym for [VM](#vm).
 
-Firewall Virtual Machine. 
-A type of [ProxyVM](#proxyvm) that is used to enforce network-level policies (a.k.a. "firewall rules"). 
-A FirewallVM called `sys-firewall` is created by default in most Qubes installations.
+See ["domain" on the Xen Wiki](https://wiki.xenproject.org/wiki/Domain).
 
-DisposableVM
-------------
-[Disposable Virtual Machine](/doc/disposablevm/).
-A temporary [AppVM](#appvm) based on a [DisposableVM Template](#disposablevm-template) that can quickly be created, used, and destroyed.
+* This term has no official meaning in Qubes OS.
 
-DispVM
-------
-An older term for [DisposableVM](#disposablevm).
+## domU
 
-DVM
----
-An abbreviation of [DisposableVM](#disposablevm), typically used to refer to [DisposableVM Templates](#disposablevm-template).
+Unprivileged [domain](#domain). Also known as **guest** domains, domUs are the
+counterparts to dom0. In Xen, all VMs except dom0 are domUs. By default, most
+domUs lack direct hardware access.
 
-DisposableVM Template
----------------------
-(Formerly known as a "DVM Template".)
-A type of [TemplateBasedVM](#templatebasedvm) on which [DisposableVMs](#disposablevm) are based.
-By default, a DisposableVM Template named `fedora-XX-dvm` is created on most Qubes installations (where `XX` is the Fedora version of the default TemplateVM). 
-DisposableVM Templates are not [TemplateVMs](#templatevm), since (being TemplateBasedVMs) they do not have root filesystems of their own to provide to other VMs.
-Rather, DisposableVM Templates are complementary to TemplateVMs insofar as DisposableVM Templates provide their own user filesystems to the DisposableVMs based on them.
+* The term "domU" is a common noun and should follow the capitalization rules
+  of common nouns.
 
-PV
---
-Paravirtualization. 
-An efficient and lightweight virtualization technique originally introduced by the Xen Project and later adopted by other virtualization platforms. 
-Unlike HVMs, paravirtualized [VMs](#vm) do not require virtualization extensions from the host CPU. 
-However, paravirtualized VMs require a PV-enabled kernel and PV drivers, so the guests are aware of the hypervisor and can run efficiently without emulation or virtual emulated hardware.
+* Sometimes the term [VM](#vm) is used as a synonym for domU. This is
+  technically inaccurate, as [dom0](#dom0) is also a VM in Xen.
 
-HVM
----
-[Hardware-assisted Virtual Machine](/doc/standalone-and-hvm/).
-Any fully virtualized, or hardware-assisted, [VM](#vm) utilizing the virtualization extensions of the host CPU. 
-Although HVMs are typically slower than paravirtualized VMs due to the required emulation, HVMs allow the user to create domains based on any operating system.
+## HVM
 
-StandaloneHVM
--------------
-Any [HVM](#hvm) that is standalone (i.e., does not depend on any other VM for its root filesystem). 
-In Qubes, StandaloneHVMs are referred to simply as **HVMs**.
+Hardware-assisted Virtual Machine. Any fully virtualized, or hardware-assisted,
+[VM](#vm) utilizing the virtualization extensions of the host CPU. Although
+HVMs are typically slower than paravirtualized qubes due to the required
+emulation, HVMs allow the user to create domains based on any operating system.
 
-TemplateHVM
------------
-Any [HVM](#hvm) that functions as a [TemplateVM](#templatevm) by supplying its root filesystem to other VMs. 
-In Qubes, TemplateHVMs are referred to as **HVM templates**.
+See [Standalones and HVM](/doc/standalones-and-hvms/).
 
-TemplateBasedHVM
-----------------
-Any [HVM](#hvm) that depends on a [TemplateVM](#templatevm) for its root filesystem. 
+## management qube
 
-ServiceVM
----------
-Service Virtual Machine. 
-A [VM](#vm) the primary purpose of which is to provide a service or services to other VMs. 
-NetVMs and ProxyVMs are examples of ServiceVMs.
+A [qube](#qube) used for automated management of a Qubes OS installation via
+[Salt](/doc/salt/).
 
-SystemVM
---------
-System Virtual Machine.
-A synonym for [ServiceVM](#servicevm).
-SystemVMs usually have the prefix `sys-`.
+## named disposable
 
-PVHVM
------
-[PV](#pv) on [HVM](#hvm). 
-To boost performance, fully virtualized HVM guests can use special paravirtual device drivers (PVHVM or PV-on-HVM drivers). 
-These drivers are optimized PV drivers for HVM environments and bypass the emulation for disk and network I/O, thus providing PV-like (or better) performance on HVM systems. 
-This allows for optimal performance on guest operating systems such as Windows.
+A type of [disposable](#disposable) given a permanent name that continues to
+exist even after it is shut down and can be restarted again. Like a regular
+[disposable](#disposable), a named disposable has no persistent state: Any
+changes made are lost when it is shut down.
 
-Windows Tools
------
-Qubes Windows Tools are a set of programs and drivers that provide integration of Windows [AppVMs](#appvm) with the rest of the Qubes system.
+* Only one instance of a named disposable can run at a time.
 
-QWT
-----
-An abbreviation of Qubes [Windows Tools](#windows-tools).
+* Like a regular [disposable](#disposable), a named disposable always has the
+  same state when it starts, namely that of the [disposable
+  template](#disposable-template) on which it is based.
 
+* Technical note: Named disposables are useful for certain [service
+  qubes](#service-qube), where the combination of persistent device assignment
+  and ephemeral qube state is desirable.
 
-[pr-748]: https://github.com/QubesOS/qubes-doc/pull/748
+## netvm
 
+The property of a [qube](#qube) that specifies from which qube, if any, it
+receives network access. Despite the name, `netvm` is a *property* of a qube,
+not a type of VM. For example, it is common for the `netvm` of an [app
+qube](#app-qube) to be the [service qube](#service-qube) `sys-firewall`, which
+in turn uses `sys-net` as its `netvm`. 
 
+* If a qube does not have a `netvm` (i.e., its `netvm` is set to `None`), then
+  that qube is offline. It is disconnected from all networking.
+
+* The name derives from "Networking Virtual Machine." Before Qubes 4.0, there
+  was a type of [service qube](#service-qube) called a "NetVM." The name of the
+  `netvm` property is a holdover from that era.
+
+## qube
+
+A secure compartment in Qubes OS. Currently, qubes are implemented as Xen
+[VMs](#vm), but Qubes OS is independent of its underlying compartmentalization
+technology. VMs could be replaced with a different technology, and qubes would
+still be called "qubes."
+
+* **Important:** The term "qube" is a common noun and should follow the
+  capitalization rules of common nouns. For example, "I have three qubes" is
+  correct," while "I have three Qubes" is incorrect.
+
+* Note that starting a sentence with the plural of "qube" (i.e., "Qubes...")
+  can be ambiguous, since it may not be clear whether the referent is a
+  plurality of qubes or [Qubes OS](#qubes-os).
+
+* Example usage: "In Qubes OS, you do your banking in your 'banking' qube and
+  your web surfing in your 'untrusted' qube. That way, if your 'untrusted' qube
+  is compromised, your banking activities will remain secure."
+
+* Historical note: The term "qube" was originally invented as an alternative to
+  "VM" intended to make it easier for less technical users to understand Qubes
+  OS and learn how to use it.
+
+## Qubes OS
+
+A security-oriented operating system (OS). The main principle of Qubes OS is
+security by compartmentalization (or isolation), in which activities are
+compartmentalized (or isolated) in separate [qubes](#qube).
+
+* **Important:** The official name is "Qubes OS" (note the capitalization and
+  the space between "Qubes" and "OS"). In casual conversation, this is often
+  shortened to "Qubes." Only in technical contexts where spaces are not
+  permitted (e.g., in usernames) may the space be omitted, as in `@QubesOS`.
+
+## Qubes Windows Tools (QWT)
+
+A set of programs and drivers that provide integration of Windows qubes with
+the rest of the Qubes OS system.
+
+See [Qubes Windows Tools](/doc/windows-tools/) and [Windows](/doc/windows/).
+
+## service qube
+
+Any [app qube](#app-qube) the primary purpose of which is to provide services
+to other qubes. `sys-net` and `sys-firewall` are examples of service qubes.
+
+## standalone
+
+Any [qube](#qube) that has its own root filesystem and does not share it with
+another qube. Distinct from both [templates](#template) and [app
+qubes](#app-qube).
+
+See [Standalones and HVMs](/doc/standalones-and-hvms/).
+
+* Previously known as: `StandaloneVM`.
+
+## template
+
+Any [qube](#qube) that shares its root filesystem with another qube. A qube
+that is borrowing a template's root filesystem is known as an [app
+qube](#app-qube) and is said to be "based on" the template. Templates are
+intended for installing and updating software applications, but not for running
+them.
+
+See [Templates](/doc/templates/).
+
+* No template is an [app qube](#app-qube).
+
+* A template cannot be based on another template.
+
+* Regular templates cannot function as [disposable
+  templates](#disposable-template). (Disposable templates must be app qubes.)
+
+* Previously known as: `TemplateVM`.
+
+## VM
+
+An abbreviation for "virtual machine." A software implementation of a machine
+(for example, a computer) that executes programs like a physical machine.

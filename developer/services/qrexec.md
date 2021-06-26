@@ -1,19 +1,18 @@
 ---
+lang: en
 layout: doc
-title: "Qrexec: secure communication across domains"
 permalink: /doc/qrexec/
 redirect_from:
 - /en/doc/qrexec3/
 - /doc/Qrexec3/
 - /doc/qrexec3/
 - /wiki/Qrexec3/
-- /doc/qrexec/
 - /en/doc/qrexec/
 - /doc/Qrexec/
 - /wiki/Qrexec/
+ref: 37
+title: 'Qrexec: Secure Communication Across Domains'
 ---
-
-# Qrexec: secure communication across domains
 
 (*This page is about qrexec v3. For qrexec v2, see [here](/doc/qrexec2/).*)
 
@@ -39,7 +38,7 @@ Typically, the first thing that a `qrexec-client` instance does is to send a req
 `qrexec-client` starts a vchan server, which `qrexec-agent` then connects to.
 Once this channel is established, stdin/stdout/stderr from the VMprocess is passed between `qrexec-agent` and the `qrexec-client` process.
 
-![qrexec basics diagram](/attachment/wiki/qrexec3/qrexec3-basics.png)
+![qrexec basics diagram](/attachment/doc/qrexec3-basics.png)
 
 The `qrexec-client` command is used to make connections to VMs from dom0.
 For example, the following command creates an empty file called `hello-world.txt` in the home folder of `someVM`:
@@ -202,7 +201,7 @@ This is why `qubes.StartApp` uses our standard `qrexec` argument grammar to stri
 ### Service policies with arguments
 
 Sometimes a service name alone isn't enough to make reasonable qrexec policy.
-One example of such a situation is [qrexec-based USB passthrough](https://www.qubes-os.org/doc/usb-devices/).
+One example of such a situation is [qrexec-based USB passthrough](/doc/how-to-use-usb-devices/).
 Using just a service name would make it difficult to express the policy "allow access to devices X and Y, but deny to all others."
 It isn't feasible to create a separate service for every device: we would need to change the code in multiple files any time we wanted to update the service.
 
@@ -288,7 +287,7 @@ We should get "3" as answer.
 
 Here we create an RPC call that reads a specific file from a predefined directory on the target.
 This example uses an [argument](#service-policies-with-arguments) to the policy.
-In this example a simplified workflow will be used. The service code placed is placed directly in the service definition file on the target VM.
+In this example a simplified workflow will be used. The service code is placed directly in the service definition file on the target VM.
 No separate client script will be needed.
 
 First, on your target VM, create two files in the home directory: `testfile1` and `testfile2`.

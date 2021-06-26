@@ -1,21 +1,23 @@
 ---
+lang: en
 layout: doc
-title: License
 permalink: /doc/license/
 redirect_from:
 - /en/doc/license/
 - /doc/QubesLicensing/
 - /wiki/QubesLicensing/
+ref: 52
+title: Software License
 ---
 
-Qubes OS License
-================
+Qubes OS is a compilation of software packages, each under its own license. The
+compilation is made available under the GNU General Public License version 2
+(GPLv2).
 
-Qubes is a compilation of software packages, each under its own license. The compilation is made available under the GNU General Public License version 2.
+The source code of Qubes OS is contained in repositories under the
+[@QubesOS](https://github.com/QubesOS) account on GitHub. This source code is
+made available under GPLv2, unless there is a `LICENSE` file in the root of the
+containing repository that specifies a different license.
 
-The full text of the GPL v2 license can be found [here](http://www.gnu.org/licenses/gpl-2.0.html).
-
-Note on rights to double-licensing of the Qubes code
-----------------------------------------------------
-
-Invisible Things Lab (ITL), who has funded and run the Qubes project since the beginning, and who has contributed the majority of Qubes-specific code (specifically: `core-*`, `gui-*`, and `qubes-*` repositories) would like to have a right to redistribute parts of this code under proprietary licenses. This is especially important for Qubes R3 and later, where the new architecture allows the creation of many editions of Qubes, using different hypervisors, some of which might not be open source. That's why we ask every developer who contributes code to Qubes project to grant ITL permission to reuse the code under a different license, and to express this consent by including the [standard signed-off line](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst?id=HEAD#n416) in the commit.
+The full text of the GPLv2 license can be found
+[here](https://www.gnu.org/licenses/gpl-2.0.html).

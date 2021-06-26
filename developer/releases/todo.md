@@ -1,18 +1,18 @@
 ---
+lang: en
 layout: doc
-title: Release Checklist
 permalink: /doc/releases/todo/
 redirect_from:
 - /en/doc/releases/todo/
+ref: 14
+title: Release Checklist
 ---
-
-Release Checklist
-=================
 
 *the checklist is probably unfinished*
 
 On -rc1
 -------
+
 * write schedule
 * create package repositories (linux-yum, linux-deb)
 * update repository definition (core-agent-linux, installer-qubes-os/qubes-release)
@@ -24,6 +24,7 @@ On -rc1
 
 On subsequent -rc
 -----------------
+
 * push packages to `current`
 * update release notes
 * build ISO and push to mirrors
@@ -31,6 +32,7 @@ On subsequent -rc
 
 On final release
 ----------------
+
 * push packages to `current`
 * finish release notes
 * update InstallationInstructions

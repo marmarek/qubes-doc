@@ -1,15 +1,15 @@
 ---
+lang: en
 layout: doc
-title: "Qrexec: Qubes RPC internals"
 permalink: /doc/qrexec-internals/
 redirect_from:
 - /doc/qrexec3-implementation/
 - /en/doc/qrexec3-implementation/
 - /doc/Qrexec3Implementation/
 - /wiki/Qrexec3Implementation/
+ref: 39
+title: 'Qrexec: Qubes RPC Internals'
 ---
-
-# Qubes RPC internals
 
 (*This page details the current implementation of qrexec (qrexec3).
 A [general introduction](/doc/qrexec/) to qrexec is also available.
@@ -32,6 +32,7 @@ These tools are not designed to be used by users directly.
 
 One instance is required for every active domain.
 `qrexec-daemon` is responsible for both:
+
 - handling execution and service requests from **dom0** (source: `qrexec-client`); and
 - handling service requests from the associated domain (source: `qrexec-client-vm`, then `qrexec-agent`).
 
@@ -39,9 +40,9 @@ Command line usage:
 
 `qrexec-daemon domain-id domain-name [default user]`
 
-* `domain-id`: Numeric Qubes ID assigned to the associated domain.
-* `domain-name`: Associated domain name.
-* `default user`: Optional. If passed, `qrexec-daemon` uses this user as default for all execution requests that don't specify one.
+- `domain-id`: Numeric Qubes ID assigned to the associated domain.
+- `domain-name`: Associated domain name.
+- `default user`: Optional. If passed, `qrexec-daemon` uses this user as default for all execution requests that don't specify one.
 
 ### qrexec-client
 
@@ -51,22 +52,23 @@ Used to pass execution and service requests to `qrexec-daemon`.
 
 Command line usage:
 
-* `-d target-domain-name`: Specifies the target for the execution/service request.
-* `-l local-program`: Optional. If present, `local-program` is executed and its stdout/stdin are used when sending/receiving data to/from the remote peer.
-* `-e`: Optional. If present, stdout/stdin are not connected to the remote   peer. Only process creation status code is received.
-* `-c <request-id,src-domain-name,src-domain-id>`: used for connecting a VM-VM service request by `qrexec-policy`. Details described below in the service example.
-* `cmdline`: Command line to pass to `qrexec-daemon` as the execution/service request. Service request format is described below in the service example.
+- `-d target-domain-name`: Specifies the target for the execution/service request.
+- `-l local-program`: Optional. If present, `local-program` is executed and its stdout/stdin are used when sending/receiving data to/from the remote peer.
+- `-e`: Optional. If present, stdout/stdin are not connected to the remote   peer. Only process creation status code is received.
+- `-c <request-id,src-domain-name,src-domain-id>`: used for connecting a VM-VM service request by `qrexec-policy`. Details described below in the service example.
+- `cmdline`: Command line to pass to `qrexec-daemon` as the execution/service request. Service request format is described below in the service example.
 
 ## VM tools implementation
 
 ### qrexec-agent
 
-`/usr/lib/qubes/qrexec-agrent`
+`/usr/lib/qubes/qrexec-agent`
 
 One instance runs in each active domain.
 Responsible for:
-  * Handling service requests from `qrexec-client-vm` and passing them to connected `qrexec-daemon` in dom0.
-  * Executing associated `qrexec-daemon` execution/service requests.
+
+- Handling service requests from `qrexec-client-vm` and passing them to connected `qrexec-daemon` in dom0.
+- Executing associated `qrexec-daemon` execution/service requests.
 
 The `qrexec-agent` command takes no parameters.
 
@@ -81,26 +83,30 @@ Command line usage:
 
 `qrexec-client-vm target-domain-name service-name local-program [local program arguments]`
 
-* `target-domain-name`: Target domain for the service request. Source is the current domain.
-* `service-name`: Requested service name.
-* `local-program`: `local-program` is executed locally and its stdin/stdout are connected to the remote service endpoint.
+- `target-domain-name`: Target domain for the service request. Source is the current domain.
+- `service-name`: Requested service name.
+- `local-program`: `local-program` is executed locally and its stdin/stdout are connected to the remote service endpoint.
 
 ## Qrexec protocol details
 
 The qrexec protocol is message-based.
 All messages share a common header followed by an optional data packet.
 
-    /* uniform for all peers, data type depends on message type */
-    struct msg_header {
-       uint32_t type;           /* message type */
-       uint32_t len;            /* data length */
-    };
+```c
+/* uniform for all peers, data type depends on message type */
+struct msg_header {
+   uint32_t type;           /* message type */
+   uint32_t len;            /* data length */
+};
+```
 
 When two peers establish connection, the server sends `MSG_HELLO` followed by `peer_info` struct:
 
-    struct peer_info {
-       uint32_t version; /* qrexec protocol version */
-    };
+```c
+struct peer_info {
+   uint32_t version; /* qrexec protocol version */
+};
+```
 
 The client then should reply with its own `MSG_HELLO` and `peer_info`.
 The lower of two versions define protocol used for this connection.
@@ -110,7 +116,7 @@ Details of all possible use cases and the messages involved are described below.
 
 ### dom0: request execution of `cmd` in domX
 
-![qrexec internals diagram dom0-vm](/attachment/wiki/qrexec3/qrexec-dom0-vm.png)
+![qrexec internals diagram dom0-vm](/attachment/doc/qrexec-dom0-vm.png)
 
 - **dom0**: `qrexec-client` is invoked in **dom0** as follows:
 
@@ -138,7 +144,7 @@ Details of all possible use cases and the messages involved are described below.
 
 ### domX: request execution of service `admin.Service` in dom0
 
-![qrexec internals diagram vm-dom0](/attachment/wiki/qrexec3/qrexec-vm-dom0.png)
+![qrexec internals diagram vm-dom0](/attachment/doc/qrexec-vm-dom0.png)
 
 - **domX**: `qrexec-client-vm` is invoked as follows:
 
@@ -184,7 +190,7 @@ Details of all possible use cases and the messages involved are described below.
 
 ### domX: invoke execution of qubes service `qubes.Service` in domY
 
-![qrexec internals diagram vm-vm](/attachment/wiki/qrexec3/qrexec-vm-vm.png)
+![qrexec internals diagram vm-vm](/attachment/doc/qrexec-vm-vm.png)
 
 - **domX**: `qrexec-client-vm` is invoked as follows:
 
@@ -232,7 +238,7 @@ Details of all possible use cases and the messages involved are described below.
 
 This is a service running in dom0. It is called by `qrexec-daemon` and is responsible for evaluating the request and possibly launching an action.
 
-The daemon listens on a socket (`/var/run/qubes/policy.sock`). It accepts requests in the format described in [qrexec-policy-daemon.rst](https://github.com/QubesOS/qubes-core-qrexec/blob/master/Documentation/qrexec-policy-daemon.rst) and replies with `result=allow/deny`.
+The daemon listens on a socket (`/var/run/qubes/policy.sock`). It accepts requests in the format described in [qrexec-policy-daemon.rst](https://github.com/QubesOS/qubes-core-qrexec/blob/master/doc/qrexec-policy-daemon.rst) and replies with `result=allow/deny`.
 
 A standalone version is called `qrexec-policy-exec` and is available as a fallback.
 

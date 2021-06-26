@@ -18,16 +18,17 @@ Qubes OS, it's time to dive in and get to work!
 ## The Basics
 
 Qubes OS is an operating system built out of securely-isolated compartments
-called **qubes**. For example, you might have a work qube, a personal qube, a
-banking qube, a web browsing qube, and so on. You can have as many qubes as you
-want! Most of the time, you'll be using an **app qube**, which is a qube
-intended for running software programs like web browsers, email clients, and
-word processors. Each app qube is based on a **template qube**. More than one
-qube can be based on the same template. Importantly, a qube cannot modify its
-template in any way. This means that, if a qube is ever compromised, its
-template and any other qubes based on that template will remain safe. This is
-what makes Qubes OS so secure. Even if an attack is successful, the damage is
-limited to a single qube.
+called [qubes](/doc/glossary/#qube). For example, you might have a work qube, a
+personal qube, a banking qube, a web browsing qube, and so on. You can have as
+many qubes as you want! Most of the time, you'll be using an [app
+qube](/doc/glossary/#app-qube), which is a qube intended for running software
+programs like web browsers, email clients, and word processors. Each app qube
+is based on another type of qube called a [template](/doc/glossary/#template).
+More than one qube can be based on the same template. Importantly, a qube
+cannot modify its template in any way. This means that, if a qube is ever
+compromised, its template and any other qubes based on that template will
+remain safe. This is what makes Qubes OS so secure. Even if an attack is
+successful, the damage is limited to a single qube.
 
 Suppose you want to use your favorite web browser in several different qubes.
 You'd install the web browser in a template, then every qube based on that
@@ -38,21 +39,23 @@ to update all the qubes based on it. This elegant design saves time and space
 while enhancing security.
 
 There are also some "helper" qubes in your system. Each qube that connects to
-the Internet does so through a network-providing **service qube**. If you need
-to access USB devices, another service qube will do that. There's also a
-**management qube** that automatically handles a lot of background
-housekeeping. For the most part, you won't have to worry about it, but it's
-nice to know that it's there. As with app qubes, service qubes and management
-qubes are also based on templates. Templates are usually named after their
-operating system (often a [Linux
+the Internet does so through a network-providing [service
+qube](/doc/glossary/#service-qube). If you need to access USB devices, another
+service qube will do that. There's also a [management
+qube](/doc/glossary/#management-qube) that automatically handles a lot of
+background housekeeping. For the most part, you won't have to worry about it,
+but it's nice to know that it's there. As with app qubes, service qubes and
+management qubes are also based on templates. Templates are usually named after
+their operating system (often a [Linux
 distribution](https://en.wikipedia.org/wiki/Linux_distribution)) and
 corresponding version number. There are many ready-to-use
 [templates](/doc/templates) to choose from, and you can download and have as
 many as you like.
 
-Last but not least, there's a very special **admin qube** which, as the name
-suggests, is used to administer your entire system. There's only one admin
-qube, and it's called **dom0**. You can think of it as the master qube, holding
+Last but not least, there's a very special [admin
+qube](/doc/glossary/#admin-qube) which, as the name suggests, is used to
+administer your entire system. There's only one admin qube, and it's called
+[dom0](/doc/glossary/#dom0). You can think of it as the master qube, holding
 ultimate power over everything that happens in Qubes OS. Dom0 is more trusted
 than any other qube. If dom0 were ever compromised, it would be "game over."
 The entire system would effectively be compromised. That's why everything in
@@ -95,38 +98,42 @@ all the same color --- or all different colors. It's entirely up to you.
 On operating systems like Windows and macOS, the desktop environment is
 unchangeable and part of that operating system. With Linux, any of a number of
 desktop environments are an option. Qubes OS is installed with XFCE as its
-default desktop environment, but it also supports KDE, as well as the i3 and
-awesome window managers.
+default desktop environment, but it also supports [KDE](/doc/kde/), as well as
+the window managers [i3](/doc/i3/) and [AwesomeWM](/doc/awesomewm/).
 
 [![r4.0-taskbar.png](/attachment/doc/r4.0-taskbar.png)](/attachment/doc/r4.0-taskbar.png)
 
 The bar at the top of your screen in Qubes 4.0 includes the following XFCE
 component areas:
 
- - The **Tray**, where many functional widgets live.
- - **Spaces**, an interface for [virtual
-   desktops](https://en.wikipedia.org/wiki/Virtual_desktop). Virtual desktops
-   do not have any inherent security isolation properties, but some users find
-   them useful for organizing things.
- - The **Task Bar** where buttons for open and hidden windows live.
- - The **App Menu**, where you go to open an application within a qube, to open
-   a dom0 terminal, to access administrative UI tools such as the Qube Manager,
-   or to access settings panels for your desktop environment.
+- The **Tray**, where many functional widgets live.
+- **Spaces**, an interface for [virtual
+  desktops](https://en.wikipedia.org/wiki/Virtual_desktop). Virtual desktops do
+  not have any inherent security isolation properties, but some users find them
+  useful for organizing things.
+- The **Task Bar** where buttons for open and hidden windows live.
+- The **App Menu**, where you go to open an application within a qube, to open
+  a dom0 terminal, to access administrative UI tools such as the Qube Manager,
+  or to access settings panels for your desktop environment.
 
 To learn more about how to customize your desktop environment, we recommend you
 spend some time going through [XFCE's documentation](https://docs.xfce.org/).
 
-There are several Tray widgets that are custom to Qubes OS:
+There are several tray widgets that are unique to Qubes OS:
 
- - The **Qubes Domains** widget allows you to manage running qubes, turn them
-   on and off, and monitor memory usage.
- - The **Qubes Devices** widget allows you to attach and detach devices ---
-   such as USB drives and cameras --- to qubes.
- - The **Qubes Disk Space Monitor** will notify you if you're ever running out
-   of disk space.
- - The **Qubes Update** tool will inform you when updates are available.
+- The **Whonix SDWDate** allows you to control the Tor connection in your
+  [`sys-whonix`](https://www.whonix.org/wiki/Qubes) qube.
+- The **Qubes Clipboard** lets you easily copy text from dom0.
+- The **Qubes Devices** widget allows you to attach and detach devices --- such
+  as USB drives and cameras --- to qubes. 
+- The **Qubes Disk Space** widget shows you how much storage you're using.
+  It'll notify you if you're ever running out of space.
+- The **Qubes Domains** widget allows you to manage running qubes, turn them on
+  and off, and monitor RAM and CPU usage.
+- The **Qubes Updater** widget informs you when updates are available and helps
+  you install them.
 
-[![q40_widgets.png](/attachment/doc/r4.0-q40_widgets.png)](/attachment/doc/r4.0-q40_widgets.png)
+[![r4.0-widgets.png](/attachment/doc/r4.0-widgets.png)](/attachment/doc/r4.0-widgets.png)
 
 To see all of your qubes at the same time, you can use the **Qube Manager** (go
 to the App Menu → System Tools → Qube Manager), which displays the states of
@@ -139,9 +146,9 @@ all the qubes in your system, even the ones that aren't running.
 All aspects of Qubes OS can be controlled using command-line tools. Opening a
 terminal emulator in dom0 can be done in several ways:
 
- - Go to the App Menu and select **Terminal Emulator** at the top.
- - Press <kbd>Alt</kbd>+<kbd>F3</kbd> and search for `xfce terminal`.
- - Right-click on the desktop and select **Open Terminal Here**.
+- Go to the App Menu and select **Terminal Emulator** at the top.
+- Press <kbd>Alt</kbd>+<kbd>F3</kbd> and search for `xfce terminal`.
+- Right-click on the desktop and select **Open Terminal Here**.
 
 Terminal emulators can also be run in other qubes as normal programs. Various
 command-line tools are described as part of this guide, and the whole reference
@@ -151,14 +158,14 @@ can be found [here](/doc/tools/).
 
 When you install Qubes OS, a number of qubes are pre-configured for you:
 
- - **Templates:** `fedora-XX` (`XX` being the version number)
- - **Admin qube:** `dom0`
- - **Service qubes:** `sys-usb`, `sys-net`, `sys-firewall`, and `sys-whonix`
- - **App qubes** configured to prioritize security by compartmentalizing tasks
-   and types of data: `work`, `personal`, `untrusted`, and `vault`. (There is
-   nothing special about these qubes. If you were to create a black qube and
-   name it `vault`, it would be the same as the pre-configured `vault` qube.
-   They're just suggestions to get you started. )
+- **Templates:** `fedora-XX` (`XX` being the version number)
+- **Admin qube:** `dom0`
+- **Service qubes:** `sys-usb`, `sys-net`, `sys-firewall`, and `sys-whonix`
+- **App qubes** configured to prioritize security by compartmentalizing tasks
+  and types of data: `work`, `personal`, `untrusted`, and `vault`. (There is
+  nothing special about these qubes. If you were to create a black qube and
+  name it `vault`, it would be the same as the pre-configured `vault` qube.
+  They're just suggestions to get you started. )
 
 A variety of open-source applications such as file managers, command-line
 terminals, printer managers, text editors, and "applets" used to configure
@@ -172,9 +179,9 @@ Menu. If you need to add or remove qubes, simply use the Qube Manager's **Add**
 and **Remove** buttons. You can also add, remove, and list qubes from the
 command line using the following tools:
 
- - `qvm-create`
- - `qvm-remove`
- - `qvm-ls`
+- `qvm-create`
+- `qvm-remove`
+- `qvm-ls`
 
 ### How many qubes do I need?
 
@@ -212,13 +219,13 @@ Here are some basic tasks you're likely to want to perform often that are
 unique to Qubes as a multi-environment system. A full list is available in the
 [How-to Guides](/doc/#how-to-guides) section in the docs.
 
- - [How to Update](/doc/how-to-update/)
- - [How to Back Up, Restore, and Migrate](/doc/how-to-back-up-restore-and-migrate/)
- - [How to Copy and Paste Text](/doc/how-to-copy-and-paste-text/)
- - [How to Copy and Move Files](/doc/how-to-copy-and-move-files/)
- - [How to Copy from Dom0](/doc/how-to-copy-from-dom0/)
- - [How to Install Software](/doc/how-to-install-software/)
- - [How to Use Devices (block storage, USB, and PCI devices)](/doc/how-to-use-devices/)
+- [How to Update](/doc/how-to-update/)
+- [How to Back Up, Restore, and Migrate](/doc/how-to-back-up-restore-and-migrate/)
+- [How to Copy and Paste Text](/doc/how-to-copy-and-paste-text/)
+- [How to Copy and Move Files](/doc/how-to-copy-and-move-files/)
+- [How to Copy from Dom0](/doc/how-to-copy-from-dom0/)
+- [How to Install Software](/doc/how-to-install-software/)
+- [How to Use Devices (block storage, USB, and PCI devices)](/doc/how-to-use-devices/)
 
 If you encounter any problems, please visit the [Help, Support, Mailing Lists,
 and Forum](/support/) page.

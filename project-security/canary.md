@@ -1,15 +1,16 @@
 ---
 lang: en
 layout: doc
-permalink: /security/canaries/
+permalink: /security/canary/
 redirect_from:
+- /security/canaries/
 - /doc/canaries/
 ref: 208
 title: Qubes Canaries
 ---
 
 A **Qubes Canary** is a security announcement periodically issued by the [Qubes
-Security Team](/security/#the-qubes-security-team) through the [Qubes Security
+Security Team](/security/#qubes-security-team) through the [Qubes Security
 Pack](/security/pack/) consisting of several statements to the effect that the
 signers of the canary have not been compromised. The idea is that, as long as
 signed canaries including such statements continue to be published, all is

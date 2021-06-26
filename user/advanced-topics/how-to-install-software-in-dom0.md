@@ -45,7 +45,7 @@ too costly for us to maintain.
 
 ## How to update dom0
 
-See [Updating Qubes OS](/doc/updating-qubes-os/).
+See [How to Update](/doc/how-to-update/).
 
 ## How to install a specific package
 
@@ -246,4 +246,3 @@ sys-whonix.
 ```
 Qubes VM Manager -> System -> Global Settings -> UpdateVM -> sys-whonix
 ```
-

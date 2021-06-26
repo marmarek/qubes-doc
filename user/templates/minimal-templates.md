@@ -1,4 +1,5 @@
 ---
+advanced: true
 lang: en
 layout: doc
 permalink: /doc/templates/minimal/
@@ -10,7 +11,6 @@ redirect_from:
 - /wiki/Templates/FedoraMinimal/
 - /doc/templates/debian-minimal/
 ref: 132
-advanced: true
 title: Minimal Templates
 ---
 
@@ -353,4 +353,3 @@ Documentation on all of these can be found in the [docs](/doc/).
 You could, of course, use `qubes-vm-recommended` to automatically install many
 of these, but in that case you are well on the way to a standard Debian
 template.
-

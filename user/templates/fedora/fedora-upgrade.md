@@ -1,4 +1,5 @@
 ---
+advanced: true
 lang: en
 layout: doc
 permalink: /doc/template/fedora/upgrade/
@@ -20,7 +21,6 @@ redirect_from:
 - /wiki/FedoraTemplateUpgrade28/
 - /doc/template/fedora/upgrade-29-to-30/
 ref: 137
-advanced: true
 title: How to Upgrade a Fedora Template In-place
 ---
 
@@ -215,4 +215,3 @@ In this case, you have several options:
 3. Do the upgrade in parts, e.g., by using package groups.
    (First upgrade `@core` packages, then the rest.)
 4. Do not perform an in-place upgrade, see [Upgrading Fedora templates](/doc/templates/fedora/#upgrading).
-

@@ -1,6 +1,6 @@
 ---
 lang: en
-layout: default
+layout: site
 permalink: /screenshots/
 redirect_from:
 - /media/
@@ -9,7 +9,6 @@ redirect_from:
 ref: 123
 title: Screenshots
 ---
-
 
 [![r4.0-xfce-desktop.png](/attachment/doc/r4.0-xfce-desktop.png)](/attachment/doc/r4.0-xfce-desktop.png)
 

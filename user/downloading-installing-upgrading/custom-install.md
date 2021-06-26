@@ -1,14 +1,13 @@
 ---
+advanced: true
 lang: en
 layout: doc
 permalink: /doc/custom-install/
 redirect_from:
 - /doc/encryption-config/
 ref: 152
-advanced: true
 title: Custom Installation
 ---
-
 
 In the present context, "custom installation" refers to things like manual partitioning, setting up LVM and RAID, and manual LUKS encryption configuration.
 
@@ -161,4 +160,3 @@ Boot into the Qubes installer, then press `ctrl`+`alt`+`F2` to get a virtual con
    Repeat the process for `sda1` and `qubes_dom0-swap`. Those should be assigned to `/boot` and `swap` respectively.
    The default file systems are ext4 for `/boot` and `/`, and swap for `swap`.
    When you are finished, the Unknown list should go away, and all three mount points should be assigned. Proceed normally with the installation from there.
-

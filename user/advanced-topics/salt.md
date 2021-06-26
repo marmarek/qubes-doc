@@ -3,9 +3,8 @@ lang: en
 layout: doc
 permalink: /doc/salt/
 ref: 185
-title: Salt (management stack)
+title: Salt (management software)
 ---
-
 
 Since the Qubes R3.1 release we have included the Salt (also called SaltStack)
 management engine in dom0 as default (with some states already configured).
@@ -609,4 +608,3 @@ install template and shutdown updateVM:
 - [Jinja templates](http://jinja.pocoo.org/)
 - [Qubes specific modules](https://github.com/QubesOS/qubes-mgmt-salt-dom0-qvm/blob/master/README.rst)
 - [Formulas for default Qubes VMs](https://github.com/QubesOS/qubes-mgmt-salt-dom0-virtual-machines/tree/master/qvm)
-

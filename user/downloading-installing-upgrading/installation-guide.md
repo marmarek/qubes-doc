@@ -415,7 +415,7 @@ remain secure against new threats.
 ### Security
 
 The Qubes OS Project occasionally issues [Qubes Security Bulletins
-(QSBs)](/security/bulletins/) as part of the [Qubes Security Pack
+(QSBs)](/security/qsb/) as part of the [Qubes Security Pack
 (qubes-secpack)](/security/pack/). It is important to make sure that you
 receive all QSBs in a timely manner so that you can take action to keep your
 system secure. (While [updating](#updating) will handle most security needs,
@@ -424,7 +424,7 @@ reason, we strongly recommend that every Qubes user subscribe to the
 [qubes-announce](/support/#qubes-announce) mailing list.
 
 In addition to QSBs, the Qubes OS Project also publishes
-[Canaries](/security/canaries/), XSA summaries, template releases and
+[Canaries](/security/canary/), XSA summaries, template releases and
 end-of-life notices, and other items of interest to Qubes users. Since these
 are not essential for all Qubes users to read, they are not sent to
 [qubes-announce](/support/#qubes-announce) in order to keep the volume on that
@@ -472,4 +472,3 @@ the other [How-to Guides](/doc/#how-to-guides), and learn about
 * Please do **not** email individual members of the Qubes team with questions
   about installation or other problems. Instead, please see [Help, Support,
   Mailing Lists, and Forum](/support/) for appropriate places to ask questions.
-

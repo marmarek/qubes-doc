@@ -5,21 +5,22 @@ permalink: /doc/how-to-use-disposables/
 redirect_from:
 - /doc/how-to-use-disposablevms/
 - /doc/disposable/
+- /doc/disposablevm/
 - /doc/dispvm/
 - /en/doc/dispvm/
 - /doc/DisposableVms/
-- /wiki/disposables/
+- /wiki/DisposableVMs/
 ref: 203
 title: How to Use Disposables
 ---
 
-A **disposable** is a lightweight VM that can be created quickly and will disappear when closed.
-disposables are usually created in order to host a single application, like a viewer, editor, or web browser.
+A [disposable](/doc/glossary/#disposable) is a lightweight [qube](/doc/glossary/#qube) that can be created quickly and will self-destruct when closed.
+Disposables are usually created in order to host a single application, like a viewer, editor, or web browser.
 
 From inside an app qube, choosing the `Open in disposable` option on a file will launch a disposable for just that file.
 Changes made to a file opened in a disposable are passed back to the originating VM.
 This means that you can safely work with untrusted files without risk of compromising your other VMs.
-disposables can be launched either directly from dom0's Start Menu or terminal window, or from within app qubes.
+Disposables can be launched either directly from dom0's Start Menu or terminal window, or from within app qubes.
 While running, disposables will appear in Qubes VM Manager with the name `disp####`.
 
 [![disposablevm-example.png](/attachment/doc/disposablevm-example.png)](/attachment/doc/disposablevm-example.png)
@@ -108,7 +109,7 @@ If you have edited the file and saved the changes, the changed file will be save
 ## Opening a fresh web browser instance in a new disposable
 
 Sometimes it is desirable to open an instance of Firefox within a new fresh disposable.
-This can be done easily using the Start Menu: just go to **Application Menu -\> disposable -\> disposable:Firefox web browser**.
+This can be done easily using the Start Menu: just go to **Application Menu -\> Disposable -\> Disposable:Firefox web browser**.
 Wait a few seconds until a web browser starts.
 Once you close the viewing application the whole disposable will be destroyed.
 
@@ -187,4 +188,3 @@ More information about RPC policies for disposables can be found [here](/doc/qre
 You can change the template used to generate the disposables, and change settings used in the disposable savefile.
 These changes will be reflected in every new disposable based on that template.
 Full instructions can be found [here](/doc/disposable-customization/).
-

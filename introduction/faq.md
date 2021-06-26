@@ -311,7 +311,7 @@ So, if feature X isn't enabled, it's most likely for one of three reasons:
 2. Our platform supports it, but we've decided not to enable it.
 3. Our platform supports it, but we're not aware that we can enable it or have forgotten to do so.
 
-If it seems like a feature that we can and should enable, please [let us know](/doc/reporting-bugs/)!
+If it seems like a feature that we can and should enable, please [let us know](/doc/issue-tracking/)!
 
 ## Users
 
@@ -694,4 +694,3 @@ If you need to support not-fully-updated systems, check for the existence of `/u
 Yes, Qubes natively supports automation via [Salt (SaltStack)](/doc/salt/).
 There is also the unofficial [ansible-qubes toolkit](https://github.com/Rudd-O/ansible-qubes).
 (**Warning:** Since this is an external project that has not been reviewed or endorsed by the Qubes team, [allowing it to manage dom0 may be a security risk](https://github.com/Qubes-Community/Contents/blob/master/docs/security/security-guidelines.md#dom0-precautions).)
-

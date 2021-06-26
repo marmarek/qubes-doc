@@ -1,4 +1,5 @@
 ---
+advanced: true
 lang: en
 layout: doc
 permalink: /doc/template/debian/upgrade/
@@ -9,7 +10,6 @@ redirect_from:
 - /doc/DebianTemplateUpgrade8/
 - /wiki/DebianTemplateUpgrade8/
 ref: 133
-advanced: true
 title: How to Upgrade a Debian Template In-place
 ---
 
@@ -166,4 +166,3 @@ We strongly recommend against using any Debian release that has reached [end-of-
 
 * By default, Qubes uses code names in the `apt` sources files, although the templates are referred to by release number.
   Check the code names for the templates, and ensure you are aware of any changes you have made in the repository definitions.
-

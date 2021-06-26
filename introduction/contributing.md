@@ -18,7 +18,7 @@ ways in which you can help:
 * [Send patches](/doc/source-code/#how-to-send-patches) to fix bugs or
   implement features
 * [Contribute packages](/doc/package-contributions)
-* [Report bugs](/doc/reporting-bugs/)
+* [Report bugs](/doc/issue-tracking/)
 * [Test new releases and updates](/doc/testing/)
 * Submit [HCL reports](/doc/hcl/) for your hardware
 * Record [video tours](/video-tours/)
@@ -58,4 +58,3 @@ time, like implementing a new feature, it's always good to contact us first,
 preferably via the [qubes-devel](/support/#qubes-devel) mailing list. Once
 we've worked out the details, we'll be grateful to [receive your
 patch](/doc/source-code/#how-to-send-patches).
-

@@ -1,9 +1,11 @@
 ---
 lang: en
 layout: doc
-permalink: /security/canaries/checklist/
+permalink: /security/canary/checklist/
+redirect_from:
+- /security/canaries/checklist/
 ref: 216
-title: Canary Checklist
+title: Qubes Canary Checklist
 ---
 
 ## Preparation
@@ -15,7 +17,7 @@ title: Canary Checklist
 
 * Push canary to public repository
 * Publish a [news post](/news/) using the [Canary
-  Template](/security/canaries/template/)
+  Template](/security/canary/template/)
 * Send the content of the news post to the appropriate [mailing
   lists](/support/)
 * Share link to news post on social media

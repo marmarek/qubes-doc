@@ -1,11 +1,12 @@
 ---
 lang: en
 layout: doc
-permalink: /security/bulletins/checklist/
+permalink: /security/qsb/checklist/
 redirect_from:
+- /security/bulletins/checklist/
 - /doc/security-bulletins/checklist/
 ref: 215
-title: Security Bulletin Checklist
+title: Qubes Security Bulletin (QSB) Checklist
 ---
 
 ## Preparation
@@ -19,7 +20,7 @@ title: Security Bulletin Checklist
 * Upload packages to `security-testing` and `current-testing` repositories
 * Push QSB to public repository
 * Publish a [news post](/news/) using the [QSB
-  Template](/security/bulletins/template/)
+  Template](/security/qsb/template/)
 * Send the content of the news post to the appropriate [mailing
   lists](/support/)
 * Share link to news post on social media

@@ -95,7 +95,12 @@ Hardware-assisted Virtual Machine. Any fully virtualized, or hardware-assisted,
 HVMs are typically slower than paravirtualized qubes due to the required
 emulation, HVMs allow the user to create domains based on any operating system.
 
-See [Standalones and HVM](/doc/standalones-and-HVM/).
+See [Standalones and HVM](/doc/standalones-and-hvms/).
+
+## management qube
+
+A [qube](#qube) used for automated management of a Qubes OS installation via
+[Salt](/doc/salt/).
 
 ## named disposable
 
@@ -181,7 +186,7 @@ Any [qube](#qube) that has its own root filesystem and does not share it with
 another qube. Distinct from both [templates](#template) and [app
 qubes](#app-qube).
 
-See [Standalones and HVMs](/doc/standalones-and-hvm/).
+See [Standalones and HVMs](/doc/standalones-and-hvms/).
 
 * Previously known as: `StandaloneVM`.
 
@@ -208,4 +213,3 @@ See [Templates](/doc/templates/).
 
 An abbreviation for "virtual machine." A software implementation of a machine
 (for example, a computer) that executes programs like a physical machine.
-

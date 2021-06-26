@@ -21,10 +21,11 @@ title: Qubes Security Pack (qubes-secpack)
 The **Qubes Security Pack** (`qubes-secpack`) is a Git repository that
 contains:
 
-* [Qubes PGP keys](https://keys.qubes-os.org/keys/)
-* [Qubes Security Bulletins (QSBs)](/security/bulletins/)
-* [Qubes Canaries](https://github.com/QubesOS/qubes-secpack/tree/master/canaries)
+* [Qubes Security Bulletins (QSBs)](/security/qsb/)
+* [Qubes Canaries](/security/canary/)
+* [Signed Qubes ISO digests](/security/verifying-signatures/#how-to-verify-qubes-iso-digests)
 * [Qubes fund information](https://github.com/QubesOS/qubes-secpack/tree/master/fund)
+* [Qubes PGP keys](https://keys.qubes-os.org/keys/)
 * Security-related information and announcements (e.g., key revocations)
 
 While `qubes-secpack` itself is independent of any particular host, its current
@@ -269,4 +270,3 @@ Qubes binaries :/
 implement multiple signature scheme for distributed binaries.
 
 ```
-

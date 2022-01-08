@@ -11,7 +11,7 @@ redirect_from:
 - /doc/Qrexec/
 - /wiki/Qrexec/
 ref: 37
-title: 'Qrexec: Secure Communication Across Domains'
+title: 'Qrexec: secure communication across domains'
 ---
 
 (*This page is about qrexec v3. For qrexec v2, see [here](/doc/qrexec2/).*)
@@ -106,7 +106,9 @@ If no policy rule is matched, the action is denied.
 If the policy file does not exist, the user is prompted to create one.
 If there is still no policy file after prompting, the action is denied.
 
-In the target VM, the file `/etc/qubes-rpc/RPC_ACTION_NAME` must exist, containing the file name of the program that will be invoked, or being that program itself -- in which case it must have executable permission set (`chmod +x`).
+In the target VM, a file in either of the following locations must exist, containing the file name of the program that will be invoked, or being that program itself -- in which case it must have executable permission set (`chmod +x`):
+  - `/etc/qubes-rpc/RPC_ACTION_NAME` when you make it in the template qube;
+  - `/usr/local/etc/qubes-rpc/RPC_ACTION_NAME` for making it only in an app qube.
 
 ### Making an RPC call
 

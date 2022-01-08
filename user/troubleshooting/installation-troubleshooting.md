@@ -3,7 +3,7 @@ lang: en
 layout: doc
 permalink: /doc/installation-troubleshooting/
 ref: 224
-title: Installation Troubleshooting
+title: Installation troubleshooting
 ---
 
 ## "An unknown error has occurred" error during installation 
@@ -26,7 +26,7 @@ Note that the Qubes installation image is over 4GB, so it may not fit on a small
 If a machine can not boot from a bigger USB, it may be too old to run Qubes. 
 * **Verify your Qubes ISO:** 
 Errors will occur if the Qubes installer is corrupted. 
-Ensure that the installer is correct and complete before writing it to a flash drive by [verifying the ISO](/security/verifying-signatures/#how-to-verify-qubes-iso-signatures). 
+Ensure that the installer is correct and complete before writing it to a flash drive by [verifying the ISO](/security/verifying-signatures/). 
 * **Change the method you used to [write your ISO to a USB key](/doc/installation-guide/#copying-the-iso-onto-the-installation-medium):** 
 Some people use the ``dd`` command (recommended), others use tools like Rufus, balenaEtcher or the GNOME Disk Utility. 
 If installation fails after using one tool, try a different one. 
@@ -81,6 +81,8 @@ For more information, look at the [Nvidia Troubleshooting guide](https://github.
 ## Installation freezes at "Setting up Networking" 
  
 If you are facing this problem on an Apple computer, check out the [Macbook Troubleshooting guide](https://github.com/Qubes-Community/Contents/blob/master/docs/troubleshooting/macbook-troubleshooting.md).
+
+If you are installing Qubes 4.0 on an external storage device, you may have forgotten to disable `sys-usb` during the [initial setup](/doc/installation-guide/#initial-setup), which is generally required for that setup to work.
 
 This issue occurs due to the network card, which may be missing some drivers or is incompatible with Qubes. 
 

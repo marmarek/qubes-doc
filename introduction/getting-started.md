@@ -1,15 +1,15 @@
 ---
 lang: en
 layout: doc
-permalink: /doc/how-to-get-started/
+permalink: /doc/getting-started/
 redirect_from:
-- /doc/getting-started/
+- /doc/how-to-get-started/
 - /getting-started/
 - /en/doc/getting-started/
 - /doc/GettingStarted/
 - /wiki/GettingStarted/
 ref: 190
-title: How to Get Started
+title: Getting started
 ---
 
 After [downloading](/downloads/) and [installing](/doc/installation-guide/)
@@ -147,7 +147,7 @@ All aspects of Qubes OS can be controlled using command-line tools. Opening a
 terminal emulator in dom0 can be done in several ways:
 
 - Go to the App Menu and select **Terminal Emulator** at the top.
-- Press <kbd>Alt</kbd>+<kbd>F3</kbd> and search for `xfce terminal`.
+- Press `Alt`+`F3` and search for `xfce terminal`.
 - Right-click on the desktop and select **Open Terminal Here**.
 
 Terminal emulators can also be run in other qubes as normal programs. Various
@@ -213,11 +213,11 @@ data unexpectedly. The [Qubes backup
 system](/doc/how-to-back-up-restore-and-migrate/) allows you to do this
 securely and easily.
 
-## How-to Guides
+## How-To Guides
 
 Here are some basic tasks you're likely to want to perform often that are
 unique to Qubes as a multi-environment system. A full list is available in the
-[How-to Guides](/doc/#how-to-guides) section in the docs.
+[How-To Guides](/doc/#how-to-guides) section in the docs.
 
 - [How to Update](/doc/how-to-update/)
 - [How to Back Up, Restore, and Migrate](/doc/how-to-back-up-restore-and-migrate/)
@@ -249,4 +249,4 @@ GitHub](https://github.com/QubesOS).
 ## Documentation
 
 Peruse our extensive library of [documentation](/doc/) for users and developers
-of Qubes OS. You can even [help us improve it](/doc/doc-guidelines/)!
+of Qubes OS. You can even [help us improve it](/doc/how-to-edit-the-documentation/)!

@@ -4,12 +4,14 @@ lang: en
 layout: doc
 permalink: /doc/testing/
 ref: 147
-title: Testing New Releases and Updates
+title: Testing new releases and updates
 ---
 
 Testing new Qubes OS releases and updates is one of the most helpful ways in
-which you can [contribute](/doc/contributing/) to the Qubes OS Project. There
-are several different types of testing, which we'll cover below.
+which you can [contribute](/doc/contributing/) to the Qubes OS Project. If
+you're interested in helping with this, please [join the testing
+team](https://forum.qubes-os.org/t/joining-the-testing-team/5190). There are
+several different types of testing, which we'll cover below.
 
 **Warning:** Software testing is intended for advanced users and developers.
 You should only attempt to do this if you know what you're doing. Never rely on
@@ -64,6 +66,26 @@ of that same package from `current-testing` to `current`, even if one of those
 older versions has been deemed stable enough. While this limitation can be
 inconvenient, the benefits outweigh the costs, since it greatly simplifies the
 testing and reporting process.
+
+## Templates
+
+How to test [templates](/doc/templates/):
+
+* For official templates, enable the `qubes-templates-itl-testing` repository,
+  then [install](/doc/templates/#installing) the desired template.
+* For community templates, enable the `qubes-templates-community-testing`
+  repository, then [install](/doc/templates/#installing) the desired template.
+
+To temporarily enable any of these repos, use the `--enablerepo=<repo-name>`
+option. Example commands:
+
+```
+sudo qubes-dom0-update --enablerepo=qubes-templates-itl-testing
+sudo qubes-dom0-update --enablerepo=qubes-templates-community-testing
+```
+
+To enable or disable any of these repos permanently, change the corresponding
+`enabled` value to `1` in `/etc/yum.repos.d/qubes-templates.repo`.
 
 ## Providing feedback
 

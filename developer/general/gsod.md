@@ -3,7 +3,7 @@ lang: en
 layout: doc
 permalink: /gsod/
 ref: 242
-title: Google Season of Docs
+title: Google Season of Docs (GSoD)
 ---
 
 Thank you for your interest in participating in the [2021 Google Season of Docs](https://developers.google.com/season-of-docs/) program with the [Qubes OS team](/team/). You can read more about the Google Season of Docs in the official [guides](https://developers.google.com/season-of-docs/docs/) and [FAQ](https://developers.google.com/season-of-docs/docs/faq).
@@ -138,7 +138,7 @@ This could be helped by writing a consolidated guide with a clear list of sympto
 
 **Project**: Improve Getting Started page
 
-**Brief explanation**: The [Getting Started page](https://www.qubes-os.org/doc/how-to-get-started/) is the place a new user would go to understand better how to use Qubes. It is currently has old screenshots not using the default desktop environment and could have much better flow. In addition, this improved page content may end up being served more directly to the user via the [offline documentation](https://github.com/QubesOS/qubes-issues/issues/1019) or the firstboot guide. 
+**Brief explanation**: The [Getting Started page](https://www.qubes-os.org/doc/getting-started/) is the place a new user would go to understand better how to use Qubes. It is currently has old screenshots not using the default desktop environment and could have much better flow. In addition, this improved page content may end up being served more directly to the user via the [offline documentation](https://github.com/QubesOS/qubes-issues/issues/1019) or the firstboot guide. 
 
 **Expected results**: 
 

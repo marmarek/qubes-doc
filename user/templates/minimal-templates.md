@@ -11,7 +11,7 @@ redirect_from:
 - /wiki/Templates/FedoraMinimal/
 - /doc/templates/debian-minimal/
 ref: 132
-title: Minimal Templates
+title: Minimal templates
 ---
 
 The minimal [templates](/doc/templates/) are lightweight versions of their
@@ -34,7 +34,7 @@ templates, along with some examples of common use cases.
    bug report. Instead, please see [Help, Support, Mailing Lists, and
    Forum](/support/) for the appropriate place to ask for help. Once you have
    learned how to solve your problem, please [contribute what you learned to
-   the documentation](/doc/doc-guidelines/).
+   the documentation](/doc/how-to-edit-the-documentation/).
 
 3. The minimal templates are intentionally *minimal*. [Do not ask for your
    favorite package to be added to the minimal template by
@@ -129,6 +129,8 @@ list of packages to be installed):
 - Commonly used utilities: `pciutils` `vim-minimal` `less` `psmisc`
   `gnome-keyring`.
 - Audio: `pulseaudio-qubes`.
+- Networking: `qubes-core-agent-networking`, and whatever network tools
+  you want. N.B. minimal templates do not include any browser.
 - [FirewallVM](/doc/firewall/), such as the template for `sys-firewall`: at
   least `qubes-core-agent-networking` and `iproute`, and also
   `qubes-core-agent-dom0-updates` if you want to use it as the `UpdateVM`
@@ -221,7 +223,13 @@ list of packages to be installed):
 
 - Commonly used utilities: `pciutils` `vim-minimal` `less` `psmisc`
   `gnome-keyring`
+- The `zenity` package is required for interactive dialogs, e.g., file selection
+  ([#5202](https://github.com/QubesOS/qubes-issues/issues/5202)) and for using
+  the Nautilus menu option to copy some files to other qubes
+  ([#6801](https://github.com/QubesOS/qubes-issues/issues/6801)).
 - Audio: `pulseaudio-qubes`
+- Networking: `qubes-core-agent-networking`, and whatever network tools
+  you want. N.B. minimal templates do not include any browser.
 - [FirewallVM](/doc/firewall/), such as the template for `sys-firewall`: at
   least `qubes-core-agent-networking`, and also `qubes-core-agent-dom0-updates`
   if you want to use it as the `UpdateVM` (which is normally `sys-firewall`).
@@ -230,7 +238,7 @@ list of packages to be installed):
   packages for a network VM, use the `lspci` command to identify the devices,
   then find the package that provides necessary firmware and install it. If you
   need utilities for debugging and analyzing network connections, install the
-  following packages: `tcpdump` `telnet` `nmap` `nmap-ncat`.
+  following packages: `tcpdump` `telnet` `nmap` `ncat`.
 - [USB qube](/doc/usb-qubes/), such as the template for `sys-usb`:
   `qubes-usb-proxy` to provide USB devices to other Qubes and
   `qubes-input-proxy-sender` to provide keyboard or mouse input to dom0.
@@ -276,10 +284,6 @@ Also, there are packages to provide additional services:
 
 Documentation on all of these can be found in the [docs](/doc/).
 
-If you want to use interactive dialogs, (e.g file selection), you will need to
-add the `zenity` package
-([example](https://github.com/QubesOS/qubes-issues/issues/5202)).
-
 You could, of course, use `qubes-vm-recommended` to automatically install many
 of these, but in that case you are well on the way to a standard Debian
 template.
@@ -298,6 +302,8 @@ list of packages to be installed):
 - Commonly used utilities: `pciutils` `vim-minimal` `less` `psmisc`
   `gnome-keyring`
 - Audio: `pulseaudio-qubes`.
+- Networking: `qubes-core-agent-networking`, and whatever network tools
+  you want. N.B. minimal templates do not include any browser.
 - [FirewallVM](/doc/firewall/), such as the template for `sys-firewall`: at
   least `qubes-core-agent-networking`, and also `qubes-core-agent-dom0-updates`
   if you want to use it as the `UpdateVM` (which is normally `sys-firewall`).

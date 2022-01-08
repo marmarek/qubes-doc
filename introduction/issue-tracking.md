@@ -13,7 +13,7 @@ redirect_from:
 - /bug-report/
 - /bug-reports/
 ref: 121
-title: Issue Tracking
+title: Issue tracking
 ---
 
 We use [GitHub Issues](https://docs.github.com/en/issues) as our [issue
@@ -26,40 +26,47 @@ such as this website) are tracked in
 
 First, let's make sure the issue tracker is the right place.
 
-### I would like to report a security vulnerability
+### I need help, have a question, or want to discuss something.
 
-Please see [Reporting Security Issues in Qubes
+We're happy to help, answer questions, and have discussions, but the issue
+tracker is not the right place for these activities. Instead, please see [Help,
+Support, Mailing Lists, and Forum](/support/).
+
+### I see something that should be changed in the documentation.
+
+We encourage you to submit the change yourself! Please see the [how to edit the
+documentation](/doc/how-to-edit-the-documentation/) for instructions on how to
+do so. If it's something you can't do yourself, please proceed to open an issue.
+
+### I would like to report a security vulnerability.
+
+Thank you! If the vulnerability is confidential, please do not report it in our
+public issue tracker. Instead, please see [Reporting Security Issues in Qubes
 OS](/security/#reporting-security-issues-in-qubes-os).
 
-### I need help, have a question, or want to discuss something
+### I still want to open an issue.
 
-Please see [Help, Support, Mailing Lists, and Forum](/support/).
+Great! Thank you for taking the time and effort to help improve Qubes! To
+ensure the process is efficient and productive for everyone involved, please
+follow these steps:
 
-### I see something that should be changed in the documentation
-
-We encourage you to submit the change yourself! Please see the [Documentation
-Guidelines](/doc/doc-guidelines/) for instructions on how to do so. If it's
-something you can't do yourself, please proceed to the next section.
-
-### I still want to open an issue
-
-1. Carefully read our issue tracking [guidelines](#guidelines). If your issue
-   would violate any of the guidelines, **stop**. Please do not submit it.
-2. [Search through the existing issues](#search-tips), both open and closed, to
-   see if your issue already exists. If it does, **stop**. [Do not open a
-   duplicate.](/doc/issue-tracking/#new-issues-should-not-be-duplicates-of-existing-issues)
-   Instead, comment on the existing issue.
-3. Go [here](https://github.com/QubesOS/qubes-issues/issues/new/choose).
-4. Select the [type](#type) of issue you want to open.
-5. Enter a descriptive title.
-6. Do not delete the provided issue template. Fill out every applicable
-   section.
-7. Make sure to mention any relevant documentation and other issues you've
-   already seen. We don't know what you've seen unless you tell us. If you
-   don't list it, we'll assume you haven't seen it.
-8. If any sections of the issue template are *truly* not applicable, you may
-   remove them, **except for the documentation and related issues sections**.
-9. Submit your issue.
+ 1. Carefully read our issue tracking [guidelines](#guidelines). If your issue
+    would violate any of the guidelines, **stop**. Please do not submit it.
+ 2. [Search through the existing issues](#search-tips), both open and closed,
+    to see if your issue already exists. If it does, **stop**. [Do not open a
+    duplicate.](/doc/issue-tracking/#new-issues-should-not-be-duplicates-of-existing-issues)
+    Instead, comment on the existing issue.
+ 3. Go [here](https://github.com/QubesOS/qubes-issues/issues/new/choose).
+ 4. Select the [type](#type) of issue you want to open.
+ 5. Enter a descriptive title.
+ 6. Do not delete the provided issue template. Fill out every applicable
+    section.
+ 7. Make sure to mention any relevant documentation and other issues you've
+    already seen. We don't know what you've seen unless you tell us. If you
+    don't list it, we'll assume you haven't seen it.
+ 8. If any sections of the issue template are *truly* not applicable, you may
+    remove them.
+ 9. Submit your issue.
 10. Respond to any questions the official team asks. For example, you may be
     asked to provide specific logs or other additional information.
 
@@ -67,7 +74,7 @@ Eventually, your issue may be closed. See [how issues get
 closed](/doc/issue-tracking/#how-issues-get-closed) for details about when,
 why, and how this occurs.
 
-## Labels, Milestones, and Projects
+## Labels, milestones, and projects
 
 Labels, milestones, and projects are features of GitHub's issue tracking system
 that we use to keep
@@ -106,7 +113,8 @@ There are several **priority** levels ranging from `P: minor` to `P: blocker`
 (see [here](https://github.com/QubesOS/qubes-issues/labels?q=P%3A) for the full
 list). Every open issue should have **exactly one** priority. An open issue
 should not have more than one priority, and it should not lack a priority
-entirely.
+entirely. See [here](/doc/version-scheme/#bug-priorities) for details about how
+the developers use these priorities.
 
 #### Component
 
@@ -131,12 +139,13 @@ to a release milestone indicates an alleged bug *in* that Qubes OS release. A
 task or enhancement assigned to a release milestone indicates that the goal is
 to implement or do that thing *in* or *for* that Qubes OS release.
 
-The `TBD` (To Be Determined) milestone is for enhancements or tasks that will
-be specific to a Qubes OS release but have yet to be assigned to a specific
-release milestone. Bug reports should never be assigned to this milestone,
-because every bug is a problem or defect in something that already exists.
+The `Release TBD` (To Be Determined) milestone is for enhancements or tasks
+that will be specific to a Qubes OS release but have yet to be assigned to a
+specific release milestone. Bug reports should never be assigned to this
+milestone, because every bug is a problem or defect in something that already
+exists.
 
-The `Ongoing` milestone is for issues that are independent of the Qubes OS
+The `Non-release` milestone is for issues that are independent of the Qubes OS
 release cycle, including (but not limited to) website, documentation, and
 project management issues. These are issues that will never be assigned to a
 specific Qubes OS release milestone.
@@ -149,7 +158,7 @@ way to create a group of multiple related issues. This is the preferred method
 of grouping issues, whereas trying to use normal issues as "meta-issues" or
 "epics" is discouraged.
 
-## Search Tips
+## Search tips
 
 [Search both open and closed
 issues.](https://github.com/QubesOS/qubes-issues/issues?utf8=%E2%9C%93&q=is%3Aissue)
@@ -266,9 +275,9 @@ you're using, as well as versions of related software packages ([how to copy
 information out of dom0](/doc/how-to-copy-from-dom0/)). If your issue is
 related to hardware, provide as many details as possible about the hardware. A
 great way to do this is by [generating and submitting a Hardware Compatibility
-List (HCL) report](/doc/hcl/#generating-and-submitting-new-reports), then
-linking to it in your issue. You may also need to use command-line tools such
-as `lspci`. If you're reporting a bug in a package that is in a
+List (HCL) report](/doc/how-to-use-the-hcl/#generating-and-submitting-new-reports),
+then linking to it in your issue. You may also need to use command-line tools
+such as `lspci`. If you're reporting a bug in a package that is in a
 [testing](/doc/testing/) repository, please reference the appropriate issue in
 the [updates-status](https://github.com/QubesOS/updates-status/issues)
 repository. Project maintainers really appreciate thorough explanations. It
@@ -345,12 +354,3 @@ which means, "The fix has been released for the testing release but is pending
 backport to the stable release." Our infrastructure will attempt to apply this
 label automatically, when appropriate, but it is not perfect, and the
 developers may be need to adjust it manually.
-
-## See also
-
-- [Help, Support, Mailing Lists, and Forum](/support/)
-- [Testing New Releases and Updates](/doc/testing/)
-- [How to Contribute](/doc/contributing/)
-- [Contributing Code](/doc/contributing/#contributing-code)
-- [Package Contributions](/doc/package-contributions/)
-- [Documentation Guidelines](/doc/doc-guidelines/)

@@ -41,7 +41,7 @@ title: Introduction
         </li>
         <li class="more-bottom">
           <b>Natures:</b> <a href="/doc/standalone-and-hvm/">full-fledged</a> or
-          <a href="/doc/how-to-get-started/">
+          <a href="/doc/getting-started/">
           stripped-down</a> virtual machines based on popular operating systems,
           such as <a href="/doc/templates/fedora/">Fedora</a>,
           <a href="/doc/templates/debian/">Debian</a>, and
@@ -50,7 +50,7 @@ title: Introduction
         <li class="more-bottom">
           <b>Levels of trust:</b> from complete to non-existent. All windows are
           displayed in a unified desktop environment with
-          <a href="/doc/how-to-get-started/">unforgeable colored window borders</a> so
+          <a href="/doc/getting-started/">unforgeable colored window borders</a> so
           that different security levels are easily identifiable.
         </li>
       </ul>
@@ -113,7 +113,7 @@ title: Introduction
     <h3>Whonix integration</h3>
     <p>
       Run <a href="https://www.torproject.org/">Tor</a> securely system-wide
-      using <a href="/doc/whonix/">Whonix with Qubes</a>.
+      using <a href="https://www.whonix.org/wiki/Qubes">Whonix with Qubes</a>.
     </p>
   </div>
   <div class="col-lg-4 col-md-4 col-xs-12">
@@ -225,7 +225,7 @@ title: Introduction
       In light of this sobering reality, Qubes takes an eminently practical
       approach: confine, control, and contain the damage. It allows you to keep
       valuable data separate from risky activities, preventing
-      cross-contamination. This means you you can do everything on the same
+      cross-contamination. This means you can do everything on the same
       physical computer without having to worry about a single successful
       cyberattack taking down your entire digital life in one fell swoop. In
       fact, Qubes has
@@ -249,14 +249,16 @@ title: Introduction
       <em>you</em> have control over your software, not the other way around.
     </p>
     <p>
-      Qubes is also powerful. Organizations like the
-      <a href="/partners/#freedom-of-the-press-foundation">Freedom of the Press
-      Foundation</a>, <a href="/partners/#mullvad">Mullvad</a>, and
-      <a href="https://twitter.com/letsencrypt/status/1239934557710737410">Let's
+      Qubes is also powerful. Organizations like the <a
+      href="https://securedrop.org/news/piloting-securedrop-workstation-qubes-os/">Freedom
+      of the Press Foundation</a>, <a
+      href="https://twitter.com/mullvadnet/status/631010362083643392">Mullvad</a>,
+      and <a
+      href="https://twitter.com/letsencrypt/status/1239934557710737410">Let's
       Encrypt</a> rely on Qubes as they build and maintain critical privacy and
       security internet technologies that are in turn relied upon by countless
-      users around the world every day. Renowned security
-      <a href="/experts/">experts</a> like Edward Snowden, Daniel J. Bernstein,
+      users around the world every day. Renowned security <a
+      href="/experts/">experts</a> like Edward Snowden, Daniel J. Bernstein,
       Micah Lee, Christopher Soghoian, Isis Agora Lovecruft, Peter Todd, Bill
       Budington, and Kenn White use and recommend Qubes.
     </p>
@@ -304,8 +306,8 @@ title: Introduction
       Ready to get started with Qubes? Here's what you need to know after
       installing.
     </p>
-    <a href="/doc/how-to-get-started/" class="btn btn-primary more-bottom">
-      <i class="fa fa-cubes"></i> How to Get Started
+    <a href="/doc/getting-started/" class="btn btn-primary more-bottom">
+      <i class="fa fa-cubes"></i> Getting Started
     </a>
   </div>
 </div>

@@ -7,7 +7,7 @@ redirect_from:
 - /doc/QubesBuilder/
 - /wiki/QubesBuilder/
 ref: 64
-title: Qubes Builder
+title: Qubes builder
 ---
 
 **Note: See [ISO building instructions](/doc/qubes-iso-building/) for a streamlined overview on how to use the build system.**
@@ -60,7 +60,7 @@ NO_SIGN=1
 One additional useful requirement is that 'sudo root' must work without any prompt, which is default on most distros (e.g. 'sudo bash' brings you the root shell without asking for any password).
 This is important as the builder needs to switch to root and then back to user several times during the build process.
 
-Additionally, if building with signing enabled (NO\_SIGN is not set), you must adjust \~/.rpmmacro file so that it points to the GPG key used for package signing, e.g.:
+Additionally, if building with signing enabled (NO\_SIGN is not set), you must adjust `\~/.rpmmacros` file so that it points to the GPG key used for package signing, e.g.:
 
 ```bash
 %_signature gpg

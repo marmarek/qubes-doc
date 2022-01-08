@@ -6,5 +6,5 @@ redirect_from:
 - /doc/NvidiaTroubleshooting/
 - /wiki/NvidiaTroubleshooting/
 ref: 91
-title: Nvidia Troubleshooting
+title: Nvidia troubleshooting
 ---

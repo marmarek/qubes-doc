@@ -11,7 +11,7 @@ ref: 131
 title: Templates
 ---
 
-In [How to Get Started](/doc/how-to-get-started/), we covered the distinction
+In [Getting Started](/doc/getting-started/), we covered the distinction
 in Qubes OS between where you *install* your software and where you *run* your
 software. Your software is installed in [templates](/doc/glossary/#template).
 Each template shares its root filesystem (i.e., all of its programs and system
@@ -89,9 +89,9 @@ Certain templates come preinstalled with Qubes OS. However, there may be times
 when you wish to install a fresh template from the Qubes repositories, e.g.:
 
 * When a template version you're using reaches
-  [end-of-life](/doc/supported-versions/).
+  [end-of-life](/doc/how-to-update/#upgrading-to-avoid-eol).
 * When a new version of a template that you wish to use becomes
-  [supported](/doc/supported-versions/).
+  [supported](/doc/supported-releases/).
 * When you suspect your template has been compromised.
 * When you have made modifications to your template that you no longer want.
 
@@ -118,6 +118,9 @@ If you receive the message that no match is found for
 `qubes-template-<DISTRO_NAME>-<RELEASE_NUMBER>`, see
 [here](/faq/#when-i-try-to-install-a-template-it-says-no-match-is-found).
 
+If you wish to install a template that is in testing, please see
+[here](/doc/testing/#templates).
+
 ## After Installing
 
 After installing a fresh template, we recommend performing the following steps:
@@ -138,6 +141,10 @@ Please see [How to Update](/doc/how-to-update/).
 Please see [How to Install Software](/doc/how-to-install-software).
 
 ## Uninstalling
+
+If you want to remove a template you must make sure that it is not being used.
+You should check that the template is not being used by any qubes,
+and also that it is not set as the default template.
 
 The procedure for uninstalling a template depends on how it was created.
 
@@ -180,8 +187,9 @@ warning: file /var/lib/qubes/vm-templates/fedora-XX: remove failed: No such file
 These are normal and expected. Nothing is wrong, and no action is required to
 address these warnings.
 
-If this uninstallation command doesn't work, please see
-[VM Troubleshooting](/doc/vm-troubleshooting/).
+If the uninstallation command doesn't work, pay close attention to
+any error message: it may tell you what qube is using the template,
+or if the template is default. In other cases, please see [VM Troubleshooting](/doc/vm-troubleshooting/).
 
 If the Applications Menu entry doesn't go away after you uninstall a template,
 execute the following type of command in dom0:
@@ -242,7 +250,7 @@ new template:
 
 The following sections cover advanced topics pertaining to templates.
 
-### Inheritance and Persistence
+### Inheritance and persistence
 
 Whenever an app qube is created, the contents of the `/home` directory of its
 parent template are *not* copied to the child app qube's `/home`. The child app

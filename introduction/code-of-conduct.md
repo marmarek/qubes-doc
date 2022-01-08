@@ -3,7 +3,7 @@ lang: en
 layout: doc
 permalink: /code-of-conduct/
 ref: 118
-title: Code of Conduct
+title: Code of conduct
 ---
 
 ## Introduction
@@ -52,7 +52,7 @@ Examples of unacceptable behavior by participants include:
 - Reinforcing stereotypical models for illustration of non-technical users
   (e.g. our mothers/grandmothers, etc.)
 - Public or private harassment, as defined by the [Citizen Code of
-  Conduct](http://citizencodeofconduct.org/)
+  Conduct](https://github.com/stumpsyn/policies/blob/master/citizen_code_of_conduct.md)
 - Publishing others' private information, such as a physical or electronic
   address, without explicit permission
 - Other conduct which could reasonably be considered inappropriate in a
@@ -78,6 +78,15 @@ representing a project or community include using an official project e-mail
 address, posting via an official social media account, or acting as an
 appointed representative at an online or offline event. Representation of a
 project may be further defined and clarified by project maintainers.
+
+In all other cases, this Code of Conduct applies only in the official project
+venues specified on [this page](/support/); it does not apply to unofficial
+venues, community-run venues, or any other public or private place. For
+example, if a Qubes user decides to create an unofficial discussion space on a
+third-party platform, and someone appears to violate this Code of Conduct in
+that space, we are not responsible for taking any action with respect to that
+behavior; the venue; the venue's creators, owners, leaders, or moderators; or
+anything else pertaining to the incident.
 
 ## Enforcement
 

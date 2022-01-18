@@ -1,6 +1,6 @@
 ---
+lang: en
 layout: doc
-title: Qubes ISO Building
 permalink: /doc/qubes-iso-building/
 redirect_from:
 - /doc/qubes-r3-building/
@@ -8,10 +8,9 @@ redirect_from:
 - /en/doc/qubes-iso-building/
 - /doc/QubesR3Building/
 - /wiki/QubesR3Building/
+ref: 63
+title: Qubes ISO building
 ---
-
-Building Qubes OS ISO
-=========================
 
 Build Environment
 -----------------
@@ -42,7 +41,7 @@ Get the necessary keys to verify the sources (run these and other commands below
 
 ~~~
 wget https://keys.qubes-os.org/keys/qubes-master-signing-key.asc
-gpg --import qubes-master-signing-key.asc 
+gpg --import qubes-master-signing-key.asc
 gpg --edit-key 36879494
 fpr
 # Verify fingerprint! See Note below!
@@ -53,7 +52,7 @@ gpg --import qubes-developers-keys.asc
 ~~~
 
 **Note** In the above process, we do *not* rely on the security of our server (keys.qubes-os.org) nor the connection (ssl, cert) -- we only rely on you getting the Qubes Master Signing Key fingerprint *somehow* and ensuring they match!
-See [Verifying Signatures](/security/verifying-signatures/#1-get-the-qubes-master-signing-key-and-verify-its-authenticity) for verification sources.
+See [verifying signatures](/security/verifying-signatures/#how-to-import-and-authenticate-the-qubes-master-signing-key) for verification sources.
 
 Now let's bootstrap the builder. Unfortunately, the builder cannot verify itself (the classic Chicken and Egg problem), so we need to verify the signature manually:
 
@@ -67,7 +66,6 @@ git tag -v `git describe`
 
 Assuming the verification went fine, we're good to go with all the rest without ever thinking more about verifying digital signatures on all the rest of the components, apart from an additional step if doing a non-scripted build.
 The builder will do that for us for each component, every time we build, even for all auxiliary files (e.g. Xen or Linux kernel sources).
-
 
 Build using setup script
 -----------------
@@ -127,7 +125,6 @@ make iso
 ~~~
 
 Enjoy your new ISO!
-
 
 Build using manual steps
 -----------------

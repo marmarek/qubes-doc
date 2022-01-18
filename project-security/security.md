@@ -1,8 +1,8 @@
 ---
+lang: en
 layout: doc
-title: Security
 permalink: /security/
-redirect_from: 
+redirect_from:
 - /en/security/
 - /en/doc/security/
 - /en/doc/qubes-security/
@@ -12,80 +12,85 @@ redirect_from:
 - /doc/SecurityPage/
 - /wiki/SecurityPage/
 - /trac/wiki/SecurityPage/
+ref: 217
+title: Qubes OS project security center
 ---
 
-Qubes OS Project Security Center
-================================
+This page provides a central hub for topics pertaining to the security of the
+Qubes OS Project. For topics pertaining to software security *within* Qubes OS,
+see [security in Qubes](/doc/#security-in-qubes). The following is a list of
+important project security pages:
 
-- [Security FAQ]
-- [Security Goals]
-- [Security Pack]
-- [Security Bulletins]
-- [Canaries]
-- [Xen Security Advisory (XSA) Tracker]
-- [Why and How to Verify Signatures]
-- [PGP Keys]
+- [Qubes security pack (qubes-secpack)](/security/pack/)
+- [Qubes security bulletins (QSBs)](/security/qsb/)
+- [Qubes canaries](/security/canary/)
+- [Xen security advisory (XSA) tracker](/security/xsa/)
+- [Verifying signatures](/security/verifying-signatures/)
+- [PGP keys](https://keys.qubes-os.org/keys/)
+- [Security FAQ](/faq/#general--security)
 
+## Reporting security issues in Qubes OS
 
-Reporting Security Issues in Qubes OS
--------------------------------------
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-exclamation-circle"></i>
+  <b>Please note:</b> The Qubes security team email address is intended for
+  <b>responsible disclosure</b> by security researchers and others who discover
+  legitimate security vulnerabilities. It is <b>not</b> intended for everyone
+  who suspects they've been hacked. Please <b>do not</b> attempt to contact the
+  Qubes security team unless you can <b>demonstrate</b> an actual security
+  vulnerability or unless the team will be able to take reasonable steps to
+  verify your claims.
+</div>
 
-If you believe you have found a security issue affecting Qubes OS, either directly or indirectly (e.g. the issue affects Xen in a configuration that is used in Qubes OS), then we would be more than happy to hear from you!
-We promise to treat any reported issue seriously and, if the investigation confirms that it affects Qubes, to patch it within a reasonable time and release a public [Qubes Security Bulletin][Security Bulletins] that describes the issue, discusses the potential impact of the vulnerability, references applicable patches or workarounds, and credits the discoverer.
+If you've discovered a security issue affecting Qubes OS, either directly or
+indirectly (e.g., the issue affects Xen in a configuration that is used in
+Qubes OS), then we would be more than happy to hear from you! We promise to
+take all reported issues seriously. If our investigation confirms that an issue
+affects Qubes, we will patch it within a reasonable time and release a public
+[Qubes security bulletin (QSB)](/security/qsb/) that describes the issue,
+discusses the potential impact of the vulnerability, references applicable
+patches or workarounds, and credits the discoverer. Please use the [Qubes
+security team PGP
+key](https://keys.qubes-os.org/keys/qubes-os-security-team-key.asc) to encrypt
+your email to this address:
 
-Security Updates
-----------------
+```
+security at qubes-os dot org
+```
 
-Qubes security updates are obtained by [Updating Qubes OS].
+This key is signed by the [Qubes Master Signing
+Key](https://keys.qubes-os.org/keys/qubes-master-signing-key.asc). Please see
+[verifying signatures](/security/verifying-signatures/) for information about
+how to authenticate these keys.
 
-The Qubes Security Team
------------------------
+## Security updates
 
-The Qubes Security Team (QST) is the subset of the [Qubes Team] that is responsible for ensuring the security of Qubes OS and the Qubes OS Project.
-In particular, the QST is responsible for:
+Qubes security updates are obtained by [updating Qubes
+OS](/doc/how-to-update/).
 
- - Responding to [reported security issues]
- - Evaluating whether [XSAs][Xen Security Advisory (XSA) Tracker] affect the security of Qubes OS
- - Writing, applying, and/or distributing security patches to fix vulnerabilities in Qubes OS
- - Writing, signing, and publishing [Security Bulletins]
- - Writing, signing, and publishing [Canaries]
- - Generating, safeguarding, and using the project's [PGP Keys]
+## Qubes security team
 
-As a security-oriented operating system, the QST is fundamentally important to Qubes, and every Qubes user implicitly trusts the members of the QST by virtue of the actions listed above.
-The Qubes Security Team can be contacted via email at the following address:
+The **Qubes security team (QST)** is the subset of the [core
+team](/team/#core-team) that is responsible for ensuring the security of Qubes
+OS and the Qubes OS Project. In particular, the QST is responsible for:
 
-    security at qubes-os dot org
+- Responding to [reported security
+  issues](#reporting-security-issues-in-qubes-os)
+- Evaluating whether [XSAs](/security/xsa/) affect the security of Qubes OS
+- Writing, applying, and/or distributing security patches to fix
+  vulnerabilities in Qubes OS
+- Writing, signing, and publishing [Qubes security bulletins
+  (QSBs)](/security/qsb/)
+- Writing, signing, and publishing [Qubes canaries](/security/canary/)
+- Generating, safeguarding, and using the project's [PGP
+  keys](https://keys.qubes-os.org/keys/)
 
+As a security-oriented operating system, the QST is fundamentally important to
+Qubes, and every Qubes user implicitly trusts the members of the QST by virtue
+of the actions listed above.
 
-### Security Team PGP Key ###
+### Members of the security team
 
-Please use the [Security Team PGP Key] to encrypt all emails sent to this address.
-This key is signed by the [Qubes Master Signing Key].
-Please see [Why and How to Verify Signatures] for information about how to verify these keys.
-
-### Members of the Security Team ###
-
-- [Marek Marczykowski-Górecki]
-- [Simon Gaiser (aka HW42)]
-- [Joanna Rutkowska] ([emeritus, canaries only])
-
-
-[Security FAQ]: /faq/#general--security
-[Security Goals]: /security/goals/
-[Security Pack]: /security/pack/
-[Security Bulletins]: /security/bulletins/
-[Canaries]: /security/canaries/
-[Xen Security Advisory (XSA) Tracker]: /security/xsa/
-[Why and How to Verify Signatures]: /security/verifying-signatures/
-[PGP Keys]: https://keys.qubes-os.org/keys/
-[Qubes Team]: /team/
-[reported security issues]: #reporting-security-issues-in-qubes-os
-[Security Team PGP Key]: https://keys.qubes-os.org/keys/qubes-os-security-team-key.asc
-[Qubes Master Signing Key]: https://keys.qubes-os.org/keys/qubes-master-signing-key.asc
-[Marek Marczykowski-Górecki]: /team/#marek-marczykowski-górecki
-[Simon Gaiser (aka HW42)]: /team/#simon-gaiser-aka-hw42
-[Joanna Rutkowska]: /team/#joanna-rutkowska
-[emeritus, canaries only]: /news/2018/11/05/qubes-security-team-update/
-[Updating Qubes OS]: /doc/updating-qubes-os/
-
-
+- [Marek Marczykowski-Górecki](/team/#marek-marczykowski-górecki)
+- [Simon Gaiser (aka HW42)](/team/#simon-gaiser-aka-hw42)
+- [Joanna Rutkowska](/team/#joanna-rutkowska) ([emeritus, canaries only](/news/2018/11/05/qubes-security-team-update/))

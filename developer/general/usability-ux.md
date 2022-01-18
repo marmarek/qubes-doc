@@ -1,15 +1,14 @@
 ---
+lang: en
 layout: doc
-title: Usability & UX
 permalink: /doc/usability-ux/
+ref: 31
+title: Usability & UX
 ---
-
-Usability & UX
-==============
 
 Software that is too complicated to use, is often unused. Because we want as many people as possible to benefit from its unique security properties, the usability and user experience of Qubes OS is an utmost priority!
 
-We ask anyone developing for Qubes OS to please read through this guide to better understand the user experience we strive to achieve. We also ask them to review [our style guide](/doc/style-guide/) for other design related information.
+We ask anyone developing for Qubes OS to please read through this guide to better understand the user experience we strive to achieve. We also ask them to review [our visual style guide](/doc/visual-style-guide/) for other design related information.
 
 ---
 
@@ -38,7 +37,6 @@ Perhaps the most common cause of mistakes is complexity. If there is a configura
 - Choose intelligent defaults for settings
 
 In making software easy to use, it is crucial to be mindful of [cognitive load](https://en.wikipedia.org/wiki/Cognitive_load) which dictates that *"humans are generally able to hold only seven +/-  two units of information in short-term memory."* Making sure your interfaces don't pass this short-term memory limit is perhaps the most important factor in helping a user feel comfortable instead of overwhelmed.
-
 
 ---
 

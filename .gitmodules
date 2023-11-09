@@ -1,0 +1,3 @@
+[submodule "attachment"]
+	path = attachment
+	url = https://github.com/qubesos/qubes-attachment

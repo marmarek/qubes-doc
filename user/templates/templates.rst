@@ -147,11 +147,10 @@ available templates. To install a template, use:
 
 
 You can also use ``qvm-template`` to upgrade or reinstall templates.
-| Repo definitions are stored in ``/etc/qubes/repo-templates`` and
-  associated keys in ``/etc/qubes/repo-templates/keys``.
+| Repo definitions are stored in ``/etc/qubes/repo-templates`` and associated keys in ``/etc/qubes/repo-templates/keys``.
 | There are additional repos for testing releases and community
-  templates. To temporarily enable any of these repos, use the
-  ``--enablerepo=<repo-name>`` option. E.g. :
+| templates. To temporarily enable any of these repos, use the
+| ``--enablerepo=<repo-name>`` option. E.g. :
 
 
 .. code:: bash
